@@ -2,7 +2,7 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('postcards_images', table => {
     table.increments().primary();
-    table.integer('poscard_id').notNullable().references('id').inTable('postcards').onDelete('CASCADE');
+    table.integer('postcard_id').notNullable().references('id').inTable('postcards').onDelete('CASCADE');
     table.integer('image_id').notNullable().references('id').inTable('images').onDelete('CASCADE');
     table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
   });
