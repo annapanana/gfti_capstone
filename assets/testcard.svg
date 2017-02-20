@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 450 306">
+  <defs>
+    <pattern id="img1" patternUnits="objectBoundingBox" width="100%" height="100%">
+      <!-- Dimensions must match rect dimensions -->
+      <image href="https://digital-photography-school.com/wp-content/uploads/2011/11/square-format-06.jpg" x="0" y="0" width="100" height="100" />
+    </pattern>
+
+    <pattern id="img2" patternUnits="objectBoundingBox" width="100%" height="100%">
+      <!-- Dimensions must match rect dimensions -->
+      <image href="http://images.fineartamerica.com/images-medium-large/little-pup-square-dog-photography.jpg" x="0" y="0" width="100" height="100" />
+    </pattern>
+
+    <style>
+      .image-1 {
+        fill: url(#img1);
+      }
+
+      .image-2 {
+        fill: url(#img2);
+      }
+
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-4 {
+        fill: #f2f2f2;
+        opacity: 0.5;
+      }
+
+      .cls-5 {
+        clip-path: url(#clip-path-2);
+      }
+
+      .cls-6 {
+        clip-path: url(#clip-path-3);
+      }
+
+      .cls-7 {
+        clip-path: url(#clip-path-4);
+      }
+
+      .cls-8 {
+        clip-path: url(#clip-path-5);
+      }
+    </style>
+    <linearGradient id="linear-gradient" y1="153" x2="450" y2="153" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#92b4a8"/>
+      <stop offset="1" stop-color="#8eb0a1"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <path id="letter_01" class="cls-1" d="M113.41,156.23H75.68V121H62v35.2H24.31V67.9H62v36.3H75.68V67.9h37.73Z"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="letter_02" class="cls-1" d="M187.55,139.62l-4,16.61H123.42V67.9h60.17l4,16.61h-26.4V107h17.71l4,16.61H161.15v16.06Z"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <path id="letter_03" class="cls-1" d="M259.48,139.62l-4,16.61H195.35V67.9h37.73v71.72Z"/>
+    </clipPath>
+    <clipPath id="clip-path-4">
+      <path id="letter_04" class="cls-1" d="M329.11,139.62l-4,16.61H265V67.9h37.73v71.72Z"/>
+    </clipPath>
+    <clipPath id="clip-path-5">
+      <path id="letter_05" class="cls-1" d="M425.69,113a43.24,43.24,0,0,1-13.37,31.85,45.68,45.68,0,0,1-64.35,0A43.24,43.24,0,0,1,334.61,113,43.25,43.25,0,0,1,348,81.16a45.68,45.68,0,0,1,64.35,0A43.25,43.25,0,0,1,425.69,113ZM387,139.62V84.51H373.33v55.11Z"/>
+    </clipPath>
+  </defs>
+  <title>testcard</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="greeting">
+      <rect class="cls-2" width="450" height="306"/>
+      <g id="clip_01">
+        <g class="cls-3">
+          <rect id="image_01" class="image-1" x="20.5" y="64.5" width="97.01" height="97.01"/>
+        </g>
+      </g>
+      <g id="clip_02">
+        <g class="cls-5">
+          <rect id="image_02" class="image-2" x="106.98" y="64.5" width="97.01" height="97.01"/>
+        </g>
+      </g>
+      <g id="clip_03">
+        <g class="cls-6">
+          <rect id="image_03" class="image-1" x="167.97" y="64.5" width="97.01" height="97.01"/>
+        </g>
+      </g>
+      <g id="clip_04">
+        <g class="cls-7">
+          <rect id="image_04" class="image-2" x="236.16" y="64.5" width="97.01" height="97.01"/>
+        </g>
+      </g>
+      <g id="clip_05">
+        <g class="cls-8">
+          <rect id="image_05" class="image-1" x="331.98" y="64.5" width="97.01" height="97.01"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
