@@ -1,0 +1,32 @@
+{
+  "name": "gfti_capstone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annapanana/gfti_capstone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annapanana/gfti_capstone/issues"
+  },
+  "homepage": "https://github.com/annapanana/gfti_capstone#readme",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-moment": "^1.0.1",
+    "angular-ui-router": "^1.0.0-beta.3",
+    "body-parser": "^1.16.1",
+    "bootstrap": "^3.3.7",
+    "express": "^4.14.1",
+    "jquery": "^3.1.1",
+    "knex": "^0.12.7",
+    "lob": "^3.9.0",
+    "pg": "^6.1.2",
+    "ui-bootstrap": "^0.1.10"
+  }
+}
