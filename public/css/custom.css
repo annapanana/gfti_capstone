@@ -1,0 +1,21 @@
+/*Temp Form CSS*/
+
+.row {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.form-column {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;;
+}
+
+.top-margin {
+  margin-top: 50px;
+}
+
+
+.container {
+  padding-bottom: 50px;
+}
