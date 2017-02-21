@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail" rel="stylesheet">
+    <title>Lob.com Sample 4x6 Postcard Front</title>
+    <style>
+      *, *:before, *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 6.25in;
+        height: 4.25in;
+        margin: 0;
+        padding: 0;
+      }
+
+      #safe-area {
+        position: absolute;
+        width: 5.875in;
+        height: 3.875in;
+        left: 0.1875in;
+        top: 0.1875in;
+        /*background-color: rgba(255,255,255,0.5);*/
+      }
+
+      .text {
+        /*margin: 10px;*/
+        /*margin-top: 250px;*/
+        position: absolute;
+        top: 30px;
+        left: 50px;
+        font-size: 50px;
+        color: #233DB9;
+        text-align: center;
+        font-family: 'Yellowtail', cursive;
+      }
+
+      /*.background-img {
+        width: 100%;
+        filter: contrast(2);
+          -webkit-filter: contrast(2);
+      }*/
+
+    </style>
+  </head>
+
+  <body>
+    <!-- <img class="background-img" src="{{background_image}}" alt=""> -->
+    <!-- <img class="background-img" src="http://www.boulderco.com/uploads/slideshow/1354198589.jpg" alt=""> -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306">
+      <defs>
+        <style>
+          .cls-1 {
+            fill: #233DB9;
+          }
+          .cls-2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            /*height: auto;*/
+            z-index: 10;
+          }
+        </style>
+        <filter id="pictureFilter" >
+          <feColorMatrix type="matrix" values="1.1 0 0 0 -0.1
+                                                0 1.1 0 0 -0.1
+                                                0 0 1.1 0 -0.1
+                                                0 0 0 1 0" />
+            <!-- <feConvolveMatrix order="3" kernelMatrix="0 0 0 0 1 0 0 0 0"/> -->
+        </filter>
+      </defs>
+      <title>test_frame</title>
+      <!-- filter="url(#pictureFilter)" -->
+      <image class="cls-2"  xlink:href="https://s3-us-west-2.amazonaws.com/popuparcade.com/gfti_test/Image+uploaded+from+iOS+(1).jpg" x="-25" y="0" height="115%" width="115%"/>
+      <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+          <!-- <path class="cls-1" d="M422.67,0H0V306H450V0ZM421,280l-196,8.71L29,280l8.3-127L29,26l196-8.71L421,26l-8.3,127Z"/> -->
+        </g>
+      </g>
+    </svg>
+
+    <div id="safe-area">
+      <!-- All text should appear within the safe area. -->
+      <div class="text">
+        Greetings from Denver!
+      </div>
+    </div>
+
+
+  </body>
+</html>

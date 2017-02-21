@@ -8,7 +8,7 @@ var fs = require('fs');
 
 const lobFactory = require('../node_modules/lob/lib/index.js');
 const lob = new lobFactory('test_97f0caa8c52f230f7bef2daef8b58e70f81');
-var front = fs.readFileSync(__dirname + '/../public/front.html', { encoding: 'utf-8' });
+var postcard = fs.readFileSync(__dirname + '/../public/front_noimg.html', { encoding: 'utf-8' });
 
 router.get('/', (req, res, next) => {
   knex('postcards')
@@ -84,17 +84,17 @@ router.post('/', (req, res, next) => {
         to: to,
         from: from,
         size: '4x6',
-        front: front,
-        message: msg
+        front: postcard,
+        message: msg,
+        data: {
+          background_image: 'http://www.boulderco.com/uploads/slideshow/1354198589.jpg'
+        }
       }, function (err, postcard) {
-        console.log("err", err);
-        console.log("pc", postcard);
         if (err) {
           res.send(err);
         }
-        console.log('Postcard to ' + postcard.to.name + ' sent! View it here: ' + postcard.url);
+        // console.log('Postcard to ' + postcard.to.name + ' sent! View it here: ' + postcard.url);
         res.status(200).send(postcard);
-        // return res.send("postcard sent!", postcard);
       });
     });
 });
@@ -112,7 +112,6 @@ router.post('/', (req, res, next) => {
 //       res.send(result[0]);
 //     });
 // });
-
 // router.delete('/:id/', (req, res, next) => {
 //   knex('postcards')
 //     .where('id', req.params.id)

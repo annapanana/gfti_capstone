@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98 138.78">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #22b573;
+      }
+    </style>
+  </defs>
+  <title>test_shape</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <path class="cls-1" d="M90.44,40.78C90.44,18.78,72.18,0,49.66,0S8.88,18.78,8.88,40.78H0v98H98v-98Z"/>
+    </g>
+  </g>
+</svg>
