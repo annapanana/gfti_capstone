@@ -37,6 +37,7 @@ router.get('/:id/', (req, res, next) => {
 router.post('/', (req, res, next) => {
   const {settings} = req.body;
   const newCard = settings;
+  console.log(newCard);
   // console.log(newCard);
   // TODO Change template id to be the string of the HTML template
 
@@ -60,7 +61,7 @@ router.post('/', (req, res, next) => {
     front: postcard,
     message: msg,
     data: {
-      background_image: 'http://www.boulderco.com/uploads/slideshow/1354198589.jpg'
+      background_image: newCard.image_url
     }
   }, function (err, postcard) {
     if (err) {

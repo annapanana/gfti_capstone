@@ -12,7 +12,7 @@
       vm.to = {};
       vm.from = {};
       vm.message = "";
-      vm.image_preview = "http://placehold.it/400x300";
+      // vm.image_preview = "http://placehold.it/400x300";
 
       vm.fileInput = function(event) {
         let files = event.target.files;
@@ -29,10 +29,28 @@
           file_type:file.type
         };
         $http.post('/photobucket', fileData).then((result) => {
-          console.log(result.data.url);
-          vm.image_preview = result.data.url;
-          console.log(vm.image_preview);
+          console.log(result.data);
+          // vm.image_preview = result.data.url;
+          // console.log(vm.image_preview);
+          uploadFile(file, result.data.signedRequest, result.data.url)
         });
+      }
+
+      function uploadFile(file, signedRequest, url) {
+        const xhr = new XMLHttpRequest();
+        xhr.open('PUT', signedRequest);
+        xhr.onreadystatechange = () => {
+          if(xhr.readyState === 4){
+            if(xhr.status === 200){
+              console.log("UPDATE ULR HERE");
+              compositionSettings.image_url = url;
+            }
+            else{
+              alert('Could not upload file.');
+            }
+          }
+        };
+        xhr.send(file);
       }
 
       vm.submitCard = function() {
@@ -61,7 +79,7 @@
 
         $http.post('/postcards', newPostcard).then((result) => {
           console.log(result);
-          vm.postcard_preview = result.data[0].postcard.thumbnails[0].medium;
+          vm.postcard_preview = result.data[0].postcard;
           console.log(vm.postcard_preview);
         });
       };
@@ -73,7 +91,7 @@
         theme_id: 1,
         greetings_subtext: 'Greetings from Denver!',
         // add image link from S3
-        image_url: vm.image_preview
+        image_url: ''
       };
     }
 }());
