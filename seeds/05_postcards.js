@@ -6,16 +6,11 @@ exports.seed = function(knex, Promise) {
       return Promise.all([
         knex('postcards').insert({
           id: 1,
-          title: 'monday in boulder',
-          search_word: 'boulder',
-          maker: 'anna',
-          notes: 'a post cards about a case of the mondays',
-          times_used: 3,
           template_id: 1,
           color_id: 1,
           theme_id: 1,
           greetings_subtext: 'greetings from boulder, co',
-          is_location: true
+          image_url: 'http://www.boulderco.com/uploads/slideshow/1354198589.jpg'
         })
       ]);
     });

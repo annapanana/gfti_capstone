@@ -35,97 +35,50 @@ router.get('/:id/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
+  const {settings} = req.body;
+  const newCard = settings;
+  // console.log(newCard);
+  // TODO Change template id to be the string of the HTML template
 
-  const {title, search_word, maker, notes, greetings_subtext, is_location, template_id, color_id, theme_id} = req.body;
-  const newCard = {title, search_word, maker, notes, greetings_subtext, is_location, template_id, color_id, theme_id};
-
-  const {html_body} = req.body;
-  const design = {html_body};
-
-  const {send_to} = req.body;
-  var to = send_to;
-
-  const {send_from} = req.body;
-  var from = send_from;
-
+  const {to} = req.body;
+  var send_to = to;
+  // console.log(send_to);
+  const {from} = req.body;
+  var send_from = from;
+  // console.log(send_from);
   const {message} = req.body;
   const msg = message;
-
-  // console.log("to", to);
-  // console.log("from", from);
-  // console.log("message", message);
-
-  // NOTE: These are temporarily hard coded
-  to = {
-    name: 'anna',
-    address_line1: '1260 kalmia ave',
-    address_line2: 'apartment 17',
-    address_city: 'Boulder',
-    address_state: 'CO',
-    address_zip: '80304'
-  };
-
-  from = {
-    name: 'anna',
-    address_line1: '1260 kalmia ave',
-    address_line2: 'apartment 17',
-    address_city: 'Boulder',
-    address_state: 'CO',
-    address_zip: '80304'
-  };
+  // console.log(msg);
 
   // TODO server side validation of newCard object
-  // console.log(req.body);
-  knex('postcards')
-    .insert(newCard, '*')
-    .then((result) => {
 
-      lob.postcards.create({
-        to: to,
-        from: from,
-        size: '4x6',
-        front: postcard,
-        message: msg,
-        data: {
-          background_image: 'http://www.boulderco.com/uploads/slideshow/1354198589.jpg'
-        }
-      }, function (err, postcard) {
-        if (err) {
-          res.send(err);
-        }
-        // console.log('Postcard to ' + postcard.to.name + ' sent! View it here: ' + postcard.url);
-        res.status(200).send(postcard);
+
+  lob.postcards.create({
+    to: send_to,
+    from: send_from,
+    size: '4x6',
+    front: postcard,
+    message: msg,
+    data: {
+      background_image: 'http://www.boulderco.com/uploads/slideshow/1354198589.jpg'
+    }
+  }, function (err, postcard) {
+    if (err) {
+      return res.send(err);
+    }
+
+    knex('postcards')
+      .insert(newCard, '*')
+      .then((result) => {
+        result[0].postcard = postcard;
+        return res.status(200).send(result);
+      })
+      .catch(err => {
+        next(err);
       });
-    });
-});
+  });
 
-// router.patch('/:id/', (req, res, next) => {
-//   const { title, description, price, item_image } = req.body;
-//   const newPost = { title, description, price, item_image };
-//   knex('postcards')
-//     .where('id', req.params.id)
-//     .update(newPost, '*')
-//     .then((result) => {
-//       result[0].date = result[0].updated_at;
-//       delete result[0].created_at;
-//       delete result[0].updated_at;
-//       res.send(result[0]);
-//     });
-// });
-// router.delete('/:id/', (req, res, next) => {
-//   knex('postcards')
-//     .where('id', req.params.id)
-//     .then((result) => {
-//       const post = result[0];
-//       knex('classifieds')
-//         .where('id', req.params.id)
-//         .del()
-//         .then(() => {
-//           delete result[0].created_at;
-//           delete result[0].updated_at;
-//           res.send(post);
-//         });
-//     });
-// });
+
+});
 
 module.exports = router;
