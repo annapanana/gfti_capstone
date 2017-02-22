@@ -11,18 +11,22 @@
       const vm = this;
       vm.to = {};
       vm.from = {};
+      vm.payment_info = {};
       vm.message = "";
       vm.postcard_front = "";
       vm.postcard_back = "";
 
       //TODO build this up and store in local storage until user pays and submits
-      vm.compositionSettings = {
+      vm.composition_settings = {
         template_name: 'template_01.html',
         color_id: 1,
         theme_id: 1,
         greetings_subtext: '',
         image_url: 'http://placehold.it/400x300'
       };
+
+      // TODO remove declaration of all vars
+
 
       vm.fileInput = function(event) {
         let files = event.target.files;
@@ -50,7 +54,7 @@
         xhr.onreadystatechange = () => {
           if(xhr.readyState === 4){
             if(xhr.status === 200){
-              vm.compositionSettings.image_url = url;
+              vm.composition_settings.image_url = url;
               // console.log("image:",   vm.compositionSettings.image_url);
               $scope.$apply();
             }
@@ -64,7 +68,7 @@
 
       vm.submitCard = function() {
         let newPostcard = {
-          settings: vm.compositionSettings,
+          settings: vm.composition_settings,
           // to: vm.to,
           to: {
             name: 'anna',
@@ -83,9 +87,16 @@
             address_state: 'CO',
             address_zip: '80304'
           },
-          message: vm.message
+          message: vm.message,
+          // payment_info: vm.payment_info
+          payment_info: {
+            object: "card",
+            number: "4242 4242 4242 4242",
+            exp_month: 10,
+            exp_year: 2018,
+            email: "annaklotko@gmail.com"
+          }
         };
-
         $http.post('/postcards', newPostcard).then((result) => {
           console.log("result", result.data[0]);
           // TODO Debug displaying image previews

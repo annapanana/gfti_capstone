@@ -11,26 +11,26 @@
           <input type="file" name="image" custom-on-change="$ctrl.fileInput">
         </div>
         <div class="row">
-          <img class="image-preview" ng-src="{{$ctrl.compositionSettings.image_url}}" alt="">
+          <img class="image-preview" ng-src="{{$ctrl.composition_settings.image_url}}" alt="">
         </div>
       </div>
       <div class="col-sm-12">
         <h4>Greeting Text</h4>
-        <input type="text" name="greeting" ng-model="$ctrl.compositionSettings.greetings_subtext" value="Greetings from Denver!">
+        <input type="text" name="greeting" ng-model="$ctrl.composition_settings.greetings_subtext" value="Greetings from Denver!">
       </div>
       <div class="col-sm-12">
         <h4>Template Data</h4>
         <div class="col-sm-12">
           <label for="template_name">Template</label>
           <br>
-          <select name="template_name" ng-mode="$ctrl.compositionSettings.template_name">
+          <select name="template_name" ng-mode="$ctrl.composition_settings.template_name">
             <option value="template_01.html">Front Img</option>
           </select>
         </div>
         <div class="col-sm-12">
           <label for="">Color</label>
           <br>
-          <select name="template_name" ng-mode="$ctrl.compositionSettings.color_id">
+          <select name="template_name" ng-mode="$ctrl.composition_settings.color_id">
             <option value="1">Red</option>
             <option value="1">Blue</option>
             <option value="1">Yellow</option>
@@ -39,7 +39,7 @@
         <div class="col-sm-12">
           <label for="">Theme</label>
           <br>
-          <select name="template_name" ng-mode="$ctrl.compositionSettings.theme_id">
+          <select name="template_name" ng-mode="$ctrl.composition_settings.theme_id">
             <option value="1">Playful</option>
             <option value="2">Modern</option>
             <option value="3">Classic</option>
@@ -102,25 +102,6 @@
     <div class="row">
       <h3>Payment Information</h3>
       <div class="col-md-6 col-sm-12">
-        <h4>Billing Address</h4>
-        <div class="col-sm-4 form-column">
-          <label for="cc_name">Name</label>
-          <label for="cc_address_line1">Address Line 1</label>
-          <label for="cc_address_line2">Address Line 2</label>
-          <label for="cc_address_city">City</label>
-          <label for="cc_address_state">State</label>
-          <label for="cc_address_zip">Zipcode</label>
-        </div>
-        <div class="col-sm-8 form-column">
-          <input type="text" name="cc_name" value="">
-          <input type="text" name="cc_address_line1" value="">
-          <input type="text" name="cc_address_line2" value="">
-          <input type="text" name="cc_address_city" value="">
-          <input type="text" name="cc_address_state" value="">
-          <input type="text" name="cc_address_zip" value="">
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-12">
         <h4>Credit Card Information</h4>
         <div class="col-sm-4 form-column">
           <label for="cc_brand">Type of Card</label>
@@ -131,13 +112,13 @@
         </div>
 
         <div class="col-sm-8 form-column">
-          <select name="cc_brand">
-            <option value="1">Visa</option>
-            <option value="2">Master Card</option>
-            <option value="3">American Express</option>
+          <select name="cc_brand" ng-model="$ctrl.payment_info.cc_brand">
+            <option value="Visa">Visa</option>
+            <option value="Master Card">Master Card</option>
+            <option value="American Express">American Express</option>
           </select>
-          <input type="number" name="cc_number">
-          <select class="cc_exp_month">
+          <input type="number" name="cc_number" ng-model="$ctrl.payment_info.cc_number">
+          <select class="cc_exp_month" ng-model="$ctrl.paytment_info.cc_exp_month">
             <option value="01">Jan</option>
             <option value="02">Feb</option>
             <option value="03">March</option>
@@ -151,7 +132,7 @@
             <option value="11">Nov</option>
             <option value="12">Dec</option>
           </select>
-          <select class="cc_exp_year" name="">
+          <select class="cc_exp_year" name="" ng-model="$ctrl.payment_info.cc_exp_year">
             <option value="2010">2010</option>
             <option value="2011">2011</option>
             <option value="2012">2012</option>
@@ -164,17 +145,17 @@
             <option value="2019">2019</option>
             <option value="2020">2020</option>
           </select>
-          <input type="number" name="cc_cvc">
+          <input type="number" name="cc_cvc" ng-model="$ctrl.payment_info.cc_cvc">
         </div>
       </div>
     </div>
 
     <div class="row">
-      <h4>Email</h4>
       <div class="col-sm-12">
+        <h4>Email</h4>
         <label for="cc_email">Your reciept will be sent to this email address:</label>
         <br>
-        <input type="email" name="cc_email">
+        <input type="email" name="cc_email" ng-model="$ctrl.payment_info.cc_email">
       </div>
     </div>
 

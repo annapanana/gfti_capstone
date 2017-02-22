@@ -43,37 +43,74 @@ router.post('/', (req, res, next) => {
   var send_to = to;
   const {from} = req.body;
   var send_from = from;
+
   const {message} = req.body;
   const msg = message;
 
-  let postcard = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
-  
-  // TODO server side validation of newCard object
-  lob.postcards.create({
-    to: send_to,
-    from: send_from,
-    size: '4x6',
-    front: postcard,
-    message: msg,
-    data: {
-      image_url: newCard.image_url,
-      greetings_subtext: newCard.greetings_subtext
-    }
-  }, function (err, postcard) {
-    if (err) {
-      return res.send(err);
-    }
+  const {payment_info} = req.body;
+  const payment = payment_info;
 
-    knex('postcards')
-      .insert(newCard, '*')
-      .then((result) => {
-        result[0].postcard = postcard;
-        return res.status(200).send(result);
-      })
-      .catch(err => {
-        next(err);
-      });
+  let postcard = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
+
+  // TODO server side validation of newCard object
+
+  // CHARGE USER
+  stripe.customers.create({
+    email: payment.email
+  }).then(function(customer){
+    console.log("customer", customer);
+    return stripe.customers.createSource(customer.id, {
+      source: {
+         object: 'card',
+         exp_month: payment.exp_month,
+         exp_year: payment.exp_year,
+         number: payment.number,
+         cvc: payment.cvc
+      }
+    });
+  }).then(function(source) {
+    return stripe.charges.create({
+      amount: 100,
+      currency: 'usd',
+      customer: source.customer
+    });
+  }).then(function(charge) {
+    // New charge created on a new customer
+    console.log("Charge Succeeded!");
+
+    // CREATE POSTCARD
+    lob.postcards.create({
+      to: send_to,
+      from: send_from,
+      size: '4x6',
+      front: postcard,
+      message: msg,
+      data: {
+        image_url: newCard.image_url,
+        greetings_subtext: newCard.greetings_subtext
+      }
+    }, function (err, postcard) {
+      if (err) {
+        // TODO switch statement to send different errors
+        return res.send(err);
+      }
+
+      knex('postcards')
+        .insert(newCard, '*')
+        .then((result) => {
+          result[0].postcard = postcard;
+          return res.status(200).send(result);
+        })
+        .catch(err => {
+          next(err);
+        });
+    });
+  }).catch(function(err) {
+    // TODO switch statement to send different errors
+    return res.send(err);
   });
+
+
 });
 
 module.exports = router;
