@@ -8,7 +8,7 @@ var fs = require('fs');
 
 const lobFactory = require('../node_modules/lob/lib/index.js');
 const lob = new lobFactory('test_97f0caa8c52f230f7bef2daef8b58e70f81');
-var postcard = fs.readFileSync(__dirname + '/../public/front_noimg.html', { encoding: 'utf-8' });
+// var postcard = fs.readFileSync(__dirname + '/../public/front_noimg.html', { encoding: 'utf-8' });
 
 router.get('/', (req, res, next) => {
   knex('postcards')
@@ -37,22 +37,16 @@ router.get('/:id/', (req, res, next) => {
 router.post('/', (req, res, next) => {
   const {settings} = req.body;
   const newCard = settings;
-  console.log(newCard);
-  // console.log(newCard);
-  // TODO Change template id to be the string of the HTML template
 
   const {to} = req.body;
   var send_to = to;
-  // console.log(send_to);
   const {from} = req.body;
   var send_from = from;
-  // console.log(send_from);
   const {message} = req.body;
   const msg = message;
-  // console.log(msg);
 
+  let postcard = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
   // TODO server side validation of newCard object
-
 
   lob.postcards.create({
     to: send_to,
@@ -61,7 +55,8 @@ router.post('/', (req, res, next) => {
     front: postcard,
     message: msg,
     data: {
-      background_image: newCard.image_url
+      image_url: newCard.image_url,
+      greetings_subtext: newCard.greetings_subtext
     }
   }, function (err, postcard) {
     if (err) {
@@ -78,8 +73,6 @@ router.post('/', (req, res, next) => {
         next(err);
       });
   });
-
-
 });
 
 module.exports = router;

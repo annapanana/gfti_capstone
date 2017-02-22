@@ -14,6 +14,15 @@
       vm.message = "";
       // vm.image_preview = "http://placehold.it/400x300";
 
+      //TODO build this up and store in local storage until user pays and submits
+      vm.compositionSettings = {
+        template_name: 'template_01.html',
+        color_id: 1,
+        theme_id: 1,
+        greetings_subtext: '',
+        image_url: ''
+      };
+
       vm.fileInput = function(event) {
         let files = event.target.files;
         if (!files) {
@@ -30,9 +39,7 @@
         };
         $http.post('/photobucket', fileData).then((result) => {
           console.log(result.data);
-          // vm.image_preview = result.data.url;
-          // console.log(vm.image_preview);
-          uploadFile(file, result.data.signedRequest, result.data.url)
+          uploadFile(file, result.data.signedRequest, result.data.url);
         });
       }
 
@@ -43,7 +50,7 @@
           if(xhr.readyState === 4){
             if(xhr.status === 200){
               console.log("UPDATE ULR HERE");
-              compositionSettings.image_url = url;
+              vm.compositionSettings.image_url = url;
             }
             else{
               alert('Could not upload file.');
@@ -55,7 +62,7 @@
 
       vm.submitCard = function() {
         let newPostcard = {
-          settings: compositionSettings,
+          settings: vm.compositionSettings,
           // to: vm.to,
           to: {
             name: 'anna',
@@ -76,7 +83,7 @@
           },
           message: vm.message
         };
-
+        console.log("settings", newPostcard.settings);
         $http.post('/postcards', newPostcard).then((result) => {
           console.log(result);
           vm.postcard_preview = result.data[0].postcard;
@@ -84,14 +91,6 @@
         });
       };
 
-      //TODO build this up and store in local storage until user pays and submits
-      var compositionSettings = {
-        template_id: 1,
-        color_id: 1,
-        theme_id: 1,
-        greetings_subtext: 'Greetings from Denver!',
-        // add image link from S3
-        image_url: ''
-      };
+
     }
 }());

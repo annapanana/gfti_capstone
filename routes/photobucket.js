@@ -26,16 +26,12 @@ router.post('/', (req, res, next) => {
 
   s3.getSignedUrl('putObject', s3Params, (err, data) => {
     if(err){
-      // console.log(err);
-      // return res.end();
       res.send(err);
     }
     const returnData = {
       signedRequest: data,
       url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
     };
-    // res.write(JSON.stringify(returnData));
-    // res.end();
     res.send(returnData);
   });
 });

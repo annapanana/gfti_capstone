@@ -67,18 +67,19 @@
           }
         </style>
         <filter id="pictureFilter" >
-          <feColorMatrix type="matrix" values="1.1 0 0 0 -0.1
+          <!-- <feColorMatrix type="matrix" values="1.1 0 0 0 -0.1
                                                 0 1.1 0 0 -0.1
                                                 0 0 1.1 0 -0.1
-                                                0 0 0 1 0" />
+                                                0 0 0 1 0" /> -->
             <!-- <feConvolveMatrix order="3" kernelMatrix="0 0 0 0 1 0 0 0 0"/> -->
         </filter>
       </defs>
       <title>test_frame</title>
       <!-- filter="url(#pictureFilter)" -->
-      <image class="cls-2" filter="url(#pictureFilter)" xlink:href="https://s3-us-west-2.amazonaws.com/popuparcade.com/gfti_test/Image+uploaded+from+iOS+(1).jpg" x="-25" y="0" height="115%" width="115%"/>
+      <image class="cls-2" xlink:href="{{image_url}}" x="-25" y="0" height="115%" width="115%"/>
       <g id="Layer_2" data-name="Layer 2">
         <g id="Layer_1-2" data-name="Layer 1">
+          <!-- TODO: Put Theme Here (SVG) -->
           <!-- <path class="cls-1" d="M422.67,0H0V306H450V0ZM421,280l-196,8.71L29,280l8.3-127L29,26l196-8.71L421,26l-8.3,127Z"/> -->
         </g>
       </g>
@@ -87,10 +88,8 @@
     <div id="safe-area">
       <!-- All text should appear within the safe area. -->
       <div class="text">
-        Greetings from Denver!
+        {{greetings_subtext}}
       </div>
     </div>
-
-
   </body>
 </html>
