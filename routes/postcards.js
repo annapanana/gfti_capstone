@@ -8,7 +8,8 @@ var fs = require('fs');
 
 const lobFactory = require('../node_modules/lob/lib/index.js');
 const lob = new lobFactory('test_97f0caa8c52f230f7bef2daef8b58e70f81');
-// var postcard = fs.readFileSync(__dirname + '/../public/front_noimg.html', { encoding: 'utf-8' });
+
+const stripe = require('stripe')('sk_test_qRNO1iwM1qqxtWINxD7nFUfN');
 
 router.get('/', (req, res, next) => {
   knex('postcards')
@@ -46,7 +47,7 @@ router.post('/', (req, res, next) => {
   const msg = message;
 
   let postcard = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
-
+  
   // TODO server side validation of newCard object
   lob.postcards.create({
     to: send_to,
