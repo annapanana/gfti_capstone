@@ -46,8 +46,8 @@ router.post('/', (req, res, next) => {
   const msg = message;
 
   let postcard = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
-  // TODO server side validation of newCard object
 
+  // TODO server side validation of newCard object
   lob.postcards.create({
     to: send_to,
     from: send_from,

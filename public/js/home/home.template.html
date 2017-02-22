@@ -5,34 +5,40 @@
   <form>
     <div class="row">
       <h3>Postcard Front</h3>
-      <div class="row col-sm-12">
+      <div class="col-sm-12">
         <h4>Image</h4>
         <div class="row">
           <input type="file" name="image" custom-on-change="$ctrl.fileInput">
         </div>
+        <div class="row">
+          <img class="image-preview" ng-src="{{$ctrl.compositionSettings.image_url}}" alt="">
+        </div>
       </div>
-      <div class="row col-sm-12">
+      <div class="col-sm-12">
         <h4>Greeting Text</h4>
         <input type="text" name="greeting" ng-model="$ctrl.compositionSettings.greetings_subtext" value="Greetings from Denver!">
       </div>
-      <div class="row col-sm-12">
+      <div class="col-sm-12">
         <h4>Template Data</h4>
-        <div class="row col-sm-12">
+        <div class="col-sm-12">
           <label for="template_name">Template</label>
+          <br>
           <select name="template_name" ng-mode="$ctrl.compositionSettings.template_name">
             <option value="template_01.html">Front Img</option>
           </select>
         </div>
-        <div class="row col-sm-12">
+        <div class="col-sm-12">
           <label for="">Color</label>
+          <br>
           <select name="template_name" ng-mode="$ctrl.compositionSettings.color_id">
             <option value="1">Red</option>
             <option value="1">Blue</option>
             <option value="1">Yellow</option>
           </select>
         </div>
-        <div class="row col-sm-12">
+        <div class="col-sm-12">
           <label for="">Theme</label>
+          <br>
           <select name="template_name" ng-mode="$ctrl.compositionSettings.theme_id">
             <option value="1">Playful</option>
             <option value="2">Modern</option>
@@ -99,6 +105,18 @@
       </div>
     </div>
 
+    <div class="row text-center" ng-if="$ctrl.postcard_back">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-4">
+        <h5>Front:</h5>
+        <img ng-src="$ctrl.postcard_front" alt="front">
+      </div>
+      <div class="col-sm-4">
+        <h5>Back:</h5>
+        <img ng-src="$ctrl.postcard_back" alt="back">
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
   </form>
 </div>
 <div class="col-md-1"></div>

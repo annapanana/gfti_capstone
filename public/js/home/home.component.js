@@ -6,13 +6,14 @@
       controller: controller
     });
 
-    controller.$inject = ["$http", "$state", "$stateParams"]
-    function controller($http, $state, $stateParams) {
+    controller.$inject = ["$http", "$state", "$stateParams", "$scope"]
+    function controller($http, $state, $stateParams, $scope) {
       const vm = this;
       vm.to = {};
       vm.from = {};
       vm.message = "";
-      // vm.image_preview = "http://placehold.it/400x300";
+      vm.postcard_front = "";
+      vm.postcard_back = "";
 
       //TODO build this up and store in local storage until user pays and submits
       vm.compositionSettings = {
@@ -20,7 +21,7 @@
         color_id: 1,
         theme_id: 1,
         greetings_subtext: '',
-        image_url: ''
+        image_url: 'http://placehold.it/400x300'
       };
 
       vm.fileInput = function(event) {
@@ -38,7 +39,7 @@
           file_type:file.type
         };
         $http.post('/photobucket', fileData).then((result) => {
-          console.log(result.data);
+          // console.log(result.data);
           uploadFile(file, result.data.signedRequest, result.data.url);
         });
       }
@@ -49,8 +50,9 @@
         xhr.onreadystatechange = () => {
           if(xhr.readyState === 4){
             if(xhr.status === 200){
-              console.log("UPDATE ULR HERE");
               vm.compositionSettings.image_url = url;
+              // console.log("image:",   vm.compositionSettings.image_url);
+              $scope.$apply();
             }
             else{
               alert('Could not upload file.');
@@ -83,11 +85,14 @@
           },
           message: vm.message
         };
-        console.log("settings", newPostcard.settings);
+
         $http.post('/postcards', newPostcard).then((result) => {
-          console.log(result);
-          vm.postcard_preview = result.data[0].postcard;
-          console.log(vm.postcard_preview);
+          console.log("result", result.data[0]);
+          // TODO Debug displaying image previews
+          // vm.postcard_front = result.data[0].postcard.thumbnails[0].large;
+          // vm.postcard_back = result.data[0].postcard.thumbnails[1].large;
+          // $scope.$apply();
+          // console.log(vm.postcard_front, vm.postcard_back);
         });
       };
 

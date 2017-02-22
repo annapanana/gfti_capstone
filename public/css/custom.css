@@ -15,7 +15,10 @@
   margin-top: 50px;
 }
 
-
 .container {
   padding-bottom: 50px;
+}
+
+.image-preview {
+  max-width: 200px;
 }
