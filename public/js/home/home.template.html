@@ -7,7 +7,14 @@
       <h3>Postcard Front</h3>
       <div class="col-sm-12">
         <h4>Image</h4>
-        <input type="file" name="image" ng-model="$ctrl.image_link">
+        <div class="row">
+          <input type="file" name="image" custom-on-change="$ctrl.fileInput">
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <img src="$ctrl.image_preview" alt="">
+          </div>
+        </div>
       </div>
       <div class="col-sm-12">
         <h4>Greeting Text</h4>
@@ -68,6 +75,14 @@
       <div class="col-sm-12">
         <button type="button" name="button" ng-click="$ctrl.submitCard()">Submit</button>
       </div>
+    </div>
+
+    <div class="row text-center top-margin" ng-if="$ctrl.postcard_preview">
+      <div class="col-md-3"></div>
+      <div class="col-md-6 col-sm-12">
+        <img ng-src="$ctrl.postcard_preview" alt="">
+      </div>
+      <div class="col-md-3"></div>
     </div>
 
   </form>

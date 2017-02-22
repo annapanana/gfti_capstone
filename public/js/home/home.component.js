@@ -12,17 +12,57 @@
       vm.to = {};
       vm.from = {};
       vm.message = "";
+      vm.image_preview = "http://placehold.it/400x300";
+
+      vm.fileInput = function(event) {
+        let files = event.target.files;
+        if (!files) {
+          console.error("you must include an image");
+        } else {
+          getSignedUrl(files[0]);
+        }
+      };
+
+      function getSignedUrl(file) {
+        let fileData = {
+          file_name: file.name,
+          file_type:file.type
+        };
+        $http.post('/photobucket', fileData).then((result) => {
+          console.log(result.data.url);
+          vm.image_preview = result.data.url;
+          console.log(vm.image_preview);
+        });
+      }
 
       vm.submitCard = function() {
         let newPostcard = {
           settings: compositionSettings,
-          to: vm.to,
-          from: vm.from,
+          // to: vm.to,
+          to: {
+            name: 'anna',
+            address_line1: '1260 kalmia ave',
+            address_line2: 'apartment 17',
+            address_city: 'Boulder',
+            address_state: 'CO',
+            address_zip: '80304'
+          },
+          // from: vm.from,
+          from: {
+            name: 'anna',
+            address_line1: '1260 kalmia ave',
+            address_line2: 'apartment 17',
+            address_city: 'Boulder',
+            address_state: 'CO',
+            address_zip: '80304'
+          },
           message: vm.message
         };
 
         $http.post('/postcards', newPostcard).then((result) => {
           console.log(result);
+          vm.postcard_preview = result.data[0].postcard.thumbnails[0].medium;
+          console.log(vm.postcard_preview);
         });
       };
 
@@ -33,25 +73,7 @@
         theme_id: 1,
         greetings_subtext: 'Greetings from Denver!',
         // add image link from S3
-        image_url: 'http://www.boulderco.com/uploads/slideshow/1354198589.jpg'
+        image_url: vm.image_preview
       };
     }
 }());
-
-// send_to = {
-//   name: 'anna',
-//   address_line1: '1260 kalmia ave',
-//   address_line2: 'apartment 17',
-//   address_city: 'Boulder',
-//   address_state: 'CO',
-//   address_zip: '80304'
-// };
-//
-// send_from = {
-//   name: 'anna',
-//   address_line1: '1260 kalmia ave',
-//   address_line2: 'apartment 17',
-//   address_city: 'Boulder',
-//   address_state: 'CO',
-//   address_zip: '80304'
-// };
