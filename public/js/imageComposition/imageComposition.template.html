@@ -1,20 +1,21 @@
-<div class="container">
-  <div class="row header-bar text-center">
-    <div class="col-sm-12">
-      <h3>Compose Image</h3>
-    </div>
+<div class="row header-bar text-center">
+  <div class="col-sm-12">
+    <h3>Compose Image</h3>
   </div>
+</div>
+
+<div class="container">
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-5 col-sm-12">
-      <img class="image-fill" ng-src="{{$ctrl.composition_settings.image_url}}" alt="composition">
+      <img class="image-fill standard-border-radius" ng-src="{{$ctrl.composition_settings.image_url}}" alt="composition">
     </div>
     <div class="col-md-5 col-sm-12 widget-container blue-2 text-center">
-      <!-- <h4>Select Filter</h4> -->
+      <h4 class="top-margin-sm">Select Filter</h4>
       <div class="row flex-row">
         <!-- Color Selection -->
         <slick class="ui-widget blue-1" dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
-          <div><img ng-click="$ctrl.selectColor(1)" class="widget-element" src="assets/color.svg" alt=""></div>
+          <div><a ng-click="$ctrl.selectColor(1)"><img  class="widget-element" src="assets/color.svg" alt=""></a></div>
           <div><img ng-click="$ctrl.selectColor(2)" class="widget-element" src="assets/color.svg" alt=""></div>
           <div><img ng-click="$ctrl.selectColor(3)" class="widget-element" src="assets/color.svg" alt=""></div>
           <div><img ng-click="$ctrl.selectColor(4)" class="widget-element" src="assets/color.svg" alt=""></div>
@@ -22,7 +23,7 @@
           <div><img ng-click="$ctrl.selectColor(6)" class="widget-element" src="assets/color.svg" alt=""></div>
         </slick>
       </div>
-      <!-- <h4>Border Filter</h4> -->
+      <h4 class="top-margin-sm">Select Theme</h4>
       <div class="row flex-row">
         <slick class="ui-widget blue-1" dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
           <div><img ng-click="$ctrl.selectTheme(1)" class="widget-element" src="assets/pattern.svg" alt=""></div>
@@ -33,9 +34,9 @@
           <div><img ng-click="$ctrl.selectTheme(6)" class="widget-element" src="assets/pattern.svg" alt=""></div>
         </slick>
       </div>
-      <h4>Edit Subtext</h4>
+      <h4 class="top-margin-sm">Edit Subtext</h4>
       <div class="row flex-row">
-
+        <input class="text-widget" type="text" name="" value="{{$ctrl.composition_settings.greetings_subtext}}">
       </div>
     </div>
     <div class="col-md-1"></div>
