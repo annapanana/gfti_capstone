@@ -2,7 +2,8 @@
 
 const express = require('express');
 const app = express();
-const messages = require('./routes/classifieds');
+const postcards = require('./routes/postcards');
+const photobucket = require('./routes/photobucket');
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({
@@ -11,7 +12,8 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 app.use(express.static('./public'));
-app.use('/classifieds',messages);
+app.use('/postcards', postcards);
+app.use('/photobucket', photobucket);
 
 app.use('/jquery', express.static('node_modules/jquery/dist'));
 app.use('/bootstrap', express.static('node_modules/bootstrap/dist/js'));

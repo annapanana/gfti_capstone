@@ -6,10 +6,8 @@
       controller: controller
     });
 
-    controller.$inject = ["$http", "$state", "$stateParams"]
-    function controller($http, $state, $stateParams) {
-      const vm = this;
+    controller.$inject = ["$http", "$state", "$stateParams", "$scope"];
+    function controller($http, $state, $stateParams, $scope) {
 
     }
-
 }());

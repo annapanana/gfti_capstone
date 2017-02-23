@@ -1,8 +1,28 @@
 <nav class="navbar navbar-default" role="navigation">
-	<div class="navbar-header">
-		<a class="navbar-brand" ui-sref="home">GFTI</a>
-	</div>
-</nav>
-<div class="container">
-  <ui-view></ui-view>
-</div>
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" ui-sref="home">GFTI</a>
+		</div>
+		<div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
+			<ul class="nav navbar-nav">
+				<li><a ui-sref="archive">archive</a></li>
+				<li><a ui-sref="photo upload">photo upload</a></li>
+				<li><a ui-sref="imageComposition">composition</a></li>
+				<li><a ui-sref="messageComposition">message</a></li>
+				<li><a ui-sref="payment">payment</a></li>
+				<li><a ui-sref="dev">dev</a></li>
+			</ul>
+		</div>
+	</nav>
+	<ui-view></ui-view>
+
+	<footer>
+		<div class="container">
+			<p class="text-muted">Place text here</p>
+		</div>
+	</footer>

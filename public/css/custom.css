@@ -1,0 +1,57 @@
+
+body {
+  background-color: #F4F2E9;
+}
+
+.header-bar {
+  /*height: 65px;*/
+  height: 100px;
+  width: 100%;
+  /*background-color: rgb(191, 242, 201);*/
+  background: url(https://s3-us-west-2.amazonaws.com/gftiresources/assets/header_texture_2.png);
+  background-size: contain;
+  background-repeat: repeat;
+  color: #4F492F;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+ /*Spaceing*/
+.row {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.form-column {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;;
+}
+
+.top-margin-lg {
+  margin-top: 50px;
+}
+
+.top-margin-md {
+  margin-top: 35px;
+}
+
+.top-margin-sm {
+  margin-top: 15px;
+}
+
+.container {
+  padding-bottom: 10px;
+}
+
+/*Images*/
+
+.image-fill {
+  width: 100%;
+  height: auto
+}
+
+.image-preview {
+  max-width: 200px;
+}
