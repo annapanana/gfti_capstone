@@ -40,7 +40,7 @@
         .state({
           name: "photoUpload",
           parent: "app",
-          url: "/app",
+          url: "/photo-upload",
           component: "photoUpload"
         })
         .state({

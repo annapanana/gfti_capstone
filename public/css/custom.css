@@ -57,6 +57,8 @@ body {
   height: auto
 }
 
-.image-preview {
-  max-width: 200px;
+footer {
+  margin-top: 50px;
+  padding-top: 10px;
+  background-color: #FFF;
 }
