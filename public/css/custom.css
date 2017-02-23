@@ -1,6 +1,5 @@
-
 body {
-  background-color: #F4F2E9;
+  background-color: #1595A3;
 }
 
 .header-bar {
@@ -58,7 +57,68 @@ body {
 }
 
 footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
   margin-top: 50px;
   padding-top: 10px;
   background-color: #FFF;
+}
+
+.widget-container {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.ui-widget {
+  margin: 20px;
+  background-color: #FFF;
+  border-radius: 5px;
+  width: 80% !important;
+  height: auto;
+}
+
+.widget-element {
+  margin: 10px;
+}
+
+.widget-element:hover {
+  opacity: .5;
+}
+
+.widget-element-selected {
+  border-style: solid;
+  border-color: #FFF;
+  border-width: thick;
+}
+
+/*Background Colors*/
+.blue-1 {
+  background-color: #a1d5da;
+}
+
+.blue-2 {
+  background-color: #73bfc8;
+}
+
+.blue-3 {
+  background-color: #44aab5;
+}
+
+.blue-4 {
+  background-color: #1595a3;
+}
+
+.white {
+  background-color: #FFF;
+}
+
+.standard-border-radius {
+  border-radius: 5px;
+}
+
+.flex-row {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
 }

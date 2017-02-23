@@ -9,9 +9,22 @@
     controller.$inject = ["$http", "$state", "$stateParams"];
     function controller($http, $state, stateParams) {
       const vm = this;
-      var composition_settings = {};
+      vm.composition_settings = {};
       vm.$onInit = function() {
-        composition_settings = JSON.parse(localStorage.getItem('composition_settings'));
+        vm.composition_settings = JSON.parse(localStorage.getItem('composition_settings'));
+        console.log(vm.composition_settings.image_url);
+      };
+
+      vm.selectColor = function(color_id) {
+        console.log('selected color', color_id);
+        vm.composition_settings.color_id = color_id;
+        // TODO: Center selected item on carousel
+      };
+
+      vm.selectTheme = function(theme_id) {
+        console.log('selected theme', theme_id);
+        vm.composition_settings.theme_id = theme_id;
+        // TODO: Center selected item on carousel
       };
     }
 }());
