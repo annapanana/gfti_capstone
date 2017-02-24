@@ -6,14 +6,34 @@ exports.seed = function(knex, Promise) {
       return Promise.all([
         knex('filters').insert({
           id: 1,
-          name: "",
+          name: "#pictureFilter",
           asset_name: "color.svg"
         }),
         knex('filters').insert({
           id: 2,
-          name: "#pictureFilter",
+          name: "",
           asset_name: "color.svg"
         }),
+        knex('filters').insert({
+          id: 3,
+          name: "",
+          asset_name: "color.svg"
+        }),
+        knex('filters').insert({
+          id: 4,
+          name: "",
+          asset_name: "color.svg"
+        }),
+        knex('filters').insert({
+          id: 5,
+          name: "",
+          asset_name: "color.svg"
+        }),
+        knex('filters').insert({
+          id: 6,
+          name: "",
+          asset_name: "color.svg"
+        })
       ]);
     });
 };

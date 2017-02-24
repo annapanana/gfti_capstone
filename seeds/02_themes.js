@@ -12,6 +12,25 @@ exports.seed = function(knex, Promise) {
           id: 2,
           path_id: 1,
           asset_name: "pattern.svg"
+        }),
+        knex('themes').insert({
+          id: 3,
+          path_id: 1,
+          asset_name: "pattern.svg"
+        }),
+        knex('themes').insert({
+          id: 4,
+          path_id: 1,
+          asset_name: "pattern.svg"
+        }),
+        knex('themes').insert({
+          id: 5,
+          path_id: 1,
+          asset_name: "pattern.svg"
+        }),knex('themes').insert({
+          id: 6,
+          path_id: 1,
+          asset_name: "pattern.svg"
         })
       ]);
     });

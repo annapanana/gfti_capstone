@@ -11,6 +11,26 @@ var themeData = [
     id: 2,
     path_id: 1,
     asset_name: "pattern.svg"
+  },
+  {
+    id: 3,
+    path_id: 1,
+    asset_name: "pattern.svg"
+  },
+  {
+    id: 4,
+    path_id: 1,
+    asset_name: "pattern.svg"
+  },
+  {
+    id: 5,
+    path_id: 1,
+    asset_name: "pattern.svg"
+  },
+  {
+    id: 6,
+    path_id: 1,
+    asset_name: "pattern.svg"
   }
 ];
 var filterData = [
@@ -21,6 +41,26 @@ var filterData = [
   },
   {
     id:2,
+    name: "#pictureFilter",
+    asset_name: "color.svg"
+  },
+  {
+    id:3,
+    name: "#pictureFilter",
+    asset_name: "color.svg"
+  },
+  {
+    id:4,
+    name: "#pictureFilter",
+    asset_name: "color.svg"
+  },
+  {
+    id:5,
+    name: "#pictureFilter",
+    asset_name: "color.svg"
+  },
+  {
+    id:6,
     name: "#pictureFilter",
     asset_name: "color.svg"
   }
