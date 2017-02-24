@@ -50,13 +50,6 @@ body {
   margin-bottom: 30px;
 }
 
-/*Images*/
-
-.image-fill {
-  width: 100%;
-  height: auto
-}
-
 footer {
   position: fixed;
   bottom: 0px;
@@ -64,6 +57,35 @@ footer {
   margin-top: 50px;
   padding-top: 10px;
   background-color: #FFF;
+}
+
+/*Postcard Composition*/
+.greetings-subtext {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  font-size: 25px;
+  text-align: center;
+  font-family: 'Yellowtail', cursive;
+}
+
+.postcard-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 5px;
+  /*height: auto;*/
+  /*z-index: 10;*/
+}
+
+.postcard-theme {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /*height: auto;*/
+  z-index: 10;
 }
 
 /*Widgets*/
@@ -136,4 +158,10 @@ footer {
   display: flex;
   flex-flow: row;
   justify-content: center;
+}
+
+/*Images*/
+.image-fill {
+  width: 100%;
+  height: auto
 }

@@ -8,7 +8,16 @@
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-5 col-sm-12">
-      <img class="image-fill standard-border-radius" ng-src="{{$ctrl.composition_settings.image_url}}" alt="composition">
+      <!-- Postcard Template -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306" class="standard-border-radius">
+        <!-- filter="url(#pictureFilter)" -->
+        <image class="postcard-background" xlink:href="{{$ctrl.postcardBackground}}" x="0" y="0"/>
+        <!-- TODO: Put Theme Here (SVG) -->
+        <path class="postcard-theme" d="M422.67,0H0V306H450V0ZM421,280l-196,8.71L29,280l8.3-127L29,26l196-8.71L421,26l-8.3,127Z"/>
+      </svg>
+      <div class="flex-row">
+        <h3 class="greetings-subtext">{{$ctrl.composition_settings.greetings_subtext}}</h3>
+      </div>
     </div>
     <div class="col-md-5 col-sm-12 widget-container blue-2 text-center">
       <h4 class="top-margin-sm">Select Filter</h4>
