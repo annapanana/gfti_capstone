@@ -44,7 +44,7 @@
           <div ng-repeat="theme in $ctrl.themes">
             <div class="">
               <a ng-click="$ctrl.selectTheme(theme.id)">
-                <img class="widget-element" src="assets/{{theme.asset_name}}" alt="">
+                <img class="widget-element" ng-src="assets/{{theme.asset_name}}" alt="">
               </a>
             </div>
           </div>

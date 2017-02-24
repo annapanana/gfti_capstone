@@ -9,8 +9,10 @@
     controller.$inject = ["$http", "$state", "$stateParams", "$sce"];
     function controller($http, $state, stateParams, $sce) {
       const vm = this;
-      vm.composition_settings = {};
-
+      var filters = require('./postcard_settings/filters.js');
+      var themes = require('./postcard_settings/themes.js');
+      vm.filters = filters;
+      vm.themes = themes;
 
       vm.$onInit = function() {
         vm.composition_settings = JSON.parse(localStorage.getItem('composition_settings'));
@@ -40,30 +42,5 @@
         localStorage.setItem('composition_settings', JSON.stringify(vm.composition_settings));
         $state.go('messageComposition');
       };
-
-      vm.themes = [
-        {
-          id: 0,
-          asset_name: "pattern.svg",
-          path: "M422.67,0H0V306H450V0ZM421,280,225,268.71,29,280,17.3,153,29,26,225,37.29,421,26l11.7,127Z"
-        }, {
-          id: 1,
-          asset_name: "pattern.svg",
-          path: "M422.67,0H0V306H450V0ZM421,280l-196,8.71L29,280l8.3-127L29,26l196-8.71L421,26l-8.3,127Z"
-        }
-      ];
-
-      vm.filters = [
-        {
-          id: 0,
-          name: "",
-          asset_name: "color.svg"
-        },
-        {
-          id: 1,
-          name: "#pictureFilter",
-          asset_name: "color.svg"
-        }
-      ];
     }
 }());

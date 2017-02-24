@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
         knex('postcards').insert({
           id: 1,
           template_name: "no_image",
-          color_id: 1,
+          filter_id: 1,
           theme_id: 1,
           greetings_subtext: 'greetings from boulder, co',
           image_url: 'http://www.boulderco.com/uploads/slideshow/1354198589.jpg',
