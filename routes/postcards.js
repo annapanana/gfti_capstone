@@ -37,10 +37,10 @@ router.get('/:id/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  console.log(STRIPE_KEY);
+
   const {composition_settings} = req.body;
   const newCard = composition_settings;
-  console.log("!!!", newCard);
+
   const {to} = req.body;
   var send_to = to;
   const {from} = req.body;
@@ -117,6 +117,34 @@ router.post('/', (req, res, next) => {
   }).catch(function(err) {
     // TODO switch statement to send different errors
     return res.send(err);
+  });
+
+  router.patch('/:id', (req, res, next) => {
+    let id = req.params.id;
+    const {card_name, card_notes} = req.body;
+    var name = card_name;
+    var notes = card_notes;
+
+    knex('postcards')
+      .where('postcards.id', id)
+      .then((result) => {
+        result[0].name = name;
+        result[0].notes = notes;
+
+        knex('postcards')
+          .where('postcards.id', id)
+          .update(result[0], '*')
+          .then((updatedResult) => {
+            res.send(updatedResult);
+          })
+          .catch((err) => {
+            res.send(err);
+          });
+
+      })
+      .catch((err) => {
+        res.send(err);
+      });
   });
 
 

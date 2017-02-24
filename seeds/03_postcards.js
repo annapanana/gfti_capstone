@@ -11,7 +11,9 @@ exports.seed = function(knex, Promise) {
           theme_id: 1,
           greetings_subtext: 'greetings from boulder, co',
           image_url: 'http://www.boulderco.com/uploads/slideshow/1354198589.jpg',
-          from_zip: '80304'
+          from_zip: '80304',
+          name: "no name",
+          notes: "this is a poscard with no name."
         })
       ]);
     });
