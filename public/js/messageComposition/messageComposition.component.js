@@ -14,8 +14,8 @@
     function controller($http, $state, stateParams, $sce) {
       const vm = this;
       var postcard = {};
-      vm.themes = themeData;
-      vm.filters = filterData;
+      // vm.themes = themeData;
+      // vm.filters = filterData;
       vm.to = {};
       vm.from = {};
       vm.message = "";
@@ -24,8 +24,8 @@
         postcard = JSON.parse(localStorage.getItem('postcard'));
         vm.composition_settings = postcard.composition_settings;
         vm.postcardBackground = $sce.trustAsResourceUrl(vm.composition_settings.image_url);
-        vm.curTheme = themeSVG[vm.themes[vm.composition_settings.theme_id].path_id];
-        vm.curFilter = vm.filters[vm.composition_settings.color_id].name;
+        vm.curTheme = themeData[vm.composition_settings.theme_id].path_data;
+        vm.curFilter = filterData[vm.composition_settings.theme_id].name;
         vm.to = postcard.to;
         vm.from = postcard.from;
         vm.message = postcard.message;
