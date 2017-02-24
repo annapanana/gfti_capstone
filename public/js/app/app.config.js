@@ -35,7 +35,15 @@
           name: "imageComposition",
           parent: "app",
           url: "/image-composition",
-          component: "imageComposition"
+          component: "imageComposition",
+          resolve: {
+            themeData: function($http) {
+              return $http({method: 'GET', url: '/themes'});
+            },
+            filterData: function($http) {
+              return $http({method: 'GET', url: '/filters'});
+            }
+          }
         })
         .state({
           name: "photoUpload",
@@ -60,6 +68,6 @@
           parent: "app",
           url: "/theme-selection",
           component: "themeSelection"
-        });
+        })
     }
 }());
