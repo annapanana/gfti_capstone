@@ -23,5 +23,10 @@
         vm.curTheme = themeSVG[vm.themes[vm.composition_settings.theme_id].path_id];
         vm.curFilter = vm.filters[vm.composition_settings.color_id].name;
       };
+
+      vm.nextStep = function() {
+        localStorage.setItem('composition_settings', JSON.stringify(vm.composition_settings));
+        $state.go('payment');
+      };
     }
 }());

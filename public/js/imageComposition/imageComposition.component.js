@@ -24,7 +24,6 @@
       };
 
       vm.selectColor = function(color_id) {
-        console.log('selected color', color_id);
         vm.composition_settings.color_id = color_id;
         vm.curFilter = vm.filters[color_id-1].name; //-1 accounts for non-zero db value
         // Refresh image to reflect current filter
@@ -34,7 +33,6 @@
       };
 
       vm.selectTheme = function(theme_id) {
-        console.log('selected theme', theme_id);
         vm.composition_settings.theme_id = theme_id;
         vm.curTheme = themeSVG[vm.themes[theme_id-1].path_id]; //-1 accounts for non-zero db value
         // TODO: Center selected item on carousel

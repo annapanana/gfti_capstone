@@ -18,7 +18,8 @@
           image_url: 'https://s3-us-west-2.amazonaws.com/gftiresources/tester.jpg',
           message: 'this is a message',
           to: {},
-          from: {}
+          from: {},
+          payment_info: {}
         };
         localStorage.setItem('composition_settings', JSON.stringify(composition_settings));
       };
