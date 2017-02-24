@@ -52,6 +52,9 @@ router.post('/', (req, res, next) => {
   const {payment_info} = req.body;
   const payment = payment_info;
 
+  const {theme_path} = req.body;
+  const theme = theme_path;
+
   // Retrieve html template
   let postcard = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
 
@@ -92,7 +95,8 @@ router.post('/', (req, res, next) => {
       message: msg,
       data: {
         image_url: newCard.image_url,
-        greetings_subtext: newCard.greetings_subtext
+        greetings_subtext: newCard.greetings_subtext,
+        theme_path: theme
       }
     }, function (err, postcard) {
       if (err) {

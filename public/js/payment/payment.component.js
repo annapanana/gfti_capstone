@@ -20,6 +20,8 @@
 
       vm.submitCard = function() {
         postcard.payment_info = vm.payment_info;
+        // Set draw path for html template
+        postcard.theme_path = themeData[postcard.composition_settings.theme_id].path_data;
         $http.post('/postcards', postcard).then((result) => {
           console.log("result", result.data[0]);
           // TODO Debug displaying image previews

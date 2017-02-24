@@ -4,8 +4,6 @@ const express = require('express');
 const app = express();
 const postcards = require('./routes/postcards');
 const photobucket = require('./routes/photobucket');
-const filters = require('./routes/filters');
-const themes = require('./routes/themes');
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({
@@ -16,8 +14,6 @@ app.use(bodyParser.json());
 app.use(express.static('./public'));
 app.use('/postcards', postcards);
 app.use('/photobucket', photobucket);
-app.use('/filters', filters);
-app.use('/themes', themes);
 
 app.use('/jquery', express.static('node_modules/jquery/dist'));
 app.use('/bootstrap', express.static('node_modules/bootstrap/dist/js'));
