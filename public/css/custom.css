@@ -88,6 +88,10 @@ footer {
   z-index: 10;
 }
 
+.img-filter {
+  filter: url(#pictureFilter);
+}
+
 /*Widgets*/
 .widget-container {
   padding: 10px;

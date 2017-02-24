@@ -15,7 +15,7 @@
           color_id: 1,
           theme_id: 1,
           greetings_subtext: 'greetings from the internet',
-          image_url: 'http://placehold.it/400x300'
+          image_url: 'https://s3-us-west-2.amazonaws.com/gftiresources/tester.jpg'
         };
         localStorage.setItem('composition_settings', JSON.stringify(composition_settings));
       };
