@@ -10,6 +10,7 @@ exports.up = function(knex, Promise) {
     table.string('from_zip').notNullable();
     table.string('name');
     table.string('notes');
+    table.string('thumbnail_url');
   });
 };
 

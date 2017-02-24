@@ -27,7 +27,7 @@
           console.log("result", result.data[0]);
 
           $timeout(function() {
-            postcard.thumbnailFront = result.data[0].postcard.thumbnails[0].large;
+            postcard.thumbnail = result.data[0].postcard.thumbnails[0].large;
             postcard.deliveryDate = result.data[0].postcard.expected_delivery_date;
             postcard.id = result.data[0].id;
             localStorage.setItem('postcard', JSON.stringify(postcard));

@@ -77,7 +77,7 @@ router.post('/', (req, res, next) => {
       }
     });
   }).then(function(source) {
-    console.log("source", source);
+    // console.log("source", source);
     return stripe.charges.create({
       amount: 150,
       currency: 'usd',
@@ -121,15 +121,17 @@ router.post('/', (req, res, next) => {
 
   router.patch('/:id', (req, res, next) => {
     let id = req.params.id;
-    const {card_name, card_notes} = req.body;
+    const {card_name, card_notes, thumbnial} = req.body;
     var name = card_name;
     var notes = card_notes;
+    var thumb = thumbnial;
 
     knex('postcards')
       .where('postcards.id', id)
       .then((result) => {
         result[0].name = name;
         result[0].notes = notes;
+        result[0].thumbnail_url = thumb;
 
         knex('postcards')
           .where('postcards.id', id)

@@ -16,15 +16,14 @@
       vm.$onInit = function() {
         postcard = JSON.parse(localStorage.getItem('postcard'));
         vm.deliveryDate = postcard.deliveryDate;
-        vm.thumbnailFront = postcard.thumbnailFront;
+        vm.thumbnailFront = postcard.thumbnail;
       };
 
       vm.saveDesign = function(){
-        console.log("save design");
         postcard.card_name = vm.cardName;
         postcard.card_notes = vm.cardNotes;
-        $http.patch(`/postcards/${postcard.id}`, postcard).then((result) => {
-          console.log(result);
+        $http.patch(`/postcards/${postcard.id}`, postcard).then(() => {
+          $state.go('archive');
         });
       };
     }
