@@ -21,7 +21,7 @@
 
       vm.saveDesign = function(){
         postcard.card_name = vm.cardName;
-        postcard.card_notes = vm.cardNotes;
+        postcard.card_notes = vm.designNotes;
         $http.patch(`/postcards/${postcard.id}`, postcard).then(() => {
           $state.go('archive');
         });

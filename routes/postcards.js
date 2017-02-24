@@ -121,10 +121,10 @@ router.post('/', (req, res, next) => {
 
   router.patch('/:id', (req, res, next) => {
     let id = req.params.id;
-    const {card_name, card_notes, thumbnial} = req.body;
+    const {card_name, card_notes, thumbnail} = req.body;
     var name = card_name;
     var notes = card_notes;
-    var thumb = thumbnial;
+    var thumb = thumbnail;
 
     knex('postcards')
       .where('postcards.id', id)

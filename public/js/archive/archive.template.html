@@ -1,1 +1,14 @@
-<h1>ARCHIVE</h1>
+<div class="row header-bar text-center">
+  <div class="col-sm-12">
+    <h3>Postcard Archive</h3>
+  </div>
+</div>
+<div class="container">
+  <div class="row card-container">
+    <div class="card" ng-repeat="entry in $ctrl.archive">
+      <img class="image-fill" ng-src="{{entry.thumbnail_url}}" alt="">
+      <h4>{{entry.name}}</h4>
+      <p>{{entry.notes}}</p>
+    </div>
+  </div>
+</div>
