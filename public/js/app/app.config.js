@@ -29,29 +29,13 @@
           name: "messageComposition",
           parent: "app",
           url: "/message-composition",
-          component: "messageComposition",
-          resolve: {
-            themeData: function($http) {
-              return $http({method: 'GET', url: '/themes'});
-            },
-            filterData: function($http) {
-              return $http({method: 'GET', url: '/filters'});
-            }
-          }
+          component: "messageComposition"
         })
         .state({
           name: "imageComposition",
           parent: "app",
           url: "/image-composition",
-          component: "imageComposition",
-          resolve: {
-            themeData: function($http) {
-              return $http({method: 'GET', url: '/themes'});
-            },
-            filterData: function($http) {
-              return $http({method: 'GET', url: '/filters'});
-            }
-          }
+          component: "imageComposition"
         })
         .state({
           name: "photoUpload",

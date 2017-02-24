@@ -9,14 +9,18 @@
     controller.$inject = ["$http", "$state", "$stateParams"];
     function controller($http, $state, stateParams) {
       const vm = this;
+      var postcard = {};
       vm.composition_settings = {};
+
       vm.$onInit = function() {
-        vm.composition_settings = JSON.parse(localStorage.getItem('composition_settings'));
+        postcard = JSON.parse(localStorage.getItem('postcard'));
+        vm.composition_settings = postcard.composition_settings;
       };
 
       vm.selectTheme = function(theme) {
         vm.composition_settings.theme_id = theme;
-        localStorage.setItem('composition_settings', JSON.stringify(vm.composition_settings));
+        postcard.composition_settings = vm.composition_settings;
+        localStorage.setItem('postcard', JSON.stringify(postcard));
         $state.go('photoUpload');
       };
     }

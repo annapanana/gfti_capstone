@@ -38,9 +38,9 @@ router.get('/:id/', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   console.log(STRIPE_KEY);
-  const {settings} = req.body;
-  const newCard = settings;
-
+  const {composition_settings} = req.body;
+  const newCard = composition_settings;
+  console.log("!!!", newCard);
   const {to} = req.body;
   var send_to = to;
   const {from} = req.body;
@@ -51,6 +51,9 @@ router.post('/', (req, res, next) => {
 
   const {payment_info} = req.body;
   const payment = payment_info;
+
+  const {theme_path} = req.body;
+  const theme = theme_path;
 
   // Retrieve html template
   let postcard = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
@@ -64,7 +67,6 @@ router.post('/', (req, res, next) => {
   stripe.customers.create({
     email: payment.email
   }).then(function(customer){
-    console.log("customer", customer);
     return stripe.customers.createSource(customer.id, {
       source: {
          object: 'card',
@@ -84,7 +86,6 @@ router.post('/', (req, res, next) => {
   }).then(function(charge) {
     // New charge created on a new customer
     console.log("Charge Succeeded!");
-    console.log("charge", charge);
     // CREATE POSTCARD
     lob.postcards.create({
       to: send_to,
@@ -94,7 +95,8 @@ router.post('/', (req, res, next) => {
       message: msg,
       data: {
         image_url: newCard.image_url,
-        greetings_subtext: newCard.greetings_subtext
+        greetings_subtext: newCard.greetings_subtext,
+        theme_path: theme
       }
     }, function (err, postcard) {
       if (err) {
