@@ -19,7 +19,6 @@ router.get('/', (req, res, next) => {
       result = result.map((r) => {
         r.date = r.updated_at;
         delete r.created_at;
-        delete r.updated_at;
         return r;
       });
       res.send(result);

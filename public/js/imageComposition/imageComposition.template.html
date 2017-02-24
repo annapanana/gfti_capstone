@@ -1,1 +1,64 @@
-<h1>COMPOSITION</h1>
+<div class="row header-bar text-center">
+  <div class="col-sm-12">
+    <h3>Compose Image</h3>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-5 col-sm-12">
+      <!-- Postcard Template -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306" class="standard-border-radius">
+        <defs>
+          <!-- TODO: Declare all filters here -->
+          <filter id="pictureFilter" >
+            <feColorMatrix type="matrix" values="1.1 0 0 0 -0.1 0 1.1 0 0 -0.1 0 0 1.1 0 -0.1 0 0 0 1 0" />
+          </filter>
+          <filter id="noFilter" >
+            <feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0" />
+          </filter>
+        </defs>
+        <rect width="100%" height="100%"></rect>
+        <image class="postcard-background" filter="url({{$ctrl.curFilter}})" xlink:href="{{$ctrl.postcardBackground}}" x="0" y="0"/>
+        <path class="postcard-theme" d="{{$ctrl.curTheme}}"/>
+        <text x="50%" y="25%" class="greetings-subtext" text-anchor="middle">
+          {{$ctrl.composition_settings.greetings_subtext}}
+        </text>
+      </svg>
+      <button type="button" name="button" ng-click="$ctrl.nextStep()">Next</button>
+    </div>
+    <div class="col-md-5 col-sm-12 widget-container blue-2 text-center">
+      <h4 class="top-margin-sm">Select Filter</h4>
+      <div class="row flex-row">
+        <!-- Color Selection -->
+        <slick class="ui-widget blue-1" dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
+          <div ng-repeat="filter in $ctrl.filters">
+            <div>
+              <a ng-click="$ctrl.selectColor(filter.id)">
+                <img class="widget-element" ng-src="assets/{{filter.asset_name}}" alt="">
+              </a>
+            </div>
+          </div>
+        </slick>
+      </div>
+      <h4 class="top-margin-sm">Select Theme</h4>
+      <div class="row flex-row">
+        <slick class="ui-widget blue-1" dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
+          <div ng-repeat="theme in $ctrl.themes">
+            <div class="">
+              <a ng-click="$ctrl.selectTheme(theme.id)">
+                <img class="widget-element" ng-src="assets/{{theme.asset_name}}" alt="">
+              </a>
+            </div>
+          </div>
+        </slick>
+      </div>
+      <h4 class="top-margin-sm">Edit Subtext</h4>
+      <div class="row flex-row">
+        <input class="text-widget" type="text" name="" ng-model="$ctrl.composition_settings.greetings_subtext" value="{{$ctrl.composition_settings.greetings_subtext}}">
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>

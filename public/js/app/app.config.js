@@ -29,18 +29,34 @@
           name: "messageComposition",
           parent: "app",
           url: "/message-composition",
-          component: "messageComposition"
+          component: "messageComposition",
+          resolve: {
+            themeData: function($http) {
+              return $http({method: 'GET', url: '/themes'});
+            },
+            filterData: function($http) {
+              return $http({method: 'GET', url: '/filters'});
+            }
+          }
         })
         .state({
           name: "imageComposition",
           parent: "app",
           url: "/image-composition",
-          component: "imageComposition"
+          component: "imageComposition",
+          resolve: {
+            themeData: function($http) {
+              return $http({method: 'GET', url: '/themes'});
+            },
+            filterData: function($http) {
+              return $http({method: 'GET', url: '/filters'});
+            }
+          }
         })
         .state({
           name: "photoUpload",
           parent: "app",
-          url: "/app",
+          url: "/photo-upload",
           component: "photoUpload"
         })
         .state({
@@ -54,6 +70,12 @@
           parent: "app",
           url: "/dev",
           component: "dev"
-        });
+        })
+        .state({
+          name: "themeSelection",
+          parent: "app",
+          url: "/theme-selection",
+          component: "themeSelection"
+        })
     }
 }());

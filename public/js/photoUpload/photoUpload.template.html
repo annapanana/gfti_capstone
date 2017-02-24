@@ -1,1 +1,28 @@
-<h1>PHOTO UPLOAD</h1>
+<div class="row header-bar text-center">
+  <div class="col-sm-12">
+    <h3>Upload a Photo</h3>
+  </div>
+</div>
+<div class="container">
+  <div class="row top-margin-lg">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="row">
+        <h5>Select a File to Upload or Enter URL:</h5>
+        <input type="file" name="image" custom-on-change="$ctrl.fileInput">
+        <input class="top-margin-md" type="text" name="image" ng-model=$ctrl.composition_settings.image_url>
+      </div>
+      <div class="row top-margin-md text-center">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <img class="image-fill standard-border-radius" ng-src="{{$ctrl.composition_settings.image_url}}" alt="">
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+  <div class="row-top-margin-md text-center">
+    <button type="button" name="button" ng-click="$ctrl.nextStep()">Next</button>
+  </div>
+</div>
