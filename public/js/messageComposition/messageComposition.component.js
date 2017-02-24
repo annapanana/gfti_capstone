@@ -14,18 +14,14 @@
     function controller($http, $state, stateParams, $sce) {
       const vm = this;
       var postcard = {};
-      // vm.themes = themeData;
-      // vm.filters = filterData;
-      vm.to = {};
-      vm.from = {};
-      vm.message = "";
 
       vm.$onInit = function() {
         postcard = JSON.parse(localStorage.getItem('postcard'));
         vm.composition_settings = postcard.composition_settings;
+        console.log(vm.composition_settings);
         vm.postcardBackground = $sce.trustAsResourceUrl(vm.composition_settings.image_url);
         vm.curTheme = themeData[vm.composition_settings.theme_id].path_data;
-        vm.curFilter = filterData[vm.composition_settings.theme_id].name;
+        vm.curFilter = filterData[vm.composition_settings.filter_id].name;
         vm.to = postcard.to;
         vm.from = postcard.from;
         vm.message = postcard.message;
@@ -52,6 +48,7 @@
         if (vm.message.length < 1) {
           console.error("You must include a message");
         }
+
         postcard.message = vm.message;
 
         localStorage.setItem('postcard', JSON.stringify(postcard));

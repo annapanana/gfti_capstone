@@ -34,19 +34,24 @@ var themeData = [
 ];
 var filterData = [
   {
-    id:1,
+    id:0,
     name: "#noFilter",
     asset_name: "color.svg"
   },
   {
-    id:2,
+    id:1,
     name: "#pictureFilter",
     asset_name: "color.svg"
   },
   {
-    id:3,
+    id:2,
     name: "#noFilter",
     asset_name: "color.svg",
+  },
+  {
+    id:3,
+    name: "#noFilter",
+    asset_name: "color.svg"
   },
   {
     id:4,
@@ -57,10 +62,8 @@ var filterData = [
     id:5,
     name: "#noFilter",
     asset_name: "color.svg"
-  },
-  {
-    id:6,
-    name: "#noFilter",
-    asset_name: "color.svg"
   }
 ];
+
+var fontData = [];
+var fontColor = [];

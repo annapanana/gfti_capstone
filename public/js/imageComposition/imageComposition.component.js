@@ -26,8 +26,9 @@
       };
 
       vm.selectColor = function(filter_id) {
+        console.log(filter_id);
         vm.composition_settings.filter_id = filter_id;
-        vm.curFilter = filterData[filter_id].name; //-1 accounts for non-zero db value
+        vm.curFilter = filterData[filter_id].name;
         // Refresh image to reflect current filter
         let curImage = vm.composition_settings.image_url + '?' + new Date().getTime();
         vm.postcardBackground = $sce.trustAsResourceUrl(curImage);
@@ -41,6 +42,7 @@
       };
 
       vm.nextStep = function() {
+        console.log(vm.composition_settings);
         postcard.composition_settings = vm.composition_settings;
         localStorage.setItem('postcard', JSON.stringify(postcard));
         $state.go('messageComposition');
