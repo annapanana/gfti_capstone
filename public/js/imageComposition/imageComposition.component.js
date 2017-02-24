@@ -14,7 +14,6 @@
 
       vm.$onInit = function() {
         vm.composition_settings = JSON.parse(localStorage.getItem('composition_settings'));
-        console.log(vm.composition_settings.image_url);
         vm.postcardBackground = $sce.trustAsResourceUrl(vm.composition_settings.image_url);
         vm.curTheme = themes[vm.composition_settings.theme_id];
         vm.curFilter = filters[vm.composition_settings.color_id];
@@ -35,6 +34,7 @@
         vm.composition_settings.theme_id = theme_id;
         vm.curTheme = themes[theme_id];
         // TODO: Center selected item on carousel
+        console.log(vm.composition_settings.greetings_subtext);
       };
 
       var themes = {
