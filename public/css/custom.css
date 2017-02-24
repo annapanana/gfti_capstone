@@ -61,10 +61,7 @@ footer {
 
 /*Postcard Composition*/
 .greetings-subtext {
-  position: absolute;
-  top: 20px;
-  left: 75px;
-  font-size: 25px;
+  font-size: 32px;
   text-align: center;
   font-family: 'Yellowtail', cursive;
 }
@@ -86,6 +83,23 @@ footer {
   width: 100%;
   /*height: auto;*/
   z-index: 10;
+}
+
+.postcard-back {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.message-preview {
+  font-size: 10px;
+  max-width: 160px;
+  margin: 0px;
+}
+
+.address-preview {
+  font-size: 8px;
+  max-width: 160px;
+  margin: 0px;
 }
 
 /*Widgets*/

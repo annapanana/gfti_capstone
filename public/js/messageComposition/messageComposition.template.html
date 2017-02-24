@@ -8,28 +8,66 @@
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-5 col-sm-12">
-      <!-- Postcard Template -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306" class="standard-border-radius">
-        <defs>
-          <!-- TODO: Declare all filters here -->
-          <filter id="pictureFilter" >
-            <feColorMatrix type="matrix" values="1.1 0 0 0 -0.1 0 1.1 0 0 -0.1 0 0 1.1 0 -0.1 0 0 0 1 0" />
-          </filter>
-        </defs>
-        <image class="postcard-background" filter="url({{$ctrl.curFilter}})" xlink:href="{{$ctrl.postcardBackground}}" x="0" y="0"/>
-        <path class="postcard-theme" d="{{$ctrl.curTheme}}"/>
-      </svg>
-      <div class="flex-row">
-        <h3 class="greetings-subtext">{{$ctrl.composition_settings.greetings_subtext}}</h3>
+      <!-- Postcard Back -->
+      <div class="row">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306" class="standard-border-radius">
+          <g>
+            <image class="postcard-back" xlink:href="assets/card_back.svg" x="0" y="0"/>
+            <!-- Message Text -->
+            <foreignObject x="20" y="80" width="200" height="150">
+              <p class="message-preview">{{$ctrl.composition_settings.message}}</p>
+            </foreignObject>
+            <!-- To Text -->
+            <foreignObject x="210" y="130" width="200" height="20">
+              <p class="address-preview">From:</p>
+            </foreignObject>
+            <foreignObject x="240" y="130" width="200" height="20">
+              <p class="address-preview">{{$ctrl.from.name}}</p>
+              <p class="address-preview">{{$ctrl.from.address_line1}}</p>
+              <p class="address-preview">{{$ctrl.from.address_line2}}</p>
+              <p class="address-preview">{{$ctrl.from.address_city}}</p>
+              <p class="address-preview">{{$ctrl.from.address_state}}</p>
+              <p class="address-preview">{{$ctrl.from.address_zip}}</p>
+            </foreignObject>
+            <foreignObject x="210" y="200" width="200" height="20">
+              <p class="address-preview">To:</p>
+            </foreignObject>
+            <foreignObject x="240" y="200" width="200" height="20">
+              <p class="address-preview">{{$ctrl.to.name}}</p>
+              <p class="address-preview">{{$ctrl.to.address_line1}}</p>
+              <p class="address-preview">{{$ctrl.to.address_line2}}</p>
+              <p class="address-preview">{{$ctrl.to.address_city}}</p>
+              <p class="address-preview">{{$ctrl.to.address_state}}</p>
+              <p class="address-preview">{{$ctrl.to.address_zip}}</p>
+            </foreignObject>
+          </g>
+        </svg>
       </div>
-      <button type="button" name="button" ng-click="$ctrl.nextStep()">Next</button>
+      <!-- Postcard Front -->
+      <div class="row">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306" class="standard-border-radius">
+          <defs>
+            <!-- TODO: Declare all filters here -->
+            <filter id="pictureFilter" >
+              <feColorMatrix type="matrix" values="1.1 0 0 0 -0.1 0 1.1 0 0 -0.1 0 0 1.1 0 -0.1 0 0 0 1 0" />
+            </filter>
+          </defs>
+          <g>
+            <image class="postcard-background" filter="url({{$ctrl.curFilter}})" xlink:href="{{$ctrl.postcardBackground}}" x="0" y="0"/>
+            <path class="postcard-theme" d="{{$ctrl.curTheme}}"/>
+            <text x="50%" y="25%" class="greetings-subtext" text-anchor="middle">
+              {{$ctrl.composition_settings.greetings_subtext}}
+            </text>
+          </g>
+        </svg>
+      </div>
     </div>
     <div class="col-md-5 col-sm-12">
 
       <div class="row">
         <div class="col-sm-12">
           <h4>Message</h4>
-          <textarea class="text-widget" name="name" rows="4" cols="60" ng-model="$ctrl.message"></textarea>
+          <textarea class="text-widget" name="name" rows="4" cols="60" ng-model="$ctrl.composition_settings.message"></textarea>
         </div>
       </div>
 
@@ -76,7 +114,7 @@
           </div>
         </div>
       </div>
-
+      <button type="button" name="button" ng-click="$ctrl.nextStep()">Next</button>
     </div>
     <div class="col-md-1"></div>
   </div>
