@@ -17,13 +17,10 @@
       vm.filters = filterData;
 
       vm.$onInit = function() {
-        console.log(vm.themes);
-        console.log(vm.filters);
         vm.composition_settings = JSON.parse(localStorage.getItem('composition_settings'));
         vm.postcardBackground = $sce.trustAsResourceUrl(vm.composition_settings.image_url);
         vm.curTheme = themeSVG[vm.themes[vm.composition_settings.theme_id].path_id];
         vm.curFilter = vm.filters[vm.composition_settings.color_id].name;
-
       };
 
       vm.selectColor = function(color_id) {

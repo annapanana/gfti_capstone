@@ -29,7 +29,15 @@
           name: "messageComposition",
           parent: "app",
           url: "/message-composition",
-          component: "messageComposition"
+          component: "messageComposition",
+          resolve: {
+            themeData: function($http) {
+              return $http({method: 'GET', url: '/themes'});
+            },
+            filterData: function($http) {
+              return $http({method: 'GET', url: '/filters'});
+            }
+          }
         })
         .state({
           name: "imageComposition",

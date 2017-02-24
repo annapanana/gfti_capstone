@@ -7,7 +7,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-1"></div>
-    <div class="col-md-6 col-sm-12">
+    <div class="col-md-5 col-sm-12">
       <!-- Postcard Template -->
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306" class="standard-border-radius">
         <defs>
@@ -25,6 +25,57 @@
       <button type="button" name="button" ng-click="$ctrl.nextStep()">Next</button>
     </div>
     <div class="col-md-5 col-sm-12">
+
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>Message</h4>
+          <textarea class="text-widget" name="name" rows="4" cols="60" ng-model="$ctrl.message"></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>Send From:</h4>
+          <div class="col-sm-4 form-column">
+            <label class="form-label" for="from_name">Name</label>
+            <label class="form-label" for="from_address_line1">Address Line 1</label>
+            <label class="form-label" for="from_address_line2">Address Line 2</label>
+            <label class="form-label" for="from_address_city">City</label>
+            <label class="form-label" for="from_address_state">State</label>
+            <label class="form-label" for="from_address_zip">Zipcode</label>
+          </div>
+          <div class="col-sm-8 form-column">
+            <input class="form-field" type="text" name="from_name" ng-model="$ctrl.from.name">
+            <input class="form-field" type="text" name="from_address_line1" ng-model="$ctrl.from.address_line1">
+            <input class="form-field" type="text" name="from_address_line2" ng-model="$ctrl.from.address_line2">
+            <input class="form-field" type="text" name="from_address_city" ng-model="$ctrl.from.address_city">
+            <input class="form-field" type="text" name="from_address_state" ng-model="$ctrl.from.address_state">
+            <input class="form-field" type="text" name="from_address_zip" ng-model="$ctrl.from.address_zip">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>Send To:</h4>
+          <div class="col-sm-4 form-column">
+            <label class="form-label" for="to_name">Name</label>
+            <label class="form-label" for="to_address_line1">Address Line 1</label>
+            <label class="form-label" for="to_address_line2">Address Line 2</label>
+            <label class="form-label" for="to_address_city">City</label>
+            <label class="form-label" for="to_address_state">State</label>
+            <label class="form-label" for="to_address_zip">Zipcode</label>
+          </div>
+          <div class="col-sm-8 form-column">
+            <input class="form-field" type="text" name="to_name" ng-model="$ctrl.to.name">
+            <input class="form-field" type="text" name="to_address_line1" ng-model="$ctrl.to.address_line1">
+            <input class="form-field" type="text" name="to_address_line2" ng-model="$ctrl.to.address_line2">
+            <input class="form-field" type="text" name="to_address_city" ng-model="$ctrl.to.address_city">
+            <input class="form-field" type="text" name="to_address_state" ng-model="$ctrl.to.address_state">
+            <input class="form-field" type="text" name="to_address_zip" ng-model="$ctrl.to.address_zip">
+          </div>
+        </div>
+      </div>
 
     </div>
     <div class="col-md-1"></div>
