@@ -3,11 +3,7 @@
   angular.module('app')
     .component('imageComposition', {
       templateUrl: 'js/imageComposition/imageComposition.template.html',
-      controller: controller,
-      binding: {
-        themeData: '<',
-        filterData: '<'
-      }
+      controller: controller
     });
 
     controller.$inject = ["$http", "$state", "$stateParams", "$sce", "$scope"];

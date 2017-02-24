@@ -3,11 +3,7 @@
   angular.module('app')
     .component('messageComposition', {
       templateUrl: 'js/messageComposition/messageComposition.template.html',
-      controller: controller,
-      binding: {
-        themeData: '<',
-        filterData: '<'
-      }
+      controller: controller
     });
 
     controller.$inject = ["$http", "$state", "$stateParams", "$sce"];
