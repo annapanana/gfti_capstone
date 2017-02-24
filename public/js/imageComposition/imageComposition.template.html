@@ -22,29 +22,32 @@
       <div class="flex-row">
         <h3 class="greetings-subtext">{{$ctrl.composition_settings.greetings_subtext}}</h3>
       </div>
+      <button type="button" name="button" ng-click="$ctrl.nextStep()">Next</button>
     </div>
     <div class="col-md-5 col-sm-12 widget-container blue-2 text-center">
       <h4 class="top-margin-sm">Select Filter</h4>
       <div class="row flex-row">
         <!-- Color Selection -->
         <slick class="ui-widget blue-1" dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
-          <div><a ng-click="$ctrl.selectColor(0)"><img  class="widget-element" src="assets/color.svg" alt=""></a></div>
-          <div><img ng-click="$ctrl.selectColor(1)" class="widget-element" src="assets/color.svg" alt=""></div>
-          <div><img ng-click="$ctrl.selectColor(2)" class="widget-element" src="assets/color.svg" alt=""></div>
-          <div><img ng-click="$ctrl.selectColor(3)" class="widget-element" src="assets/color.svg" alt=""></div>
-          <div><img ng-click="$ctrl.selectColor(4)" class="widget-element" src="assets/color.svg" alt=""></div>
-          <div><img ng-click="$ctrl.selectColor(5)" class="widget-element" src="assets/color.svg" alt=""></div>
+          <div ng-repeat="filter in $ctrl.filters">
+            <div>
+              <a ng-click="$ctrl.selectColor(filter.id)">
+                <img  class="widget-element" ng-src="assets/{{filter.asset_name}}" alt="">
+              </a>
+            </div>
+          </div>
         </slick>
       </div>
       <h4 class="top-margin-sm">Select Theme</h4>
       <div class="row flex-row">
         <slick class="ui-widget blue-1" dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
-          <div><img ng-click="$ctrl.selectTheme(0)" class="widget-element" src="assets/pattern.svg" alt=""></div>
-          <div><img ng-click="$ctrl.selectTheme(1)" class="widget-element" src="assets/pattern.svg" alt=""></div>
-          <div><img ng-click="$ctrl.selectTheme(2)" class="widget-element" src="assets/pattern.svg" alt=""></div>
-          <div><img ng-click="$ctrl.selectTheme(3)" class="widget-element" src="assets/pattern.svg" alt=""></div>
-          <div><img ng-click="$ctrl.selectTheme(4)" class="widget-element" src="assets/pattern.svg" alt=""></div>
-          <div><img ng-click="$ctrl.selectTheme(5)" class="widget-element" src="assets/pattern.svg" alt=""></div>
+          <div ng-repeat="theme in $ctrl.themes">
+            <div class="">
+              <a ng-click="$ctrl.selectTheme(theme.id)">
+                <img class="widget-element" src="assets/{{theme.asset_name}}" alt="">
+              </a>
+            </div>
+          </div>
         </slick>
       </div>
       <h4 class="top-margin-sm">Edit Subtext</h4>
