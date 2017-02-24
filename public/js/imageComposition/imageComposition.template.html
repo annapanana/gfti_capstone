@@ -11,18 +11,13 @@
       <!-- Postcard Template -->
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306" class="standard-border-radius">
         <defs>
+          <!-- TODO: Declare all filters here -->
           <filter id="pictureFilter" >
-            <feColorMatrix type="matrix" values="1.1 0 0 0 -0.1
-                                                  0 1.1 0 0 -0.1
-                                                  0 0 1.1 0 -0.1
-                                                  0 0 0 1 0" />
-            <!-- <feConvolveMatrix order="3" kernelMatrix="0 0 0 0 1 0 0 0 0"/> -->
+            <feColorMatrix type="matrix" values="1.1 0 0 0 -0.1 0 1.1 0 0 -0.1 0 0 1.1 0 -0.1 0 0 0 1 0" />
           </filter>
         </defs>
-        <!-- filter="url(#pictureFilter)" -->
-        <image class="postcard-background img-filter" xlink:href="{{$ctrl.postcardBackground}}" x="0" y="0"/>
-        <!-- TODO: Put Theme Here (SVG) -->
-        <path class="postcard-theme" d="M422.67,0H0V306H450V0ZM421,280l-196,8.71L29,280l8.3-127L29,26l196-8.71L421,26l-8.3,127Z"/>
+        <image class="postcard-background" filter="url({{$ctrl.curFilter}})" xlink:href="{{$ctrl.postcardBackground}}" x="0" y="0"/>
+        <path class="postcard-theme" d="{{$ctrl.curTheme}}"/>
       </svg>
       <div class="flex-row">
         <h3 class="greetings-subtext">{{$ctrl.composition_settings.greetings_subtext}}</h3>
@@ -33,23 +28,23 @@
       <div class="row flex-row">
         <!-- Color Selection -->
         <slick class="ui-widget blue-1" dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
-          <div><a ng-click="$ctrl.selectColor(1)"><img  class="widget-element" src="assets/color.svg" alt=""></a></div>
+          <div><a ng-click="$ctrl.selectColor(0)"><img  class="widget-element" src="assets/color.svg" alt=""></a></div>
+          <div><img ng-click="$ctrl.selectColor(1)" class="widget-element" src="assets/color.svg" alt=""></div>
           <div><img ng-click="$ctrl.selectColor(2)" class="widget-element" src="assets/color.svg" alt=""></div>
           <div><img ng-click="$ctrl.selectColor(3)" class="widget-element" src="assets/color.svg" alt=""></div>
           <div><img ng-click="$ctrl.selectColor(4)" class="widget-element" src="assets/color.svg" alt=""></div>
           <div><img ng-click="$ctrl.selectColor(5)" class="widget-element" src="assets/color.svg" alt=""></div>
-          <div><img ng-click="$ctrl.selectColor(6)" class="widget-element" src="assets/color.svg" alt=""></div>
         </slick>
       </div>
       <h4 class="top-margin-sm">Select Theme</h4>
       <div class="row flex-row">
         <slick class="ui-widget blue-1" dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
+          <div><img ng-click="$ctrl.selectTheme(0)" class="widget-element" src="assets/pattern.svg" alt=""></div>
           <div><img ng-click="$ctrl.selectTheme(1)" class="widget-element" src="assets/pattern.svg" alt=""></div>
           <div><img ng-click="$ctrl.selectTheme(2)" class="widget-element" src="assets/pattern.svg" alt=""></div>
           <div><img ng-click="$ctrl.selectTheme(3)" class="widget-element" src="assets/pattern.svg" alt=""></div>
           <div><img ng-click="$ctrl.selectTheme(4)" class="widget-element" src="assets/pattern.svg" alt=""></div>
           <div><img ng-click="$ctrl.selectTheme(5)" class="widget-element" src="assets/pattern.svg" alt=""></div>
-          <div><img ng-click="$ctrl.selectTheme(6)" class="widget-element" src="assets/pattern.svg" alt=""></div>
         </slick>
       </div>
       <h4 class="top-margin-sm">Edit Subtext</h4>
