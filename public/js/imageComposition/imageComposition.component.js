@@ -24,6 +24,7 @@
       };
 
       vm.selectColor = function(color_id) {
+
         vm.composition_settings.color_id = color_id;
         vm.curFilter = vm.filters[color_id-1].name; //-1 accounts for non-zero db value
         // Refresh image to reflect current filter

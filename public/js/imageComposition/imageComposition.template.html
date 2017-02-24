@@ -15,6 +15,9 @@
           <filter id="pictureFilter" >
             <feColorMatrix type="matrix" values="1.1 0 0 0 -0.1 0 1.1 0 0 -0.1 0 0 1.1 0 -0.1 0 0 0 1 0" />
           </filter>
+          <filter id="noFilter" >
+            <feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0" />
+          </filter>
         </defs>
         <rect width="100%" height="100%"></rect>
         <image class="postcard-background" filter="url({{$ctrl.curFilter}})" xlink:href="{{$ctrl.postcardBackground}}" x="0" y="0"/>
@@ -33,7 +36,7 @@
           <div ng-repeat="filter in $ctrl.filters">
             <div>
               <a ng-click="$ctrl.selectColor(filter.id)">
-                <img  class="widget-element" ng-src="assets/{{filter.asset_name}}" alt="">
+                <img class="widget-element" ng-src="assets/{{filter.asset_name}}" alt="">
               </a>
             </div>
           </div>
