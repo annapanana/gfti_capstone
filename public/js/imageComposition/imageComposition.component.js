@@ -25,9 +25,9 @@
         vm.curFilter = vm.filters[vm.composition_settings.color_id].name;
       };
 
-      vm.selectColor = function(color_id) {
-        vm.composition_settings.color_id = color_id-1;
-        vm.curFilter = vm.filters[color_id-1].name; //-1 accounts for non-zero db value
+      vm.selectColor = function(filter_id) {
+        vm.composition_settings.filter_id = filter_id-1;
+        vm.curFilter = vm.filters[filter_id-1].name; //-1 accounts for non-zero db value
         // Refresh image to reflect current filter
         let curImage = vm.composition_settings.image_url + '?' + new Date().getTime();
         vm.postcardBackground = $sce.trustAsResourceUrl(curImage);

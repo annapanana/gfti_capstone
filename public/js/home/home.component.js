@@ -13,15 +13,35 @@
         let postcard = {
           composition_settings: {
             template_name: 'template_01.html',
-            color_id: 1,
+            filter_id: 1,
             theme_id: 1,
             greetings_subtext: 'greetings from the internet',
             image_url: 'https://s3-us-west-2.amazonaws.com/gftiresources/tester.jpg'
           },
           message: 'this is a message',
-          to: {},
-          from: {},
-          payment_info: {}
+          to: {
+            name: 'anna',
+            address_line1: '1260 kalmia ave',
+            address_line2: 'apartment 17',
+            address_city: 'Boulder',
+            address_state: 'CO',
+            address_zip: '80304'
+          },
+          from: {
+            name: 'anna',
+            address_line1: '1260 kalmia ave',
+            address_line2: 'apartment 17',
+            address_city: 'Boulder',
+            address_state: 'CO',
+            address_zip: '80304'
+          },
+          payment_info: {
+            object: "card",
+            number: "4242 4242 4242 4242",
+            exp_month: 10,
+            exp_year: 2018,
+            email: "annaklotko@gmail.com"
+          }
         };
         localStorage.setItem('postcard', JSON.stringify(postcard));
       };

@@ -38,9 +38,9 @@ router.get('/:id/', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   console.log(STRIPE_KEY);
-  const {settings} = req.body;
-  const newCard = settings;
-
+  const {composition_settings} = req.body;
+  const newCard = composition_settings;
+  console.log("!!!", newCard);
   const {to} = req.body;
   var send_to = to;
   const {from} = req.body;
@@ -64,7 +64,6 @@ router.post('/', (req, res, next) => {
   stripe.customers.create({
     email: payment.email
   }).then(function(customer){
-    console.log("customer", customer);
     return stripe.customers.createSource(customer.id, {
       source: {
          object: 'card',
@@ -84,7 +83,6 @@ router.post('/', (req, res, next) => {
   }).then(function(charge) {
     // New charge created on a new customer
     console.log("Charge Succeeded!");
-    console.log("charge", charge);
     // CREATE POSTCARD
     lob.postcards.create({
       to: send_to,
