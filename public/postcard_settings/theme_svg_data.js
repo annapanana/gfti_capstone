@@ -4,32 +4,32 @@ var themeSVG = ["", "M422.67,0H0V306H450V0ZM421,280,225,268.71,29,280,17.3,153,2
 var themeData = [
   {
     id: 1,
-    path_id: 0,
-    asset_name: "pattern.svg"
-  },
-  {
-    id: 2,
     path_id: 1,
     asset_name: "pattern.svg"
   },
   {
-    id: 3,
+    id: 2,
     path_id: 2,
     asset_name: "pattern.svg"
   },
   {
+    id: 3,
+    path_id: 3,
+    asset_name: "pattern.svg"
+  },
+  {
     id: 4,
-    path_id: 0,
+    path_id: 1,
     asset_name: "pattern.svg"
   },
   {
     id: 5,
-    path_id: 0,
+    path_id: 1,
     asset_name: "pattern.svg"
   },
   {
     id: 6,
-    path_id: 0,
+    path_id: 1,
     asset_name: "pattern.svg"
   }
 ];
@@ -47,7 +47,7 @@ var filterData = [
   {
     id:3,
     name: "#noFilter",
-    asset_name: "color.svg"
+    asset_name: "color.svg",
   },
   {
     id:4,

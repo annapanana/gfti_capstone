@@ -10,12 +10,15 @@
     function controller($http, $state, stateParams, $scope) {
       const vm = this;
       vm.composition_settings = {};
+      var postcard = {};
       vm.$onInit = function() {
-        vm.composition_settings = JSON.parse(localStorage.getItem('composition_settings'));
+        postcard = JSON.parse(localStorage.getItem('postcard'));
+        vm.composition_settings = postcard.composition_settings;
       };
 
       vm.nextStep = function() {
-        localStorage.setItem('composition_settings', JSON.stringify(vm.composition_settings));
+        postcard.composition_settings = vm.composition_settings;
+        localStorage.setItem('postcard', JSON.stringify(postcard));
         $state.go('imageComposition');
       };
 

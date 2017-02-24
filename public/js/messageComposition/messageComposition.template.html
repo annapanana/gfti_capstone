@@ -12,7 +12,7 @@
       <div class="row">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306" class="standard-border-radius">
           <g>
-            <rect width="100%" height="100%"></rect>
+            <!-- <rect width="100%" height="100%"></rect> -->
             <image class="postcard-back" xlink:href="assets/card_back.svg" x="0" y="0"/>
             <!-- Message Text -->
             <foreignObject x="20" y="80" width="200" height="150">
@@ -52,6 +52,9 @@
             <filter id="pictureFilter" >
               <feColorMatrix type="matrix" values="1.1 0 0 0 -0.1 0 1.1 0 0 -0.1 0 0 1.1 0 -0.1 0 0 0 1 0" />
             </filter>
+            <filter id="noFilter" >
+              <feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0" />
+            </filter>
           </defs>
           <g>
             <rect width="100%" height="100%"></rect>
@@ -69,7 +72,7 @@
       <div class="row">
         <div class="col-sm-12">
           <h4>Message</h4>
-          <textarea class="text-widget" name="name" rows="4" cols="60" ng-model="$ctrl.composition_settings.message"></textarea>
+          <textarea class="text-widget" name="name" rows="4" cols="60" ng-model="$ctrl.composition_settings.message" maxlength="440"></textarea>
         </div>
       </div>
 
@@ -85,12 +88,12 @@
             <label class="form-label" for="from_address_zip">Zipcode</label>
           </div>
           <div class="col-sm-8 form-column">
-            <input class="form-field" type="text" name="from_name" ng-model="$ctrl.from.name">
-            <input class="form-field" type="text" name="from_address_line1" ng-model="$ctrl.from.address_line1">
-            <input class="form-field" type="text" name="from_address_line2" ng-model="$ctrl.from.address_line2">
-            <input class="form-field" type="text" name="from_address_city" ng-model="$ctrl.from.address_city">
-            <input class="form-field" type="text" name="from_address_state" ng-model="$ctrl.from.address_state">
-            <input class="form-field" type="text" name="from_address_zip" ng-model="$ctrl.from.address_zip">
+            <input class="form-field" type="text" name="from_name" ng-model="$ctrl.from.name" maxlength="40" required>
+            <input class="form-field" type="text" name="from_address_line1" ng-model="$ctrl.from.address_line1" maxlength="40" required>
+            <input class="form-field" type="text" name="from_address_line2" ng-model="$ctrl.from.address_line2" maxlength="40" required>
+            <input class="form-field" type="text" name="from_address_city" ng-model="$ctrl.from.address_city" maxlength="40" required>
+            <input class="form-field" type="text" name="from_address_state" ng-model="$ctrl.from.address_state" maxlength="2" required>
+            <input class="form-field" type="text" name="from_address_zip" ng-model="$ctrl.from.address_zip" maxlength="5" required>
           </div>
         </div>
       </div>
@@ -107,12 +110,12 @@
             <label class="form-label" for="to_address_zip">Zipcode</label>
           </div>
           <div class="col-sm-8 form-column">
-            <input class="form-field" type="text" name="to_name" ng-model="$ctrl.to.name">
-            <input class="form-field" type="text" name="to_address_line1" ng-model="$ctrl.to.address_line1">
-            <input class="form-field" type="text" name="to_address_line2" ng-model="$ctrl.to.address_line2">
-            <input class="form-field" type="text" name="to_address_city" ng-model="$ctrl.to.address_city">
-            <input class="form-field" type="text" name="to_address_state" ng-model="$ctrl.to.address_state">
-            <input class="form-field" type="text" name="to_address_zip" ng-model="$ctrl.to.address_zip">
+            <input class="form-field" type="text" name="to_name" ng-model="$ctrl.to.name" maxlength="40" required>
+            <input class="form-field" type="text" name="to_address_line1" ng-model="$ctrl.to.address_line1" maxlength="40" required>
+            <input class="form-field" type="text" name="to_address_line2" ng-model="$ctrl.to.address_line2" maxlength="40" required>
+            <input class="form-field" type="text" name="to_address_city" ng-model="$ctrl.to.address_city" maxlength="40" required>
+            <input class="form-field" type="text" name="to_address_state" ng-model="$ctrl.to.address_state" maxlength="2" required>
+            <input class="form-field" type="text" name="to_address_zip" ng-model="$ctrl.to.address_zip" maxlength="5" required>
           </div>
         </div>
       </div>
