@@ -8,6 +8,9 @@ exports.up = function(knex, Promise) {
     table.string('greetings_subtext').notNullable();
     table.string('image_url').notNullable();
     table.string('from_zip').notNullable();
+    table.string('name');
+    table.string('notes');
+    table.string('thumbnail_url');
   });
 };
 

@@ -61,5 +61,11 @@
           url: "/theme-selection",
           component: "themeSelection"
         })
+        .state({
+          name: "postcardSent",
+          parent: "app",
+          url: "postcard-sent",
+          component: "postcardSent"
+        });
     }
 }());

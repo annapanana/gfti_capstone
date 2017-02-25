@@ -37,10 +37,10 @@ router.get('/:id/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  console.log(STRIPE_KEY);
+
   const {composition_settings} = req.body;
   const newCard = composition_settings;
-  console.log("!!!", newCard);
+
   const {to} = req.body;
   var send_to = to;
   const {from} = req.body;
@@ -54,7 +54,7 @@ router.post('/', (req, res, next) => {
 
   const {theme_path} = req.body;
   const theme = theme_path;
-
+  console.log(theme);
   // Retrieve html template
   let postcard = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
 
@@ -77,7 +77,7 @@ router.post('/', (req, res, next) => {
       }
     });
   }).then(function(source) {
-    console.log("source", source);
+    // console.log("source", source);
     return stripe.charges.create({
       amount: 150,
       currency: 'usd',
@@ -117,6 +117,36 @@ router.post('/', (req, res, next) => {
   }).catch(function(err) {
     // TODO switch statement to send different errors
     return res.send(err);
+  });
+
+  router.patch('/:id', (req, res, next) => {
+    let id = req.params.id;
+    const {card_name, card_notes, thumbnail} = req.body;
+    var name = card_name;
+    var notes = card_notes;
+    var thumb = thumbnail;
+
+    knex('postcards')
+      .where('postcards.id', id)
+      .then((result) => {
+        result[0].name = name;
+        result[0].notes = notes;
+        result[0].thumbnail_url = thumb;
+
+        knex('postcards')
+          .where('postcards.id', id)
+          .update(result[0], '*')
+          .then((updatedResult) => {
+            res.send(updatedResult);
+          })
+          .catch((err) => {
+            res.send(err);
+          });
+
+      })
+      .catch((err) => {
+        res.send(err);
+      });
   });
 
 
