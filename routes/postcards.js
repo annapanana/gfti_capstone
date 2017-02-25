@@ -54,7 +54,7 @@ router.post('/', (req, res, next) => {
 
   const {theme_path} = req.body;
   const theme = theme_path;
-
+  console.log(theme);
   // Retrieve html template
   let postcard = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
 

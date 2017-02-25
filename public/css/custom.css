@@ -77,12 +77,7 @@ footer {
 }
 
 .postcard-theme {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  /*height: auto;*/
-  z-index: 10;
+  fill: #b5a77f;
 }
 
 .postcard-back {

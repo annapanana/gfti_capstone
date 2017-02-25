@@ -24,7 +24,7 @@
         // Set draw path for html template
         postcard.theme_path = themeData[postcard.composition_settings.theme_id].path_data;
         $http.post('/postcards', postcard).then((result) => {
-          console.log("result", result.data[0]);
+          console.log("result", result.data);
 
           $timeout(function() {
             postcard.thumbnail = result.data[0].postcard.thumbnails[0].large;
