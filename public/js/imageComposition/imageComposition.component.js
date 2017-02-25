@@ -15,8 +15,8 @@
       vm.$onInit = function() {
         postcard = JSON.parse(localStorage.getItem('postcard'));
         vm.composition_settings = postcard.composition_settings;
-        vm.filters = filterData;
-        vm.frames = themeData[vm.composition_settings.theme_id];
+        vm.filters = filterData; // set for UI widget
+        vm.frames = themeData[vm.composition_settings.theme_id]; // set for UI widget
         vm.postcardBackground = $sce.trustAsResourceUrl(vm.composition_settings.image_url);
         vm.curTheme = $sce.trustAsResourceUrl(themeData[vm.composition_settings.theme_id][1].frame);
         frameUrl = themeData[vm.composition_settings.theme_id][1].frame;
