@@ -9,32 +9,32 @@ var themeData = {
     },
     {
       id: 1,
-      frame: "assets/frames/playful/frame_playful_01.svg",
+      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/frame_classic_01.svg",
       asset_name: "pattern.svg"
     },
     {
       id: 2,
-      frame: "assets/frames/playful/frame_playful_02.svg",
+      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/frame_classic_02.svg",
       asset_name: "pattern.svg"
     },
     {
       id: 3,
-      frame: "assets/frames/playful/frame_playful_03.svg",
+      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/frame_classic_03.svg",
       asset_name: "pattern.svg"
     },
     {
       id: 4,
-      frame: "assets/frames/playful/frame_playful_04.svg",
+      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/frame_classic_04.svg",
       asset_name: "pattern.svg"
     },
     {
       id: 5,
-      frame: "assets/frames/playful/frame_playful_05.svg",
+      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/frame_classic_05.svg",
       asset_name: "pattern.svg"
     },
     {
       id: 6,
-      frame: "assets/frames/playful/frame_playful_06.svg",
+      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/frame_classic_06.svg",
       asset_name: "pattern.svg"
     }
   ],
@@ -46,32 +46,32 @@ var themeData = {
     },
     {
       id: 1,
-      frame: "assets/frames/classic/frame_classic_01.svg",
+      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/frame_playful_01.svg",
       asset_name: "pattern.svg"
     },
     {
       id: 2,
-      frame: "assets/frames/classic/frame_classic_02.svg",
+      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/frame_playful_02.svg",
       asset_name: "pattern.svg"
     },
     {
       id: 3,
-      frame: "assets/frames/classic/frame_classic_03.svg",
+      frame: "	https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/frame_playful_03.svg",
       asset_name: "pattern.svg"
     },
     {
       id: 4,
-      frame: "assets/frames/classic/frame_classic_04.svg",
+      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/frame_playful-4.svg",
       asset_name: "pattern.svg"
     },
     {
       id: 5,
-      frame: "assets/frames/classic/frame_classic_05.svg",
+      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/frame_playful_05.svg",
       asset_name: "pattern.svg"
     },
     {
       id: 6,
-      frame: "assets/frames/classic/frame_classic_06.svg",
+      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/frame_playful_06.svg",
       asset_name: "pattern.svg"
     }
   ],

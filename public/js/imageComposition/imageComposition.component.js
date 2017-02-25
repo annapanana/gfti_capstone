@@ -10,7 +10,7 @@
     function controller($http, $state, stateParams, $sce, $scope) {
       const vm = this;
       var postcard = {};
-
+      var frameUrl = "";
 
       vm.$onInit = function() {
         postcard = JSON.parse(localStorage.getItem('postcard'));
@@ -18,7 +18,8 @@
         vm.filters = filterData;
         vm.frames = themeData[vm.composition_settings.theme_id];
         vm.postcardBackground = $sce.trustAsResourceUrl(vm.composition_settings.image_url);
-        vm.curTheme = themeData[vm.composition_settings.theme_id][1].frame;
+        vm.curTheme = $sce.trustAsResourceUrl(themeData[vm.composition_settings.theme_id][1].frame);
+        frameUrl = themeData[vm.composition_settings.theme_id][1].frame;
         vm.curFilter = filterData[vm.composition_settings.filter_id].name;
       };
 
@@ -33,13 +34,13 @@
 
       vm.selectFrame = function(frame_id) {
         vm.composition_settings.frame_id = frame_id;
-        console.log(frame_id);
-        vm.curTheme = themeData[vm.composition_settings.theme_id][frame_id].frame;
+        frameUrl =  themeData[vm.composition_settings.theme_id][frame_id].frame;
+        vm.curTheme = $sce.trustAsResourceUrl(frameUrl);
         // TODO: Center selected item on carousel
       };
 
       vm.nextStep = function() {
-        console.log(vm.composition_settings);
+        postcard.frame_url = frameUrl; // set frame url link for Lob parsing
         postcard.composition_settings = vm.composition_settings;
         localStorage.setItem('postcard', JSON.stringify(postcard));
         $state.go('messageComposition');
