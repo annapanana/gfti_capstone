@@ -18,7 +18,8 @@
         </defs>
         <!-- <rect width="100%" height="100%"></rect> -->
         <image class="postcard-background" filter="url({{$ctrl.curFilter}})" xlink:href="{{$ctrl.postcardBackground}}" x="0" y="0"/>
-        <path class="postcard-theme" ng-attr-d="{{$ctrl.curTheme}}"/>
+        <image class="postcard-theme" xlink:href="{{$ctrl.curTheme}}" width="100%" height="100%" x="0" y="0"/>
+        <!-- <path class="postcard-theme" ng-attr-d="{{$ctrl.curTheme}}"/> -->
         <text x="50%" y="25%" class="greetings-subtext" text-anchor="middle">
           {{$ctrl.composition_settings.greetings_subtext}}
         </text>
@@ -39,13 +40,13 @@
           </div>
         </slick>
       </div>
-      <h4 class="top-margin-sm">Select Theme</h4>
+      <h4 class="top-margin-sm">Select Frame</h4>
       <div class="row flex-row">
         <slick class="ui-widget blue-1" dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
-          <div ng-repeat="theme in $ctrl.themes">
+          <div ng-repeat="singleFrame in $ctrl.frames">
             <div class="">
-              <a ng-click="$ctrl.selectTheme(theme.id)">
-                <img class="widget-element" ng-src="assets/{{theme.asset_name}}" alt="">
+              <a ng-click="$ctrl.selectFrame(singleFrame.id)">
+                <img class="widget-element" ng-src="assets/{{singleFrame.asset_name}}" alt="">
               </a>
             </div>
           </div>

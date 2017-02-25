@@ -10,19 +10,19 @@
     function controller($http, $state, stateParams, $sce, $scope) {
       const vm = this;
       var postcard = {};
-      vm.themes = themeData;
-      vm.filters = filterData;
+
 
       vm.$onInit = function() {
         postcard = JSON.parse(localStorage.getItem('postcard'));
         vm.composition_settings = postcard.composition_settings;
+        vm.filters = filterData;
+        vm.frames = themeData[vm.composition_settings.theme_id];
         vm.postcardBackground = $sce.trustAsResourceUrl(vm.composition_settings.image_url);
-        vm.curTheme = themeData[vm.composition_settings.theme_id].path_data;
+        vm.curTheme = themeData[vm.composition_settings.theme_id][1].frame;
         vm.curFilter = filterData[vm.composition_settings.filter_id].name;
       };
 
       vm.selectColor = function(filter_id) {
-        console.log(filter_id);
         vm.composition_settings.filter_id = filter_id;
         vm.curFilter = filterData[filter_id].name;
         // Refresh image to reflect current filter
@@ -31,9 +31,10 @@
         // TODO: Center selected item on carousel
       };
 
-      vm.selectTheme = function(theme_id) {
-        vm.composition_settings.theme_id = theme_id;
-        vm.curTheme = themeData[theme_id].path_data;
+      vm.selectFrame = function(frame_id) {
+        vm.composition_settings.frame_id = frame_id;
+        console.log(frame_id);
+        vm.curTheme = themeData[vm.composition_settings.theme_id][frame_id].frame;
         // TODO: Center selected item on carousel
       };
 
