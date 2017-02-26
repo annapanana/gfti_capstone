@@ -6,8 +6,8 @@
       controller: controller
     });
 
-    controller.$inject = ["$http", "$state", "$stateParams", "$scope"];
-    function controller($http, $state, $stateParams, $scope) {
+    controller.$inject = ["$http", "$state", "$stateParams", "$scope", "$sce"];
+    function controller($http, $state, $stateParams, $scope, $sce) {
       const vm = this;
       vm.$onInit = function() {
         let postcard = {
@@ -15,9 +15,12 @@
             template_name: 'template_01.html',
             filter_id: 1,
             theme_id: 1,
+            frame_id: 1,
+            color_id: 1,
             greetings_subtext: 'greetings from the internet',
             image_url: 'https://s3-us-west-2.amazonaws.com/gftiresources/tester.jpg'
           },
+          frame_url: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/frame_playful_06.svg",
           message: 'this is a message',
           to: {
             name: 'anna',
@@ -41,7 +44,7 @@
             exp_month: 10,
             exp_year: 2018,
             email: "annaklotko@gmail.com"
-          }
+          },
         };
         localStorage.setItem('postcard', JSON.stringify(postcard));
       };
