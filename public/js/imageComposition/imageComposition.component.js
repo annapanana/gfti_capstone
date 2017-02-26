@@ -10,17 +10,21 @@
     function controller($http, $state, stateParams, $sce, $scope) {
       const vm = this;
       var postcard = {};
-      var frameUrl = "";
+      var frameUrl = ""; //Lob needs URL reference
 
       vm.$onInit = function() {
         postcard = JSON.parse(localStorage.getItem('postcard'));
         vm.composition_settings = postcard.composition_settings;
         vm.filters = filterData; // set for UI widget
-        vm.frames = themeData[vm.composition_settings.theme_id]; // set for UI widget
+        vm.frames = themeData[vm.composition_settings.theme_id]; // only display items for this theme
+        vm.colors = colorData[vm.composition_settings.theme_id]; // only display items for this theme
+        console.log(vm.colors);
         vm.postcardBackground = $sce.trustAsResourceUrl(vm.composition_settings.image_url);
         vm.curTheme = $sce.trustAsResourceUrl(themeData[vm.composition_settings.theme_id][1].frame);
         frameUrl = themeData[vm.composition_settings.theme_id][1].frame;
         vm.curFilter = filterData[vm.composition_settings.filter_id].name;
+        vm.curColor = colorData[vm.composition_settings.theme_id][1].c;
+        console.log(vm.curColor);
       };
 
       vm.selectColor = function(filter_id) {
@@ -38,6 +42,11 @@
         vm.curTheme = $sce.trustAsResourceUrl(frameUrl);
         // TODO: Center selected item on carousel
       };
+
+      vm.selectColor = function(color_id) {
+        vm.composition_settings.color_id = color_id;
+        vm.curColor = colorData[vm.composition_settings.theme_id][color_id].c;
+      }
 
       vm.nextStep = function() {
         postcard.frame_url = frameUrl; // set frame url link for Lob parsing

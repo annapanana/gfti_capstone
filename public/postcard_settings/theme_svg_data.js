@@ -125,7 +125,7 @@ var themeData = {
     },
     {
       id: 2,
-      frame: "",
+      frame: "assets/frames/wild/frame_wild_01.svg",
       asset_name: "pattern.svg"
     },
     {
@@ -185,4 +185,25 @@ var filterData = [
 ];
 
 var fontData = [];
-var fontColor = [];
+var colorData = {
+  1:[
+    {id:0, c:"#F4987A"},
+    {id:1, c:"#130E32"},
+    {id:2, c:"#A9140A"},
+    {id:3, c:"#FFCE3E"},
+    {id:4, c:"#64CC9E"},
+    {id:5, c:"#0A9796"},
+    {id:6, c:"#FFF"},
+    {id:7, c:"#000"}],
+  2:[],
+  3:[
+    {id:0, c:"#EDE5D0"},
+    {id:1, c:"#224567"},
+    {id:2, c:"#BAE4E4"},
+    {id:3, c:"#B0CE9B"},
+    {id:4, c:"#435F2E"},
+    {id:5, c:"#332926"},
+    {id:6, c:"#FFF"},
+    {id:7, c:"#000"}],
+  4:[]
+};
