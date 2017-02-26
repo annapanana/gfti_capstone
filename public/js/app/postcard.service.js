@@ -22,26 +22,8 @@
         return colorData[this.postcard.composition_settings.theme_id];
       };
 
-
       this.getBackgroundImage = function($sce) {
         return $sce.trustAsResourceUrl(this.postcard.composition_settings.image_url);
-      };
-
-      this.getDefaultFrame = function($sce) {
-        return $sce.trustAsResourceUrl(frameData[this.postcard.composition_settings.theme_id][1].frames[this.postcard.composition_settings.color_id]);
-      };
-
-      this.getDefaultFrameUrl = function() {
-        return themeData[this.postcard.composition_settings.theme_id][1].frame
-      };
-
-
-      this.getDefaultFilter = function() {
-        return filterData[this.postcard.composition_settings.filter_id].name;
-      };
-
-      this.getDefaultColor = function() {
-        return colorData[this.postcard.composition_settings.theme_id][1].c;
       };
 
       this.setFilter = function(filter_id) {
@@ -54,6 +36,7 @@
 
       this.refreshBackgroundImage = function($sce) {
         let img = this.postcard.composition_settings.image_url + '?' + new Date().getTime();
+        console.log(img);
         return $sce.trustAsResourceUrl(img);
       };
 
@@ -73,14 +56,42 @@
         this.postcard.composition_settings.color_id = color_id;
       };
 
-      this.getCurrentColor = function() {
+      this.getColor = function() {
         let color_id = this.postcard.composition_settings.color_id;
         return colorData[this.postcard.composition_settings.theme_id][color_id].c;
       };
 
       this.getSubtext = function() {
-        return this.postcard.composition_settings.greetingsSubtext;
+        return this.postcard.composition_settings.greetings_subtext;
+      };
+
+      this.setSubtext = function(text) {
+        this.postcard.composition_settings.greetings_subtext = text;
       }
+
+      this.getMessage = function() {
+        return this.postcard.message;
+      };
+
+      this.setMessage = function(msg) {
+        this.postcard.message = msg;
+      };
+
+      this.getAddressedTo = function() {
+        return this.postcard.to;
+      };
+
+      this.setAddressedTo = function(to) {
+        this.postcard.to = to;
+      };
+
+      this.getAddressedFrom = function() {
+        return this.postcard.from;
+      };
+
+      this.setAddressedFrom = function(from) {
+        this.postcard.from = from;
+      };
 
       this.savePostcardData = function() {
         localStorage.setItem('postcard', JSON.stringify(this.postcard));

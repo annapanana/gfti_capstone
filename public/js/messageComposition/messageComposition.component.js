@@ -6,25 +6,21 @@
       controller: controller
     });
 
-    controller.$inject = ["$http", "$state", "$stateParams", "$sce"];
-    function controller($http, $state, stateParams, $sce) {
+    controller.$inject = ["$http", "$state", "$stateParams", "$sce", "postcardService"];
+    function controller($http, $state, stateParams, $sce, postcardService) {
       const vm = this;
-      var postcard = {};
+      vm.postcard = {
+        frame: postcardService.updateFrameUrl($sce),
+        filter: postcardService.getFilter(),
+        color: postcardService.getColor(),
+        subtext: postcardService.getSubtext(),
+        background: postcardService.getBackgroundImage($sce)
+      };
 
       vm.$onInit = function() {
-        postcard = JSON.parse(localStorage.getItem('postcard'));
-        vm.composition_settings = postcard.composition_settings;
-        vm.postcardBackground = $sce.trustAsResourceUrl(vm.composition_settings.image_url);
-        let frameSelection = vm.composition_settings.frame_id;
-        vm.curTheme = $sce.trustAsResourceUrl(postcard.frame_url);
-        // vm.curTheme = $sce.trustAsResourceUrl(themeData[vm.composition_settings.theme_id][1].frames[vm.composition_settings.color_id]);
-        vm.curFilter = filterData[vm.composition_settings.filter_id].name;
-        let colorSelection = vm.composition_settings.color_id;
-        vm.curColor = colorData[vm.composition_settings.theme_id][colorSelection].c;
-
-        vm.to = postcard.to;
-        vm.from = postcard.from;
-        vm.message = postcard.message;
+        vm.to = postcardService.getAddressedTo();
+        vm.from = postcardService.getAddressedFrom();
+        vm.message = postcardService.getMessage();
       };
 
       vm.nextStep = function() {
@@ -35,7 +31,7 @@
         } else if (!checkStateCode(vm.from.address_state)) {
           console.error("The state in your from address is not valid");
         }
-        postcard.to = vm.to;
+        postcardService.setAddressedTo(vm.to);
 
         // Is the zip code entered correctly?
         if (!checkZipcode(vm.from.address_zip)) {
@@ -43,15 +39,14 @@
         } else if (!checkZipcode(vm.from.address_zip)) {
           console.error("The zipcode in your from address is not valid");
         }
-        postcard.from = vm.from;
+        postcardService.setAddressedFrom(vm.from);
 
         if (vm.message.length < 1) {
           console.error("You must include a message");
         }
+        postcardService.setMessage(vm.message);
 
-        postcard.message = vm.message;
-
-        localStorage.setItem('postcard', JSON.stringify(postcard));
+        postcardService.savePostcardData();
         $state.go('payment');
       };
 

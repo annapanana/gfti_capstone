@@ -57,11 +57,11 @@
           </filter>
         </defs>
         <g>
-          <rect width="100%" height="100%"></rect>
-          <image class="postcard-background" filter="url({{$ctrl.curFilter}})" xlink:href="{{$ctrl.postcardBackground}}" x="0" y="0"/>
-          <image class="postcard-theme" xlink:href="{{$ctrl.curTheme}}" width="100%" height="100%" x="0" y="0"/>
-          <text x="50%" y="25%" class="greetings-subtext" text-anchor="middle" fill="{{$ctrl.curColor}}">
-            {{$ctrl.composition_settings.greetings_subtext}}
+          <!-- <rect width="100%" height="100%"></rect> -->
+          <image class="postcard-background" filter="url({{$ctrl.postcard.filter}})" xlink:href="{{$ctrl.postcard.background}}" x="0" y="0"/>
+          <image class="postcard-theme" xlink:href="{{$ctrl.postcard.frame}}" width="100%" height="100%" x="0" y="0"/>
+          <text x="50%" y="25%" class="greetings-subtext" text-anchor="middle" fill="{{$ctrl.postcard.color}}">
+            {{$ctrl.postcard.subtext}}
           </text>
         </g>
       </svg>
