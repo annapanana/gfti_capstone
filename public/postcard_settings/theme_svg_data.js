@@ -4,38 +4,31 @@ var themeData = {
   1: [
     {
       id: 0,
-      frame: "",
-      asset_name: "pattern.svg"
+      frames: [""]
     },
     {
       id: 1,
-      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/frame_classic_01.svg",
-      asset_name: "pattern.svg"
+      frames: ["https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_01_exports/frame_classic_01_01.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_01_exports/frame_classic_01_02.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_01_exports/frame_classic_01_03.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_01_exports/frame_classic_01_04.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_01_exports/frame_classic_01_05.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_01_exports/frame_classic_01_06.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_01_exports/frame_classic_01_07.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_01_exports/frame_classic_01_08.svg"]
     },
     {
       id: 2,
-      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/frame_classic_02.svg",
-      asset_name: "pattern.svg"
+      frames: ["https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_02_exports/frame_classic_02_01.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_02_exports/frame_classic_02_02.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_02_exports/frame_classic_02_03.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_02_exports/frame_classic_02_04.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_02_exports/frame_classic_02_05.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_02_exports/frame_classic_02_06.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_02_exports/frame_classic_02_07.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_02_exports/frame_classic_02_08.svg"]
     },
     {
       id: 3,
-      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/frame_classic_03.svg",
-      asset_name: "pattern.svg"
+      frames: ["https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_03_exports/frame_classic_03_01.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_03_exports/frame_classic_03_02.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_03_exports/frame_classic_03_03.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_03_exports/frame_classic_03_04.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_03_exports/frame_classic_03_05.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_03_exports/frame_classic_03_06.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_03_exports/frame_classic_03_07.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_03_exports/frame_classic_03_08.svg"]
     },
     {
       id: 4,
-      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/frame_classic_04.svg",
-      asset_name: "pattern.svg"
+      frames: ["https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_04_exports/frame_classic_04_01.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_04_exports/frame_classic_04_02.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_04_exports/frame_classic_04_03.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_04_exports/frame_classic_04_04.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_04_exports/frame_classic_04_05.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_04_exports/frame_classic_04_06.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_04_exports/frame_classic_04_07.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_04_exports/frame_classic_04_08.svg"]
     },
     {
       id: 5,
-      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/frame_classic_05.svg",
-      asset_name: "pattern.svg"
+      frames: ["https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_05_exports/frame_classic_05_01.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_05_exports/frame_classic_05_02.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_05_exports/frame_classic_05_03.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_05_exports/frame_classic_05_04.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_05_exports/frame_classic_05_05.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_05_exports/frame_classic_05_06.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_05_exports/frame_classic_05_07.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_05_exports/frame_classic_05_08.svg"]
     },
     {
       id: 6,
-      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/frame_classic_06.svg",
-      asset_name: "pattern.svg"
+      frames: ["https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_06_exports/frame_classic_06_01.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_06_exports/frame_classic_06_02.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_06_exports/frame_classic_06_03.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_06_exports/frame_classic_06_04.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_06_exports/frame_classic_06_05.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_06_exports/frame_classic_06_06.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_06_exports/frame_classic_06_07.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_06_exports/frame_classic_06_08.svg"]
     }
   ],
   2: [
@@ -190,7 +183,7 @@ var colorData = {
     {id:0, c:"#F4987A"},
     {id:1, c:"#130E32"},
     {id:2, c:"#A9140A"},
-    {id:3, c:"#FFCE3E"},
+    {id:3, c:"#B5A77F"},
     {id:4, c:"#64CC9E"},
     {id:5, c:"#0A9796"},
     {id:6, c:"#FFF"},

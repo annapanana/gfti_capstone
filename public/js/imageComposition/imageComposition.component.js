@@ -11,6 +11,7 @@
       const vm = this;
       var postcard = {};
       var frameUrl = ""; //Lob needs URL reference
+      var frameId = 1;
 
       vm.$onInit = function() {
         postcard = JSON.parse(localStorage.getItem('postcard'));
@@ -19,13 +20,13 @@
         vm.frames = themeData[vm.composition_settings.theme_id]; // only display items for this theme
         vm.colors = colorData[vm.composition_settings.theme_id]; // only display items for this theme
         vm.postcardBackground = $sce.trustAsResourceUrl(vm.composition_settings.image_url);
-        vm.curTheme = $sce.trustAsResourceUrl(themeData[vm.composition_settings.theme_id][1].frame);
+        vm.curTheme = $sce.trustAsResourceUrl(themeData[vm.composition_settings.theme_id][1].frames[vm.composition_settings.color_id]);
         frameUrl = themeData[vm.composition_settings.theme_id][1].frame;
         vm.curFilter = filterData[vm.composition_settings.filter_id].name;
         vm.curColor = colorData[vm.composition_settings.theme_id][1].c;
       };
 
-      vm.selectColor = function(filter_id) {
+      vm.selectFilter = function(filter_id) {
         vm.composition_settings.filter_id = filter_id;
         vm.curFilter = filterData[filter_id].name;
         // Refresh image to reflect current filter
@@ -35,8 +36,9 @@
       };
 
       vm.selectFrame = function(frame_id) {
+        frameId = frame_id;
         vm.composition_settings.frame_id = frame_id;
-        frameUrl =  themeData[vm.composition_settings.theme_id][frame_id].frame;
+        frameUrl =  themeData[vm.composition_settings.theme_id][frame_id].frames[vm.composition_settings.color_id];
         vm.curTheme = $sce.trustAsResourceUrl(frameUrl);
         // TODO: Center selected item on carousel
       };
@@ -44,6 +46,9 @@
       vm.selectColor = function(color_id) {
         vm.composition_settings.color_id = color_id;
         vm.curColor = colorData[vm.composition_settings.theme_id][color_id].c;
+        // Update Frame to Reflect Color Change
+        frameUrl =  themeData[vm.composition_settings.theme_id][frameId].frames[vm.composition_settings.color_id];
+        vm.curTheme = $sce.trustAsResourceUrl(frameUrl);
       }
 
       vm.nextStep = function() {

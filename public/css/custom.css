@@ -178,6 +178,9 @@ footer {
   height: 60px;
   background-color: #FFF;
   border-radius: 15px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 }
 
 .widget-element:hover {

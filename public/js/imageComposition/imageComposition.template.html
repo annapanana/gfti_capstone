@@ -49,7 +49,7 @@
         <slick class="ui-widget color-1" dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
           <div ng-repeat="filter in $ctrl.filters">
             <div>
-              <a ng-click="$ctrl.selectColor(filter.id)">
+              <a ng-click="$ctrl.selectFilter(filter.id)">
                 <img class="widget-element" ng-src="assets/{{filter.asset_name}}" alt="">
               </a>
             </div>
@@ -62,7 +62,7 @@
           <div ng-repeat="singleFrame in $ctrl.frames">
             <div class="">
               <a ng-click="$ctrl.selectFrame(singleFrame.id)">
-                <img class="widget-element" ng-src="assets/{{singleFrame.asset_name}}" alt="">
+                <div class="widget-element"><h3>{{singleFrame.id}}</h3></div>
               </a>
             </div>
           </div>

@@ -16,7 +16,8 @@
         vm.composition_settings = postcard.composition_settings;
         vm.postcardBackground = $sce.trustAsResourceUrl(vm.composition_settings.image_url);
         let frameSelection = vm.composition_settings.frame_id;
-        vm.curTheme = $sce.trustAsResourceUrl(themeData[vm.composition_settings.theme_id][frameSelection].frame);
+        vm.curTheme = $sce.trustAsResourceUrl(postcard.frame_url);
+        // vm.curTheme = $sce.trustAsResourceUrl(themeData[vm.composition_settings.theme_id][1].frames[vm.composition_settings.color_id]);
         vm.curFilter = filterData[vm.composition_settings.filter_id].name;
         let colorSelection = vm.composition_settings.color_id;
         vm.curColor = colorData[vm.composition_settings.theme_id][colorSelection].c;
