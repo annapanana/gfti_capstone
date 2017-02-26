@@ -51,10 +51,10 @@ router.post('/', (req, res, next) => {
 
   const {payment_info} = req.body;
   const payment = payment_info;
-  console.log(req.body);
+  // console.log(req.body);
   const {frame_url} = req.body;
   const frame = frame_url;
-  console.log("frame", frame);
+  // console.log("frame", frame);
   // Retrieve html template
   let postcard = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
 
@@ -104,7 +104,7 @@ router.post('/', (req, res, next) => {
         return res.send(err);
       }
 
-      console.log("card", postcard);
+      // console.log("card", postcard);
 
       knex('postcards')
         .insert(newCard, '*')

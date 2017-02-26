@@ -44,7 +44,6 @@
         xhr.onreadystatechange = () => {
           if(xhr.readyState === 4){
             if(xhr.status === 200){
-              console.log(url);
               postcardService.setBackgroundImage(url);
               vm.postcard.background = postcardService.getBackgroundImage($sce);
               // console.log("image:",   vm.compositionSettings.image_url);
