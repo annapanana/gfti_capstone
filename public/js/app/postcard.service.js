@@ -1,0 +1,89 @@
+'use strict';
+(function() {
+  angular.module('app')
+  // NOTE SCE must be passed in as a param
+    .service('postcardService', function() {
+
+      this.postcard = JSON.parse(localStorage.getItem('postcard'));
+
+      this.getCompositionSettings = function() {
+        return this.postcard.composition_settings;
+      };
+
+      this.getFilterData = function() {
+        return filterData;
+      };
+
+      this.getFrameData = function() {
+        return frameData[this.postcard.composition_settings.theme_id];
+      };
+
+      this.getColorData = function() {
+        return colorData[this.postcard.composition_settings.theme_id];
+      };
+
+
+      this.getBackgroundImage = function($sce) {
+        return $sce.trustAsResourceUrl(this.postcard.composition_settings.image_url);
+      };
+
+      this.getDefaultFrame = function($sce) {
+        return $sce.trustAsResourceUrl(frameData[this.postcard.composition_settings.theme_id][1].frames[this.postcard.composition_settings.color_id]);
+      };
+
+      this.getDefaultFrameUrl = function() {
+        return themeData[this.postcard.composition_settings.theme_id][1].frame
+      };
+
+
+      this.getDefaultFilter = function() {
+        return filterData[this.postcard.composition_settings.filter_id].name;
+      };
+
+      this.getDefaultColor = function() {
+        return colorData[this.postcard.composition_settings.theme_id][1].c;
+      };
+
+      this.setFilter = function(filter_id) {
+        this.postcard.composition_settings.filter_id = filter_id;
+      }
+
+      this.getFilter = function() {
+        return filterData[this.postcard.composition_settings.filter_id].name;
+      };
+
+      this.refreshBackgroundImage = function($sce) {
+        let img = this.postcard.composition_settings.image_url + '?' + new Date().getTime();
+        return $sce.trustAsResourceUrl(img);
+      };
+
+      this.setFrame = function(frame_id) {
+        this.postcard.composition_settings.frame_id = frame_id;
+      };
+
+      this.updateFrameUrl = function($sce) {
+        let frame_id = this.postcard.composition_settings.frame_id;
+        let color_id = this.postcard.composition_settings.color_id;
+        let theme_id = this.postcard.composition_settings.theme_id;
+        this.postcard.frame_url = frameData[theme_id][frame_id].frames[color_id];
+        return $sce.trustAsResourceUrl(this.postcard.frame_url);
+      };
+
+      this.setColor = function(color_id) {
+        this.postcard.composition_settings.color_id = color_id;
+      };
+
+      this.getCurrentColor = function() {
+        let color_id = this.postcard.composition_settings.color_id;
+        return colorData[this.postcard.composition_settings.theme_id][color_id].c;
+      };
+
+      this.getSubtext = function() {
+        return this.postcard.composition_settings.greetingsSubtext;
+      }
+
+      this.savePostcardData = function() {
+        localStorage.setItem('postcard', JSON.stringify(this.postcard));
+      };
+    });
+}());

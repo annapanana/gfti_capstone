@@ -6,8 +6,8 @@
       controller: controller
     });
 
-    controller.$inject = ["$http", "$state", "$stateParams", "$scope"];
-    function controller($http, $state, $stateParams, $scope) {
+    controller.$inject = ["$http", "$state", "$stateParams", "$scope", "$sce"];
+    function controller($http, $state, $stateParams, $scope, $sce) {
       const vm = this;
       vm.$onInit = function() {
         let postcard = {
@@ -44,7 +44,7 @@
             exp_month: 10,
             exp_year: 2018,
             email: "annaklotko@gmail.com"
-          }
+          },
         };
         localStorage.setItem('postcard', JSON.stringify(postcard));
       };

@@ -6,55 +6,41 @@
       controller: controller
     });
 
-    controller.$inject = ["$http", "$state", "$stateParams", "$sce", "$scope"];
-    function controller($http, $state, stateParams, $sce, $scope) {
+    controller.$inject = ["$http", "$state", "$stateParams", "$sce", "$scope", "postcardService"];
+    function controller($http, $state, stateParams, $sce, $scope, postcardService) {
       const vm = this;
-      var postcard = {};
-      var frameUrl = ""; //Lob needs URL reference
-      var frameId = 1;
 
       vm.$onInit = function() {
-        postcard = JSON.parse(localStorage.getItem('postcard'));
-        vm.composition_settings = postcard.composition_settings;
-        vm.filters = filterData; // set for UI widget
-        vm.frames = themeData[vm.composition_settings.theme_id]; // only display items for this theme
-        vm.colors = colorData[vm.composition_settings.theme_id]; // only display items for this theme
-        vm.postcardBackground = $sce.trustAsResourceUrl(vm.composition_settings.image_url);
-        vm.curTheme = $sce.trustAsResourceUrl(themeData[vm.composition_settings.theme_id][1].frames[vm.composition_settings.color_id]);
-        frameUrl = themeData[vm.composition_settings.theme_id][1].frame;
-        vm.curFilter = filterData[vm.composition_settings.filter_id].name;
-        vm.curColor = colorData[vm.composition_settings.theme_id][1].c;
+        vm.filters = postcardService.getFilterData();
+        vm.frames = postcardService.getFrameData();
+        vm.colors = postcardService.getColorData();
+        vm.postcardBackground = postcardService.getBackgroundImage($sce);
+        // TODO change theme to frame
+        vm.curTheme = postcardService.getDefaultFrame($sce);
+        vm.curFilter = postcardService.getDefaultFilter();
+        vm.curColor = postcardService.getDefaultColor();
+        vm.greetingsSubtext = postcardService.getSubtext();
       };
 
       vm.selectFilter = function(filter_id) {
-        vm.composition_settings.filter_id = filter_id;
-        vm.curFilter = filterData[filter_id].name;
-        // Refresh image to reflect current filter
-        let curImage = vm.composition_settings.image_url + '?' + new Date().getTime();
-        vm.postcardBackground = $sce.trustAsResourceUrl(curImage);
-        // TODO: Center selected item on carousel
+        postcardService.setFilter(filter_id);
+        vm.curFilter = postcardService.getFilter();
+        vm.postcardBackground = postcardService.refreshBackgroundImage($sce);
       };
 
       vm.selectFrame = function(frame_id) {
-        frameId = frame_id;
-        vm.composition_settings.frame_id = frame_id;
-        frameUrl =  themeData[vm.composition_settings.theme_id][frame_id].frames[vm.composition_settings.color_id];
-        vm.curTheme = $sce.trustAsResourceUrl(frameUrl);
-        // TODO: Center selected item on carousel
+        postcardService.setFrame(frame_id);
+        vm.curTheme = postcardService.updateFrameUrl($sce);
       };
 
       vm.selectColor = function(color_id) {
-        vm.composition_settings.color_id = color_id;
-        vm.curColor = colorData[vm.composition_settings.theme_id][color_id].c;
-        // Update Frame to Reflect Color Change
-        frameUrl =  themeData[vm.composition_settings.theme_id][frameId].frames[vm.composition_settings.color_id];
-        vm.curTheme = $sce.trustAsResourceUrl(frameUrl);
-      }
+        postcardService.setColor(color_id);
+        vm.curColor = postcardService.getCurrentColor();
+        vm.curTheme = postcardService.updateFrameUrl($sce);
+      };
 
       vm.nextStep = function() {
-        postcard.frame_url = frameUrl; // set frame url link for Lob parsing
-        postcard.composition_settings = vm.composition_settings;
-        localStorage.setItem('postcard', JSON.stringify(postcard));
+        postcardService.savePostcardData();
         $state.go('messageComposition');
       };
     }

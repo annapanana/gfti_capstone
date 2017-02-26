@@ -1,6 +1,6 @@
 'use strict';
 
-var themeData = {
+var frameData = {
   1: [
     {
       id: 0,
