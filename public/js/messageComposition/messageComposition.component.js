@@ -18,6 +18,9 @@
         let frameSelection = vm.composition_settings.frame_id;
         vm.curTheme = $sce.trustAsResourceUrl(themeData[vm.composition_settings.theme_id][frameSelection].frame);
         vm.curFilter = filterData[vm.composition_settings.filter_id].name;
+        let colorSelection = vm.composition_settings.color_id;
+        vm.curColor = colorData[vm.composition_settings.theme_id][colorSelection].c;
+
         vm.to = postcard.to;
         vm.from = postcard.from;
         vm.message = postcard.message;

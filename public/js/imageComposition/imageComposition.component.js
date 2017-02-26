@@ -18,13 +18,11 @@
         vm.filters = filterData; // set for UI widget
         vm.frames = themeData[vm.composition_settings.theme_id]; // only display items for this theme
         vm.colors = colorData[vm.composition_settings.theme_id]; // only display items for this theme
-        console.log(vm.colors);
         vm.postcardBackground = $sce.trustAsResourceUrl(vm.composition_settings.image_url);
         vm.curTheme = $sce.trustAsResourceUrl(themeData[vm.composition_settings.theme_id][1].frame);
         frameUrl = themeData[vm.composition_settings.theme_id][1].frame;
         vm.curFilter = filterData[vm.composition_settings.filter_id].name;
         vm.curColor = colorData[vm.composition_settings.theme_id][1].c;
-        console.log(vm.curColor);
       };
 
       vm.selectColor = function(filter_id) {
