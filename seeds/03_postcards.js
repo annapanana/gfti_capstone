@@ -10,6 +10,7 @@ exports.seed = function(knex, Promise) {
           filter_id: 1,
           theme_id: 1,
           frame_id: 1,
+          color_id: 1,
           greetings_subtext: 'greetings from boulder, co',
           image_url: 'http://www.boulderco.com/uploads/slideshow/1354198589.jpg',
           from_zip: '80304',

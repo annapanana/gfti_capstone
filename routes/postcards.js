@@ -104,6 +104,8 @@ router.post('/', (req, res, next) => {
         return res.send(err);
       }
 
+      console.log("card", postcard);
+
       knex('postcards')
         .insert(newCard, '*')
         .then((result) => {
