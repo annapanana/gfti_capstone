@@ -6,19 +6,15 @@
       controller: controller
     });
 
-    controller.$inject = ["$http", "$state", "$stateParams", "$scope"];
-    function controller($http, $state, stateParams, $scope) {
+    controller.$inject = ["$http", "$state", "$stateParams", "$scope", "$sce", "postcardService"];
+    function controller($http, $state, stateParams, $scope, $sce, postcardService) {
       const vm = this;
-      vm.composition_settings = {};
-      var postcard = {};
-      vm.$onInit = function() {
-        postcard = JSON.parse(localStorage.getItem('postcard'));
-        vm.composition_settings = postcard.composition_settings;
+      vm.postcard = {
+        background: postcardService.getBackgroundImage($sce)
       };
 
       vm.nextStep = function() {
-        postcard.composition_settings = vm.composition_settings;
-        localStorage.setItem('postcard', JSON.stringify(postcard));
+        postcardService.savePostcardData();
         $state.go('imageComposition');
       };
 
@@ -48,7 +44,9 @@
         xhr.onreadystatechange = () => {
           if(xhr.readyState === 4){
             if(xhr.status === 200){
-              vm.composition_settings.image_url = url;
+              console.log(url);
+              postcardService.setBackgroundImage(url);
+              vm.postcard.background = postcardService.getBackgroundImage($sce);
               // console.log("image:",   vm.compositionSettings.image_url);
               $scope.$apply();
             }

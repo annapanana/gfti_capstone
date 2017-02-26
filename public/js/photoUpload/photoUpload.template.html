@@ -15,12 +15,12 @@
         <div class="flex-row">
             <input type="file" name="image" custom-on-change="$ctrl.fileInput">
         </div>
-        <input class="top-margin-sm text-widget" type="text" name="image" ng-model="$ctrl.composition_settings.image_url">
+        <input class="top-margin-sm text-widget" type="text" name="image" ng-model="$ctrl.postcard.background">
       </div>
       <div class="row top-margin-sm text-center">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-          <img class="image-fill standard-border-radius" ng-src="{{$ctrl.composition_settings.image_url}}" alt="">
+          <img class="image-fill standard-border-radius" ng-src="{{$ctrl.postcard.background}}" alt="">
         </div>
         <div class="col-md-2"></div>
       </div>

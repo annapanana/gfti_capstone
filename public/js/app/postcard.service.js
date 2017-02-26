@@ -26,9 +26,13 @@
         return $sce.trustAsResourceUrl(this.postcard.composition_settings.image_url);
       };
 
+      this.setBackgroundImage = function(image_url) {
+        this.postcard.composition_settings.image_url = image_url;
+      };
+
       this.setFilter = function(filter_id) {
         this.postcard.composition_settings.filter_id = filter_id;
-      }
+      };
 
       this.getFilter = function() {
         return filterData[this.postcard.composition_settings.filter_id].name;
