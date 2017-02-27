@@ -47,33 +47,28 @@ var frameData = {
     },
     {
       id: 1,
-      local_frame: 'modern-1',
-      template_name: 'modern_01.html'
+      local_frame: 'playful-1',
+      template_name: 'playful_01.html'
     },
     {
       id: 2,
-      local_frame: 'modern-2',
-      template_name: 'modern_02.html'
+      local_frame: 'playful-2',
+      template_name: 'playful_02.html'
     },
     {
       id: 3,
-      local_frame: 'modern-3',
-      template_name: 'modern_03.html'
+      local_frame: 'playful-3',
+      template_name: 'playful_03.html'
     },
     {
       id: 4,
-      local_frame: 'modern-4',
-      template_name: 'modern_04.html'
+      local_frame: 'playful-4',
+      template_name: 'playful_04.html'
     },
     {
       id: 5,
-      local_frame: 'modern-5',
-      template_name: 'modern_05.html'
-    },
-    {
-      id: 6,
-      local_frame: 'modern-6',
-      template_name: 'modern_06.html'
+      local_frame: 'playful-5',
+      template_name: 'playful_05.html'
     }
   ],
   3: [

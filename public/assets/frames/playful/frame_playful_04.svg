@@ -1,19 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 429.59 282.59">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #FF7F1C;
-      }
-
-      .cls-2 {
-        fill: #FF7F1C;
-      }
-    </style>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 429.59 282.59" class="frame-container">
   <title>frame_playful_04</title>
   <g id="Layer_2" data-name="Layer 2">
     <g id="playful_borders">
-      <g>
+      <g fill="{{$ctrl.postcard.color}}">
         <g>
           <path class="cls-1" d="M.89,270.71a3.46,3.46,0,0,1,1-2.54h0l1.48-1.49H2.12l-.61.61a5.8,5.8,0,0,1-.28-.61H.3A6.35,6.35,0,0,0,.89,268,4.43,4.43,0,0,0,0,270.64v.08a6.14,6.14,0,0,0,.3,1.78h.94a5.32,5.32,0,0,1-.35-1.79"/>
           <path class="cls-1" d="M7.9,266.69l-1.77,1.78-4,4H3.38l3.75-3.78,1.17-1.17.17-.17a3.71,3.71,0,0,1,.73,2.14,3.47,3.47,0,0,1,0,.35,4.91,4.91,0,0,1-1.27,2.64H9.05a5.45,5.45,0,0,0,1-2.54c0-.15,0-.3,0-.44a4.63,4.63,0,0,0-1-2.85H7.92l0,0"/>

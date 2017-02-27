@@ -8,6 +8,7 @@ router.post('/', (req, res, next) => {
     body: req.body,
     params: req.params
   };
+  console.log(responseTest); // heroku logs
   res.send(responseTest);
 });
 
