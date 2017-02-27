@@ -6,6 +6,12 @@
 
       this.postcard = JSON.parse(localStorage.getItem('postcard'));
 
+      this.init = function() {
+        let color_id = this.postcard.composition_settings.color_id;
+        let theme_id = this.postcard.composition_settings.theme_id;
+        this.postcard.color_hex = colorData[theme_id][color_id];
+      };
+
       this.getCompositionSettings = function() {
         return this.postcard.composition_settings;
       };
@@ -15,7 +21,6 @@
       };
 
       this.getFrameData = function() {
-        console.log(frameData[this.postcard.composition_settings.theme_id]);
         return frameData[this.postcard.composition_settings.theme_id];
       };
 
@@ -41,7 +46,6 @@
 
       this.refreshBackgroundImage = function($sce) {
         let img = this.postcard.composition_settings.image_url + '?' + new Date().getTime();
-        console.log(img);
         return $sce.trustAsResourceUrl(img);
       };
 
@@ -54,10 +58,13 @@
         let color_id = this.postcard.composition_settings.color_id;
         let theme_id = this.postcard.composition_settings.theme_id;
         this.postcard.frame_url = frameData[theme_id][frame_id].local_frame;
+        this.postcard.composition_settings.template_name = frameData[theme_id][frame_id].template_name;
         return this.postcard.frame_url;
       };
 
       this.setColor = function(color_id) {
+        let theme_id = this.postcard.composition_settings.theme_id;
+        this.postcard.color_hex = colorData[theme_id][color_id].c;
         this.postcard.composition_settings.color_id = color_id;
       };
 
@@ -72,7 +79,7 @@
 
       this.setSubtext = function(text) {
         this.postcard.composition_settings.greetings_subtext = text;
-      }
+      };
 
       this.getMessage = function() {
         return this.postcard.message;
@@ -99,6 +106,7 @@
       };
 
       this.savePostcardData = function() {
+        // console.log(this.postcard);
         localStorage.setItem('postcard', JSON.stringify(this.postcard));
       };
     });
