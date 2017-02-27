@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail" rel="stylesheet">
+    <title>Lob.com Sample 4x6 Postcard Front</title>
+    <style>
+      *, *:before, *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 6.25in;
+        height: 4.25in;
+        margin: 0;
+        padding: 0;
+      }
+
+      .greetings-subtext {
+        position: absolute;
+        top: 30px;
+        left: 50px;
+        font-size: 32px;
+        text-align: center;
+        font-family: 'Yellowtail', cursive;
+      }
+    </style>
+  </head>
+
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306">
+      <defs>
+        <style>
+          .cls-1 {
+            fill-rule: evenodd;
+            opacity: 0.75;
+          }
+          .cls-2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            /*height: auto;*/
+            z-index: 10;
+          }
+        </style>
+        <filter id="pictureFilter" >
+          <!-- <feColorMatrix type="matrix" values="1.1 0 0 0 -0.1
+                                                0 1.1 0 0 -0.1
+                                                0 0 1.1 0 -0.1
+                                                0 0 0 1 0" /> -->
+            <!-- <feConvolveMatrix order="3" kernelMatrix="0 0 0 0 1 0 0 0 0"/> -->
+        </filter>
+      </defs>
+      <title>test_frame</title>
+      <!-- filter="url(#pictureFilter)" -->
+      <image class="cls-2 filter" xlink:href="{{image_url}}" x="-25" y="0" height="115%" width="115%"/>
+      <!-- SVG Path -->
+      <path class="cls-1" fill="{{color}}" d="M0,0V306H450V0ZM431.51,241.81a48.82,48.82,0,0,1-48.82,48.82H67.31a48.82,48.82,0,0,1-48.82-48.82V64.19A48.82,48.82,0,0,1,67.31,15.38H382.69a48.82,48.82,0,0,1,48.82,48.82Z"/>
+
+      <text x="50%" y="25%" class="greetings-subtext" text-anchor="middle" fill="{{color}}">
+        {{greetings_subtext}}
+      </text>
+    </svg>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail" rel="stylesheet">
+    <title>Lob.com Sample 4x6 Postcard Front</title>
+    <style>
+      *, *:before, *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 6.25in;
+        height: 4.25in;
+        margin: 0;
+        padding: 0;
+      }
+
+      .greetings-subtext {
+        position: absolute;
+        top: 30px;
+        left: 50px;
+        font-size: 32px;
+        text-align: center;
+        font-family: 'Yellowtail', cursive;
+      }
+    </style>
+  </head>
+
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306">
+      <defs>
+        <style>
+          .cls-2 {
+            opacity: 0.8;
+          }
+
+          .cls-3 {
+            opacity: 0.6;
+          }
+
+          .cls-4 {
+            opacity: 0.4;
+          }
+          .cls-5 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            /*height: auto;*/
+            z-index: 10;
+          }
+        </style>
+        <filter id="pictureFilter" >
+          <!-- <feColorMatrix type="matrix" values="1.1 0 0 0 -0.1
+                                                0 1.1 0 0 -0.1
+                                                0 0 1.1 0 -0.1
+                                                0 0 0 1 0" /> -->
+            <!-- <feConvolveMatrix order="3" kernelMatrix="0 0 0 0 1 0 0 0 0"/> -->
+        </filter>
+      </defs>
+      <title>test_frame</title>
+      <!-- filter="url(#pictureFilter)" -->
+      <image class="cls-5 filter" xlink:href="{{image_url}}" x="-25" y="0" height="115%" width="115%"/>
+      <!-- SVG Path -->
+      <g fill="{{color}}">
+        <rect class="cls-1" y="294.75" width="450" height="11.25"/>
+        <rect class="cls-2" y="283.5" width="450" height="11.25"/>
+        <rect class="cls-3" y="272.25" width="450" height="11.25"/>
+        <rect class="cls-4" y="261" width="450" height="11.25"/>
+        <rect class="cls-4" y="33.75" width="450" height="11.25"/>
+        <rect class="cls-3" y="22.5" width="450" height="11.25"/>
+        <rect class="cls-2" y="11.25" width="450" height="11.25"/>
+        <rect class="cls-1" width="450" height="11.25"/>
+      </g>
+      <text x="50%" y="25%" class="greetings-subtext" text-anchor="middle" fill="{{color}}">
+        {{greetings_subtext}}
+      </text>
+    </svg>
+  </body>
+</html>

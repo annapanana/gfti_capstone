@@ -1,10 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306" class="frame-container">
   <defs>
     <style>
-      .cls-1, .cls-2, .cls-3, .cls-4 {
-        fill: #A0C1BB;
-      }
-
       .cls-2 {
         opacity: 0.8;
       }
@@ -21,7 +17,7 @@
   <title>frame_modern_03</title>
   <g id="Layer_2" data-name="Layer 2">
     <g id="modern_border">
-      <g>
+      <g fill="{{$ctrl.postcard.color}}">
         <rect class="cls-1" y="294.75" width="450" height="11.25"/>
         <rect class="cls-2" y="283.5" width="450" height="11.25"/>
         <rect class="cls-3" y="272.25" width="450" height="11.25"/>

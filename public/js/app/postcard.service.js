@@ -106,7 +106,7 @@
       };
 
       this.savePostcardData = function() {
-        console.log(this.postcard);
+        // console.log(this.postcard);
         localStorage.setItem('postcard', JSON.stringify(this.postcard));
       };
     });

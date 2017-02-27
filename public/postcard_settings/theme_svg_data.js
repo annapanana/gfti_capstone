@@ -10,107 +10,107 @@ var frameData = {
     {
       id: 1,
       local_frame: 'classic-1',
-      template_name: "classic_01.html"
+      template_name: "classic/classic_01.html"
 
     },
     {
       id: 2,
       local_frame: 'classic-2',
-      template_name: "classic_02.html"
+      template_name: "classic/classic_02.html"
     },
     {
       id: 3,
       local_frame: 'classic-3',
-      template_name: "classic_03.html"
+      template_name: "classic/classic_03.html"
     },
     {
       id: 4,
       local_frame: 'classic-4',
-      template_name: "classic_04.html"
+      template_name: "classic/classic_04.html"
     },
     {
       id: 5,
       local_frame: 'classic-5',
-      template_name: "classic_05.html"
+      template_name: "classic/classic_05.html"
     },
     {
       id: 6,
       local_frame: 'classic-6',
-      template_name: "classic_06.html"
+      template_name: "classic/classic_06.html"
     }
   ],
   2: [
     {
       id: 0,
-      local_frame: "",
-      s3_frame: [""]
+      local_frame: '',
+      template_name: ''
     },
     {
       id: 1,
-      local_frame: "",
-      s3_frame: ""
+      local_frame: 'modern-1',
+      template_name: 'modern_01.html'
     },
     {
       id: 2,
-      local_frame: "",
-      s3_frame: ""
+      local_frame: 'modern-2',
+      template_name: 'modern_02.html'
     },
     {
       id: 3,
-      local_frame: "",
-      s3_frame: ""
+      local_frame: 'modern-3',
+      template_name: 'modern_03.html'
     },
     {
       id: 4,
-      local_frame: "",
-      s3_frame: ""
+      local_frame: 'modern-4',
+      template_name: 'modern_04.html'
     },
     {
       id: 5,
-      local_frame: "",
-      s3_frame: ""
+      local_frame: 'modern-5',
+      template_name: 'modern_05.html'
     },
     {
       id: 6,
-      local_frame: "",
-      s3_frame: ""
+      local_frame: 'modern-6',
+      template_name: 'modern_06.html'
     }
   ],
   3: [
     {
       id: 0,
-      local_frame: "",
-      s3_frame: ""
+      local_frame: '',
+      template_name: ''
     },
     {
       id: 1,
-      local_frame: "",
-      s3_frame: ""
+      local_frame: 'modern-1',
+      template_name: 'modern/modern_01.html'
     },
     {
       id: 2,
-      local_frame: "",
-      s3_frame: ""
+      local_frame: 'modern-2',
+      template_name: 'modern/modern_02.html'
     },
     {
       id: 3,
-      local_frame: "",
-      s3_frame: ""
+      local_frame: 'modern-3',
+      template_name: 'modern/modern_03.html'
     },
     {
       id: 4,
-      local_frame: "",
-      s3_frame: ""
+      local_frame: 'modern-4',
+      template_name: 'modern/modern_04.html'
     },
     {
       id: 5,
-      local_frame: "",
-      s3_frame: ""
+      local_frame: 'modern-5',
+      template_name: 'modern/modern_05.html'
     },
     {
       id: 6,
-      local_frame: "",
-      s3_frame: ""
+      local_frame: 'modern-6',
+      template_name: 'modern/modern_06.html'
     }
   ],
   4: [
@@ -121,32 +121,32 @@ var frameData = {
     {
       id: 1,
       local_frame: "",
-      s3_frame: ""
+      template_name: ""
     },
     {
       id: 2,
       local_frame: "",
-      s3_frame: ""
+      template_name: ""
     },
     {
       id: 3,
       local_frame: "",
-      s3_frame: ""
+      template_name: ""
     },
     {
       id: 4,
       local_frame: "",
-      s3_frame: ""
+      template_name: ""
     },
     {
       id: 5,
       local_frame: "",
-      s3_frame: ""
+      template_name: ""
     },
     {
       id: 6,
       local_frame: "",
-      s3_frame: ""
+      template_name: ""
     }
   ]
 };
