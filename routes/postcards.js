@@ -54,6 +54,11 @@ router.post('/', (req, res, next) => {
   // console.log(req.body);
   const {frame_url} = req.body;
   const frame = frame_url;
+
+  const {color_hex} = req.body;
+  const color = color_hex;
+  console.log('color', color);
+  console.log("new card", newCard);
   // console.log("frame", frame);
   // Retrieve html template
   let postcard = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
@@ -96,7 +101,8 @@ router.post('/', (req, res, next) => {
       data: {
         image_url: newCard.image_url,
         greetings_subtext: newCard.greetings_subtext,
-        frame: frame_url
+        color: color
+        // frame: frame_url
       }
     }, function (err, postcard) {
       if (err) {

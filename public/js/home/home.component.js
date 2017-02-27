@@ -12,7 +12,7 @@
       vm.$onInit = function() {
         let postcard = {
           composition_settings: {
-            template_name: 'template_01.html',
+            template_name: 'classic_01.html',
             filter_id: 1,
             theme_id: 1,
             frame_id: 1,
@@ -20,7 +20,8 @@
             greetings_subtext: 'greetings from the internet',
             image_url: 'https://s3-us-west-2.amazonaws.com/gftiresources/tester.jpg'
           },
-          frame_url: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/frame_playful_06.svg",
+          frame_url: "classic-1",
+          color_hex: "#F4987A",
           message: 'this is a message',
           to: {
             name: 'anna',
