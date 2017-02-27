@@ -21,10 +21,17 @@
         </defs>
         <!-- <rect width="100%" height="100%"></rect> -->
         <image class="postcard-background" filter="url({{$ctrl.postcard.filter}})" xlink:href="{{$ctrl.postcard.background}}" x="0" y="0"/>
-        <image class="postcard-theme" xlink:href="{{$ctrl.postcard.frame}}" width="100%" height="100%" x="0" y="0"/>
+        <!-- <image fill="{{$ctrl.postcard.color}}" class="postcard-theme" xlink:href="{{$ctrl.postcard.frame}}" width="100%" height="100%" x="0" y="0"/> -->
         <text x="50%" y="25%" class="greetings-subtext" text-anchor="middle" fill="{{$ctrl.postcard.color}}">
           {{$ctrl.postcard.subtext}}
         </text>
+        <!-- TODO Add a whole bunch of NG ifs -->
+        <div ng-if="$ctrl.postcard.frame === 'classic-1'" classic-one></div>
+        <div ng-if="$ctrl.postcard.frame === 'classic-2'" classic-two></div>
+        <div ng-if="$ctrl.postcard.frame === 'classic-3'" classic-three></div>
+        <div ng-if="$ctrl.postcard.frame === 'classic-4'" classic-four></div>
+        <div ng-if="$ctrl.postcard.frame === 'classic-5'" classic-five></div>
+        <div ng-if="$ctrl.postcard.frame === 'classic-6'" classic-six></div>
       </svg>
       <div class="widget-container color-2 text-center top-margin-sm" style="height:190px;">
         <h4 class="top-margin-sm">Edit Subtext</h4>

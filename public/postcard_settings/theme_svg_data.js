@@ -4,208 +4,113 @@ var frameData = {
   1: [
     {
       id: 0,
-      local_frames: [""],
-      frames: [""]
+      local_frame: "",
+      s3_frame: ""
     },
     {
       id: 1,
-      local_frames: [],
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_01_exports/frame_classic_01_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: 'classic-1',
+      s3_frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/frame_classic_01.svg"
+
     },
     {
       id: 2,
-      local_frames: [],
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_02_exports/frame_classic_02_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: 'classic-2',
+      s3_frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/frame_classic_02.svg"
     },
     {
       id: 3,
-      local_frames: [],
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_03_exports/frame_classic_03_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: 'classic-3',
+      s3_frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/frame_classic_03.svg"
     },
     {
       id: 4,
-      local_frames: [],
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_04_exports/frame_classic_04_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: 'classic-4',
+      s3_frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/frame_classic_04.svg"
     },
     {
       id: 5,
-      local_frames: [],
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_05_exports/frame_classic_05_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: 'classic-5',
+      s3_frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/frame_classic_05.svg"
     },
     {
       id: 6,
-      local_frames: [],
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_06_exports/frame_classic_06_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: 'classic-6',
+      s3_frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/frame_classic_06.svg"
     }
   ],
   2: [
     {
       id: 0,
-      local_frames: [""],
-      frames: [""]
+      local_frame: "",
+      s3_frame: [""]
     },
     {
       id: 1,
-      local_frames: [],
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/playful_01_exports/frame_playful_01_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: "",
+      s3_frame: ""
     },
     {
       id: 2,
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/playful_02_exports/frame_playful_02_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: "",
+      s3_frame: ""
     },
     {
       id: 3,
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/playful_03_exports/frame_playful_03_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: "",
+      s3_frame: ""
     },
     {
       id: 4,
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/playful_04_exports/frame_playful_04_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: "",
+      s3_frame: ""
     },
     {
       id: 5,
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/playful_05_exports/frame_playful_05_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: "",
+      s3_frame: ""
     },
     {
       id: 6,
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/playful_06_exports/frame_playful_06_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: "",
+      s3_frame: ""
     }
   ],
   3: [
     {
       id: 0,
-      frames: []
+      local_frame: "",
+      s3_frame: ""
     },
     {
       id: 1,
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/modern/modern_01_exports/frame_modern_01_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: "",
+      s3_frame: ""
     },
     {
       id: 2,
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/modern/modern_02_exports/frame_modern_02_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: "",
+      s3_frame: ""
     },
     {
       id: 3,
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/modern/modern_03_exports/frame_modern_03_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: "",
+      s3_frame: ""
     },
     {
       id: 4,
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/modern/modern_04_exports/frame_modern_04_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: "",
+      s3_frame: ""
     },
     {
       id: 5,
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/modern/modern_05_exports/frame_modern_05_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: "",
+      s3_frame: ""
     },
     {
       id: 6,
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/modern/modern_06_exports/frame_modern_06_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: "",
+      s3_frame: ""
     }
   ],
   4: [
@@ -215,63 +120,33 @@ var frameData = {
     },
     {
       id: 1,
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/wild/wild_01_exports/frame_wild_01_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: "",
+      s3_frame: ""
     },
     {
       id: 2,
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/wild/wild_02_exports/frame_wild_02_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: "",
+      s3_frame: ""
     },
     {
       id: 3,
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/wild/wild_03_exports/frame_wild_03_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: "",
+      s3_frame: ""
     },
     {
       id: 4,
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/wild/wild_04_exports/frame_wild_04_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: "",
+      s3_frame: ""
     },
     {
       id: 5,
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/wild/wild_05_exports/frame_wild_05_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: "",
+      s3_frame: ""
     },
     {
       id: 6,
-      frames: (function generateFrames() {
-        let frames = [];
-        for (var i = 1; i <= 8; i++) {
-          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/wild/wild_06_exports/frame_wild_06_0${i}.svg`);
-        }
-        return frames;
-      })()
+      local_frame: "",
+      s3_frame: ""
     }
   ]
 };

@@ -22,6 +22,7 @@
           subtext: postcardService.getSubtext(),
           background: postcardService.getBackgroundImage($sce)
         };
+        console.log(vm.postcard.frame);
       };
 
       vm.selectFilter = function(filter_id) {

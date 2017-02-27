@@ -137,8 +137,13 @@ footer {
   /*z-index: 10;*/
 }
 
+.frame-container {
+  position: absolute;
+  top: 0px;
+  left: 15px;
+}
 .postcard-theme {
-  fill: #b5a77f;
+  fill: red;
 }
 
 .postcard-back {

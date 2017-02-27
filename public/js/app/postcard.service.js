@@ -53,9 +53,8 @@
         let frame_id = this.postcard.composition_settings.frame_id;
         let color_id = this.postcard.composition_settings.color_id;
         let theme_id = this.postcard.composition_settings.theme_id;
-        this.postcard.frame_url = frameData[theme_id][frame_id].frames[color_id];
-        console.log(this.postcard.frame_url);
-        return $sce.trustAsResourceUrl(this.postcard.frame_url);
+        this.postcard.frame_url = frameData[theme_id][frame_id].local_frame;
+        return this.postcard.frame_url;
       };
 
       this.setColor = function(color_id) {
