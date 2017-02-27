@@ -48,27 +48,27 @@ var frameData = {
     {
       id: 1,
       local_frame: 'playful-1',
-      template_name: 'playful_01.html'
+      template_name: 'playful/playful_01.html'
     },
     {
       id: 2,
       local_frame: 'playful-2',
-      template_name: 'playful_02.html'
+      template_name: 'playful/playful_02.html'
     },
     {
       id: 3,
       local_frame: 'playful-3',
-      template_name: 'playful_03.html'
+      template_name: 'playful/playful_03.html'
     },
     {
       id: 4,
       local_frame: 'playful-4',
-      template_name: 'playful_04.html'
+      template_name: 'playful/playful_04.html'
     },
     {
       id: 5,
       local_frame: 'playful-5',
-      template_name: 'playful_05.html'
+      template_name: 'playful/playful_05.html'
     }
   ],
   3: [
