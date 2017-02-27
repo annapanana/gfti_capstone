@@ -57,9 +57,7 @@ router.post('/', (req, res, next) => {
 
   const {color_hex} = req.body;
   const color = color_hex;
-  console.log('color', color);
-  console.log("new card", newCard);
-  // console.log("frame", frame);
+
   // Retrieve html template
   let postcard = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
 

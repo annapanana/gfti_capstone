@@ -11,8 +11,33 @@
   <div class="row top-margin-sm">
     <div class="col-xs-1"></div>
     <div class="col-md-5 col-xs-10">
+      <!-- Postcard Front -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306" class="standard-border-radius">
+        <defs>
+          <!-- TODO: Declare all filters here -->
+          <filter id="pictureFilter" >
+            <feColorMatrix type="matrix" values="1.1 0 0 0 -0.1 0 1.1 0 0 -0.1 0 0 1.1 0 -0.1 0 0 0 1 0" />
+          </filter>
+          <filter id="noFilter" >
+            <feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0" />
+          </filter>
+        </defs>
+        <g>
+          <!-- <rect width="100%" height="100%"></rect> -->
+          <image class="postcard-background" filter="url({{$ctrl.postcard.filter}})" xlink:href="{{$ctrl.postcard.background}}" x="0" y="0"/>
+          <text x="50%" y="25%" class="greetings-subtext" text-anchor="middle" fill="{{$ctrl.postcard.color}}">
+            {{$ctrl.postcard.subtext}}
+          </text>
+          <div ng-if="$ctrl.postcard.frame === 'classic-1'" classic-one></div>
+          <div ng-if="$ctrl.postcard.frame === 'classic-2'" classic-two></div>
+          <div ng-if="$ctrl.postcard.frame === 'classic-3'" classic-three></div>
+          <div ng-if="$ctrl.postcard.frame === 'classic-4'" classic-four></div>
+          <div ng-if="$ctrl.postcard.frame === 'classic-5'" classic-five></div>
+          <div ng-if="$ctrl.postcard.frame === 'classic-6'" classic-six></div>
+        </g>
+      </svg>
       <!-- Postcard Back -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306" class="standard-border-radius top-margin-xs">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306" class="standard-border-radius top-margin-sm">
         <g>
           <!-- <rect width="100%" height="100%"></rect> -->
           <image class="postcard-back" xlink:href="assets/card_back.svg" x="0" y="0"/>
@@ -43,26 +68,6 @@
             <p class="address-preview">{{$ctrl.to.address_state}}</p>
             <p class="address-preview">{{$ctrl.to.address_zip}}</p>
           </foreignObject>
-        </g>
-      </svg>
-      <!-- Postcard Front -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306" class="standard-border-radius top-margin-sm">
-        <defs>
-          <!-- TODO: Declare all filters here -->
-          <filter id="pictureFilter" >
-            <feColorMatrix type="matrix" values="1.1 0 0 0 -0.1 0 1.1 0 0 -0.1 0 0 1.1 0 -0.1 0 0 0 1 0" />
-          </filter>
-          <filter id="noFilter" >
-            <feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0" />
-          </filter>
-        </defs>
-        <g>
-          <!-- <rect width="100%" height="100%"></rect> -->
-          <image class="postcard-background" filter="url({{$ctrl.postcard.filter}})" xlink:href="{{$ctrl.postcard.background}}" x="0" y="0"/>
-          <image class="postcard-theme" xlink:href="{{$ctrl.postcard.frame}}" width="100%" height="100%" x="0" y="0"/>
-          <text x="50%" y="25%" class="greetings-subtext" text-anchor="middle" fill="{{$ctrl.postcard.color}}">
-            {{$ctrl.postcard.subtext}}
-          </text>
         </g>
       </svg>
     </div>
