@@ -111,37 +111,33 @@ var frameData = {
   4: [
     {
       id: 0,
-      frames: [""]
+      local_frame: "",
+      template_name: ""
     },
     {
       id: 1,
-      local_frame: "",
-      template_name: ""
+      local_frame: 'wild-1',
+      template_name: 'wild/wild_01.html'
     },
     {
       id: 2,
-      local_frame: "",
-      template_name: ""
+      local_frame: 'wild-2',
+      template_name: 'wild/wild_02.html'
     },
     {
       id: 3,
-      local_frame: "",
-      template_name: ""
+      local_frame: 'wild-3',
+      template_name: 'wild/wild_03.html'
     },
     {
       id: 4,
-      local_frame: "",
-      template_name: ""
+      local_frame: 'wild-4',
+      template_name: 'wild/wild_04.html'
     },
     {
       id: 5,
-      local_frame: "",
-      template_name: ""
-    },
-    {
-      id: 6,
-      local_frame: "",
-      template_name: ""
+      local_frame: 'wild-5',
+      template_name: 'wild/wild_05.html'
     }
   ]
 };
