@@ -4,145 +4,276 @@ var frameData = {
   1: [
     {
       id: 0,
+      local_frames: [""],
       frames: [""]
     },
     {
       id: 1,
-      frames: ["https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_01_exports/frame_classic_01_01.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_01_exports/frame_classic_01_02.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_01_exports/frame_classic_01_03.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_01_exports/frame_classic_01_04.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_01_exports/frame_classic_01_05.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_01_exports/frame_classic_01_06.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_01_exports/frame_classic_01_07.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_01_exports/frame_classic_01_08.svg"]
+      local_frames: [],
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_01_exports/frame_classic_01_0${i}.svg`);
+        }
+        return frames;
+      })()
     },
     {
       id: 2,
-      frames: ["https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_02_exports/frame_classic_02_01.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_02_exports/frame_classic_02_02.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_02_exports/frame_classic_02_03.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_02_exports/frame_classic_02_04.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_02_exports/frame_classic_02_05.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_02_exports/frame_classic_02_06.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_02_exports/frame_classic_02_07.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_02_exports/frame_classic_02_08.svg"]
+      local_frames: [],
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_02_exports/frame_classic_02_0${i}.svg`);
+        }
+        return frames;
+      })()
     },
     {
       id: 3,
-      frames: ["https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_03_exports/frame_classic_03_01.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_03_exports/frame_classic_03_02.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_03_exports/frame_classic_03_03.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_03_exports/frame_classic_03_04.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_03_exports/frame_classic_03_05.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_03_exports/frame_classic_03_06.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_03_exports/frame_classic_03_07.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_03_exports/frame_classic_03_08.svg"]
+      local_frames: [],
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_03_exports/frame_classic_03_0${i}.svg`);
+        }
+        return frames;
+      })()
     },
     {
       id: 4,
-      frames: ["https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_04_exports/frame_classic_04_01.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_04_exports/frame_classic_04_02.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_04_exports/frame_classic_04_03.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_04_exports/frame_classic_04_04.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_04_exports/frame_classic_04_05.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_04_exports/frame_classic_04_06.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_04_exports/frame_classic_04_07.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_04_exports/frame_classic_04_08.svg"]
+      local_frames: [],
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_04_exports/frame_classic_04_0${i}.svg`);
+        }
+        return frames;
+      })()
     },
     {
       id: 5,
-      frames: ["https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_05_exports/frame_classic_05_01.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_05_exports/frame_classic_05_02.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_05_exports/frame_classic_05_03.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_05_exports/frame_classic_05_04.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_05_exports/frame_classic_05_05.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_05_exports/frame_classic_05_06.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_05_exports/frame_classic_05_07.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_05_exports/frame_classic_05_08.svg"]
+      local_frames: [],
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_05_exports/frame_classic_05_0${i}.svg`);
+        }
+        return frames;
+      })()
     },
     {
       id: 6,
-      frames: ["https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_06_exports/frame_classic_06_01.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_06_exports/frame_classic_06_02.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_06_exports/frame_classic_06_03.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_06_exports/frame_classic_06_04.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_06_exports/frame_classic_06_05.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_06_exports/frame_classic_06_06.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_06_exports/frame_classic_06_07.svg", "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_06_exports/frame_classic_06_08.svg"]
+      local_frames: [],
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/classic/classic_06_exports/frame_classic_06_0${i}.svg`);
+        }
+        return frames;
+      })()
     }
   ],
   2: [
     {
       id: 0,
-      frame: "",
-      asset_name: "pattern.svg"
+      local_frames: [""],
+      frames: [""]
     },
     {
       id: 1,
-      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/frame_playful_01.svg",
-      asset_name: "pattern.svg"
+      local_frames: [],
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/playful_01_exports/frame_playful_01_0${i}.svg`);
+        }
+        return frames;
+      })()
     },
     {
       id: 2,
-      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/frame_playful_02.svg",
-      asset_name: "pattern.svg"
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/playful_02_exports/frame_playful_02_0${i}.svg`);
+        }
+        return frames;
+      })()
     },
     {
       id: 3,
-      frame: "	https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/frame_playful_03.svg",
-      asset_name: "pattern.svg"
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/playful_03_exports/frame_playful_03_0${i}.svg`);
+        }
+        return frames;
+      })()
     },
     {
       id: 4,
-      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/frame_playful-4.svg",
-      asset_name: "pattern.svg"
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/playful_04_exports/frame_playful_04_0${i}.svg`);
+        }
+        return frames;
+      })()
     },
     {
       id: 5,
-      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/frame_playful_05.svg",
-      asset_name: "pattern.svg"
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/playful_05_exports/frame_playful_05_0${i}.svg`);
+        }
+        return frames;
+      })()
     },
     {
       id: 6,
-      frame: "https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/frame_playful_06.svg",
-      asset_name: "pattern.svg"
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/playful/playful_06_exports/frame_playful_06_0${i}.svg`);
+        }
+        return frames;
+      })()
     }
   ],
   3: [
     {
       id: 0,
-      frame: "",
-      asset_name: "pattern.svg"
+      frames: []
     },
     {
       id: 1,
-      frame: "",
-      asset_name: "pattern.svg"
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/modern/modern_01_exports/frame_modern_01_0${i}.svg`);
+        }
+        return frames;
+      })()
     },
     {
       id: 2,
-      frame: "",
-      asset_name: "pattern.svg"
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/modern/modern_02_exports/frame_modern_02_0${i}.svg`);
+        }
+        return frames;
+      })()
     },
     {
       id: 3,
-      frame: "",
-      asset_name: "pattern.svg"
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/modern/modern_03_exports/frame_modern_03_0${i}.svg`);
+        }
+        return frames;
+      })()
     },
     {
       id: 4,
-      frame: "",
-      asset_name: "pattern.svg"
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/modern/modern_04_exports/frame_modern_04_0${i}.svg`);
+        }
+        return frames;
+      })()
     },
     {
       id: 5,
-      frame: "",
-      asset_name: "pattern.svg"
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/modern/modern_05_exports/frame_modern_05_0${i}.svg`);
+        }
+        return frames;
+      })()
     },
     {
       id: 6,
-      frame: "",
-      asset_name: "pattern.svg"
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/modern/modern_06_exports/frame_modern_06_0${i}.svg`);
+        }
+        return frames;
+      })()
     }
   ],
   4: [
     {
       id: 0,
-      frame: "",
-      asset_name: "pattern.svg"
+      frames: [""]
     },
     {
       id: 1,
-      frame: "",
-      asset_name: "pattern.svg"
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/wild/wild_01_exports/frame_wild_01_0${i}.svg`);
+        }
+        return frames;
+      })()
     },
     {
       id: 2,
-      frame: "assets/frames/wild/frame_wild_01.svg",
-      asset_name: "pattern.svg"
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/wild/wild_02_exports/frame_wild_02_0${i}.svg`);
+        }
+        return frames;
+      })()
     },
     {
       id: 3,
-      frame: "",
-      asset_name: "pattern.svg"
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/wild/wild_03_exports/frame_wild_03_0${i}.svg`);
+        }
+        return frames;
+      })()
     },
     {
       id: 4,
-      frame: "",
-      asset_name: "pattern.svg"
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/wild/wild_04_exports/frame_wild_04_0${i}.svg`);
+        }
+        return frames;
+      })()
     },
     {
       id: 5,
-      frame: "",
-      asset_name: "pattern.svg"
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/wild/wild_05_exports/frame_wild_05_0${i}.svg`);
+        }
+        return frames;
+      })()
     },
     {
       id: 6,
-      frame: "",
-      asset_name: "pattern.svg"
+      frames: (function generateFrames() {
+        let frames = [];
+        for (var i = 1; i <= 8; i++) {
+          frames.push(`https://s3-us-west-2.amazonaws.com/gftiresources/assets/frames/wild/wild_06_exports/frame_wild_06_0${i}.svg`);
+        }
+        return frames;
+      })()
     }
   ]
-
 };
 var filterData = [
   {
@@ -188,15 +319,31 @@ var colorData = {
     {id:5, c:"#0A9796"},
     {id:6, c:"#FFF"},
     {id:7, c:"#000"}],
-  2:[],
-  3:[
-    {id:0, c:"#EDE5D0"},
-    {id:1, c:"#224567"},
-    {id:2, c:"#BAE4E4"},
-    {id:3, c:"#B0CE9B"},
-    {id:4, c:"#435F2E"},
-    {id:5, c:"#332926"},
+  2:[
+    {id:0, c:"#FBFC01"},
+    {id:1, c:"#FF7F1C"},
+    {id:2, c:"#FF3A9E"},
+    {id:3, c:"#50FC00"},
+    {id:4, c:"#009AD8"},
+    {id:5, c:"#BC3EFF"},
     {id:6, c:"#FFF"},
     {id:7, c:"#000"}],
-  4:[]
+  3:[
+    {id:0, c:"#F9C5C5"},
+    {id:1, c:"#485967"},
+    {id:2, c:"#A0C1BB"},
+    {id:3, c:"#A898B7"},
+    {id:4, c:"#F2C66D"},
+    {id:5, c:"#F07463"},
+    {id:6, c:"#FFF"},
+    {id:7, c:"#000"}],
+  4:[
+    {id:0, c:"#C7BAA7"},
+    {id:1, c:"#B3DDB9"},
+    {id:2, c:"#607563"},
+    {id:3, c:"#8BA7AA"},
+    {id:4, c:"#DD5E27"},
+    {id:5, c:"#FEDF72"},
+    {id:6, c:"#FFF"},
+    {id:7, c:"#000"}],
 };

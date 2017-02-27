@@ -15,6 +15,7 @@
       };
 
       this.getFrameData = function() {
+        console.log(frameData[this.postcard.composition_settings.theme_id]);
         return frameData[this.postcard.composition_settings.theme_id];
       };
 
@@ -53,6 +54,7 @@
         let color_id = this.postcard.composition_settings.color_id;
         let theme_id = this.postcard.composition_settings.theme_id;
         this.postcard.frame_url = frameData[theme_id][frame_id].frames[color_id];
+        console.log(this.postcard.frame_url);
         return $sce.trustAsResourceUrl(this.postcard.frame_url);
       };
 

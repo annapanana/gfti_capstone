@@ -9,18 +9,19 @@
     controller.$inject = ["$http", "$state", "$stateParams", "$sce", "$scope", "postcardService"];
     function controller($http, $state, stateParams, $sce, $scope, postcardService) {
       const vm = this;
-      vm.postcard = {
-        frame: postcardService.updateFrameUrl($sce),
-        filter: postcardService.getFilter(),
-        color: postcardService.getColor(),
-        subtext: postcardService.getSubtext(),
-        background: postcardService.getBackgroundImage($sce)
-      };
 
       vm.$onInit = function() {
         vm.filters = postcardService.getFilterData();
         vm.frames = postcardService.getFrameData();
         vm.colors = postcardService.getColorData();
+
+        vm.postcard = {
+          frame: postcardService.updateFrameUrl($sce),
+          filter: postcardService.getFilter(),
+          color: postcardService.getColor(),
+          subtext: postcardService.getSubtext(),
+          background: postcardService.getBackgroundImage($sce)
+        };
       };
 
       vm.selectFilter = function(filter_id) {

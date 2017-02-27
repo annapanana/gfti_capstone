@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #000;
+        fill-rule: evenodd;
+        opacity: 0.6;
+      }
+    </style>
+  </defs>
+  <title>frame_modern_01</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="modern_border">
+      <path class="cls-1" d="M0,0V306H450V0ZM357.75,252.5a33.25,33.25,0,0,1-33.25,33.25h-199A33.25,33.25,0,0,1,92.25,252.5V53.5A33.25,33.25,0,0,1,125.5,20.25h199A33.25,33.25,0,0,1,357.75,53.5Z"/>
+    </g>
+  </g>
+</svg>
