@@ -1,31 +1,33 @@
-<img class="background-image" ng-src="assets/waves_background_1.svg" alt="">
-<div class="container">
-  <div class="row top-margin-lg">
-    <div class="col-md-6 col-xs-12">
-      <div id="card" ng-click="$ctrl.flip()">
-        <div class="front">
-          <img ng-src="assets/demo_card_front.png" alt="front">
-        </div>
-        <div class="back">
-          <img ng-src="assets/demo_card_back.png" alt="back">
-        </div>
-      </div>
+<div hero-background></div>
+<div class="hero-text">
+  <h2>Greetings from {{$ctrl.hoverObject}}</h2>
+</div>
+<div class="hero-container">
+  <div class="row top-margin-md">
+    <p class="text-background pink-text text-center">Pork belly before they sold out four dollar toast authentic paleo, unicorn color bottle twee taxidermy retro lyft messenger bag. Chillwave hell of subway tile, etsy schlitz beard tumblr authentic echo park.</p>
+  </div>
+  <div class="row flex-row-spacing top-margin-sm">
+    <div>
+      <button class="btn" type="button" name="button" ui-sref="archive">view cards</button>
+      <h6><span class="span-white">find pre-made cards</span></h6>
     </div>
-    <div class="col-md-6 col-xs-12">
-      <div class="row">
-        <p class="text-background pink-text">Pork belly before they sold out four dollar toast authentic paleo, unicorn color bottle twee taxidermy retro lyft messenger bag. Chillwave hell of subway tile, etsy schlitz beard tumblr authentic echo park.</p>
-      </div>
-      <div class="row">
-        <div class="col-xs-6 col-sm-3">
-          <button class="btn" type="button" name="button" ui-sref="archive">view cards</button>
-          <h6><span class="span-white">find pre-made cards</span></h6>
-        </div>
-        <div class="col-xs-6 col-sm-3">
-          <button class="btn" type="button" name="button" ui-sref="themeSelection">new card</button>
-          <h6><span class="span-white">create a new card</span></h6>
-        </div>
-        <div class="col-sm-6"></div>
-      </div>
+    <div>
+      <button class="btn" type="button" name="button" ui-sref="themeSelection">new card</button>
+      <h6><span class="span-white">create a new card</span></h6>
+    </div>
+  </div>
+</div>
+
+<div class="row header-bar text-center">
+  <h3>Example Postcards</h3>
+</div>
+<div class="container">
+  <div id="card" ng-click="$ctrl.flip()">
+    <div class="front">
+      <img ng-src="assets/demo_card_front.png" alt="front">
+    </div>
+    <div class="back">
+      <img ng-src="assets/demo_card_back.png" alt="back">
     </div>
   </div>
 </div>
@@ -33,7 +35,6 @@
 <div class="row header-bar text-center">
   <h3>how does it work?</h3>
 </div>
-
 <div class="container">
   <div class="row top-margin-md">
     <div class="col-md-2"></div>

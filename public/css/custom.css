@@ -292,6 +292,47 @@ footer {
   height: auto
 }
 
+/*.hero-image {
+  height: 700px;
+  width: 100%;
+  overflow: hidden;
+}*/
+
+
+
+@media (max-width: 960px) {
+  .hero-image {
+    height: 500px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    height: 300px;
+  }
+  .hero-container {
+    display: none;
+  }
+}
+
+.hero-text {
+  position: absolute;
+  left: 10px;
+  top: 400px;
+  background-color: white;
+  opacity: .75;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.hero-container {
+  position: absolute;;
+  top: 100px;
+  left: 25%;
+  width: 50%;
+}
+
 /*Fonts*/
 @font-face {
     font-family: 'Helvetica Neue Light';
@@ -492,4 +533,22 @@ a:hover {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+/*Angular Animations*/
+.fade.ng-hide {
+  opacity: 0;
+}
+
+.fade.ng-hide-remove,
+.fade.ng-hide-add {
+  display: block !important;
+}
+
+.fade.ng-hide-remove {
+  transition: all linear 1000ms;
+}
+
+.fade.ng-hide-add {
+  transition: all linear 500ms;
 }

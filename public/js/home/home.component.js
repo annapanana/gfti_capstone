@@ -6,8 +6,8 @@
       controller: controller
     });
 
-    controller.$inject = ["$http", "$state", "$stateParams", "$scope", "$sce"];
-    function controller($http, $state, $stateParams, $scope, $sce) {
+    controller.$inject = ["$http", "$state", "$stateParams", "$scope", "$sce", "$timeout"];
+    function controller($http, $state, $stateParams, $scope, $sce, $timeout) {
       const vm = this;
       vm.$onInit = function() {
         let postcard = {
@@ -49,10 +49,29 @@
         };
         localStorage.setItem('postcard', JSON.stringify(postcard));
         $("#card").flip();
+        updateHoverObject();
       };
 
       vm.flip = function() {
         $("#card").flip();
-      }
+      };
+
+      vm.hoverObject = "";
+      vm.setHoverObject = function(obj) {
+        console.log(obj);
+        vm.hoverObject = obj;
+      };
+
+      let destinations = ['sydney', 'peru', 'paris', 'japan', 'istanbul', 'india', 'hawaii', 'colorado', 'berlin', 'south africa', 'outer space', 'morocco'];
+      let index = 0;
+
+      function updateHoverObject() {
+        vm.hoverObject = destinations[index];
+        index++;
+        if (index > destinations.length - 1) {
+          index = 0;
+        }
+        $timeout(updateHoverObject, 2000);
+      };
     }
 }());
