@@ -48,6 +48,11 @@
           },
         };
         localStorage.setItem('postcard', JSON.stringify(postcard));
+        $("#card").flip();
       };
+
+      vm.flip = function() {
+        $("#card").flip();
+      }
     }
 }());

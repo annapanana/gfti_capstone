@@ -25,7 +25,7 @@ app.use('/ui-bootstrap', express.static('node_modules/ui-bootstrap/'));
 app.use('/angular-ui-router', express.static('node_modules/angular-ui-router/release'));
 app.use('/angular-slick', express.static('node_modules/angular-slick/dist'));
 app.use('/slick-carousel', express.static('node_modules/slick-carousel/slick'));
-app.use('/socket',express.static('node_modules/socket.io-client/dist/'))
+app.use('/flip', express.static('node_modules/flip'));
 
 const port = process.env.PORT || 3000;
 
