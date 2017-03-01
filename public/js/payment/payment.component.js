@@ -10,8 +10,8 @@
     function controller($http, $state, $stateParams, $timeout) {
       const vm = this;
       var postcard = {};
-      vm.payment_info = {};
-      vm.imagePreview = "http://placehold.it/350x150";
+      // vm.payment_info = {};
+      vm.isLoading = false;
       var stripe = Stripe('pk_test_1EIBbNvuJSQ8GPIJFBC71eqP');
       var elements = stripe.elements();
       // for stripe element
@@ -44,7 +44,7 @@
 
       vm.submitCard = function() {
         postcard.payment_info = vm.payment_info;
-
+        vm.isLoading = true;
         stripe.createToken(card).then(function(result) {
           if (result.error) {
             // Inform the user if there was an error

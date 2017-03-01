@@ -19,8 +19,9 @@
       </div>
       <div class="row top-margin-sm text-center">
         <div class="col-md-2"></div>
-        <div class="col-md-8">
-          <img class="image-fill standard-border-radius" ng-src="{{$ctrl.postcard.background}}" alt="">
+        <div class="col-md-8 photo-upload">
+          <div ng-if="$ctrl.isLoading" class="loader">Loading...</div>
+          <img ng-if="!$ctrl.isLoading" class="image-fill standard-border-radius" ng-src="{{$ctrl.postcard.background}}" alt="">
         </div>
         <div class="col-md-2"></div>
       </div>

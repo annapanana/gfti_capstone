@@ -9,6 +9,8 @@
     controller.$inject = ["$http", "$state", "$stateParams", "$scope", "$sce", "postcardService"];
     function controller($http, $state, stateParams, $scope, $sce, postcardService) {
       const vm = this;
+      vm.isLoading = false;
+
       vm.postcard = {
         background: postcardService.getBackgroundImage($sce)
       };
@@ -24,6 +26,7 @@
           console.error("you must include an image");
         } else {
           getSignedUrl(files[0]);
+          vm.isLoading = true;
         }
       };
 
@@ -47,6 +50,7 @@
               postcardService.setBackgroundImage(url);
               vm.postcard.background = postcardService.getBackgroundImage($sce);
               // console.log("image:",   vm.compositionSettings.image_url);
+              vm.isLoading = false;
               $scope.$apply();
             }
             else{
