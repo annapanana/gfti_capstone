@@ -12,7 +12,7 @@
       vm.$onInit = function() {
         let postcard = {
           composition_settings: {
-            template_name: 'classic_01.html',
+            template_name: 'classic/classic_01.html',
             filter_id: 1,
             theme_id: 1,
             frame_id: 1,

@@ -109,7 +109,10 @@ router.post('/', (req, res, next) => {
       }
 
       // console.log("card", postcard);
+      newCard.order_id = postcard.id;
+      newCard.image_processed = false;
 
+      console.log("ORDER", postcard.id);
       knex('postcards')
         .insert(newCard, '*')
         .then((result) => {

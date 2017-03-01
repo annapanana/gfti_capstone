@@ -1,11 +1,12 @@
 'use strict';
 
-const express = require('express');
-const app = express();
+var express = require('express');
+var app = express();
 const postcards = require('./routes/postcards');
 const photobucket = require('./routes/photobucket');
 const thumbnails = require('./routes/thumbnails')
 const bodyParser = require('body-parser');
+
 
 app.use(bodyParser.urlencoded({
   extended:false
@@ -24,8 +25,11 @@ app.use('/ui-bootstrap', express.static('node_modules/ui-bootstrap/'));
 app.use('/angular-ui-router', express.static('node_modules/angular-ui-router/release'));
 app.use('/angular-slick', express.static('node_modules/angular-slick/dist'));
 app.use('/slick-carousel', express.static('node_modules/slick-carousel/slick'));
+app.use('/socket',express.static('node_modules/socket.io-client/dist/'))
 
 const port = process.env.PORT || 3000;
+
+//order id
 
 app.get('/', (req, res, next) => {
   console.log("Hello World");
