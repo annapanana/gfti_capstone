@@ -154,12 +154,12 @@ var filterData = [
   },
   {
     id:2,
-    name: "#noFilter",
+    name: "#add-saturation",
     asset_name: "color.svg",
   },
   {
     id:3,
-    name: "#noFilter",
+    name: "#duotone-filter",
     asset_name: "color.svg"
   },
   {
