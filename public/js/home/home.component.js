@@ -16,7 +16,7 @@
             filter_id: 1,
             theme_id: 1,
             frame_id: 1,
-            color_id: 1,
+            color_id: 2,
             greetings_subtext: 'greetings from the internet',
             image_url: 'https://s3-us-west-2.amazonaws.com/gftiresources/tester.jpg'
           },
@@ -59,7 +59,7 @@
       vm.openh1 = false;
       vm.openh2 = false;
       vm.openh3 = false;
-      
+
       vm.hoverObject = "";
       vm.setHoverObject = function(obj) {
         vm.hoverObject = obj;
