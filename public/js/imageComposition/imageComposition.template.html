@@ -89,7 +89,7 @@
           <div ng-repeat="filter in $ctrl.filters">
             <div>
               <a ng-click="$ctrl.selectFilter(filter.id)">
-                <img class="widget-element" ng-src="assets/{{filter.asset_name}}" alt="">
+                <div class="widget-element"></div>
               </a>
             </div>
           </div>
@@ -125,7 +125,7 @@
           <div ng-repeat="singleFrame in $ctrl.frames">
             <div class="">
               <a ng-click="$ctrl.selectFrame(singleFrame.id)">
-                <img class="widget-element" ng-src="assets/{{singleFrame.asset_name}}" alt="">
+                <div class="widget-element"></div>
               </a>
             </div>
           </div>
