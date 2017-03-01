@@ -1,10 +1,17 @@
 <img class="background-image" ng-src="assets/waves_background_1.svg" alt="">
 <div class="container">
   <div class="row top-margin-lg">
-    <div class="col-md-6 col-sm-12">
-      <!-- <img class="image-fill" ng-src="http://placehold.it/800x400" alt=""> -->
+    <div class="col-md-6 col-xs-12">
+      <div id="card" ng-click="$ctrl.flip()">
+        <div class="front">
+          <img ng-src="assets/demo_card_front.png" alt="front">
+        </div>
+        <div class="back">
+          <img ng-src="assets/demo_card_back.png" alt="back">
+        </div>
+      </div>
     </div>
-    <div class="col-md-6 col-sm-12">
+    <div class="col-md-6 col-xs-12">
       <div class="row">
         <p class="text-background pink-text">Pork belly before they sold out four dollar toast authentic paleo, unicorn color bottle twee taxidermy retro lyft messenger bag. Chillwave hell of subway tile, etsy schlitz beard tumblr authentic echo park.</p>
       </div>

@@ -13,6 +13,8 @@ exports.up = function(knex, Promise) {
     table.string('name');
     table.string('notes');
     table.string('thumbnail_url');
+    table.string('order_id').notNullable();
+    table.bool('image_processed').notNullable().defaultsTo(false);
   });
 };
 

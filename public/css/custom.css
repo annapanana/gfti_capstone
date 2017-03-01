@@ -261,6 +261,12 @@ footer {
   justify-content: center;
 }
 
+.flex-row-spacing {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+
 .card-container {
   display: flex;
   flex-flow: row;
@@ -348,6 +354,27 @@ a:hover {
   background-color: #D9ACA7;
   color: #FFF;
   opacity: .5;
+}
+
+.btn-tab {
+  background-color: #D9ACA7;
+  border-radius: 3px;
+  color: white;
+  border-style: none;
+  padding: 10px 15px 5px 15px;
+  font-family: 'Helvetica Neue Light';
+  font-size: 16px;
+}
+
+.btn-tab:hover {
+  opacity: .5;
+}
+
+.btn-tab-active {
+  border-style: solid;
+  border-color: #D9ACA7;
+  color: #D9ACA7;
+  background-color: rgba(217, 172, 167, .25);
 }
 
 .img-button {

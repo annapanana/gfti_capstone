@@ -69,14 +69,16 @@
         // Submit the form
         $http.post('/postcards', postcard).then((result) => {
           console.log("result", result.data);
+          postcard.order_id = result.data[0].postcard.id;
+          postcard.thumbnail = result.data[0].postcard.thumbnails[0].large;
+          postcard.deliveryDate = result.data[0].postcard.expected_delivery_date;
+          postcard.id = result.data[0].id;
 
-          $timeout(function() {
-            postcard.thumbnail = result.data[0].postcard.thumbnails[0].large;
-            postcard.deliveryDate = result.data[0].postcard.expected_delivery_date;
-            postcard.id = result.data[0].id;
-            localStorage.setItem('postcard', JSON.stringify(postcard));
-            $state.go('postcardSent');
-          }, 5000);
+          // simpulate web hooks callback from lob
+          $http.post('/thumbnails', postcard);
+
+          localStorage.setItem('postcard', JSON.stringify(postcard));
+          $state.go('postcardSent');
         });
       };
     }

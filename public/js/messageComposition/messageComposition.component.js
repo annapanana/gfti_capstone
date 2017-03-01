@@ -9,6 +9,8 @@
     controller.$inject = ["$http", "$state", "$stateParams", "$sce", "postcardService"];
     function controller($http, $state, stateParams, $sce, postcardService) {
       const vm = this;
+      vm.currentTab = 'message';
+
       vm.postcard = {
         frame: postcardService.updateFrameUrl($sce),
         filter: postcardService.getFilter(),
@@ -21,6 +23,10 @@
         vm.to = postcardService.getAddressedTo();
         vm.from = postcardService.getAddressedFrom();
         vm.message = postcardService.getMessage();
+      };
+
+      vm.changeTab = function(tab) {
+        vm.currentTab = tab;
       };
 
       vm.nextStep = function() {
