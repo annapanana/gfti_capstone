@@ -56,6 +56,10 @@
         $(".card-preview").flip();
       };
 
+      vm.openh1 = false;
+      vm.openh2 = false;
+      vm.openh3 = false;
+      
       vm.hoverObject = "";
       vm.setHoverObject = function(obj) {
         vm.hoverObject = obj;

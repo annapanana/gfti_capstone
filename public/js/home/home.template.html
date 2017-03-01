@@ -16,17 +16,17 @@
   </div>
 </div>
 
-<div class="row header-bar text-center">
-  <h3>Example Postcards</h3>
+<div class="row header-bar text-center" ng-click="$ctrl.openh1 = !$ctrl.openh1">
+  <h3>example postcards</h3>
 </div>
-<div style="background-color:#B6BDC2;">
+<div ng-class="{ showMe: $ctrl.openh1 }" class="collapsable">
   <div class="container">
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-10">
         <div class="row top-margin-md">
           <div class="col-md-6 col-xs-12 bottom-gutter img-button">
-
+            <a href="#">
             <div class="card-preview" ng-click="$ctrl.flip()">
               <div class="front">
                 <img ng-src="assets/demo_card_front.png" alt="front">
@@ -35,43 +35,43 @@
                 <img ng-src="assets/demo_card_back.png" alt="back">
               </div>
             </div>
-
+            </a>
           </div>
           <div class="col-md-6 col-xs-12 bottom-gutter img-button">
-
-            <div class="card-preview" ng-click="$ctrl.flip()">
-              <div class="front">
-                <img ng-src="assets/demo_card_front.png" alt="front">
+            <a href="#">
+              <div class="card-preview" ng-click="$ctrl.flip()">
+                <div class="front">
+                  <img ng-src="assets/demo_card_front.png" alt="front">
+                </div>
+                <div class="back">
+                  <img ng-src="assets/demo_card_back.png" alt="back">
+                </div>
               </div>
-              <div class="back">
-                <img ng-src="assets/demo_card_back.png" alt="back">
-              </div>
-            </div>
-
+            </a>
           </div>
           <div class="col-md-6 col-xs-12 bottom-gutter img-button">
-
-            <div class="card-preview" ng-click="$ctrl.flip()">
-              <div class="front">
-                <img ng-src="assets/demo_card_front.png" alt="front">
+            <a href="#">
+              <div class="card-preview" ng-click="$ctrl.flip()">
+                <div class="front">
+                  <img ng-src="assets/demo_card_front.png" alt="front">
+                </div>
+                <div class="back">
+                  <img ng-src="assets/demo_card_back.png" alt="back">
+                </div>
               </div>
-              <div class="back">
-                <img ng-src="assets/demo_card_back.png" alt="back">
-              </div>
-            </div>
-
+            </a>
           </div>
           <div class="col-md-6 col-xs-12 bottom-gutter img-button">
-
-            <div class="card-preview" ng-click="$ctrl.flip()">
-              <div class="front">
-                <img ng-src="assets/demo_card_front.png" alt="front">
+            <a href="#">
+              <div class="card-preview" ng-click="$ctrl.flip()">
+                <div class="front">
+                  <img ng-src="assets/demo_card_front.png" alt="front">
+                </div>
+                <div class="back">
+                  <img ng-src="assets/demo_card_back.png" alt="back">
+                </div>
               </div>
-              <div class="back">
-                <img ng-src="assets/demo_card_back.png" alt="back">
-              </div>
-            </div>
-
+            </a>
           </div>
         </div>
       </div>
@@ -80,79 +80,83 @@
   </div>
 </div>
 
-<div class="row header-bar text-center">
+<div class="row header-bar text-center" ng-click="$ctrl.openh2 = !$ctrl.openh2">
   <h3>how does it work?</h3>
 </div>
-<div class="container">
-  <div class="row top-margin-md">
-    <div class="col-md-1"></div>
-    <div class="col-md-2 col-sm-12">
-      <img class="image-fill" ng-src="assets/icons/step_1.svg" alt="">
+<div class="collapsable" ng-class="{ showMe: $ctrl.openh2 }">
+  <div class="container" >
+    <div class="row top-margin-md">
+      <div class="col-md-1"></div>
+      <div class="col-md-2 col-sm-12">
+        <img class="image-fill" ng-src="assets/icons/step_1.svg" alt="">
+      </div>
+      <div class="col-md-8 col-sm-md">
+        <h3>Step 1: Theme Selection</h3>
+        <p>We have carefully crafted 4 different themes to choose from. Each theme includes different customization assets that will give a different visual identity to your postcard. The themes include: Classic, Playful, Modern and Wild</p>
+      </div>
+      <div class="col-md-1"></div>
     </div>
-    <div class="col-md-8 col-sm-md">
-      <h3>Step 1: Theme Selection</h3>
-      <p>We have carefully crafted 4 different themes to choose from. Each theme includes different customization assets that will give a different visual identity to your postcard. The themes include: Classic, Playful, Modern and Wild</p>
+    <div class="row top-margin-md">
+      <div class="col-md-1"></div>
+      <div class="col-md-2 col-sm-12">
+        <img class="image-fill" ng-src="assets/icons/step_2.svg" alt="">
+      </div>
+      <div class="col-md-8 col-sm-12">
+        <h3>Step 2: Photo Upload</h3>
+        <p>If you are using this site on a mobile device, you can take a photo and directly upload it to the site. Alternatively, you can upload a photo from your desktop or provide an image URL. The postcard layout is optomized for mobile uploads.</p>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="row top-margin-md">
+      <div class="col-md-1"></div>
+      <div class="col-md-2 col-sm-12">
+        <img class="image-fill" ng-src="assets/icons/step_3.svg" alt="">
+      </div>
+      <div class="col-md-8 col-sm-12">
+        <h3>Step 3: Edit Design</h3>
+        <p>You can use 5 different widgets to customize your design. Tools include image filters, border themes, color selection, font selection and subtext customization. The design assets and colors are specific to the theme that you select.</p>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="row top-margin-md">
+      <div class="col-md-1"></div>
+      <div class="col-md-2 col-sm-12">
+        <img class="image-fill" ng-src="assets/icons/step_4.svg" alt="">
+      </div>
+      <div class="col-md-8 col-sm-12">
+        <h3>Step 4: Message & Address</h3>
+        <p>Fill in a custom message and address the card for mailing. Your desing will be saved to the postcard archive for sharing with the community but your message and addresses will not be saved in order to respect your privacy.</p>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="row top-margin-md">
+      <div class="col-md-1"></div>
+      <div class="col-md-2 col-sm-12">
+        <img class="image-fill" ng-src="assets/icons/step_5.svg" alt="">
+      </div>
+      <div class="col-md-8 col-sm-12">
+        <h3>Step 5: Pay and Mail</h3>
+        <p>When you have completed your postcard, you can mail it. You will recieve an estimated delivery date. Each postcard costs $1.50 to send, which includes printing and postage. We use Stripe for secure payments.</p>
+      </div>
     </div>
     <div class="col-md-1"></div>
   </div>
-  <div class="row top-margin-md">
-    <div class="col-md-1"></div>
-    <div class="col-md-2 col-sm-12">
-      <img class="image-fill" ng-src="assets/icons/step_2.svg" alt="">
-    </div>
-    <div class="col-md-8 col-sm-12">
-      <h3>Step 2: Photo Upload</h3>
-      <p>If you are using this site on a mobile device, you can take a photo and directly upload it to the site. Alternatively, you can upload a photo from your desktop or provide an image URL. The postcard layout is optomized for mobile uploads.</p>
-    </div>
-    <div class="col-md-1"></div>
-  </div>
-  <div class="row top-margin-md">
-    <div class="col-md-1"></div>
-    <div class="col-md-2 col-sm-12">
-      <img class="image-fill" ng-src="assets/icons/step_3.svg" alt="">
-    </div>
-    <div class="col-md-8 col-sm-12">
-      <h3>Step 3: Edit Design</h3>
-      <p>You can use 5 different widgets to customize your design. Tools include image filters, border themes, color selection, font selection and subtext customization. The design assets and colors are specific to the theme that you select.</p>
-    </div>
-    <div class="col-md-1"></div>
-  </div>
-  <div class="row top-margin-md">
-    <div class="col-md-1"></div>
-    <div class="col-md-2 col-sm-12">
-      <img class="image-fill" ng-src="assets/icons/step_4.svg" alt="">
-    </div>
-    <div class="col-md-8 col-sm-12">
-      <h3>Step 4: Message & Address</h3>
-      <p>Fill in a custom message and address the card for mailing. Your desing will be saved to the postcard archive for sharing with the community but your message and addresses will not be saved in order to respect your privacy.</p>
-    </div>
-    <div class="col-md-1"></div>
-  </div>
-  <div class="row top-margin-md">
-    <div class="col-md-1"></div>
-    <div class="col-md-2 col-sm-12">
-      <img class="image-fill" ng-src="assets/icons/step_5.svg" alt="">
-    </div>
-    <div class="col-md-8 col-sm-12">
-      <h3>Step 5: Pay and Mail</h3>
-      <p>When you have completed your postcard, you can mail it. You will recieve an estimated delivery date. Each postcard costs $1.50 to send, which includes printing and postage. We use Stripe for secure payments.</p>
-    </div>
-  </div>
-  <div class="col-md-1"></div>
 </div>
 
 
-<div class="row header-bar text-center">
+
+<div class="row header-bar text-center" ng-click="$ctrl.openh3 = !$ctrl.openh3">
   <h3>about the team</h3>
 </div>
-
-<div class="container">
-  <div class="row text-center top-margin-md">
-    <div class="col-md-3"></div>
-    <div class="col-md-6 col-sm-12">
-      <img ng-src="http://placehold.it/200x200" alt="">
-      <p class="top-margin-sm">Pork belly before they sold out four dollar toast authentic paleo, unicorn color bottle twee taxidermy retro lyft messenger bag. Chillwave hell of subway tile, etsy schlitz beard tumblr authentic echo park.</p>
+<div class="collapsable" ng-class="{ showMe: $ctrl.openh3 }">
+  <div class="container">
+    <div class="row text-center top-margin-md">
+      <div class="col-md-3"></div>
+      <div class="col-md-6 col-sm-12">
+        <img ng-src="http://placehold.it/200x200" alt="">
+        <p class="top-margin-sm">Pork belly before they sold out four dollar toast authentic paleo, unicorn color bottle twee taxidermy retro lyft messenger bag. Chillwave hell of subway tile, etsy schlitz beard tumblr authentic echo park.</p>
+      </div>
+      <div class="col-md-3"></div>
     </div>
-    <div class="col-md-3"></div>
   </div>
 </div>
