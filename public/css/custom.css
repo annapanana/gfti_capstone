@@ -14,12 +14,13 @@ html, body {
   /*height: 65px;*/
   height: 100px;
   width: 100%;
-  margin: 0px;
+  margin: 0px !important;
   /*background-color: rgb(191, 242, 201);*/
   /*background: url(https://s3-us-west-2.amazonaws.com/gftiresources/assets/header_texture_2.png);
   background-size: contain;
   background-repeat: repeat;*/
-  background-color: #D9ACA7;
+  background-color: #485967;
+  color: #FFF;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -32,12 +33,6 @@ html, body {
   padding: 20px;
 }
 
-.span-white {
-  background-color: #FFF;
-  /*border-radius: 5px;*/
-  width: 100%;
-}
-
  /*Spaceing*/
 .row {
   margin-top: 5px;
@@ -48,6 +43,10 @@ html, body {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
+}
+
+.top-padding-md {
+  padding-top: 35px;
 }
 
 .top-margin-lg {
@@ -390,15 +389,14 @@ a:hover {
   border: solid;
   padding: 10px 20px 10px 20px;
   background-color: #FFF;
-  border-color: #D9ACA7;
-  color: #D9ACA7;
+  border-color: #485967;
+  color: #485967;
   border-radius: 0;
 }
 
 .btn:hover {
-  background-color: #D9ACA7;
+  background-color: #485967;
   color: #FFF;
-  opacity: .5;
 }
 
 .btn-tab {

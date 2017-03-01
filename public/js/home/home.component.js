@@ -48,18 +48,18 @@
           },
         };
         localStorage.setItem('postcard', JSON.stringify(postcard));
-        $("#card").flip();
+        $(".card-preview").flip();
         updateHoverObject();
       };
 
       vm.flip = function() {
-        $("#card").flip();
+        $(".card-preview").flip();
       };
 
       vm.hoverObject = "";
       vm.setHoverObject = function(obj) {
-        console.log(obj);
         vm.hoverObject = obj;
+        index = destinations.indexOf(obj);
       };
 
       let destinations = ['sydney', 'peru', 'paris', 'japan', 'istanbul', 'india', 'hawaii', 'colorado', 'berlin', 'south africa', 'outer space', 'morocco'];
