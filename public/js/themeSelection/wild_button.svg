@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 300.46">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>wild_button</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <image width="600" height="300" transform="translate(0 0.46)" xlink:href="../../assets/theme_src/wild_background_hover.png"/>
+      <image class="fade" width="600" height="300" xlink:href="../../assets/theme_src/wild_background.png" ng-mouseover="$ctrl.setHoverObject('wild')" ng-hide="$ctrl.hoverObject === 'wild'"/>
+      <g>
+        <path class="cls-1" d="M193.09,119.66h24l13.78,65.16L245,119.66h24.65l-26.23,90.48H219.07l-14.19-65.91-14.36,65.91H165.94l-25.4-90.48h25.4l14.11,64.91Z"/>
+        <path class="cls-1" d="M307,108.87H283V87h24Zm-24,10.79h24v90.48H283Z"/>
+        <path class="cls-1" d="M354,210.14H330.38V87.79H354Z"/>
+        <path class="cls-1" d="M425.09,121.11a28.74,28.74,0,0,1,10.38,10V88h24V210.14h-23V197.6q-5.06,8.05-11.54,11.7T408.82,213q-15.86,0-26.69-12.82T371.3,167.22q0-23.16,10.67-36.44t28.51-13.28A29.18,29.18,0,0,1,425.09,121.11Zm5.81,64.46q5.23-7.47,5.23-19.34,0-16.6-8.38-23.74a18,18,0,0,0-12-4.32q-10.38,0-15.23,7.84t-4.86,19.46q0,12.53,4.94,20t15,7.51Q425.67,193,430.9,185.57Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
