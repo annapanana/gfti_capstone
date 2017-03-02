@@ -14,7 +14,6 @@
       vm.$onInit = function() {
         $http.get('/postcards').then((result) => {
           for (var i = 0; i < result.data.length; i++) {
-            console.log(result.data[i]);
             if (result.data[i].is_saved) {
               vm.archive.push(result.data[i]);
             }

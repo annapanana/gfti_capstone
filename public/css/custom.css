@@ -303,16 +303,21 @@ footer {
 .card-container {
   display: flex;
   flex-flow: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .card {
-  max-width: 300px;
+  max-width: 275px;
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
   background-color: #FFF;
   padding: 10px;
+  border-style: solid;
+  border-radius: 3px;
+  border-color: #6DC4E2;
+  margin: 10px;
 }
 
 /*Images*/
