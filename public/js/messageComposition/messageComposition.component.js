@@ -23,7 +23,6 @@
         vm.to = postcardService.getAddressedTo();
         vm.from = postcardService.getAddressedFrom();
         vm.message = postcardService.getMessage();
-        console.log(vm.postcard.color);
       };
 
       vm.changeTab = function(tab) {

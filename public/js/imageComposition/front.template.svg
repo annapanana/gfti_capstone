@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306" class="standard-border-radius">
+  <defs>
+    <filter id="pictureFilter" ><feColorMatrix type="matrix" values="1.1 0 0 0 -0.1 0 1.1 0 0 -0.1 0 0 1.1 0 -0.1 0 0 0 1 0" /></filter>
+    <filter id="noFilter" >
+      <feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0" />
+    </filter>
+    <filter id="add-saturation">
+       <feColorMatrix type="saturate" values="4.00"/>
+    </filter>
+    <filter id="duotone-filter">
+      <feColorMatrix
+        type="matrix"
+        values="1  0  0  0  0
+                1  0  0  0  0
+                1  0  0  0  0
+                0  0  0  1  0"/>
+    </filter>
+  </defs>
+  <!-- <rect width="100%" height="100%"></rect> -->
+  <image class="postcard-background" filter="url({{$ctrl.postcard.filter}})" xlink:href="{{$ctrl.postcard.background}}" x="0" y="0"/>
+  <!-- <image fill="{{$ctrl.postcard.color}}" class="postcard-theme" xlink:href="{{$ctrl.postcard.frame}}" width="100%" height="100%" x="0" y="0"/> -->
+  <text x="50%" y="25%" class="greetings-subtext" text-anchor="middle" fill="{{$ctrl.postcard.color}}">
+    {{$ctrl.postcard.subtext}}
+  </text>
+  <!-- TODO Add a whole bunch of NG ifs -->
+  <div ng-if="$ctrl.postcard.frame === 'classic-1'" classic-one></div>
+  <div ng-if="$ctrl.postcard.frame === 'classic-2'" classic-two></div>
+  <div ng-if="$ctrl.postcard.frame === 'classic-3'" classic-three></div>
+  <div ng-if="$ctrl.postcard.frame === 'classic-4'" classic-four></div>
+  <div ng-if="$ctrl.postcard.frame === 'classic-5'" classic-five></div>
+  <div ng-if="$ctrl.postcard.frame === 'classic-6'" classic-six></div>
+
+  <div ng-if="$ctrl.postcard.frame === 'playful-1'" playful-one></div>
+  <div ng-if="$ctrl.postcard.frame === 'playful-2'" playful-two></div>
+  <div ng-if="$ctrl.postcard.frame === 'playful-3'" playful-three></div>
+  <div ng-if="$ctrl.postcard.frame === 'playful-4'" playful-four></div>
+  <div ng-if="$ctrl.postcard.frame === 'playful-5'" playful-five></div>
+  <div ng-if="$ctrl.postcard.frame === 'playful-6'" playful-six></div>
+
+  <div ng-if="$ctrl.postcard.frame === 'modern-1'" modern-one></div>
+  <div ng-if="$ctrl.postcard.frame === 'modern-2'" modern-two></div>
+  <div ng-if="$ctrl.postcard.frame === 'modern-3'" modern-three></div>
+  <div ng-if="$ctrl.postcard.frame === 'modern-4'" modern-four></div>
+  <div ng-if="$ctrl.postcard.frame === 'modern-5'" modern-five></div>
+  <div ng-if="$ctrl.postcard.frame === 'modern-6'" modern-six></div>
+
+  <div ng-if="$ctrl.postcard.frame === 'wild-1'" wild-one></div>
+  <div ng-if="$ctrl.postcard.frame === 'wild-2'" wild-two></div>
+  <div ng-if="$ctrl.postcard.frame === 'wild-3'" wild-three></div>
+  <div ng-if="$ctrl.postcard.frame === 'wild-4'" wild-four></div>
+  <div ng-if="$ctrl.postcard.frame === 'wild-5'" wild-five></div>
+  <div ng-if="$ctrl.postcard.frame === 'wild-6'" wild-six></div>
+</svg>
