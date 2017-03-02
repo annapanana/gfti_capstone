@@ -6,11 +6,10 @@
       controller: controller
     });
 
-    controller.$inject = ["$http", "$state", "$stateParams", "$timeout"];
-    function controller($http, $state, $stateParams, $timeout) {
+    controller.$inject = ["$http", "$state", "$stateParams", "$timeout", "$sce", "postcardService"];
+    function controller($http, $state, $stateParams, $timeout, $sce, postcardService) {
       const vm = this;
-      var postcard = {};
-      // vm.payment_info = {};
+
       vm.isLoading = false;
       var stripe = Stripe('pk_test_1EIBbNvuJSQ8GPIJFBC71eqP');
       var elements = stripe.elements();
@@ -28,9 +27,15 @@
       card.mount('#card-element');
 
       vm.$onInit = function() {
-        postcard = JSON.parse(localStorage.getItem('postcard'));
-        // TODO Load postcard preview settings
-        vm.payment_info = postcard.payment_info;
+        vm.postcard = {
+          frame: postcardService.updateFrameUrl($sce),
+          filter: postcardService.getFilter(),
+          color: postcardService.getColor(),
+          subtext: postcardService.getSubtext(),
+          background: postcardService.getBackgroundImage($sce)
+        };
+
+        vm.payment_info = postcardService.getPaymentInfo();
 
         card.addEventListener('change', function(event) {
           var displayError = document.getElementById('card-errors');
@@ -40,10 +45,14 @@
             displayError.textContent = '';
           }
         });
+
+        $(".card-preview").flip();
       };
 
       vm.submitCard = function() {
-        postcard.payment_info = vm.payment_info;
+        //TODO get this info from stripe?
+        postcardService.setPaymentInfo(vm.payment_info);
+
         vm.isLoading = true;
         stripe.createToken(card).then(function(result) {
           if (result.error) {
@@ -65,21 +74,25 @@
         hiddenInput.setAttribute('name', 'stripeToken');
         hiddenInput.setAttribute('value', token.id);
         form.appendChild(hiddenInput);
-
+        postcardService.savePostcardData();
         // Submit the form
-        $http.post('/postcards', postcard).then((result) => {
+        $http.post('/postcards', postcardService.postcard).then((result) => {
           console.log("result", result.data);
-          postcard.order_id = result.data[0].postcard.id;
-          postcard.thumbnail = result.data[0].postcard.thumbnails[0].large;
-          postcard.deliveryDate = result.data[0].postcard.expected_delivery_date;
-          postcard.id = result.data[0].id;
+          postcardService.setThumbnail(result.data[0].postcard.thumbnails[0].large);
 
-          // simpulate web hooks callback from lob
-          $http.post('/thumbnails', postcard);
 
-          localStorage.setItem('postcard', JSON.stringify(postcard));
+          // postcard.order_id = result.data[0].postcard.id;
+          // postcard.thumbnail = result.data[0].postcard.thumbnails[0].large;
+          // postcard.deliveryDate = result.data[0].postcard.expected_delivery_date;
+          // postcard.id = result.data[0].id;
+
+          // localStorage.setItem('postcard', JSON.stringify(postcard));
           $state.go('postcardSent');
         });
+      };
+
+      vm.flip = function() {
+        $(".card-preview").flip();
       };
     }
 }());

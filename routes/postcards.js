@@ -51,10 +51,7 @@ router.post('/', (req, res, next) => {
 
   const {payment_info} = req.body;
   const payment = payment_info;
-  // console.log(req.body);
-  const {frame_url} = req.body;
-  const frame = frame_url;
-
+  console.log(payment);
   const {color_hex} = req.body;
   const color = color_hex;
 

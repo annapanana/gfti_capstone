@@ -29,6 +29,7 @@
       };
 
       this.getBackgroundImage = function($sce) {
+        console.log(this.postcard.composition_settings.image_url);
         return $sce.trustAsResourceUrl(this.postcard.composition_settings.image_url);
       };
 
@@ -103,6 +104,19 @@
 
       this.setAddressedFrom = function(from) {
         this.postcard.from = from;
+      };
+
+      this.setThumbnail = function(img) {
+        this.postcard.thumbnail = img;
+      };
+
+      this.getPaymentInfo = function() {
+        return this.postcard.payment_info;
+      };
+
+      this.setPaymentInfo = function(data) {
+        this.postcard.payment_info = data;
+        console.log("setting", data);
       };
 
       this.savePostcardData = function() {
