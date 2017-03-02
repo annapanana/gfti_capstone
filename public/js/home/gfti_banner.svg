@@ -479,7 +479,7 @@
         <!-- <image width="1024" height="500" transform="scale(1.04)" xlink:href="../../assets/wall_paper/wallpaper_01.png" ng-hide="$ctrl.wallpaper !== 0"/>
         <image width="1024" height="500" transform="scale(1.04)" xlink:href="../../assets/wall_paper/wallpaper_02.png" ng-hide="$ctrl.wallpaper !== 1"/>
         <image width="1024" height="500" transform="scale(1.04)" xlink:href="../../assets/wall_paper/wallpaper_03.png" ng-hide="$ctrl.wallpaper !== 2"/> -->
-        <g>
+        <g transform="translate(-16)">
           <g>
             <g>
               <g class="cls-2">
