@@ -269,27 +269,19 @@ footer {
 
 /*Background Colors*/
 .color-1 {
-  background-color: #E4C5C2;
+  background-color: #D4EFFB;
 }
 
 .color-2 {
-  background-color: #D9ACA7;
+  background-color: #AAE0F8;
 }
 
 .color-3 {
-  background-color: #44aab5;
-}
-
-.color-4 {
-  background-color: #1595a3;
+  background-color: #6DC4E2;
 }
 
 .white {
   background-color: #FFF;
-}
-
-.pink-text {
-  color: #D9ACA7;
 }
 
 .standard-border-radius {
@@ -406,11 +398,6 @@ p {
   font-family: 'Helvetica Neue Light';
 }
 
-h5,
-h6 {
-  color: #D9ACA7;
-}
-
 label {
   font-family: 'Helvetica Neue Light';
 }
@@ -427,21 +414,22 @@ a:hover {
 .btn {
   border: solid;
   padding: 10px 20px 10px 20px;
-  background-color: #FFF;
-  border-color: #485967;
-  color: #485967;
-  border-radius: 0;
+  background-color: #FFFBCA;
+  padding-top: 15px;
+  border-color: #FFF02A;
+  color: #000;
+  border-radius: 3px;
+  font-family: 'Helvetica Neue Medium';
 }
 
 .btn:hover {
-  background-color: #485967;
-  color: #FFF;
+  background-color: #FFF02A;
 }
 
 .btn-tab {
-  background-color: #D9ACA7;
+  background-color: #FFF794;
   border-radius: 3px;
-  color: white;
+  color: #000;
   border-style: none;
   padding: 10px 15px 5px 15px;
   font-family: 'Helvetica Neue Light';
@@ -453,10 +441,7 @@ a:hover {
 }
 
 .btn-tab-active {
-  border-style: solid;
-  border-color: #D9ACA7;
-  color: #D9ACA7;
-  background-color: rgba(217, 172, 167, .25);
+  background-color: #FFF02A;
 }
 
 .img-button {
