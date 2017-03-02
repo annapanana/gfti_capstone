@@ -35,7 +35,7 @@
           <div ng-repeat="filter in $ctrl.filters">
             <div>
               <a ng-click="$ctrl.selectFilter(filter.id)">
-                <div class="widget-element"></div>
+                <div class="widget-element"><img ng-src="{{filter.asset}}" alt="{{filter.name}}"></div>
               </a>
             </div>
           </div>
