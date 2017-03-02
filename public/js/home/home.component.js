@@ -60,7 +60,7 @@
       vm.openh2 = false;
       vm.openh3 = false;
 
-      vm.imageSets = [3, 1, 1, 1];
+      vm.imageSets = [1, 1, 1, 3];
       vm.updateImage = function(image_num) {
         vm.imageSets[image_num]+=1;
         if (vm.imageSets[image_num] > 3) {
