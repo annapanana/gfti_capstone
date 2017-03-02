@@ -23,5 +23,10 @@
         localStorage.setItem('postcard', JSON.stringify(postcard));
         $state.go('photoUpload');
       };
+
+      vm.hoverObject = "";
+      vm.setHoverObject = function(obj) {
+        vm.hoverObject = obj;
+      };
     }
 }());

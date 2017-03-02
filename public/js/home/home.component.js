@@ -6,8 +6,8 @@
       controller: controller
     });
 
-    controller.$inject = ["$http", "$state", "$stateParams", "$scope", "$sce"];
-    function controller($http, $state, $stateParams, $scope, $sce) {
+    controller.$inject = ["$http", "$state", "$stateParams", "$scope", "$sce", "$timeout"];
+    function controller($http, $state, $stateParams, $scope, $sce, $timeout) {
       const vm = this;
       vm.$onInit = function() {
         let postcard = {
@@ -16,7 +16,7 @@
             filter_id: 1,
             theme_id: 1,
             frame_id: 1,
-            color_id: 1,
+            color_id: 2,
             greetings_subtext: 'greetings from the internet',
             image_url: 'https://s3-us-west-2.amazonaws.com/gftiresources/tester.jpg'
           },
@@ -48,11 +48,31 @@
           },
         };
         localStorage.setItem('postcard', JSON.stringify(postcard));
-        $("#card").flip();
+        $(".card-preview").flip();
+        selectRandomWallpaper();
       };
 
       vm.flip = function() {
-        $("#card").flip();
+        $(".card-preview").flip();
+      };
+
+      vm.openh1 = false;
+      vm.openh2 = false;
+      vm.openh3 = false;
+
+      vm.imageSets = [3, 1, 1, 1];
+      vm.updateImage = function(image_num) {
+        vm.imageSets[image_num]+=1;
+        if (vm.imageSets[image_num] > 3) {
+          vm.imageSets[image_num] = 1;
+        }
+      };
+
+      vm.wallpaper = 1;
+      function selectRandomWallpaper() {
+        // TODO select a wallpaper to disply
+        vm.wallpaper = Math.floor(Math.random() * 3);
+        console.log(vm.wallpaper);
       }
     }
 }());

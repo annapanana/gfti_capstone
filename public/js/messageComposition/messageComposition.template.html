@@ -12,39 +12,7 @@
     <div class="col-xs-1"></div>
     <div class="col-md-5 col-xs-10">
       <!-- Postcard Back -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306" class="standard-border-radius top-margin-sm">
-        <g>
-          <!-- <rect width="100%" height="100%"></rect> -->
-          <image class="postcard-back" xlink:href="assets/card_back.svg" x="0" y="0"/>
-          <!-- Message Text -->
-          <foreignObject x="20" y="80" width="200" height="150">
-            <p class="message-preview">{{$ctrl.message}}</p>
-          </foreignObject>
-          <!-- To Text -->
-          <foreignObject x="210" y="130" width="200" height="20">
-            <p class="address-preview">From:</p>
-          </foreignObject>
-          <foreignObject x="240" y="130" width="200" height="20">
-            <p class="address-preview">{{$ctrl.from.name}}</p>
-            <p class="address-preview">{{$ctrl.from.address_line1}}</p>
-            <p class="address-preview">{{$ctrl.from.address_line2}}</p>
-            <p class="address-preview">{{$ctrl.from.address_city}}</p>
-            <p class="address-preview">{{$ctrl.from.address_state}}</p>
-            <p class="address-preview">{{$ctrl.from.address_zip}}</p>
-          </foreignObject>
-          <foreignObject x="210" y="200" width="200" height="20">
-            <p class="address-preview">To:</p>
-          </foreignObject>
-          <foreignObject x="240" y="200" width="200" height="20">
-            <p class="address-preview">{{$ctrl.to.name}}</p>
-            <p class="address-preview">{{$ctrl.to.address_line1}}</p>
-            <p class="address-preview">{{$ctrl.to.address_line2}}</p>
-            <p class="address-preview">{{$ctrl.to.address_city}}</p>
-            <p class="address-preview">{{$ctrl.to.address_state}}</p>
-            <p class="address-preview">{{$ctrl.to.address_zip}}</p>
-          </foreignObject>
-        </g>
-      </svg>
+      <div back-design></div>
     </div>
     <div class="col-md-5 col-xs-10">
       <div class="row flex-row-spacing">
@@ -55,7 +23,7 @@
       <div class="row" ng-if="$ctrl.currentTab === 'message'">
         <div class="col-xs-12 color-2 widget-container">
           <h4>Message</h4>
-          <textarea class="text-widget" name="name" rows="4" cols="60" ng-model="$ctrl.message" maxlength="440"></textarea>
+          <textarea class="text-widget" name="name" rows="4" cols="60" ng-model="$ctrl.message" maxlength="400"></textarea>
         </div>
       </div>
 

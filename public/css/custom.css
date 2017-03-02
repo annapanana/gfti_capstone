@@ -14,12 +14,13 @@ html, body {
   /*height: 65px;*/
   height: 100px;
   width: 100%;
-  margin: 0px;
+  margin: 0px !important;
   /*background-color: rgb(191, 242, 201);*/
   /*background: url(https://s3-us-west-2.amazonaws.com/gftiresources/assets/header_texture_2.png);
   background-size: contain;
   background-repeat: repeat;*/
-  background-color: #D9ACA7;
+  background-color: #485967;
+  color: #FFF;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -32,12 +33,6 @@ html, body {
   padding: 20px;
 }
 
-.span-white {
-  background-color: #FFF;
-  /*border-radius: 5px;*/
-  width: 100%;
-}
-
  /*Spaceing*/
 .row {
   margin-top: 5px;
@@ -48,6 +43,10 @@ html, body {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
+}
+
+.top-padding-md {
+  padding-top: 35px;
 }
 
 .top-margin-lg {
@@ -226,6 +225,10 @@ footer {
   margin-bottom: 0;
 }
 
+.photo-upload {
+  min-height: 300px;
+}
+
 /*Background Colors*/
 .color-1 {
   background-color: #E4C5C2;
@@ -288,6 +291,47 @@ footer {
   height: auto
 }
 
+/*.hero-image {
+  height: 700px;
+  width: 100%;
+  overflow: hidden;
+}*/
+
+
+
+@media (max-width: 960px) {
+  .hero-image {
+    height: 500px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    height: 300px;
+  }
+  .hero-container {
+    display: none;
+  }
+}
+
+.hero-text {
+  position: absolute;
+  left: 10px;
+  top: 400px;
+  background-color: white;
+  opacity: .75;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.hero-container {
+  position: absolute;;
+  top: 200px;
+  left: 25%;
+  width: 50%;
+}
+
 /*Fonts*/
 @font-face {
     font-family: 'Helvetica Neue Light';
@@ -345,15 +389,14 @@ a:hover {
   border: solid;
   padding: 10px 20px 10px 20px;
   background-color: #FFF;
-  border-color: #D9ACA7;
-  color: #D9ACA7;
+  border-color: #485967;
+  color: #485967;
   border-radius: 0;
 }
 
 .btn:hover {
-  background-color: #D9ACA7;
+  background-color: #485967;
   color: #FFF;
-  opacity: .5;
 }
 
 .btn-tab {
@@ -381,14 +424,7 @@ a:hover {
   border-radius: 5px;
 }
 
-.img-button:hover {
-  opacity: .5;
-}
-
-/**
- * The CSS shown here will not be introduced in the Quickstart guide, but shows
- * how you can use CSS to style your Element's container.
- */
+/*Stripe*/
 .StripeElement {
   background-color: white;
   padding: 8px 12px;
@@ -409,4 +445,124 @@ a:hover {
 
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
+}
+
+/*Loader*/
+.loader {
+  color: #ffffff;
+  font-size: 90px;
+  text-indent: -9999em;
+  overflow: hidden;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  margin: 72px auto;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+  animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+}
+@-webkit-keyframes load6 {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+}
+@keyframes load6 {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+}
+@-webkit-keyframes round {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes round {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/*Angular Animations*/
+
+.fade {
+  opacity: 1;
+}
+.fade.ng-hide {
+  opacity: 0;
+}
+
+.fade.ng-hide-remove,
+.fade.ng-hide-add {
+  display: block !important;
+}
+
+.fade.ng-hide-remove {
+  transition: all linear 1000ms;
+}
+
+.fade.ng-hide-add {
+  transition: all linear 500ms;
+}
+
+.collapsable {
+    display: inline-block;
+    overflow: hidden;
+    height: 0;
+    width: 100%;
+    transition: height 1s;
+    -webkit-transition: height 1s;
+    -moz-transition: height 1s;
+    -o-transition: height 1s;
+  }
+  /*TODO figure out how to make the animation work*/
+  .collapsable.showMe {
+  /*width: 100%;*/
+  height: 100%;
 }

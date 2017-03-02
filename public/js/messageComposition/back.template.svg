@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306" class="standard-border-radius top-margin-sm">
+<style>
+  .cls-1 {
+    opacity: 0.2;
+  }
+
+  .cls-2 {
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+  }
+</style>
+  <g>
+    <rect class="cls-1" fill="{{$ctrl.postcard.color}}" x="12.4" y="12.39" width="425.43" height="280.85"/>
+    <line stroke="{{$ctrl.postcard.color}}" class="cls-2" x1="190.19" y1="275.99" x2="190.19" y2="30.01"/>
+    <path fill="{{$ctrl.postcard.color}}" d="M0,0V305.62H450V0ZM437.83,293.23H12.4V12.39H437.83Z"/>
+    <!-- Message Text -->
+    <foreignObject x="20" y="80" width="200" height="150">
+      <p class="message-preview">{{$ctrl.message}}</p>
+    </foreignObject>
+    <!-- To Text -->
+    <foreignObject x="210" y="130" width="200" height="20">
+      <p class="address-preview">From:</p>
+    </foreignObject>
+    <foreignObject x="240" y="130" width="200" height="20">
+      <p class="address-preview">{{$ctrl.from.name}}</p>
+      <p class="address-preview">{{$ctrl.from.address_line1}}</p>
+      <p class="address-preview">{{$ctrl.from.address_line2}}</p>
+      <p class="address-preview">{{$ctrl.from.address_city}}</p>
+      <p class="address-preview">{{$ctrl.from.address_state}}</p>
+      <p class="address-preview">{{$ctrl.from.address_zip}}</p>
+    </foreignObject>
+    <foreignObject x="210" y="200" width="200" height="20">
+      <p class="address-preview">To:</p>
+    </foreignObject>
+    <foreignObject x="240" y="200" width="200" height="20">
+      <p class="address-preview">{{$ctrl.to.name}}</p>
+      <p class="address-preview">{{$ctrl.to.address_line1}}</p>
+      <p class="address-preview">{{$ctrl.to.address_line2}}</p>
+      <p class="address-preview">{{$ctrl.to.address_city}}</p>
+      <p class="address-preview">{{$ctrl.to.address_state}}</p>
+      <p class="address-preview">{{$ctrl.to.address_zip}}</p>
+    </foreignObject>
+  </g>
+</svg>

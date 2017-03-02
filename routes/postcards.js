@@ -51,20 +51,16 @@ router.post('/', (req, res, next) => {
 
   const {payment_info} = req.body;
   const payment = payment_info;
-  // console.log(req.body);
-  const {frame_url} = req.body;
-  const frame = frame_url;
-
+  console.log(payment);
   const {color_hex} = req.body;
   const color = color_hex;
 
   // Retrieve html template
-  let postcard = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
+  let postcard_front = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
+  let postcard_back = fs.readFileSync(__dirname + `/../public/postcard_templates/postcard_back.html`, { encoding: 'utf-8' });
 
   // Add zip to db for data viz
   newCard.from_zip = send_from.address_zip;
-
-  // TODO server side validation of newCard object
 
   // CHARGE USER
   stripe.customers.create({
@@ -94,12 +90,13 @@ router.post('/', (req, res, next) => {
       to: send_to,
       from: send_from,
       size: '4x6',
-      front: postcard,
-      message: msg,
+      front: postcard_front,
+      back: postcard_back,
       data: {
         image_url: newCard.image_url,
         greetings_subtext: newCard.greetings_subtext,
-        color: color
+        color: color,
+        message: msg
         // frame: frame_url
       }
     }, function (err, postcard) {

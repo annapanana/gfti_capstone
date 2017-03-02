@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 400">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        opacity: 0.5;
+      }
+    </style>
+  </defs>
+  <title>hero_background</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <image width="100" height="400" transform="translate(800)" xlink:href="../../assets/hero_src/hero_berlin.png"/>
+      <image width="100" height="400" transform="translate(700)" xlink:href="../../assets/hero_src/hero_colorado.png"/>
+      <image width="100" height="400" transform="translate(600)" xlink:href="../../assets/hero_src/hero_hawaii.png"/>
+      <image width="100" height="400" transform="translate(500)" xlink:href="../../assets/hero_src/hero_india.png"/>
+      <image width="100" height="400" transform="translate(400)" xlink:href="../../assets/hero_src/hero_istanbul.png"/>
+      <image width="100" height="400" transform="translate(300)" xlink:href="../../assets/hero_src/hero_japan.png"/>
+      <image width="100" height="400" transform="translate(200)" xlink:href="../../assets/hero_src/hero_paris.png"/>
+      <image width="100" height="400" transform="translate(100)" xlink:href="../../assets/hero_src/hero_peru.png"/>
+      <image width="100" height="400" transform="translate(900)" xlink:href="../../assets/hero_src/hero_south_africa.png"/>
+      <image width="100" height="400" xlink:href="../../assets/hero_src/hero_sydney.png"/>
+      <image width="100" height="400" transform="translate(1100)" xlink:href="../../assets/hero_src/hero_morocco.png"/>
+      <image width="100" height="400" transform="translate(1000)" xlink:href="../../assets/hero_src/hero_space.png"/>
+      <rect class="cls-1 fade" width="100" height="400" ng-show="$ctrl.hoverObject !== 'sydney'"/>
+      <rect class="cls-1 fade" x="100" width="100" height="400" ng-show="$ctrl.hoverObject !== 'peru'"/>
+      <rect class="cls-1 fade" x="200" width="100" height="400" ng-show="$ctrl.hoverObject !== 'paris'"/>
+      <rect class="cls-1 fade" x="300" width="100" height="400" ng-show="$ctrl.hoverObject !== 'japan'"/>
+      <rect class="cls-1 fade" x="400" width="100" height="400" ng-show="$ctrl.hoverObject !== 'istanbul'"/>
+      <rect class="cls-1 fade" x="500" width="100" height="400" ng-show="$ctrl.hoverObject !== 'india'"/>
+      <rect class="cls-1 fade" x="600" width="100" height="400" ng-show="$ctrl.hoverObject !== 'hawaii'"/>
+      <rect class="cls-1 fade" x="700" width="100" height="400" ng-show="$ctrl.hoverObject !== 'colorado'"/>
+      <rect class="cls-1 fade" x="800" width="100" height="400" ng-show="$ctrl.hoverObject !== 'berlin'"/>
+      <rect class="cls-1 fade" x="900" width="100" height="400" ng-show="$ctrl.hoverObject !== 'south africa'"/>
+      <rect class="cls-1" x="1000" width="100" height="400" ng-mouseover="$ctrl.setHoverObject('outer space')" ng-show="$ctrl.hoverObject !== 'outer space'"/>
+      <rect class="cls-1" x="1100" width="100" height="400" ng-show="$ctrl.hoverObject !== 'morocco'"/>
+    </g>
+  </g>
+</svg>

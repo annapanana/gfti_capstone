@@ -1,0 +1,84 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+<title>Lob.com Sample 4x6 Postcard Back</title>
+<style>
+  *, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  body {
+    width: 6.25in;
+    height: 4.25in;
+    margin: 0;
+    padding: 0;
+    /* If using an image, the background image should have dimensions of 1875x1275 pixels. */
+    background-size: 6.25in 4.25in;
+    background-repeat: no-repeat;
+  }
+
+  @font-face {
+      font-family: 'Helvetica Neue Light';
+      src: url('https://s3-us-west-2.amazonaws.com/gftiresources/assets/HelveticaNeueLTCom-Lt.ttf');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+  #safe-area {
+    position: absolute;
+    width: 5.875in;
+    height: 3.875in;
+    left: 0.1875in;
+    top: 0.1875in;
+  }
+
+  #ink-free {
+    position: absolute;
+    width: 3.5in;
+    height: 2.7in;
+    right: -0.1875in;
+    bottom: -0.1875in;
+    background-color: white;
+  }
+
+  .text {
+    margin: 10px;
+    margin-top: 15px;
+    width: 200px;
+    font-family: 'Helvetica Neue Light';
+    font-size: 17px;
+    color: black;
+  }
+
+  .cls-1 {
+    opacity: 0.2;
+  }
+
+  .cls-2 {
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+  }
+</style>
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 306">
+    <g>
+      <rect class="cls-1" fill="{{color}}" x="12.4" y="12.39" width="425.43" height="280.85"/>
+      <line stroke="{{color}}" class="cls-2" x1="190.19" y1="275.99" x2="190.19" y2="30.01"/>
+      <path fill="{{color}}" d="M0,0V305.62H450V0ZM437.83,293.23H12.4V12.39H437.83Z"/>
+    </g>
+  </svg>
+  <div id="safe-area">
+    <!-- All text should appear without the safe area. -->
+    <div class="text">
+      {{message}}
+    </div>
+  </div>
+</body>
+
+</html>

@@ -29,6 +29,7 @@
         postcardService.setFilter(filter_id);
         vm.postcard.filter = postcardService.getFilter();
         vm.postcard.background = postcardService.refreshBackgroundImage($sce);
+
       };
 
       vm.selectFrame = function(frame_id) {
