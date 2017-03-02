@@ -150,12 +150,12 @@ var filterData = [
   {
     id:1,
     name: "#contrast",
-    asset: "color.svg"
+    asset: "../../assets/filters/filter_dark.svg"
   },
   {
     id:2,
     name: "#add-saturation",
-    asset: "color.svg",
+    asset: "../../assets/filters/filter_bright.svg",
   },
   {
     id:3,

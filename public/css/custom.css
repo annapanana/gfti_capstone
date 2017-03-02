@@ -321,6 +321,10 @@ footer {
   height: auto
 }
 
+.image-shadow {
+  box-shadow: 4px 4px 4px rgba(79, 79, 79, 0.46);
+}
+
 /*.hero-image {
   height: 700px;
   width: 100%;

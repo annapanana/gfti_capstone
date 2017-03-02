@@ -12,9 +12,10 @@ exports.up = function(knex, Promise) {
     table.string('from_zip').notNullable();
     table.string('name');
     table.string('notes');
-    table.string('thumbnail_url');
-    table.string('order_id').notNullable();
-    table.bool('image_processed').notNullable().defaultsTo(false);
+    table.string('thumbnail_url').notNullable();
+    table.bool('is_saved').notNullable().defaultsTo(false);
+    // table.string('order_id').notNullable();
+    // table.bool('image_processed').notNullable().defaultsTo(false);
   });
 };
 
