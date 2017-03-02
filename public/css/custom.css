@@ -43,6 +43,23 @@ html, body {
   }
 }
 
+.h-image1 {
+  display: block;
+}
+
+.h-image2 {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .h-image1 {
+    display: none;
+  }
+  .h-image2 {
+    display: block;
+  }
+}
+
 .text-background {
   background-color: #FFF;
   /*border-radius: 5px;*/
