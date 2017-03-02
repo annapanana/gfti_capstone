@@ -2,11 +2,11 @@
   <defs>
     <style>
       .cls-1, .cls-5, .cls-6 {
-        fill: #485967;
+        fill: #be242c;
       }
 
       .cls-2 {
-        fill: #a0c1bb;
+        fill: #fff;
       }
 
       .cls-3 {
@@ -14,7 +14,7 @@
       }
 
       .cls-3, .cls-4 {
-        stroke: #485967;
+        stroke: #be242c;
         stroke-miterlimit: 10;
         stroke-width: 6px;
       }
