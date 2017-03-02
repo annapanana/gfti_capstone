@@ -49,7 +49,7 @@
         };
         localStorage.setItem('postcard', JSON.stringify(postcard));
         $(".card-preview").flip();
-        updateHoverObject();
+        selectRandomWallpaper();
       };
 
       vm.flip = function() {
@@ -60,22 +60,19 @@
       vm.openh2 = false;
       vm.openh3 = false;
 
-      vm.hoverObject = "";
-      vm.setHoverObject = function(obj) {
-        vm.hoverObject = obj;
-        index = destinations.indexOf(obj);
-      };
-
-      let destinations = ['sydney', 'peru', 'paris', 'japan', 'istanbul', 'india', 'hawaii', 'colorado', 'berlin', 'south africa', 'outer space', 'morocco'];
-      let index = 0;
-
-      function updateHoverObject() {
-        vm.hoverObject = destinations[index];
-        index++;
-        if (index > destinations.length - 1) {
-          index = 0;
+      vm.imageSets = [3, 1, 1, 1];
+      vm.updateImage = function(image_num) {
+        vm.imageSets[image_num]+=1;
+        if (vm.imageSets[image_num] > 3) {
+          vm.imageSets[image_num] = 1;
         }
-        $timeout(updateHoverObject, 2000);
       };
+
+      vm.wallpaper = 1;
+      function selectRandomWallpaper() {
+        // TODO select a wallpaper to disply
+        vm.wallpaper = Math.floor(Math.random() * 3);
+        console.log(vm.wallpaper);
+      }
     }
 }());

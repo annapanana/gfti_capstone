@@ -563,6 +563,6 @@ a:hover {
   }
   /*TODO figure out how to make the animation work*/
   .collapsable.showMe {
-  width: 100%;
-  height: auto;
+  /*width: 100%;*/
+  height: 100%;
 }
