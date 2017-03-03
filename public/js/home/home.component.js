@@ -48,7 +48,11 @@
           },
         };
         localStorage.setItem('postcard', JSON.stringify(postcard));
-        $(".card-preview").flip();
+        // $(".card-preview").flip({autoSize: true});
+        $(".card-preview").flip({
+          trigger: 'hover',
+        });
+
         selectRandomWallpaper();
       };
 

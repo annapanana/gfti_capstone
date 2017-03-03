@@ -3,9 +3,59 @@
   <img class="h-image2" ng-src="../../assets/headers/h10_small.svg" alt="select-theme">
 </div>
 
+
+
 <div class="container">
-  <div class="card-container col-xs-12">
-    <div class="card" ng-repeat="entry in $ctrl.archive">
+  <div class="row top-margin-md">
+    <div class="col-xs-12">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-4 text-center" style="background-color:red; height:75px;">
+        <div class="row">
+          Search for Keyword...
+        </div>
+        <div class="row">
+          <input type="search" class="form-control input-sm search-form" placeholder="Search" ng-model="search.title">
+        </div>
+      </div>
+      <div class="col-sm-2" style="background-color:blue; height:75px;">
+        <div class="col-xs-12 text-center">
+          <h5>Filter By...</h5>
+        </div>
+        <div class="col-xs-12 text-center">
+          <a href="#"
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false">{{$ctrl.filterBy}} <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li ng-click="$ctrl.updateFilterCriteria('None')"><a>None</a></li>
+            <li ng-click="$ctrl.updateFilterCriteria('Classic')"><a>Classic</a></li>
+            <li ng-click="$ctrl.updateFilterCriteria('Playful')"><a>Playful</a></li>
+            <li ng-click="$ctrl.updateFilterCriteria('Modern')"><a>Modern</a></li>
+            <li ng-click="$ctrl.updateFilterCriteria('Wild')"><a>Wild</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-4 text-center" style="background-color:green; height:75px;">
+        <div class="col-xs-12">
+          <h5>Sort By...</h5>
+        </div>
+        <div class="col-xs-12">
+          <div class="col-xs-6">
+            <button type="button" name="button">Popularity</button>
+          </div>
+          <div class="col-xs-6">
+            <button type="button" name="button">Date Created</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
+  </div>
+
+  <div class="card-container col-xs-12 top-margin-sm">
+    <div class="card" ng-repeat="entry in $ctrl.archive" ng-click="$ctrl.selectTemplate(entry.id)">
       <img class="image-fill" ng-src="{{entry.thumbnail_url}}" alt="">
       <h4>{{entry.name}}</h4>
       <p>{{entry.notes}}</p>
