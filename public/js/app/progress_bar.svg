@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 553.76 71.95">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #aae0f8;
+      }
+
+      .cls-2 {
+        fill: #b3e3f9;
+      }
+
+      .cls-3 {
+        fill: #bbe6f9;
+      }
+
+      .cls-4 {
+        fill: #c4e9fa;
+      }
+
+      .cls-5 {
+        fill: #ccecfb;
+      }
+
+      .cls-6 {
+        fill: #d4effb;
+      }
+    </style>
+  </defs>
+  <title>progress_bar</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_2-2" data-name="Layer 2">
+      <polygon class="cls-1" points="78.96 71.95 0 71.95 20 35.98 0 0 78.96 0 108.96 35.98 78.96 71.95"/>
+      <polygon class="cls-2" points="167.92 71.95 88.96 71.95 118.96 35.98 88.96 0 167.92 0 197.92 35.98 167.92 71.95"/>
+      <polygon class="cls-3" points="256.88 71.95 177.92 71.95 207.92 35.98 177.92 0 256.88 0 286.88 35.98 256.88 71.95"/>
+      <polygon class="cls-4" points="345.84 71.95 266.88 71.95 296.88 35.98 266.88 0 345.84 0 375.84 35.98 345.84 71.95"/>
+      <polygon class="cls-5" points="434.8 71.95 355.84 71.95 385.84 35.98 355.84 0 434.8 0 464.8 35.98 434.8 71.95"/>
+      <polygon class="cls-6" points="523.76 71.95 444.8 71.95 474.8 35.98 444.8 0 523.76 0 553.76 35.98 523.76 71.95"/>
+    </g>
+  </g>
+</svg>

@@ -223,16 +223,17 @@ footer {
   display: flex;
   flex-flow: column;
   justify-content: center;
+  border-style: solid;
+  border-width: thick;
+  border-color: #FFF;
+}
+
+.widget-element-selected {
+  border-color: #AAE0F8;
 }
 
 .widget-element:hover {
   opacity: .5;
-}
-
-.widget-element-selected {
-  border-style: solid;
-  border-color: #FFF;
-  border-width: thick;
 }
 
 .text-widget {

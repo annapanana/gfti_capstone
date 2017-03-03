@@ -31,11 +31,11 @@
       <h4 class="top-margin-sm">Select Filter</h4>
       <div class="row flex-row">
         <!-- Color Selection -->
-        <slick class="ui-widget color-1" dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
+        <slick class="ui-widget white" style="opacity:.85" dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
           <div ng-repeat="filter in $ctrl.filters">
             <div>
               <a ng-click="$ctrl.selectFilter(filter.id)">
-                <img class="widget-element" ng-src="{{filter.asset}}" alt="{{filter.name}}">
+                <img class="widget-element" ng-class="{'widget-element-selected':filter.id==$ctrl.curFilter}" ng-src="{{filter.asset}}" alt="{{filter.name}}">
               </a>
             </div>
           </div>
@@ -43,11 +43,11 @@
       </div>
       <h4 class="top-margin-sm">Select Frame</h4>
       <div class="row flex-row">
-        <slick class="ui-widget color-1" dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
+        <slick class="ui-widget white" style="opacity:.85" dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
           <div ng-repeat="singleFrame in $ctrl.frames">
             <div class="">
               <a ng-click="$ctrl.selectFrame(singleFrame.id)">
-                <div class="widget-element"><h3>{{singleFrame.id}}</h3></div>
+                <div class="widget-element" ng-class="{'widget-element-selected':singleFrame.id==$ctrl.curFrame}"><h3>{{singleFrame.id}}</h3></div>
               </a>
             </div>
           </div>
@@ -59,7 +59,7 @@
           <div ng-repeat="color in $ctrl.colors">
             <div class="">
               <a ng-click="$ctrl.selectColor(color.id)">
-                <div class="widget-element" style="background-color:{{color.c}};"></div>
+                <div class="widget-element" ng-class="{'widget-element-selected':color.id==$ctrl.curColor}" style="background-color:{{color.c}};"></div>
               </a>
             </div>
           </div>
@@ -67,7 +67,7 @@
       </div>
       <h4 class="top-margin-sm">Select Font</h4>
       <div class="row flex-row">
-        <slick class="ui-widget color-1" dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
+        <slick class="ui-widget white" style="opacity:.85" dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
           <div ng-repeat="singleFrame in $ctrl.frames">
             <div class="">
               <a ng-click="$ctrl.selectFrame(singleFrame.id)">

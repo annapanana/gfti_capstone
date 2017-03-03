@@ -11,7 +11,7 @@
       const vm = this;
       vm.archive = [];
       vm.filterBy = undefined;
-      vm.filterName = "All"
+      vm.filterName = "All";
       vm.sortCriteria = "Popularity";
 
       vm.$onInit = function() {
