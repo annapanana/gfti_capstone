@@ -11,8 +11,18 @@
       const vm = this;
       vm.currentTab = 'message';
       vm.curStep = 4;
-      
       vm.hoverStep = 0;
+      vm.nextStep = false;
+      vm.buttonHover = false;
+
+      vm.setNextButton = function() {
+        vm.nextStep = true;
+      };
+
+      vm.hoverNext = function(state) {
+        vm.buttonHover = state;
+      };
+
       vm.setHoverStep = function(step) {
         vm.hoverStep = step;
       };
@@ -35,7 +45,7 @@
         vm.currentTab = tab;
       };
 
-      vm.nextStep = function() {
+      vm.next = function() {
 
         // Is the state entered correctly?
         if (!checkStateCode(vm.to.address_state)) {

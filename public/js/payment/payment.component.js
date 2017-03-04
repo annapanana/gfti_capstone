@@ -10,8 +10,18 @@
     function controller($http, $state, $stateParams, $timeout, $sce, postcardService) {
       const vm = this;
       vm.curStep = 5;
-
       vm.hoverStep = 0;
+      vm.nextStep = false;
+      vm.buttonHover = false;
+
+      vm.setNextButton = function() {
+        vm.nextStep = true;
+      };
+
+      vm.hoverNext = function(state) {
+        vm.buttonHover = state;
+      };
+      
       vm.setHoverStep = function(step) {
         vm.hoverStep = step;
       };
