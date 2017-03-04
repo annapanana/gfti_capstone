@@ -32,7 +32,6 @@
     "lob": "^3.9.0",
     "pg": "^6.1.2",
     "slick-carousel": "^1.6.0",
-    "socket.io": "1.7.2",
     "stripe": "^4.15.0",
     "ui-bootstrap": "^0.1.10"
   }
