@@ -7,14 +7,17 @@
     });
 
     controller.$inject = ["$http", "$state", "$stateParams"];
-    function controller($http, $state, stateParams) {
+    function controller($http, $state, $stateParams) {
       const vm = this;
+      vm.curStep = 1;
       var postcard = {};
       vm.composition_settings = {};
 
       vm.$onInit = function() {
         postcard = JSON.parse(localStorage.getItem('postcard'));
         vm.composition_settings = postcard.composition_settings;
+
+        // console.log($stateParams);
       };
 
       vm.selectTheme = function(theme) {

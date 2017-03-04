@@ -7,12 +7,19 @@
     });
 
     controller.$inject = ["$http", "$state", "$stateParams", "$scope", "$sce", "postcardService"];
-    function controller($http, $state, stateParams, $scope, $sce, postcardService) {
+    function controller($http, $state, $stateParams, $scope, $sce, postcardService) {
       const vm = this;
       vm.isLoading = false;
-
+      vm.curStep = 2;
       vm.postcard = {
         background: postcardService.getBackgroundImage($sce)
+      };
+
+      vm.$onInit = function() {
+        $stateParams.header_lg = "../../assets/headers/h5.svg";
+        $stateParams.header_sm = "../../assets/headers/h5_small.svg";
+        $stateParams.nextTarg = 'imageComposition';
+        console.log($stateParams);
       };
 
       vm.nextStep = function() {

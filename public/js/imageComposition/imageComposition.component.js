@@ -9,7 +9,8 @@
     controller.$inject = ["$http", "$state", "$stateParams", "$sce", "$scope", "postcardService"];
     function controller($http, $state, stateParams, $sce, $scope, postcardService) {
       const vm = this;
-
+      vm.curStep = 3;
+      
       vm.$onInit = function() {
         vm.filters = postcardService.getFilterData();
         vm.frames = postcardService.getFrameData();

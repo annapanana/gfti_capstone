@@ -10,6 +10,7 @@
     function controller($http, $state, stateParams, $sce, postcardService) {
       const vm = this;
       vm.currentTab = 'message';
+      vm.curStep = 4;
 
       vm.postcard = {
         frame: postcardService.updateFrameUrl($sce),

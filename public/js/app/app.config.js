@@ -14,12 +14,6 @@
           component: "app"
         })
         .state({
-          name: "tool",
-          parent: "app",
-          abstract: true,
-          component: "tool"
-        })
-        .state({
           name: "home",
           parent: "app",
           url: "/",
@@ -27,25 +21,25 @@
         })
         .state({
           name: "payment",
-          parent: "tool",
+          parent: "app",
           url: "/payment",
           component: "payment"
         })
         .state({
           name: "messageComposition",
-          parent: "tool",
+          parent: "app",
           url: "/message-composition",
           component: "messageComposition"
         })
         .state({
           name: "imageComposition",
-          parent: "tool",
+          parent: "app",
           url: "/image-composition",
           component: "imageComposition"
         })
         .state({
           name: "photoUpload",
-          parent: "tool",
+          parent: "app",
           url: "/photo-upload",
           component: "photoUpload"
         })
@@ -63,13 +57,13 @@
         })
         .state({
           name: "themeSelection",
-          parent: "tool",
+          parent: "app",
           url: "/theme-selection",
-          component: "themeSelection"
+          component: "themeSelection",
         })
         .state({
           name: "postcardSent",
-          parent: "tool",
+          parent: "app",
           url: "postcard-sent",
           component: "postcardSent"
         });

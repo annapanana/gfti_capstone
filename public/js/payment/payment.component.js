@@ -9,6 +9,7 @@
     controller.$inject = ["$http", "$state", "$stateParams", "$timeout", "$sce", "postcardService"];
     function controller($http, $state, $stateParams, $timeout, $sce, postcardService) {
       const vm = this;
+      vm.curStep = 5;
 
       vm.isLoading = false;
       var stripe = Stripe('pk_test_1EIBbNvuJSQ8GPIJFBC71eqP');
