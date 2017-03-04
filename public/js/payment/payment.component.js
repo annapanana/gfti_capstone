@@ -21,7 +21,7 @@
       vm.hoverNext = function(state) {
         vm.buttonHover = state;
       };
-      
+
       vm.setHoverStep = function(step) {
         vm.hoverStep = step;
       };
@@ -50,6 +50,10 @@
           subtext: postcardService.getSubtext(),
           background: postcardService.getBackgroundImage($sce)
         };
+
+        vm.to = postcardService.getAddressedTo();
+        vm.from = postcardService.getAddressedFrom();
+        vm.message = postcardService.getMessage();
 
         vm.payment_info = postcardService.getPaymentInfo();
 

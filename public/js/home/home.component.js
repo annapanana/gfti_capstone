@@ -22,7 +22,7 @@
           },
           frame_url: "classic-1",
           color_hex: "#F4987A",
-          message: '',
+          message: 'this is a message',
           to: {
             name: 'anna',
             address_line1: '1260 kalmia ave',

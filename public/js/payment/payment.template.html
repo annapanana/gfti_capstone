@@ -38,16 +38,19 @@
   <div class="row text-center top-margin-sm">
     <button type="button" class="btn" name="button" ng-click="$ctrl.submitCard()">Pay and Send</button>
   </div>
-  <div class="row top-margin-sm flex-row">
-    <a href="#">
-      <div class="card-preview" ng-click="$ctrl.flip()">
-        <div class="front">
-          <div front-design></div>
-        </div>
-        <div class="back">
-          <div back-design></div>
-        </div>
+  <div class="row top-margin-sm">
+    <div class="row text-center">
+      <h3>Order Preview:</h3>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-sm-1"></div>
+      <div class="col-md-4 col-sm-5 col-sx-12">
+        <div front-design></div>
       </div>
-    </a>
+      <div class="col-md-4 col-sm-5 col-sx-12">
+        <div back-design></div>
+      </div>
+      <div class="col-md-2 col-sm-1"></div>
+    </div>
   </div>
 </div>
