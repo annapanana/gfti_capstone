@@ -29,7 +29,6 @@
       };
 
       this.getBackgroundImage = function($sce) {
-        console.log(this.postcard.composition_settings.image_url);
         return $sce.trustAsResourceUrl(this.postcard.composition_settings.image_url);
       };
 
@@ -116,7 +115,6 @@
 
       this.setPaymentInfo = function(data) {
         this.postcard.payment_info = data;
-        console.log("setting", data);
       };
 
       this.setId = function(id) {

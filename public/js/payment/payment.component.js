@@ -11,6 +11,11 @@
       const vm = this;
       vm.curStep = 5;
 
+      vm.hoverStep = 0;
+      vm.setHoverStep = function(step) {
+        vm.hoverStep = step;
+      };
+
       vm.isLoading = false;
       var stripe = Stripe('pk_test_1EIBbNvuJSQ8GPIJFBC71eqP');
       var elements = stripe.elements();

@@ -11,15 +11,14 @@
       const vm = this;
       vm.isLoading = false;
       vm.curStep = 2;
-      vm.postcard = {
-        background: postcardService.getBackgroundImage($sce)
+      vm.hoverStep = 0;
+
+      vm.setHoverStep = function(step) {
+        vm.hoverStep = step;
       };
 
-      vm.$onInit = function() {
-        $stateParams.header_lg = "../../assets/headers/h5.svg";
-        $stateParams.header_sm = "../../assets/headers/h5_small.svg";
-        $stateParams.nextTarg = 'imageComposition';
-        console.log($stateParams);
+      vm.postcard = {
+        background: postcardService.getBackgroundImage($sce)
       };
 
       vm.nextStep = function() {

@@ -11,6 +11,11 @@
       const vm = this;
       vm.currentTab = 'message';
       vm.curStep = 4;
+      
+      vm.hoverStep = 0;
+      vm.setHoverStep = function(step) {
+        vm.hoverStep = step;
+      };
 
       vm.postcard = {
         frame: postcardService.updateFrameUrl($sce),

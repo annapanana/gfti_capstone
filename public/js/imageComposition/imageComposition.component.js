@@ -11,6 +11,11 @@
       const vm = this;
       vm.curStep = 3;
       
+      vm.hoverStep = 0;
+      vm.setHoverStep = function(step) {
+        vm.hoverStep = step;
+      };
+
       vm.$onInit = function() {
         vm.filters = postcardService.getFilterData();
         vm.frames = postcardService.getFrameData();

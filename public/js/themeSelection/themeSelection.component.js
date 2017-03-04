@@ -6,17 +6,21 @@
       controller: controller
     });
 
-    controller.$inject = ["$http", "$state", "$stateParams"];
-    function controller($http, $state, $stateParams) {
+    controller.$inject = ["$http", "$state", "$stateParams", "$timeout"];
+    function controller($http, $state, $stateParams, $timeout) {
       const vm = this;
       vm.curStep = 1;
+      vm.hoverStep = 0;
+      vm.setHoverStep = function(step) {
+        vm.hoverStep = step;
+      };
+
       var postcard = {};
       vm.composition_settings = {};
 
       vm.$onInit = function() {
         postcard = JSON.parse(localStorage.getItem('postcard'));
         vm.composition_settings = postcard.composition_settings;
-
         // console.log($stateParams);
       };
 
