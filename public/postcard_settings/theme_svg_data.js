@@ -145,32 +145,57 @@ var filterData = [
   {
     id:0,
     name: "#noFilter",
-    asset_name: "color.svg"
+    asset: "../../assets/filters/filter_none.svg"
   },
   {
     id:1,
-    name: "#pictureFilter",
-    asset_name: "color.svg"
+    name: "#contrast",
+    asset: "../../assets/filters/filter_dark.svg"
   },
   {
     id:2,
     name: "#add-saturation",
-    asset_name: "color.svg",
+    asset: "../../assets/filters/filter_bright.svg",
   },
   {
     id:3,
-    name: "#duotone-filter",
-    asset_name: "color.svg"
+    name: "#purple",
+    asset: "../../assets/filters/filter_purple.svg"
   },
   {
     id:4,
-    name: "#noFilter",
-    asset_name: "color.svg"
+    name: "#yellow",
+    asset: "../../assets/filters/filter_yellow.svg"
   },
   {
     id:5,
-    name: "#noFilter",
-    asset_name: "color.svg"
+    name: "#cyan",
+    asset: "../../assets/filters/filter_cyan.svg"
+  },
+  {
+    id:6,
+    name: "#bw",
+    asset: "../../assets/filters/filter_bw.svg"
+  },
+  {
+    id:7,
+    name: "#oldtimes",
+    asset: "../../assets/filters/filter_old_times.svg"
+  },
+  {
+    id:8,
+    name: "#coldlife",
+    asset: "../../assets/filters/filter_cold_life.svg"
+  },
+  {
+    id:9,
+    name: "#sepium",
+    asset: "../../assets/filters/filter_sepium.svg"
+  },
+  {
+    id:10,
+    name: "#milk",
+    asset: "../../assets/filters/filter_milk.svg"
   }
 ];
 

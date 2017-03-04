@@ -119,6 +119,18 @@
         console.log("setting", data);
       };
 
+      this.setId = function(id) {
+        this.postcard.id = id;
+      };
+
+      this.setDeliveryDate = function(date) {
+        this.postcard.delivery_date = date;
+      };
+
+      this.updatePostcardObject = function(obj) {
+        this.postcard = obj;
+      };
+
       this.savePostcardData = function() {
         // console.log(this.postcard);
         localStorage.setItem('postcard', JSON.stringify(this.postcard));

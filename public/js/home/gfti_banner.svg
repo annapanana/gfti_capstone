@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1061.13 414.5">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 501">
   <defs>
     <style>
       .cls-1 {
@@ -472,10 +472,14 @@
   <g class="cls-2">
     <g id="Layer_2" data-name="Layer 2">
       <g id="Layer_3" data-name="Layer 3">
-        <image width="1024" height="400" transform="scale(1.04)" xlink:href="../../assets/wall_paper/wallpaper_1.png" ng-hide="$ctrl.wallpaper !== 0"/>
-        <image width="1024" height="400" transform="scale(1.04)" xlink:href="../../assets/wall_paper/wallpaper_02.png" ng-hide="$ctrl.wallpaper !== 1"/>
-        <image width="1024" height="400" transform="scale(1.04)" xlink:href="../../assets/wall_paper/wallpaper_04.png" ng-hide="$ctrl.wallpaper !== 2"/>
-        <g>
+        <image width="1024" height="501" xlink:href="../../assets/wall_paper/wallpaper_01.png" ng-hide="$ctrl.wallpaper !== 0"/>
+        <image width="1024" height="501" xlink:href="../../assets/wall_paper/wallpaper_02.png" ng-hide="$ctrl.wallpaper !== 1"/>
+        <image width="1024" height="501" xlink:href="../../assets/wall_paper/wallpaper_03.png" ng-hide="$ctrl.wallpaper !== 2"/>
+
+        <!-- <image width="1024" height="500" transform="scale(1.04)" xlink:href="../../assets/wall_paper/wallpaper_01.png" ng-hide="$ctrl.wallpaper !== 0"/>
+        <image width="1024" height="500" transform="scale(1.04)" xlink:href="../../assets/wall_paper/wallpaper_02.png" ng-hide="$ctrl.wallpaper !== 1"/>
+        <image width="1024" height="500" transform="scale(1.04)" xlink:href="../../assets/wall_paper/wallpaper_03.png" ng-hide="$ctrl.wallpaper !== 2"/> -->
+        <g transform="translate(-16)">
           <g>
             <g>
               <g class="cls-2">

@@ -51,7 +51,7 @@ router.post('/', (req, res, next) => {
 
   const {payment_info} = req.body;
   const payment = payment_info;
-  console.log(payment);
+
   const {color_hex} = req.body;
   const color = color_hex;
 
@@ -105,11 +105,9 @@ router.post('/', (req, res, next) => {
         return res.send(err);
       }
 
-      // console.log("card", postcard);
-      newCard.order_id = postcard.id;
-      newCard.image_processed = false;
-
-      console.log("ORDER", postcard.id);
+      // newCard.order_id = postcard.id;
+      // newCard.image_processed = false;
+      newCard.thumbnail_url = postcard.thumbnails[0].large;
       knex('postcards')
         .insert(newCard, '*')
         .then((result) => {
@@ -130,15 +128,15 @@ router.post('/', (req, res, next) => {
     const {card_name, card_notes, thumbnail} = req.body;
     var name = card_name;
     var notes = card_notes;
-    var thumb = thumbnail;
-
+    console.log(name, notes);
+    console.log(id);
     knex('postcards')
       .where('postcards.id', id)
       .then((result) => {
         result[0].name = name;
         result[0].notes = notes;
-        result[0].thumbnail_url = thumb;
-
+        result[0].is_saved = true;
+        console.log(result);
         knex('postcards')
           .where('postcards.id', id)
           .update(result[0], '*')

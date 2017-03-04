@@ -18,7 +18,7 @@
             frame_id: 1,
             color_id: 2,
             greetings_subtext: 'greetings from the internet',
-            image_url: 'https://s3-us-west-2.amazonaws.com/gftiresources/tester.jpg'
+            image_url: '../../assets/placeholder_img.png'
           },
           frame_url: "classic-1",
           color_hex: "#F4987A",
@@ -48,7 +48,11 @@
           },
         };
         localStorage.setItem('postcard', JSON.stringify(postcard));
-        $(".card-preview").flip();
+        // $(".card-preview").flip({autoSize: true});
+        $(".card-preview").flip({
+          trigger: 'hover',
+        });
+
         selectRandomWallpaper();
       };
 
@@ -60,7 +64,7 @@
       vm.openh2 = false;
       vm.openh3 = false;
 
-      vm.imageSets = [3, 1, 1, 1];
+      vm.imageSets = [1, 1, 1, 3];
       vm.updateImage = function(image_num) {
         vm.imageSets[image_num]+=1;
         if (vm.imageSets[image_num] > 3) {

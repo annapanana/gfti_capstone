@@ -79,13 +79,10 @@
         $http.post('/postcards', postcardService.postcard).then((result) => {
           console.log("result", result.data);
           postcardService.setThumbnail(result.data[0].postcard.thumbnails[0].large);
+          postcardService.setId(result.data[0].id);
+          postcardService.setDeliveryDate(result.data[0].postcard.expected_delivery_date);
 
-
-          // postcard.order_id = result.data[0].postcard.id;
-          // postcard.thumbnail = result.data[0].postcard.thumbnails[0].large;
-          // postcard.deliveryDate = result.data[0].postcard.expected_delivery_date;
-          // postcard.id = result.data[0].id;
-
+          postcardService.savePostcardData();
           // localStorage.setItem('postcard', JSON.stringify(postcard));
           $state.go('postcardSent');
         });
