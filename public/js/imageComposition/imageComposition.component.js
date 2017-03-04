@@ -13,13 +13,16 @@
       vm.hoverStep = 0;
       vm.nextStep = false;
       vm.buttonHover = false;
+      vm.disabled = false;
 
       vm.setNextButton = function() {
         vm.nextStep = true;
       };
 
       vm.hoverNext = function(state) {
-        vm.buttonHover = state;
+        if (!vm.disabled) {
+          vm.buttonHover = state;
+        }
       };
 
       vm.setHoverStep = function(step) {

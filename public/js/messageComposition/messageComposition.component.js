@@ -14,13 +14,16 @@
       vm.hoverStep = 0;
       vm.nextStep = false;
       vm.buttonHover = false;
+      vm.disabled = true;
 
       vm.setNextButton = function() {
         vm.nextStep = true;
       };
 
       vm.hoverNext = function(state) {
-        vm.buttonHover = state;
+        if (!vm.disabled) {
+          vm.buttonHover = state;
+        }
       };
 
       vm.setHoverStep = function(step) {
@@ -43,6 +46,17 @@
 
       vm.changeTab = function(tab) {
         vm.currentTab = tab;
+      };
+
+      vm.checkIfValidData = function() {
+        postcardService.setAddressedFrom(vm.from);
+        postcardService.setAddressedTo(vm.to);
+        postcardService.setMessage(vm.message);
+        if (postcardService.validateBack()) {
+          vm.disabled = false;
+        } else {
+          vm.disabled = true;
+        }
       };
 
       vm.next = function() {

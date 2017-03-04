@@ -13,6 +13,12 @@
       .button-hover {
         opacity: .5;
       }
+      .dark-gray {
+        fill: #B3B3B3;
+      }
+      .light-gray {
+        fill: #E6E6E6;
+      }
     </style>
   </defs>
   <title>progress_bar_1</title>
@@ -121,9 +127,9 @@
         <path class="dark-blue" d="M458.47,84.76a2.47,2.47,0,0,1,.73,2v5h-2V87.26a2.07,2.07,0,0,0-.16-.9,1.1,1.1,0,0,0-1.09-.57,1.35,1.35,0,0,0-1.35.84,2.9,2.9,0,0,0-.19,1.13v4h-1.95V84.35h1.89v1.09a3.28,3.28,0,0,1,.71-.83,2.45,2.45,0,0,1,1.52-.45A2.86,2.86,0,0,1,458.47,84.76Z"/>
         <path class="dark-blue" d="M460.25,85.79V84.4h1V82.33h1.93V84.4h1.21v1.39h-1.21v3.94a.89.89,0,0,0,.12.57,1.28,1.28,0,0,0,.71.11h.38v1.46l-.92,0a2.48,2.48,0,0,1-1.89-.48,1.42,1.42,0,0,1-.33-1V85.79Z"/>
       </g>
-      <g id="next_step" ng-if="$ctrl.nextStep !== true" ng-mousedown="$ctrl.setNextButton()" ng-mouseenter="$ctrl.hoverNext(true)" ng-mouseleave="$ctrl.hoverNext(false)" ng-class="{'button-hover':$ctrl.buttonHover}" >
-        <rect class="light-blue" x="487.33" y="12.2" width="136.5" height="54.18"/>
-        <rect class="dark-blue" x="480.72" y="5.58" width="136.5" height="54.18"/>
+      <g id="next_step" ng-hide="$ctrl.nextStep === true && $ctrl.disabled === false" ng-mousedown="$ctrl.setNextButton()" ng-mouseenter="$ctrl.hoverNext(true)" ng-mouseleave="$ctrl.hoverNext(false)" ng-class="{'button-hover':$ctrl.buttonHover}" >
+        <rect ng-class="{'dark-gray':$ctrl.disabled}" class="light-blue" x="487.33" y="12.2" width="136.5" height="54.18"/>
+        <rect ng-class="{'light-gray':$ctrl.disabled}" class="dark-blue" x="480.72" y="5.58" width="136.5" height="54.18"/>
         <g>
           <path class="white-fill" d="M495.21,25.38H499l6.88,12.08V25.38h3.38V42.71h-3.62l-7.05-12.3v12.3h-3.37Z"/>
           <path class="white-fill" d="M520.74,30.15A5.21,5.21,0,0,1,523,32a6.31,6.31,0,0,1,1,2.65,16.42,16.42,0,0,1,.11,2.54h-9.33a3.08,3.08,0,0,0,1.34,2.7,3.41,3.41,0,0,0,1.85.48A2.61,2.61,0,0,0,520.49,39h3.42a4.19,4.19,0,0,1-1.24,2.32,6.23,6.23,0,0,1-4.82,1.87,7,7,0,0,1-4.51-1.58q-2-1.58-2-5.13a6.94,6.94,0,0,1,1.77-5.11,6.18,6.18,0,0,1,4.58-1.78A7.3,7.3,0,0,1,520.74,30.15Zm-5,2.89a3.49,3.49,0,0,0-.89,2h5.77a2.8,2.8,0,0,0-.89-2,2.94,2.94,0,0,0-2-.69A2.66,2.66,0,0,0,515.73,33Z"/>
@@ -135,7 +141,7 @@
           <path class="white-fill" d="M602.13,31.27a6.83,6.83,0,0,1,1.57,4.87,7.69,7.69,0,0,1-1.53,5.16,5,5,0,0,1-3.95,1.77,4.13,4.13,0,0,1-2.56-.76,4.92,4.92,0,0,1-1.09-1.23v6.68h-3.32V29.89h3.21v1.89a5.38,5.38,0,0,1,1.16-1.32,4.28,4.28,0,0,1,2.67-.86A5.07,5.07,0,0,1,602.13,31.27Zm-2.57,2.41a2.38,2.38,0,0,0-2.21-1.14,2.52,2.52,0,0,0-2.53,1.73,6.5,6.5,0,0,0-.36,2.33,3.7,3.7,0,0,0,1.2,3.14,2.75,2.75,0,0,0,1.69.53,2.45,2.45,0,0,0,2.16-1.08,5.66,5.66,0,0,0,.06-5.5Z"/>
         </g>
       </g>
-      <g id="next_step_selected" ng-if="$ctrl.nextStep === true" ng-mouseup="$ctrl.next()">
+      <g id="next_step_selected" ng-if="$ctrl.nextStep === true && $ctrl.disabled === false" ng-mouseup="$ctrl.next()">
         <rect class="light-blue" x="487.33" y="12.2" width="136.5" height="54.18"/>
         <rect class="dark-blue" x="487.33" y="12.2" width="136.5" height="54.18"/>
         <g>
