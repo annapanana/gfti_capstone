@@ -7,15 +7,35 @@
     });
 
     controller.$inject = ["$http", "$state", "$stateParams", "$scope", "$sce", "postcardService"];
-    function controller($http, $state, stateParams, $scope, $sce, postcardService) {
+    function controller($http, $state, $stateParams, $scope, $sce, postcardService) {
       const vm = this;
       vm.isLoading = false;
+      vm.curStep = 2;
+      vm.hoverStep = 0;
+      vm.nextStep = false;
+      vm.buttonHover = false;
+      vm.disabled = true;
+
+      vm.setNextButton = function() {
+        vm.nextStep = true;
+      };
+
+      vm.hoverNext = function(state) {
+        if (!vm.disabled) {
+          vm.buttonHover = state;
+        }
+      };
+
+      vm.setHoverStep = function(step) {
+        vm.hoverStep = step;
+      };
 
       vm.postcard = {
         background: postcardService.getBackgroundImage($sce)
       };
 
-      vm.nextStep = function() {
+      vm.next = function() {
+        console.log("next?");
         postcardService.savePostcardData();
         $state.go('imageComposition');
       };
@@ -51,6 +71,7 @@
               vm.postcard.background = postcardService.getBackgroundImage($sce);
               // console.log("image:",   vm.compositionSettings.image_url);
               vm.isLoading = false;
+              vm.disabled = false;
               $scope.$apply();
             }
             else{

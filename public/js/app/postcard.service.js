@@ -29,7 +29,6 @@
       };
 
       this.getBackgroundImage = function($sce) {
-        console.log(this.postcard.composition_settings.image_url);
         return $sce.trustAsResourceUrl(this.postcard.composition_settings.image_url);
       };
 
@@ -106,6 +105,26 @@
         this.postcard.from = from;
       };
 
+      this.validateBack = function() {
+        console.log("!!!");
+        for (let key in this.postcard.to) {
+          console.log(this.postcard.to[key]);
+          if (this.postcard[key] === "") {
+            return false;
+          }
+        }
+        for (let key in this.postcard.from) {
+          console.log(this.postcard.to[key]);
+          if (this.postcard[key] === "") {
+              return false;
+          }
+        }
+        if (this.postcard.message === "") {
+          return false;
+        }
+        return true;
+      };
+
       this.setThumbnail = function(img) {
         this.postcard.thumbnail = img;
       };
@@ -116,7 +135,6 @@
 
       this.setPaymentInfo = function(data) {
         this.postcard.payment_info = data;
-        console.log("setting", data);
       };
 
       this.setId = function(id) {

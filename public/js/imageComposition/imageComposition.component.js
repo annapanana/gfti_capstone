@@ -9,6 +9,25 @@
     controller.$inject = ["$http", "$state", "$stateParams", "$sce", "$scope", "postcardService"];
     function controller($http, $state, stateParams, $sce, $scope, postcardService) {
       const vm = this;
+      vm.curStep = 3;
+      vm.hoverStep = 0;
+      vm.nextStep = false;
+      vm.buttonHover = false;
+      vm.disabled = false;
+
+      vm.setNextButton = function() {
+        vm.nextStep = true;
+      };
+
+      vm.hoverNext = function(state) {
+        if (!vm.disabled) {
+          vm.buttonHover = state;
+        }
+      };
+
+      vm.setHoverStep = function(step) {
+        vm.hoverStep = step;
+      };
 
       vm.$onInit = function() {
         vm.filters = postcardService.getFilterData();
@@ -52,7 +71,7 @@
         vm.postcard.frame = postcardService.updateFrameUrl($sce);
       };
 
-      vm.nextStep = function() {
+      vm.next = function() {
         postcardService.setSubtext(vm.postcard.subtext);
         postcardService.savePostcardData();
         $state.go('messageComposition');

@@ -9,6 +9,22 @@
     controller.$inject = ["$http", "$state", "$stateParams", "$timeout", "$sce", "postcardService"];
     function controller($http, $state, $stateParams, $timeout, $sce, postcardService) {
       const vm = this;
+      vm.curStep = 5;
+      vm.hoverStep = 0;
+      vm.nextStep = false;
+      vm.buttonHover = false;
+
+      vm.setNextButton = function() {
+        vm.nextStep = true;
+      };
+
+      vm.hoverNext = function(state) {
+        vm.buttonHover = state;
+      };
+
+      vm.setHoverStep = function(step) {
+        vm.hoverStep = step;
+      };
 
       vm.isLoading = false;
       var stripe = Stripe('pk_test_1EIBbNvuJSQ8GPIJFBC71eqP');
@@ -34,6 +50,10 @@
           subtext: postcardService.getSubtext(),
           background: postcardService.getBackgroundImage($sce)
         };
+
+        vm.to = postcardService.getAddressedTo();
+        vm.from = postcardService.getAddressedFrom();
+        vm.message = postcardService.getMessage();
 
         vm.payment_info = postcardService.getPaymentInfo();
 

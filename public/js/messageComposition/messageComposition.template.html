@@ -3,11 +3,16 @@
   <img class="h-image2" ng-src="../../assets/headers/h7_small.svg" alt="select-theme">
 </div>
 
-<div class="container">
-  <div class="row top-margin-md text-center">
-    <button type="button" class="btn" name="button" ng-click="$ctrl.nextStep()">Next Step</button>
+<div class="row top-margin-sm">
+  <div class="col-md-4 col-sm-2 col-xs-1"></div>
+  <div class="col-md-5 col-sm-8 col-xs-10">
+    <div progress-bar></div>
   </div>
-  <div class="row top-margin-sm">
+  <div class="col-md-3 col-sm-2 col-xs-1"></div>
+</div>
+
+<div class="container">
+  <div class="row">
     <div class="col-xs-1"></div>
     <div class="col-md-5 col-xs-10">
       <!-- Postcard Back -->
@@ -22,7 +27,7 @@
       <div class="row" ng-if="$ctrl.currentTab === 'message'">
         <div class="col-xs-12 color-2 widget-container">
           <h4>Message</h4>
-          <textarea class="text-widget" name="name" rows="4" cols="60" ng-model="$ctrl.message" maxlength="400"></textarea>
+          <textarea class="text-widget" name="name" rows="4" cols="60" ng-model="$ctrl.message" maxlength="400" ng-blur="$ctrl.checkIfValidData()"></textarea>
         </div>
       </div>
 

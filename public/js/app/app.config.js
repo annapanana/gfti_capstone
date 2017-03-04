@@ -59,7 +59,7 @@
           name: "themeSelection",
           parent: "app",
           url: "/theme-selection",
-          component: "themeSelection"
+          component: "themeSelection",
         })
         .state({
           name: "postcardSent",
