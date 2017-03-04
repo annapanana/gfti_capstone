@@ -469,21 +469,22 @@ a:hover {
 }
 
 .btn-tab {
-  background-color: #AAE0F8;
+  background-color: #FFF;
   border-radius: 3px;
   color: #000;
   border-style: none;
   padding: 5px 15px 0px 15px;
   font-family: 'Helvetica Neue Light';
   font-size: 16px;
-}
-
-.btn-tab:hover {
   opacity: .5;
 }
 
+.btn-tab:hover {
+  opacity: .25;
+}
+
 .btn-tab-active {
-  background-color: #FFF02A;
+  opacity: 1;
 }
 
 .img-button {
