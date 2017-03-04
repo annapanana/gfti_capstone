@@ -37,7 +37,6 @@ router.get('/:id/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-
   const {composition_settings} = req.body;
   const newCard = composition_settings;
 

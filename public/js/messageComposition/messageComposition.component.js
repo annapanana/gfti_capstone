@@ -42,6 +42,11 @@
         vm.to = postcardService.getAddressedTo();
         vm.from = postcardService.getAddressedFrom();
         vm.message = postcardService.getMessage();
+        if (postcardService.validateBack()) {
+          vm.disabled = false;
+        } else {
+          vm.disabled = true;
+        }
       };
 
       vm.changeTab = function(tab) {

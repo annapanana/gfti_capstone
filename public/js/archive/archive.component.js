@@ -28,10 +28,8 @@
       vm.selectTemplate = function(id) {
 
         $http.get(`/postcards/${id}`).then((result) => {
-          console.log(result.data);
           postcardService.updatePostcardObject(result.data);
           postcardService.savePostcardData();
-          console.log("DONE");
           $state.go('imageComposition');
         });
 

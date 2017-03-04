@@ -146,7 +146,8 @@
       };
 
       this.updatePostcardObject = function(obj) {
-        this.postcard = obj;
+        console.log("updated object", obj);
+        this.postcard.composition_settings = obj;
       };
 
       this.savePostcardData = function() {

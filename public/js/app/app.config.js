@@ -50,12 +50,6 @@
           component: "archive"
         })
         .state({
-          name: "dev",
-          parent: "app",
-          url: "/dev",
-          component: "dev"
-        })
-        .state({
           name: "themeSelection",
           parent: "app",
           url: "/theme-selection",
