@@ -149,53 +149,48 @@ var filterData = [
   },
   {
     id:1,
-    name: "#contrast",
-    asset: "../../assets/filters/filter_dark.svg"
-  },
-  {
-    id:2,
-    name: "#add-saturation",
-    asset: "../../assets/filters/filter_bright.svg",
-  },
-  {
-    id:3,
-    name: "#purple",
-    asset: "../../assets/filters/filter_purple.svg"
-  },
-  {
-    id:4,
-    name: "#yellow",
-    asset: "../../assets/filters/filter_yellow.svg"
-  },
-  {
-    id:5,
-    name: "#cyan",
-    asset: "../../assets/filters/filter_cyan.svg"
-  },
-  {
-    id:6,
     name: "#bw",
     asset: "../../assets/filters/filter_bw.svg"
   },
   {
-    id:7,
+    id:2,
     name: "#oldtimes",
     asset: "../../assets/filters/filter_old_times.svg"
   },
   {
-    id:8,
+    id:3,
     name: "#coldlife",
     asset: "../../assets/filters/filter_cold_life.svg"
   },
   {
-    id:9,
+    id:4,
     name: "#sepium",
     asset: "../../assets/filters/filter_sepium.svg"
   },
   {
-    id:10,
+    id:5,
     name: "#milk",
     asset: "../../assets/filters/filter_milk.svg"
+  },
+  {
+    id:6,
+    name: "#contrast",
+    asset: "../../assets/filters/filter_dark.svg"
+  },
+  {
+    id:7,
+    name: "#add-saturation",
+    asset: "../../assets/filters/filter_bright.svg",
+  },
+  {
+    id:8,
+    name: "#purple",
+    asset: "../../assets/filters/filter_purple.svg"
+  },
+  {
+    id:9,
+    name: "#yellow",
+    asset: "../../assets/filters/filter_yellow.svg"
   }
 ];
 
