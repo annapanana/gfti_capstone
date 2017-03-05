@@ -52,7 +52,7 @@
           <div ng-repeat="singleFrame in $ctrl.frames">
             <div class="">
               <a ng-click="$ctrl.selectFrame(singleFrame.id)">
-                <div class="widget-element" ng-class="{'widget-element-selected':singleFrame.id==$ctrl.curFrame}"><h3>{{singleFrame.id}}</h3></div>
+                <img class="widget-element" ng-src="{{singleFrame.asset}}" ng-class="{'widget-element-selected':singleFrame.id==$ctrl.curFrame}" alt="frame">
               </a>
             </div>
           </div>

@@ -10,32 +10,38 @@ var frameData = {
     {
       id: 1,
       local_frame: 'classic-1',
+      asset: 'assets/icons/frame_Icons/icon_classic_01.png',
       template_name: "classic/classic_01.html"
 
     },
     {
       id: 2,
       local_frame: 'classic-2',
+      asset: 'assets/icons/frame_Icons/icon_classic_02.png',
       template_name: "classic/classic_02.html"
     },
     {
       id: 3,
       local_frame: 'classic-3',
+      asset: 'assets/icons/frame_Icons/icon_classic_03.png',
       template_name: "classic/classic_03.html"
     },
     {
       id: 4,
       local_frame: 'classic-4',
+      asset: 'assets/icons/frame_Icons/icon_classic_04.png',
       template_name: "classic/classic_04.html"
     },
     {
       id: 5,
       local_frame: 'classic-5',
+      asset: 'assets/icons/frame_Icons/icon_classic_05.png',
       template_name: "classic/classic_05.html"
     },
     {
       id: 6,
       local_frame: 'classic-6',
+      asset: 'assets/icons/frame_Icons/icon_classic_06.png',
       template_name: "classic/classic_06.html"
     }
   ],
@@ -48,26 +54,31 @@ var frameData = {
     {
       id: 1,
       local_frame: 'playful-1',
+      asset: 'assets/icons/frame_Icons/icon_playful_01.png',
       template_name: 'playful/playful_01.html'
     },
     {
       id: 2,
       local_frame: 'playful-2',
+      asset: 'assets/icons/frame_Icons/icon_playful_02.png',
       template_name: 'playful/playful_02.html'
     },
     {
       id: 3,
       local_frame: 'playful-3',
+      asset: 'assets/icons/frame_Icons/icon_playful_03.png',
       template_name: 'playful/playful_03.html'
     },
     {
       id: 4,
       local_frame: 'playful-4',
+      asset: 'assets/icons/frame_Icons/icon_playful_04.png',
       template_name: 'playful/playful_04.html'
     },
     {
       id: 5,
       local_frame: 'playful-5',
+      asset: 'assets/icons/frame_Icons/icon_playful_05.png',
       template_name: 'playful/playful_05.html'
     }
   ],
@@ -80,31 +91,37 @@ var frameData = {
     {
       id: 1,
       local_frame: 'modern-1',
+      asset: 'assets/icons/frame_Icons/icon_modern_01.png',
       template_name: 'modern/modern_01.html'
     },
     {
       id: 2,
       local_frame: 'modern-2',
+      asset: 'assets/icons/frame_Icons/icon_modern_02.png',
       template_name: 'modern/modern_02.html'
     },
     {
       id: 3,
       local_frame: 'modern-3',
+      asset: 'assets/icons/frame_Icons/icon_modern_03.png',
       template_name: 'modern/modern_03.html'
     },
     {
       id: 4,
       local_frame: 'modern-4',
+      asset: 'assets/icons/frame_Icons/icon_modern_04.png',
       template_name: 'modern/modern_04.html'
     },
     {
       id: 5,
       local_frame: 'modern-5',
+      asset: 'assets/icons/frame_Icons/icon_modern_05.png',
       template_name: 'modern/modern_05.html'
     },
     {
       id: 6,
       local_frame: 'modern-6',
+      asset: 'assets/icons/frame_Icons/icon_modern_06.png',
       template_name: 'modern/modern_06.html'
     }
   ],
@@ -117,26 +134,31 @@ var frameData = {
     {
       id: 1,
       local_frame: 'wild-1',
+      asset: 'assets/icons/frame_Icons/icon_wild_01.png',
       template_name: 'wild/wild_01.html'
     },
     {
       id: 2,
       local_frame: 'wild-2',
+      asset: 'assets/icons/frame_Icons/icon_wild_02.png',
       template_name: 'wild/wild_02.html'
     },
     {
       id: 3,
       local_frame: 'wild-3',
+      asset: 'assets/icons/frame_Icons/icon_wild_03.png',
       template_name: 'wild/wild_03.html'
     },
     {
       id: 4,
       local_frame: 'wild-4',
+      asset: 'assets/icons/frame_Icons/icon_wild_04.png',
       template_name: 'wild/wild_04.html'
     },
     {
       id: 5,
       local_frame: 'wild-5',
+      asset: 'assets/icons/frame_Icons/icon_wild_05.png',
       template_name: 'wild/wild_05.html'
     }
   ]

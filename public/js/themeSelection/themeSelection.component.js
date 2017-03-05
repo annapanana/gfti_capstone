@@ -11,6 +11,14 @@
       const vm = this;
       vm.curStep = 1;
       vm.hoverStep = 0;
+
+      vm.suitcases = ["closed", "closed", "closed", "closed"];
+
+
+      vm.toggleSuitcase = function(suitcase, state) {
+        vm.suitcases[suitcase] = state;
+      };
+
       vm.setHoverStep = function(step) {
         vm.hoverStep = step;
       };
