@@ -21,21 +21,26 @@
     <div class="col-sm-3"></div>
   </div>
   <div class="row top-margin-sm">
-    <div class="col-md-3 col-sm-6 col-xs-12 bottom-gutter">
-      <img class="image-fill" ng-mouseenter="$ctrl.toggleSuitcase(0, 'open')" ng-if="$ctrl.suitcases[0] === 'closed'" ng-click="$ctrl.selectTheme('1')" src="../../assets/objects/suitcase_classic_closed.svg" alt="suitcase">
-      <img class="image-fill" ng-mouseleave="$ctrl.toggleSuitcase(0, 'closed')" ng-if="$ctrl.suitcases[0] === 'open'" ng-click="$ctrl.selectTheme('1')" src="../../assets/objects/suitcase_classic_open.svg" alt="suitcase">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="col-sm-6 col-xs-12 bottom-gutter">
+        <div suitcase-classic-closed ng-mouseenter="$ctrl.toggleSuitcase(0, 'open')" ng-if="$ctrl.suitcases[0] === 'closed'" ng-click="$ctrl.selectTheme('1')"></div>
+        <div suitcase-classic-open ng-mouseleave="$ctrl.toggleSuitcase(0, 'closed')" ng-if="$ctrl.suitcases[0] === 'open'" ng-click="$ctrl.selectTheme('1')"></div>
+      </div>
+      <div class="col-sm-6 col-xs-12 bottom-gutter">
+        <div suitcase-playful-closed ng-mouseenter="$ctrl.toggleSuitcase(1, 'open')" ng-if="$ctrl.suitcases[1] === 'closed'" ng-click="$ctrl.selectTheme('2')"></div>
+        <div suitcase-playful-open ng-mouseleave="$ctrl.toggleSuitcase(1, 'closed')" ng-if="$ctrl.suitcases[1] === 'open'" ng-click="$ctrl.selectTheme('2')"></div>
+      </div>
+      <div class="col-sm-6 col-xs-12 bottom-gutter">
+        <div suitcase-wild-closed ng-mouseenter="$ctrl.toggleSuitcase(3, 'open')" ng-if="$ctrl.suitcases[3] === 'closed'" ng-click="$ctrl.selectTheme('4')"></div>
+        <div suitcase-wild-open ng-mouseleave="$ctrl.toggleSuitcase(3, 'closed')" ng-if="$ctrl.suitcases[3] === 'open'" ng-click="$ctrl.selectTheme('4')"></div>
+      </div>
+      <div class="col-sm-6 col-xs-12 bottom-gutter">
+        <div suitcase-modern-closed ng-mouseenter="$ctrl.toggleSuitcase(2, 'open')" ng-if="$ctrl.suitcases[2] === 'closed'" ng-click="$ctrl.selectTheme('3')"></div>
+        <div suitcase-modern-open ng-mouseleave="$ctrl.toggleSuitcase(2, 'closed')" ng-if="$ctrl.suitcases[2] === 'open'" ng-click="$ctrl.selectTheme('3')"></div>
+      </div>
+
     </div>
-    <div class="col-md-3 col-sm-6 col-xs-12 bottom-gutter">
-      <img class="image-fill" ng-mouseenter="$ctrl.toggleSuitcase(1, 'open')" ng-if="$ctrl.suitcases[1] === 'closed'" ng-click="$ctrl.selectTheme('2')" src="../../assets/objects/suitcase_playful_closed.svg" alt="suitcase">
-      <img class="image-fill" ng-mouseleave="$ctrl.toggleSuitcase(1, 'closed')" ng-if="$ctrl.suitcases[1] === 'open'" ng-click="$ctrl.selectTheme('2')" src="../../assets/objects/suitcase_playful_open.svg" alt="suitcase">
-    </div>
-    <div class="col-md-3 col-sm-6 col-xs-12 bottom-gutter">
-      <img class="image-fill" ng-mouseenter="$ctrl.toggleSuitcase(2, 'open')" ng-if="$ctrl.suitcases[2] === 'closed'" ng-click="$ctrl.selectTheme('3')" src="../../assets/objects/suitcase_modern_closed.svg" alt="suitcase">
-      <img class="image-fill" ng-mouseleave="$ctrl.toggleSuitcase(2, 'closed')" ng-if="$ctrl.suitcases[2] === 'open'" ng-click="$ctrl.selectTheme('3')" src="../../assets/objects/suitcase_modern_open.svg" alt="suitcase">
-    </div>
-    <div class="col-md-3 col-sm-6 col-xs-12 bottom-gutter">
-      <img class="image-fill" ng-mouseenter="$ctrl.toggleSuitcase(3, 'open')" ng-if="$ctrl.suitcases[3] === 'closed'" ng-click="$ctrl.selectTheme('4')" src="../../assets/objects/suitcase_wild_closed.svg" alt="suitcase">
-      <img class="image-fill" ng-mouseleave="$ctrl.toggleSuitcase(3, 'closed')" ng-if="$ctrl.suitcases[3] === 'open'" ng-click="$ctrl.selectTheme('4')" src="../../assets/objects/suitcase_wild_open.svg" alt="suitcase">
-    </div>
+    <div class="col-md-2"></div>
   </div>
 </div>

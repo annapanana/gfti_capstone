@@ -5,7 +5,8 @@ var frameData = {
     {
       id: 0,
       local_frame: "",
-      template_name: ""
+      template_name: "",
+      asset: "assets/icons/frame_Icons/icon_none.png"
     },
     {
       id: 1,
@@ -48,6 +49,7 @@ var frameData = {
   2: [
     {
       id: 0,
+      asset: "assets/icons/frame_Icons/icon_none.png",
       local_frame: '',
       template_name: ''
     },
@@ -85,8 +87,9 @@ var frameData = {
   3: [
     {
       id: 0,
-      local_frame: '',
-      template_name: ''
+      asset: "assets/icons/frame_Icons/icon_none.png",
+      template_name: '',
+      local_frame: ''
     },
     {
       id: 1,
@@ -129,6 +132,7 @@ var frameData = {
     {
       id: 0,
       local_frame: "",
+      asset: "assets/icons/frame_Icons/icon_none.png",
       template_name: ""
     },
     {
@@ -171,8 +175,8 @@ var filterData = [
   },
   {
     id:1,
-    name: "#bw",
-    asset: "../../assets/filters/filter_bw.svg"
+    name: "#sepium",
+    asset: "../../assets/filters/filter_sepium.svg"
   },
   {
     id:2,
@@ -181,13 +185,13 @@ var filterData = [
   },
   {
     id:3,
-    name: "#coldlife",
-    asset: "../../assets/filters/filter_cold_life.svg"
+    name: "#bw",
+    asset: "../../assets/filters/filter_bw.svg"
   },
   {
     id:4,
-    name: "#sepium",
-    asset: "../../assets/filters/filter_sepium.svg"
+    name: "#coldlife",
+    asset: "../../assets/filters/filter_cold_life.svg"
   },
   {
     id:5,
