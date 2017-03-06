@@ -8,7 +8,8 @@ var fs = require('fs');
 require('dotenv').config();
 
 const lobFactory = require('../node_modules/lob/lib/index.js');
-const lob = new lobFactory('test_97f0caa8c52f230f7bef2daef8b58e70f81');
+const LOB_KEY = process.env.LOB_KEY;
+const lob = new lobFactory(LOB_KEY);
 
 const STRIPE_KEY = process.env.STRIPE_KEY;
 const stripe = require('stripe')(STRIPE_KEY);
