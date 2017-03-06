@@ -33,16 +33,20 @@
         vm.filters = postcardService.getFilterData();
         vm.frames = postcardService.getFrameData();
         vm.colors = postcardService.getColorData();
-        //TODO these should be set on init
+        vm.fonts = postcardService.getFontData();
+
         vm.curFilter = 1;
         vm.curFrame = 1;
         vm.curColor = 1;
+        vm.curFont = 1;
 
         vm.postcard = {
           frame: postcardService.updateFrameUrl($sce),
           filter: postcardService.getFilter(),
           color: postcardService.getColor(),
           subtext: postcardService.getSubtext(),
+          font: postcardService.getFont(),
+          font_size: postcardService.getFontSize(),
           background: postcardService.getBackgroundImage($sce)
         };
 
@@ -71,10 +75,34 @@
         vm.postcard.frame = postcardService.updateFrameUrl($sce);
       };
 
+      vm.selectFont = function(font_id) {
+        vm.curFont = font_id;
+        postcardService.setFont(font_id);
+        vm.postcard.font = postcardService.getFont();
+        vm.postcard.font_size = postcardService.getFontSize();
+        console.log(vm.postcard.font_size);
+      };
+
       vm.next = function() {
         postcardService.setSubtext(vm.postcard.subtext);
         postcardService.savePostcardData();
         $state.go('messageComposition');
+      };
+
+      $scope.$on("slideEnded", function() {
+         let fontSize = $scope.slider.value;
+         postcardService.setFontSize(fontSize);
+         vm.postcard.font_size = postcardService.getFontSize();
+         $scope.$apply();
+      });
+
+      $scope.slider = {
+        value: postcardService.getFontSize(),
+        options: {
+          floor: 12,
+          ceil: 36,
+          showTicks: true
+        }
       };
     }
 }());

@@ -7,5 +7,9 @@
     });
 
     function controller() {
+      const vm = this;
+      vm.$onInit = function() {
+        Dropzone.autoDiscover = false;
+      }
     }
 }());

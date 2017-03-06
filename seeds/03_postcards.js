@@ -11,6 +11,8 @@ exports.seed = function(knex, Promise) {
           theme_id: 1,
           frame_id: 1,
           color_id: 1,
+          font_id: 1,
+          font_size: 24,
           greetings_subtext: 'greetings from boulder, co',
           image_url: 'http://www.boulderco.com/uploads/slideshow/1354198589.jpg',
           from_zip: '80304',
@@ -28,6 +30,8 @@ exports.seed = function(knex, Promise) {
           theme_id: 1,
           frame_id: 1,
           color_id: 1,
+          font_id: 1,
+          font_size: 24,
           greetings_subtext: 'greetings from boulder, co',
           image_url: 'http://www.boulderco.com/uploads/slideshow/1354198589.jpg',
           from_zip: '80304',
@@ -45,6 +49,8 @@ exports.seed = function(knex, Promise) {
           theme_id: 1,
           frame_id: 1,
           color_id: 1,
+          font_id: 1,
+          font_size: 24,
           greetings_subtext: 'greetings from boulder, co',
           image_url: 'http://www.boulderco.com/uploads/slideshow/1354198589.jpg',
           from_zip: '80304',
@@ -63,6 +69,8 @@ exports.seed = function(knex, Promise) {
           theme_id: 1,
           frame_id: 1,
           color_id: 1,
+          font_id: 1,
+          font_size: 24,
           greetings_subtext: 'greetings from boulder, co',
           image_url: 'http://www.boulderco.com/uploads/slideshow/1354198589.jpg',
           from_zip: '80304',
@@ -80,6 +88,8 @@ exports.seed = function(knex, Promise) {
           theme_id: 1,
           frame_id: 1,
           color_id: 1,
+          font_id: 1,
+          font_size: 24,
           greetings_subtext: 'greetings from boulder, co',
           image_url: 'http://www.boulderco.com/uploads/slideshow/1354198589.jpg',
           from_zip: '80304',
@@ -97,6 +107,8 @@ exports.seed = function(knex, Promise) {
           theme_id: 2,
           frame_id: 1,
           color_id: 1,
+          font_id: 1,
+          font_size: 24,
           greetings_subtext: 'greetings from boulder, co',
           image_url: 'http://www.boulderco.com/uploads/slideshow/1354198589.jpg',
           from_zip: '80304',
@@ -114,6 +126,8 @@ exports.seed = function(knex, Promise) {
           theme_id: 3,
           frame_id: 1,
           color_id: 1,
+          font_id: 1,
+          font_size: 24,
           greetings_subtext: 'greetings from boulder, co',
           image_url: 'http://www.boulderco.com/uploads/slideshow/1354198589.jpg',
           from_zip: '80304',
@@ -125,5 +139,8 @@ exports.seed = function(knex, Promise) {
           // image_processed: true
         })
       ]);
+    })
+    .then(() => {
+      return knex.raw("SELECT setval('postcards_id_seq', (SELECT MAX(id) FROM postcards))");
     });
 };

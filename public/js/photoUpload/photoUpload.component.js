@@ -40,6 +40,10 @@
         $state.go('imageComposition');
       };
 
+      vm.$onInit = function() {
+
+      };
+
       vm.fileInput = function(event) {
         let files = event.target.files;
         if (!files) {

@@ -3,6 +3,10 @@ html, body {
     padding-bottom: 100px;
 }
 
+.container {
+  padding-bottom: 15px;
+}
+
 .background-image {
   position: absolute;;
   top: 0;
@@ -99,10 +103,6 @@ html, body {
   margin-top: 5px;
 }
 
-.container {
-  padding-bottom: 10px;
-}
-
 .bottom-gutter {
   margin-bottom: 30px;
 }
@@ -114,10 +114,6 @@ html, body {
   height: 100%;
 }*/
 
-.container {
-  padding-bottom: 50px;
-}
-
 footer {
   position: fixed;
   bottom: 0px;
@@ -125,7 +121,7 @@ footer {
   left: 0;
   right: 0;
   padding: 10px;
-  background-color: #FFF;
+  background-color: #AAE0F8;
 }
 
 .navbar {
@@ -159,9 +155,8 @@ footer {
 
 /*Postcard Composition*/
 .greetings-subtext {
-  font-size: 32px;
   text-align: center;
-  font-family: 'Yellowtail', cursive;
+  /*font-family: 'Yellowtail', cursive;*/
 }
 
 .postcard-background {
@@ -426,6 +421,14 @@ footer {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Day Poster';
+    src: url('https://s3-us-west-2.amazonaws.com/gftiresources/assets/Dayposter_Black.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 h1 {
   font-family: 'Helvetica Neue Medium';
 }
@@ -454,36 +457,39 @@ a:hover {
 
 /*Buttons*/
 .btn {
-  border: solid;
-  padding: 10px 20px 10px 20px;
-  background-color: #FFFBCA;
-  padding-top: 15px;
-  border-color: #FFF02A;
-  color: #000;
-  border-radius: 3px;
+  /*padding: 10px 20px 10px 20px;*/
+  background-color: #6DC4E2;
+  padding-top: 10px;
+  border-color: #AAE0F8;
+  color: #FFF;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 rgb(212, 239, 251);
   font-family: 'Helvetica Neue Medium';
+  font-size: 14pt;
 }
 
 .btn:hover {
-  background-color: #FFF02A;
+  opacity: .5;
+  color: #FFF;
 }
 
 .btn-tab {
-  background-color: #AAE0F8;
+  background-color: #FFF;
   border-radius: 3px;
   color: #000;
   border-style: none;
   padding: 5px 15px 0px 15px;
   font-family: 'Helvetica Neue Light';
   font-size: 16px;
-}
-
-.btn-tab:hover {
   opacity: .5;
 }
 
+.btn-tab:hover {
+  opacity: .25;
+}
+
 .btn-tab-active {
-  background-color: #FFF02A;
+  opacity: 1;
 }
 
 .img-button {
@@ -615,21 +621,4 @@ a:hover {
 
 .fade.ng-hide-add {
   transition: all linear 500ms;
-}
-
-.collapsable {
-    display: inline-block;
-    overflow: hidden;
-    height: 0;
-    width: 100%;
-    transition: height 1s;
-    -webkit-transition: height 1s;
-    -moz-transition: height 1s;
-    -o-transition: height 1s;
-  }
-  /*TODO figure out how to make the animation work*/
-  .collapsable.showMe {
-  width: 100%;
-  height: auto;
-  /*height: 100%;*/
 }

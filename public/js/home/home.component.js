@@ -16,13 +16,17 @@
             filter_id: 1,
             theme_id: 1,
             frame_id: 1,
+            font_id: 1,
             color_id: 2,
+            font_size: 24,
             greetings_subtext: 'greetings from the internet',
             image_url: '../../assets/placeholder_img.png'
           },
           frame_url: "classic-1",
           color_hex: "#F4987A",
           message: 'this is a message',
+          font_family: 'Day Poster',
+          font_size: 24,
           to: {
             name: 'anna',
             address_line1: '1260 kalmia ave',
@@ -49,9 +53,14 @@
         };
         localStorage.setItem('postcard', JSON.stringify(postcard));
         // $(".card-preview").flip({autoSize: true});
-        $(".card-preview").flip({
+        angular.element(".card-preview").flip({
           trigger: 'hover',
+          autoSize: true
         });
+        // $(".card-preview").flip({
+        //   trigger: 'hover',
+        //   autoSize: true
+        // });
 
         selectRandomWallpaper();
       };

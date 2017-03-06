@@ -14,64 +14,57 @@
 </div>
 
 <div ng-click="$ctrl.openh1 = !$ctrl.openh1" class="home-header">
-  <img class="image-fill" ng-src="../../assets/headers/h2.svg" alt="how-does-it-work">
+  <img class="image-fill blue-header" ng-src="../../assets/headers/h2.svg" alt="how-does-it-work">
 </div>
-<div ng-class="{ showMe: $ctrl.openh1 }" class="collapsable">
+<div ng-class="{ showMe: $ctrl.openh1 }">
   <div class="container">
     <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row top-margin-md">
-          <div class="col-md-1"></div>
-          <div class="col-md-10">
-            <div class="col-md-4 col-xs-12">
-              <a href="#">
-              <div class="card-preview" ng-click="$ctrl.flip()">
-                <div class="front">
-                  <img class="image-shadow" ng-src="assets/demo_cards/demo_card_01_front.png" alt="front">
-                </div>
-                <div class="back">
-                  <img class="image-shadow" ng-src="assets/demo_card_back.png" alt="back">
-                </div>
-              </div>
-              </a>
+      <div class="row" style="margin-right:50px; margin-left:50px;">
+        <div class="col-sm-4 top-margin-sm">
+          <a href="#">
+          <div class="card-preview" ng-click="$ctrl.flip()">
+            <div class="front">
+              <img class="image-shadow image-fill" ng-src="assets/demo_cards/demo_card_01_front.png" alt="front">
             </div>
-            <div class="col-md-4 col-xs-12">
-              <a href="#">
-                <div class="card-preview" ng-click="$ctrl.flip()">
-                  <div class="front">
-                    <img class="image-shadow"  ng-src="assets/demo_cards/demo_card_03_front.png" alt="front">
-                  </div>
-                  <div class="back">
-                    <img class="image-shadow"  ng-src="assets/demo_card_back.png" alt="back">
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-4 col-xs-12 bottom-gutter img-button">
-              <a href="#">
-                <div class="card-preview" ng-click="$ctrl.flip()">
-                  <div class="front">
-                    <img class="image-shadow"  ng-src="assets/demo_cards/demo_card_04_front.png" alt="front">
-                  </div>
-                  <div class="back">
-                    <img class="image-shadow"  ng-src="assets/demo_card_back.png" alt="back">
-                  </div>
-                </div>
-              </a>
+            <div class="back">
+              <img class="image-shadow image-fill" ng-src="assets/demo_card_back.png" alt="back">
             </div>
           </div>
+          </a>
+        </div>
+        <div class="col-sm-4 top-margin-sm">
+          <a href="#">
+            <div class="card-preview" ng-click="$ctrl.flip()">
+              <div class="front">
+                <img class="image-shadow image-fill"  ng-src="assets/demo_cards/demo_card_03_front.png" alt="front">
+              </div>
+              <div class="back">
+                <img class="image-shadow image-fill"  ng-src="assets/demo_card_back.png" alt="back">
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-sm-4 top-margin-sm">
+          <a href="#">
+            <div class="card-preview" ng-click="$ctrl.flip()">
+              <div class="front">
+                <img class="image-shadow image-fill"  ng-src="assets/demo_cards/demo_card_04_front.png" alt="front">
+              </div>
+              <div class="back">
+                <img class="image-shadow image-fill"  ng-src="assets/demo_card_back.png" alt="back">
+              </div>
+            </div>
+          </a>
         </div>
       </div>
-      <div class="col-md-1"></div>
     </div>
   </div>
 </div>
 
 <div ng-click="$ctrl.openh2 = !$ctrl.openh2">
-  <img class="image-fill" ng-src="../../assets/headers/h1.svg" alt="how-does-it-work">
+  <img class="image-fill blue-header" ng-src="../../assets/headers/h1.svg" alt="how-does-it-work">
 </div>
-<div class="collapsable" ng-class="{ showMe: $ctrl.openh2 }">
+<div ng-class="{ showMe: $ctrl.openh2 }">
   <div class="container" >
     <div class="row top-margin-md col-xs-12">
       <div class="col-md-6">
@@ -130,9 +123,9 @@
 
 
 <div ng-click="$ctrl.openh3 = !$ctrl.openh3">
-  <img class="image-fill" ng-src="../../assets/headers/h3.svg" alt="how-does-it-work">
+  <img class="image-fill blue-header" ng-src="../../assets/headers/h3.svg" alt="how-does-it-work">
 </div>
-<div class="collapsable" ng-class="{ showMe: $ctrl.openh3 }">
+<div ng-class="{ showMe: $ctrl.openh3 }">
   <div class="container">
     <div class="row text-center top-margin-md">
       <div class="col-md-3"></div>
