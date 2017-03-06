@@ -14,17 +14,25 @@
 <div class="container">
   <div class="row">
     <div class="col-md-1"></div>
-    <div class="col-md-5 col-sm-6 col-xs-12 widget-container color-2 text-center" style="margin-right:5px;">
-      <h4>Select a File to Upload or Enter URL:</h4>
+    <div class="col-md-5 col-sm-6 col-xs-12 widget-container color-2 text-center flex-column" style="margin-right:5px;height:340px;">
+      <h4>Select a File to Upload</h4>
 
       <div class="flex-row">
-        <div class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods" ng-dropzone></div>
-
-          <!-- <input type="file" name="image" custom-on-change="$ctrl.fileInput"> -->
+        <label class="inputfile-label" for="file">Choose a File <img class="icon" src="../../assets/icons/upload_iconicon.svg" alt=""></label>
+          <input class="inputfile" type="file" name="file" id="file" custom-on-change="$ctrl.fileInput">
       </div>
-      <input class="top-margin-sm text-widget" type="text" name="image" ng-model="$ctrl.postcard.background">
+      <div class="text-center">
+        <h4>OR</h4>
+      </div>
+
+      <div class="flex-row">
+        <div class="flex-column">
+          <h4>Enter an Image URL</h4>
+          <input style="width:200px;" class="top-margin-sm text-widget" type="text" name="image" ng-model="$ctrl.postcard.background">
+        </div>
+      </div>
     </div>
-    <div class="col-md-5 col-sm-6 col-xs-12 widget-container color-2" style="margin-left:5px;">
+    <div class="col-md-5 col-sm-6 col-xs-12 widget-container color-2" style="margin-left:5px;height:340px;">
       <div class="photo-upload">
         <div ng-if="$ctrl.isLoading" class="loader">Loading...</div>
         <img ng-if="!$ctrl.isLoading" class="image-fill standard-border-radius" ng-src="{{$ctrl.postcard.background}}" alt="">

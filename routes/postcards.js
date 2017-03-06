@@ -60,6 +60,10 @@ router.post('/', (req, res, next) => {
   const {font_size} = req.body;
   const size = font_size;
 
+  const {filter_name} = req.body;
+  const filter = filter_name;
+  console.log(filter);
+
   // Retrieve html template
   let postcard_front = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
   let postcard_back = fs.readFileSync(__dirname + `/../public/postcard_templates/postcard_back.html`, { encoding: 'utf-8' });
@@ -89,7 +93,7 @@ router.post('/', (req, res, next) => {
     });
   }).then(function(charge) {
     // New charge created on a new customer
-    console.log("Charge Succeeded!");
+    console.log("Charge Succeeded!", newCard);
     // CREATE POSTCARD
     lob.postcards.create({
       to: send_to,
@@ -103,8 +107,11 @@ router.post('/', (req, res, next) => {
         font_family: font,
         font_size: size,
         color: color,
-        message: msg
-        // frame: frame_url
+        message: msg,
+        image_scale: newCard.image_scale,
+        image_pos_x: newCard.image_pos_x,
+        image_pos_y: newCard.image_pos_y,
+        image_filter: filter
       }
     }, function (err, postcard) {
       if (err) {

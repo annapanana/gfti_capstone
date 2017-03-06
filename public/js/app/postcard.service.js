@@ -41,6 +41,9 @@
       };
 
       this.setFilter = function(filter_id) {
+        console.log(filter_id);
+        this.postcard.filter_name = filterData[filter_id].name;
+        console.log(this.postcard.filter_name);
         this.postcard.composition_settings.filter_id = filter_id;
       };
 
@@ -95,7 +98,31 @@
 
       this.getFontSize = function() {
         return this.postcard.composition_settings.font_size;
-      }
+      };
+
+      this.setImageScale = function(scale) {
+        this.postcard.composition_settings.image_scale = scale;
+      };
+
+      this.getImageScale = function() {
+        return this.postcard.composition_settings.image_scale;
+      };
+
+      this.setImagePosX = function(pos) {
+        this.postcard.composition_settings.image_pos_x = pos;
+      };
+
+      this.getImagePosX = function() {
+        return this.postcard.composition_settings.image_pos_x;
+      };
+
+      this.setImagePosY = function(pos) {
+        this.postcard.composition_settings.image_pos_y = pos;
+      };
+
+      this.getImagePosY = function() {
+        return this.postcard.composition_settings.image_pos_y;
+      };
 
       this.getSubtext = function() {
         return this.postcard.composition_settings.greetings_subtext;
@@ -149,10 +176,6 @@
         return true;
       };
 
-      this.setThumbnail = function(img) {
-        this.postcard.thumbnail = img;
-      };
-
       this.getPaymentInfo = function() {
         return this.postcard.payment_info;
       };
@@ -169,13 +192,29 @@
         this.postcard.delivery_date = date;
       };
 
+      this.getDeliveryDate = function() {
+        return this.postcard.delivery_date;
+      };
+
+      this.setThumbnail = function(url) {
+        this.postcard.composition_settings.thumbnail_url = url;
+      };
+
+      this.setPreview = function(url) {
+        this.postcard.preview = url;
+      };
+
+      this.getPreview = function() {
+        return this.postcard.preview;
+      };
+
       this.updatePostcardObject = function(obj) {
         console.log("updated object", obj);
         this.postcard.composition_settings = obj;
       };
 
       this.savePostcardData = function() {
-        // console.log(this.postcard);
+        console.log(this.postcard);
         localStorage.setItem('postcard', JSON.stringify(this.postcard));
       };
     });

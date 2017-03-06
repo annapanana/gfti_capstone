@@ -27,8 +27,6 @@ app.use('/angular-slick', express.static('node_modules/angular-slick/dist'));
 app.use('/slick-carousel', express.static('node_modules/slick-carousel/slick'));
 app.use('/flip', express.static('node_modules/flip'));
 app.use('/animate', express.static('node_modules/angular-animate'));
-app.use('/dropzone', express.static('node_modules/dropzone/dist'));
-app.use('/ngdropzone', express.static('node_modules/ngdropzone/dist'));
 app.use('/angular-slider', express.static('node_modules/angularjs-slider/dist'));
 
 const port = process.env.PORT || 3000;
@@ -38,6 +36,10 @@ const port = process.env.PORT || 3000;
 app.get('/', (req, res, next) => {
   console.log("Hello World");
 });
+
+app.use('*', function (req, res, next) {
+  res.sendFile('index.html', { root: path.join(__dirname, 'public') })
+})
 
 app.listen(port, () => {
   console.log('Listening on port', port);

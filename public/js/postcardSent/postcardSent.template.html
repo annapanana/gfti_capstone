@@ -7,42 +7,49 @@
   <div class="row text-center">
     <div class="col-md-2"></div>
     <div class="col-md-8 col-sm-12">
-      <h5>Your postcard has successfully been sent and is estimated to arrive on {{$ctrl.deliveryDate}}</h5>
+      <div class="row">
+        <h5>Your postcard has successfully been sent and is estimated to arrive on {{$ctrl.postcard.delivery_date}}</h5>
+      </div>
+      <div class="row">
+        <button class="btn" type="button" name="button" ng-click="$ctrl.viewPreview()">View PDF</button>
+      </div>
     </div>
     <div class="col-md-2"></div>
   </div>
-
 </div>
-<div class="row header-bar text-center">
-  <div class="col-sm-12">
-    <h3>Save Card</h3>
-  </div>
+
+<div class="image-fill">
+  <img class="h-image1" ng-src="../../assets/headers/h11.svg" alt="save postcard">
+  <img class="h-image2" ng-src="../../assets/headers/h11_small.svg" alt="save postacrd">
 </div>
 
 <div class="container">
-  <div class="row text-center">
-    <h5>Your postcard has been saved to the GFTI community!</h5>
-    <p>Give your postcard a name and add some information about the design. The message and address information will not be shared.</p>
-  </div>
-  <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6 col-sm-12">
-      <img class="image-fill" ng-src="{{$ctrl.thumbnailFront}}" alt="thumbnail-front">
+  <div class="row text-center top-margin-sm">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6 col-xs-6">
+      <p>Give your postcard a name and add some information about the design. Then select save to send your design to the archive! All saved designs will be shared with the GFTI community.</p>
     </div>
-    <div class="col-md-3"></div>
+    <div class="col-sm-3"></div>
   </div>
   <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-sm-12 col-md-6 form-column">
-      <label class="form-label" for="postcard_name">Design Name:</label>
-      <input class="form-field" type="text" name="poscard_notes" ng-model="$ctrl.cardName">
-      <label class="form-label" for="poscard_notes">Design Notes:</label>
-      <textarea class="text-widget" name="postcard_name" rows="8" cols="60" ng-mode="$ctrl.designNotes"></textarea>
+    <div class="col-md-1"></div>
+    <div class="col-md-5 col-sm-12">
+      <div front-design></div>
     </div>
-    <div class="col-md-3"></div>
-  </div>
-  <div class="row">
-    <button type="button" name="button" ng-click="$ctrl.saveDesign()">Save Design</button>
-    <h6>save your design and view it in the archive</h6>
+    <div class="col-md-5 col-sm-12">
+      <div class="form-column widget-container color-2">
+        <label class="form-label" for="postcard_name">Design Name:</label>
+        <input class="form-field" type="text" name="poscard_notes" ng-model="$ctrl.cardName">
+        <label class="form-label" for="poscard_notes">Design Notes:</label>
+        <textarea class="text-widget" name="postcard_name" rows="8" cols="100" ng-mode="$ctrl.designNotes"></textarea>
+        <div class="flex-row top-margin-sm">
+          <button style="width:150px;" class="btn" type="button" name="button" ng-click="$ctrl.saveDesign()">Save Design</button>
+        </div>
+        <div class="flex-row top-margin-xs">
+          <h6>save your design and view it in the archive</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
   </div>
 </div>

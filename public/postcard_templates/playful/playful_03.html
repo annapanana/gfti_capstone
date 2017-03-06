@@ -47,17 +47,80 @@
             z-index: 10;
           }
         </style>
-        <filter id="pictureFilter" >
-          <!-- <feColorMatrix type="matrix" values="1.1 0 0 0 -0.1
-                                                0 1.1 0 0 -0.1
-                                                0 0 1.1 0 -0.1
-                                                0 0 0 1 0" /> -->
-            <!-- <feConvolveMatrix order="3" kernelMatrix="0 0 0 0 1 0 0 0 0"/> -->
+        <filter id="contrast" ><feColorMatrix type="matrix" values="1.1 0 0 0 -0.1 0 1.1 0 0 -0.1 0 0 1.1 0 -0.1 0 0 0 1 0" /></filter>
+        <filter id="noFilter" >
+          <feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0" />
+        </filter>
+        <filter id="add-saturation">
+           <feColorMatrix type="saturate" values="4.00"/>
+        </filter>
+        <filter id="purple">
+          <feColorMatrix
+            type="matrix"
+            values="1  -0.2  0  0  0
+                    0  1  0  -0.1  0
+                    0  1.2  1  .1  0
+                    0  0  1.7  1  0"/>
+        </filter>
+        <filter id="yellow">
+          <feColorMatrix
+            type="matrix"
+            values="1  0  0  0  0
+                    -0.2  1.0  0.3  0.1  0
+                    -0.1  0  1  0  0
+                    0  0  0  1  0"/>
+        </filter>
+        <filter id="cyan">
+          <feColorMatrix
+            type="matrix"
+            values="1  0  0  1.9  -2.2
+                    0  1  0  0  0.3
+                    0  0  1  0  0.5
+                    0  0  0  1  0.2"/>
+        </filter>
+        <filter id="bw">
+          <feColorMatrix
+            type="matrix"
+            values="0  1  0  0  0
+                    0  1  0  0  0
+                    0  1  0  0  0
+                    0  1  0  1  0"/>
+        </filter>
+        <filter id="oldtimes">
+          <feColorMatrix
+            type="matrix"
+            values="1  0  0  0  0
+                    -0.4  1.3  -0.4  0.2  -0.1
+                    0  0  1  0  0
+                    0  0  0  1  0"/>
+        </filter>
+        <filter id="coldlife">
+          <feColorMatrix
+            type="matrix"
+            values="1  0  0  0  0
+                    0  1  0  0  0
+                    -0.2  0.2  0.1  0.4  0
+                    0  0  0  1  0"/>
+        </filter>
+        <filter id="sepium">
+          <feColorMatrix
+            type="matrix"
+            values="1.3  -0.3  1.1  0  0
+                    0  1.3  0.2  0  0
+                    0  0  0.8  0.2  0
+                    0  0  0  1  0"/>
+        </filter>
+        <filter id="milk">
+          <feColorMatrix
+            type="matrix"
+            values="0  1  0  0  0
+                    0  1  0  0  0
+                    0  0.6  1  0  0
+                    0  0  0  1  0"/>
         </filter>
       </defs>
       <title>test_frame</title>
-      <!-- filter="url(#pictureFilter)" -->
-      <image class="cls-2 filter" xlink:href="{{image_url}}" x="-25" y="0" height="115%" width="115%"/>
+      <image class="cls-2 filter" xlink:href="{{image_url}}" width="100%" height="100%" x="0" y="0" transform="scale({{image_scale}}) translate({{image_pos_x}},{{image_pos_y}})" filter="url({{image_filter}})"/>
       <!-- SVG Path -->
       <g stroke="{{color}}">
         <path class="cls-1" d="M15.67,58.17c-.19-.5-.68-.47-1.14-.5a1.5,1.5,0,0,0-.36.05c-.07,0-.15,0-.2.07s-.28.34-.42.52-.08.17,0,.26c.23.29.62.16.93.21a1.53,1.53,0,0,0,.39,0,2.29,2.29,0,0,1,.43-.06c.15,0,.16.15,0,.31s-.15.14-.22.21-.08.16,0,.18a.72.72,0,0,0,.16,0l.18-.08c.25-.12.26-.2.36-.5S15.74,58.36,15.67,58.17Z"/>
