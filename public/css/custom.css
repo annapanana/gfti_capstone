@@ -125,7 +125,7 @@ footer {
 }
 
 .navbar {
-  min-height: 80px;
+  min-height: 65px;
   background-color: #AAE0F8;
   border: none;
   margin: 0;
@@ -136,7 +136,6 @@ footer {
 .navbar-nav {
   position: absolute;;
   right: 0;
-  top: 25%;
   display: flex;
   flex-flow: row;
   justify-content: flex-end;
@@ -149,7 +148,9 @@ footer {
   color: #D9ACA7;*/
   position: absolute;
   /*top: 25%;*/
-  max-width: 80px;
+  max-width: 50px;
+  padding: 0px;
+  margin: 8px;
   height: auto;
 }
 
@@ -529,6 +530,18 @@ a:hover {
 
 .img-button {
   border-radius: 5px;
+}
+
+.icon-button {
+  width: 30px;
+  height: auto;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  opacity: .5;
+  cursor: pointer;
 }
 
 /*Stripe*/

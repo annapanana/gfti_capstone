@@ -15,6 +15,7 @@
       vm.nextStep = false;
       vm.buttonHover = false;
       vm.disabled = true;
+      vm.selectedImage = "";
 
       vm.setNextButton = function() {
         vm.nextStep = true;
@@ -84,5 +85,12 @@
         };
         xhr.send(file);
       }
+
+      vm.submitImageUrl = function() {
+        // TODO Validate if this is an image
+        postcardService.setBackgroundImage(vm.selectedImage);
+        vm.postcard.background = postcardService.getBackgroundImage($sce);
+        vm.disabled = false;
+      };
     }
 }());

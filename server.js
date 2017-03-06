@@ -6,6 +6,7 @@ const postcards = require('./routes/postcards');
 const photobucket = require('./routes/photobucket');
 const thumbnails = require('./routes/thumbnails')
 const bodyParser = require('body-parser');
+const path = require('path');
 
 
 app.use(bodyParser.urlencoded({
@@ -39,7 +40,7 @@ app.get('/', (req, res, next) => {
 
 app.use('*', function (req, res, next) {
   res.sendFile('index.html', { root: path.join(__dirname, 'public') })
-})
+});
 
 app.listen(port, () => {
   console.log('Listening on port', port);

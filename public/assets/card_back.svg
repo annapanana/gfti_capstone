@@ -1,28 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 305.62">
-  <defs>
-    <style>
-      .cls-1, .cls-2, .cls-3 {
-        fill: #0a9796;
-      }
-
-      .cls-1 {
-        opacity: 0.2;
-      }
-
-      .cls-2 {
-        stroke: #0a9796;
-        stroke-linecap: round;
-        stroke-miterlimit: 10;
-        stroke-width: 2px;
-      }
-    </style>
-  </defs>
-  <title>card_back</title>
-  <g id="Layer_2" data-name="Layer 2">
-    <g id="Layer_2-2" data-name="Layer 2">
-      <rect class="cls-1" x="12.4" y="12.39" width="425.43" height="280.85"/>
-      <line class="cls-2" x1="190.19" y1="275.99" x2="190.19" y2="30.01"/>
-      <path class="cls-3" d="M0,0V305.62H450V0ZM437.83,293.23H12.4V12.39H437.83Z"/>
-    </g>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 450 305.6" style="enable-background:new 0 0 450 305.6;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.2;fill:#0A9796;enable-background:new    ;}
+	.st1{fill:none;stroke:#0A9796;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+	.st2{fill:#0A9796;}
+	.st3{font-family:'Helvetica-Bold';}
+	.st4{font-size:12px;}
+	.st5{fill:#EA6453;}
+	.st6{font-family:'Helvetica-Light';}
+	.st7{font-size:9px;}
+</style>
+<title>card_back</title>
+<g id="Layer_2">
+	<g id="Layer_2-2">
+		<rect x="12.4" y="12.4" class="st0" width="425.4" height="280.9"/>
+		<line class="st1" x1="190.2" y1="276" x2="190.2" y2="30"/>
+		<path class="st2" d="M0,0v305.6h450V0H0z M437.8,293.2H12.4V12.4h425.4V293.2z"/>
+	</g>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 340.0578 56.3333)" class="st3 st4">using gfti</text>
+	<path class="st5" d="M316.4,65.5c0,0-10.1-8.9-12.6-12.6c-3.8-5.5,3.1-12.5,8.6-9.5l4.1,2.3l4.1-2.3c5.5-3,12.3,4,8.6,9.5
+		C326.4,56.6,316.4,65.5,316.4,65.5z"/>
+	<text transform="matrix(1 0 0 1 233.9743 56.3335)" class="st3 st4">made with</text>
+</g>
+<text transform="matrix(1 0 0 1 211.7302 77.5151)" class="st6 st7"> visit greetingsfromtheinter.net for more information</text>
 </svg>
