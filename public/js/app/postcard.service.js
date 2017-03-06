@@ -41,6 +41,9 @@
       };
 
       this.setFilter = function(filter_id) {
+        console.log(filter_id);
+        this.postcard.filter_name = filterData[filter_id].name;
+        console.log(this.postcard.filter_name);
         this.postcard.composition_settings.filter_id = filter_id;
       };
 
@@ -95,7 +98,31 @@
 
       this.getFontSize = function() {
         return this.postcard.composition_settings.font_size;
-      }
+      };
+
+      this.setImageScale = function(scale) {
+        this.postcard.composition_settings.image_scale = scale;
+      };
+
+      this.getImageScale = function() {
+        return this.postcard.composition_settings.image_scale;
+      };
+
+      this.setImagePosX = function(pos) {
+        this.postcard.composition_settings.image_pos_x = pos;
+      };
+
+      this.getImagePosX = function() {
+        return this.postcard.composition_settings.image_pos_x;
+      };
+
+      this.setImagePosY = function(pos) {
+        this.postcard.composition_settings.image_pos_y = pos;
+      };
+
+      this.getImagePosY = function() {
+        return this.postcard.composition_settings.image_pos_y;
+      };
 
       this.getSubtext = function() {
         return this.postcard.composition_settings.greetings_subtext;

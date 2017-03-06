@@ -47,15 +47,18 @@
           subtext: postcardService.getSubtext(),
           font: postcardService.getFont(),
           font_size: postcardService.getFontSize(),
+          image_scale: postcardService.getImageScale(),
+          image_x: postcardService.getImagePosX(),
+          image_y: postcardService.getImagePosY(),
           background: postcardService.getBackgroundImage($sce)
         };
-
         // $(".ui-widget").slick({
         //   focusOnSelect: true
         // });
       };
 
       vm.selectFilter = function(filter_id) {
+        console.log(filter_id);
         vm.curFilter = filter_id;
         postcardService.setFilter(filter_id);
         vm.postcard.filter = postcardService.getFilter();
@@ -90,9 +93,15 @@
       };
 
       $scope.$on("slideEnded", function() {
-         let fontSize = $scope.slider.value;
-         postcardService.setFontSize(fontSize);
+        console.log("update settings");
+         postcardService.setFontSize($scope.slider.value);
+         postcardService.setImageScale($scope.imageScale.value);
+         postcardService.setImagePosX($scope.imagePosX.value);
+         postcardService.setImagePosY($scope.imagePosY.value);
          vm.postcard.font_size = postcardService.getFontSize();
+         vm.postcard.image_scale = postcardService.getImageScale();
+         vm.postcard.image_x = postcardService.getImagePosX();
+         vm.postcard.image_y = postcardService.getImagePosY();
          $scope.$apply();
       });
 
@@ -100,8 +109,35 @@
         value: postcardService.getFontSize(),
         options: {
           floor: 12,
-          ceil: 36,
+          ceil: 72,
           showTicks: true
+        }
+      };
+
+      $scope.imageScale = {
+        value: 1,
+        options: {
+          floor: 1,
+          ceil: 5,
+          showTicks: true
+        }
+      };
+
+      $scope.imagePosX = {
+        value: 0,
+        options: {
+          floor: -500,
+          ceil: 500,
+          showTicks: false
+        }
+      };
+
+      $scope.imagePosY = {
+        value: 0,
+        options: {
+          floor: -500,
+          ceil: 500,
+          showTicks: false
         }
       };
     }

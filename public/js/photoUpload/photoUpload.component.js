@@ -35,7 +35,6 @@
       };
 
       vm.next = function() {
-        console.log("next?");
         postcardService.savePostcardData();
         $state.go('imageComposition');
       };
@@ -46,7 +45,6 @@
 
       vm.fileInput = function(event) {
         let files = event.target.files;
-        console.log(files);
         if (!files) {
           console.error("you must include an image");
         } else {
