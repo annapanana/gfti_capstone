@@ -106,7 +106,8 @@
           postcardService.setThumbnail(result.data[0].postcard.thumbnails[0].large);
           postcardService.setId(result.data[0].id);
           postcardService.setDeliveryDate(result.data[0].postcard.expected_delivery_date);
-
+          postcardService.setPreview(result.data[0].postcard.url);
+          console.log(result.data[0].postcard.expected_delivery_date);
           postcardService.savePostcardData();
           // localStorage.setItem('postcard', JSON.stringify(postcard));
           $state.go('postcardSent');

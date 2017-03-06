@@ -37,6 +37,10 @@ app.get('/', (req, res, next) => {
   console.log("Hello World");
 });
 
+app.use('*', function (req, res, next) {
+  res.sendFile('index.html', { root: path.join(__dirname, 'public') })
+})
+
 app.listen(port, () => {
   console.log('Listening on port', port);
 });

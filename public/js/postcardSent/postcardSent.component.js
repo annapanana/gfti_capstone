@@ -6,17 +6,28 @@
       controller: controller
     });
 
-    controller.$inject = ["$http", "$state"];
-    function controller($http, $state) {
+    controller.$inject = ["$http", "$state", "postcardService", "$sce"];
+    function controller($http, $state, postcardService, $sce) {
       const vm = this;
       var postcard = {};
       vm.cardName = "";
       vm.cardNotes = "";
 
       vm.$onInit = function() {
-        postcard = JSON.parse(localStorage.getItem('postcard'));
-        vm.deliveryDate = postcard.deliveryDate;
-        vm.thumbnailFront = postcard.thumbnail;
+
+        vm.postcard = {
+          frame: postcardService.updateFrameUrl($sce),
+          filter: postcardService.getFilter(),
+          color: postcardService.getColor(),
+          font: postcardService.getFont(),
+          font_size: postcardService.getFontSize(),
+          image_scale: postcardService.getImageScale(),
+          image_x: postcardService.getImagePosX(),
+          image_y: postcardService.getImagePosY(),
+          subtext: postcardService.getSubtext(),
+          background: postcardService.getBackgroundImage($sce),
+          delivery_date: postcardService.getDeliveryDate()
+        };
       };
 
       vm.saveDesign = function(){
@@ -26,6 +37,11 @@
         $http.patch(`/postcards/${postcard.id}`, postcard).then(() => {
           $state.go('archive');
         });
+      };
+
+      vm.viewPreview = function() {
+        var win = window.open(postcardService.getPreview(), '_blank');
+        win.focus();
       };
     }
 }());
