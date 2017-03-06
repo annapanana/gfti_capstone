@@ -1,119 +1,126 @@
 <div hero-background></div>
 <div class="hero-container">
   <div class="row top-margin-md">
-    <!-- <p class="text-background text-center">Pork belly before they sold out four dollar toast authentic paleo, unicorn color bottle twee taxidermy retro lyft messenger bag. Chillwave hell of subway tile, etsy schlitz beard tumblr authentic echo park.</p> -->
   </div>
-  <!-- <div class="row flex-row-spacing top-margin-sm">
-    <div>
-      <button class="btn" type="button" name="button" ui-sref="archive">view cards</button>
-    </div>
-    <div>
-      <button class="btn" type="button" name="button" ui-sref="themeSelection">new card</button>
-    </div>
-  </div> -->
 </div>
 
-<div ng-click="$ctrl.openh1 = !$ctrl.openh1" class="home-header">
+<div class="home-header">
+  <img class="image-fill blue-header" ng-src="../../assets/headers/h12.svg" alt="about">
+</div>
+<div class="container">
+  <div class="row text-center">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="row">
+        <p class="top-margin-sm">Greetings from the Internet is a travel-themed postcard creation tool. Users can design and mail a postard from this site. To get started, create a new card or explore the card archive of saved designs.</p>
+      </div>
+      <div class="row flex-row-spacing">
+        <button style="width: 175px;" class="btn" type="button" name="button" ui-sref="themeSelection">Create Card</button>
+        <button style="width: 175px;" class="btn" type="button" name="button" ui-sref="archive">Explore Archive</button>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
+<div>
   <img class="image-fill blue-header" ng-src="../../assets/headers/h2.svg" alt="how-does-it-work">
 </div>
-<div ng-class="{ showMe: $ctrl.openh1 }">
-  <div class="container">
-    <div class="row">
-      <div class="row" style="margin-right:50px; margin-left:50px;">
-        <div class="col-sm-4 top-margin-sm">
-          <a href="#">
+<div class="container">
+  <div class="row">
+    <div class="row" style="margin-right:50px; margin-left:50px;">
+      <div class="col-sm-4 top-margin-sm">
+        <a href="#">
+        <div class="card-preview" ng-click="$ctrl.flip()">
+          <div class="front">
+            <img class="image-shadow image-fill" ng-src="assets/demo_cards/demo_card_01_front.png" alt="front">
+          </div>
+          <div class="back">
+            <img class="image-shadow image-fill" ng-src="assets/demo_card_back.png" alt="back">
+          </div>
+        </div>
+        </a>
+      </div>
+      <div class="col-sm-4 top-margin-sm">
+        <a href="#">
           <div class="card-preview" ng-click="$ctrl.flip()">
             <div class="front">
-              <img class="image-shadow image-fill" ng-src="assets/demo_cards/demo_card_01_front.png" alt="front">
+              <img class="image-shadow image-fill"  ng-src="assets/demo_cards/demo_card_03_front.png" alt="front">
             </div>
             <div class="back">
-              <img class="image-shadow image-fill" ng-src="assets/demo_card_back.png" alt="back">
+              <img class="image-shadow image-fill"  ng-src="assets/demo_card_back.png" alt="back">
             </div>
           </div>
-          </a>
-        </div>
-        <div class="col-sm-4 top-margin-sm">
-          <a href="#">
-            <div class="card-preview" ng-click="$ctrl.flip()">
-              <div class="front">
-                <img class="image-shadow image-fill"  ng-src="assets/demo_cards/demo_card_03_front.png" alt="front">
-              </div>
-              <div class="back">
-                <img class="image-shadow image-fill"  ng-src="assets/demo_card_back.png" alt="back">
-              </div>
+        </a>
+      </div>
+      <div class="col-sm-4 top-margin-sm">
+        <a href="#">
+          <div class="card-preview" ng-click="$ctrl.flip()">
+            <div class="front">
+              <img class="image-shadow image-fill"  ng-src="assets/demo_cards/demo_card_04_front.png" alt="front">
             </div>
-          </a>
-        </div>
-        <div class="col-sm-4 top-margin-sm">
-          <a href="#">
-            <div class="card-preview" ng-click="$ctrl.flip()">
-              <div class="front">
-                <img class="image-shadow image-fill"  ng-src="assets/demo_cards/demo_card_04_front.png" alt="front">
-              </div>
-              <div class="back">
-                <img class="image-shadow image-fill"  ng-src="assets/demo_card_back.png" alt="back">
-              </div>
+            <div class="back">
+              <img class="image-shadow image-fill"  ng-src="assets/demo_card_back.png" alt="back">
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
 </div>
 
-<div ng-click="$ctrl.openh2 = !$ctrl.openh2">
+<div>
   <img class="image-fill blue-header" ng-src="../../assets/headers/h1.svg" alt="how-does-it-work">
 </div>
-<div ng-class="{ showMe: $ctrl.openh2 }">
-  <div class="container" >
-    <div class="row top-margin-md col-xs-12">
-      <div class="col-md-6">
-        <div class="row">
-          <div class="col-xs-3">
-            <img class="image-fill" ng-src="assets/icons/step_1.svg" alt="">
-          </div>
-          <div class="col-xs-9">
-            <h3>Step 1: Theme Selection</h3>
-            <p>We have carefully crafted 4 different themes to choose from. Each theme includes different customization assets that will give a different visual identity to your postcard. The themes include: Classic, Playful, Modern and Wild</p>
-          </div>
+
+<div class="container" >
+  <div class="row top-margin-md col-xs-12">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-xs-3">
+          <img class="image-fill" ng-src="assets/icons/step_1.svg" alt="">
         </div>
-        <div class="row">
-          <div class="col-xs-3">
-            <img class="image-fill" ng-src="assets/icons/step_2.svg" alt="">
-          </div>
-          <div class="col-xs-9">
-            <h3>Step 2: Photo Upload</h3>
-            <p>If you are using this site on a mobile device, you can take a photo and directly upload it to the site. Alternatively, you can upload a photo from your desktop or provide an image URL. The postcard layout is optomized for mobile uploads.</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-3">
-            <img class="image-fill" ng-src="assets/icons/step_3.svg" alt="">
-          </div>
-          <div class="col-xs-9">
-            <h3>Step 3: Edit Design</h3>
-            <p>You can use 5 different widgets to customize your design. Tools include image filters, border themes, color selection, font selection and subtext customization. The design assets and colors are specific to the theme that you select.</p>
-          </div>
+        <div class="col-xs-9">
+          <h3>Step 1: Theme Selection</h3>
+          <p>We have carefully crafted 4 different themes to choose from. Each theme includes different customization assets that will give a different visual identity to your postcard. The themes include: Classic, Playful, Modern and Wild</p>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="row">
-          <div class="col-xs-3">
-            <img class="image-fill" ng-src="assets/icons/step_4.svg" alt="">
-          </div>
-          <div class="col-xs-9">
-            <h3>Step 4: Message & Address</h3>
-            <p>Fill in a custom message and address the card for mailing. Your desing will be saved to the postcard archive for sharing with the community but your message and addresses will not be saved in order to respect your privacy.</p>
-          </div>
+      <div class="row">
+        <div class="col-xs-3">
+          <img class="image-fill" ng-src="assets/icons/step_2.svg" alt="">
         </div>
-        <div class="row">
-          <div class="col-xs-3">
-            <img class="image-fill" ng-src="assets/icons/step_5.svg" alt="">
-          </div>
-          <div class="col-xs-9">
-            <h3>Step 5: Pay and Mail</h3>
-            <p>When you have completed your postcard, you can mail it. You will recieve an estimated delivery date. Each postcard costs $1.50 to send, which includes printing and postage. We use Stripe for secure payments.</p>
-          </div>
+        <div class="col-xs-9">
+          <h3>Step 2: Photo Upload</h3>
+          <p>If you are using this site on a mobile device, you can take a photo and directly upload it to the site. Alternatively, you can upload a photo from your desktop or provide an image URL. The postcard layout is optomized for mobile uploads.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">
+          <img class="image-fill" ng-src="assets/icons/step_3.svg" alt="">
+        </div>
+        <div class="col-xs-9">
+          <h3>Step 3: Edit Design</h3>
+          <p>You can use 5 different widgets to customize your design. Tools include image filters, border themes, color selection, font selection and subtext customization. The design assets and colors are specific to the theme that you select.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-xs-3">
+          <img class="image-fill" ng-src="assets/icons/step_4.svg" alt="">
+        </div>
+        <div class="col-xs-9">
+          <h3>Step 4: Message & Address</h3>
+          <p>Fill in a custom message and address the card for mailing. Your desing will be saved to the postcard archive for sharing with the community but your message and addresses will not be saved in order to respect your privacy.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">
+          <img class="image-fill" ng-src="assets/icons/step_5.svg" alt="">
+        </div>
+        <div class="col-xs-9">
+          <h3>Step 5: Pay and Mail</h3>
+          <p>When you have completed your postcard, you can mail it. You will recieve an estimated delivery date. Each postcard costs $1.50 to send, which includes printing and postage. We use Stripe for secure payments.</p>
         </div>
       </div>
     </div>
@@ -121,19 +128,16 @@
 </div>
 
 
-
-<div ng-click="$ctrl.openh3 = !$ctrl.openh3">
+<div>
   <img class="image-fill blue-header" ng-src="../../assets/headers/h3.svg" alt="how-does-it-work">
 </div>
-<div ng-class="{ showMe: $ctrl.openh3 }">
-  <div class="container">
-    <div class="row text-center top-margin-md">
-      <div class="col-md-3"></div>
-      <div class="col-md-6 col-sm-12">
-        <img ng-src="http://placehold.it/200x200" alt="">
-        <p class="top-margin-sm">Pork belly before they sold out four dollar toast authentic paleo, unicorn color bottle twee taxidermy retro lyft messenger bag. Chillwave hell of subway tile, etsy schlitz beard tumblr authentic echo park.</p>
-      </div>
-      <div class="col-md-3"></div>
+<div class="container">
+  <div class="row text-center top-margin-md">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 col-sm-12">
+      <img ng-src="http://placehold.it/200x200" alt="">
+      <p class="top-margin-sm">Pork belly before they sold out four dollar toast authentic paleo, unicorn color bottle twee taxidermy retro lyft messenger bag. Chillwave hell of subway tile, etsy schlitz beard tumblr authentic echo park.</p>
     </div>
+    <div class="col-md-3"></div>
   </div>
 </div>
