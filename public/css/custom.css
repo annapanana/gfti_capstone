@@ -263,6 +263,29 @@ footer {
   min-height: 300px;
 }
 
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile-label {
+    color: black;
+    background-color: #D4EFFB;
+    padding: 25px 50px 20px 50px;
+    border-radius: 5px;
+    border-style: dashed;
+    border-color: white;
+}
+
+.inputfile-label:focus,
+.inputfile-label:hover {
+    opacity: .5;
+}
+
 .archive-container {
   display: flex;
   flex-flow: row;
@@ -295,6 +318,12 @@ footer {
   font-size: 14px;
 }
 
+.icon {
+  width: 50px;
+  height: auto;
+  margin: 10px;
+}
+
 /*Background Colors*/
 .color-1 {
   background-color: #D4EFFB;
@@ -325,6 +354,12 @@ footer {
 .flex-row-spacing {
   display: flex;
   flex-flow: row;
+  justify-content: space-around;
+}
+
+.flex-column {
+  display: flex;
+  flex-flow: column;
   justify-content: space-around;
 }
 

@@ -20,7 +20,7 @@
             color_id: 2,
             font_size: 24,
             greetings_subtext: 'greetings from the internet',
-            image_url: '../../assets/placeholder_img.png'
+            image_url: 'https://s3-us-west-2.amazonaws.com/gftiresources/assets/placeholder_img.png'
           },
           frame_url: "classic-1",
           color_hex: "#F4987A",

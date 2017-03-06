@@ -6,8 +6,8 @@
       controller: controller
     });
 
-    controller.$inject = ["$http", "$state", "$stateParams", "$scope", "$sce", "postcardService"];
-    function controller($http, $state, $stateParams, $scope, $sce, postcardService) {
+    controller.$inject = ["$http", "$state", "$stateParams", "$scope", "$sce", "postcardService", "$log"];
+    function controller($http, $state, $stateParams, $scope, $sce, postcardService, $log) {
       const vm = this;
       vm.isLoading = false;
       vm.curStep = 2;
@@ -46,6 +46,7 @@
 
       vm.fileInput = function(event) {
         let files = event.target.files;
+        console.log(files);
         if (!files) {
           console.error("you must include an image");
         } else {
@@ -73,7 +74,7 @@
             if(xhr.status === 200){
               postcardService.setBackgroundImage(url);
               vm.postcard.background = postcardService.getBackgroundImage($sce);
-              // console.log("image:",   vm.compositionSettings.image_url);
+              console.log("image:",  url);
               vm.isLoading = false;
               vm.disabled = false;
               $scope.$apply();
