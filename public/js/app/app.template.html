@@ -2,17 +2,16 @@
 		<div class="navbar-header">
 			<a class="navbar-brand" ui-sref="home"><img class="image-fill" src="../../assets/gfti_logo.svg" alt="gfti"></a>
 		</div>
-		<div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
-			<ul class="nav navbar-nav">
-				<li><a ui-sref="archive">archive</a></li>
-				<li><a ui-sref="themeSelection">theme</a></li>
-				<li><a ui-sref="photoUpload">photo upload</a></li>
-				<li><a ui-sref="imageComposition">composition</a></li>
-				<li><a ui-sref="messageComposition">message</a></li>
-				<li><a ui-sref="payment">payment</a></li>
-				<li><a ui-sref="postcardSent">sent</a></li>
-			</ul>
-		</div>
+		<ul class="nav navbar-nav">
+			<li><a ui-sref="themeSelection"><h4>Create Card</h4></a></li>
+			<li><h3>|</h3></li>
+			<li><a ui-sref="archive"><h4>Explore Archive</h4></a></li>
+			<!-- <li><a ui-sref="photoUpload">photo upload</a></li>
+			<li><a ui-sref="imageComposition">composition</a></li>
+			<li><a ui-sref="messageComposition">message</a></li>
+			<li><a ui-sref="payment">payment</a></li>
+			<li><a ui-sref="postcardSent">sent</a></li> -->
+		</ul>
 	</nav>
 	<ui-view></ui-view>
 

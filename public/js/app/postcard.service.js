@@ -10,6 +10,7 @@
         let color_id = this.postcard.composition_settings.color_id;
         let theme_id = this.postcard.composition_settings.theme_id;
         this.postcard.color_hex = colorData[theme_id][color_id];
+        localStorage.setItem('postcard', JSON.stringify(this.postcard));
       };
 
       this.getCompositionSettings = function() {

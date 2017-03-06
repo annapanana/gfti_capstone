@@ -18,7 +18,7 @@
       <h4>Select a File to Upload</h4>
 
       <div class="flex-row">
-        <label class="inputfile-label" for="file">Choose a File <img class="icon" src="../../assets/icons/upload_iconicon.svg" alt=""></label>
+        <label class="inputfile-label" for="file"><img class="icon" src="../../assets/icons/upload_iconicon.svg" alt=""></label>
           <input class="inputfile" type="file" name="file" id="file" custom-on-change="$ctrl.fileInput">
       </div>
       <div class="text-center">
@@ -28,7 +28,10 @@
       <div class="flex-row">
         <div class="flex-column">
           <h4>Enter an Image URL</h4>
-          <input style="width:200px;" class="top-margin-sm text-widget" type="text" name="image" ng-model="$ctrl.postcard.background">
+          <div class="">
+            <input style="width:200px;" class="top-margin-sm text-widget" type="text" name="image" ng-model="$ctrl.selectedImage">
+            <a href="#" ng-click="$ctrl.submitImageUrl()"><img class="icon-button" src="../../assets/buttons/done_buttonicon.svg" alt=""></a>
+          </div>
         </div>
       </div>
     </div>
