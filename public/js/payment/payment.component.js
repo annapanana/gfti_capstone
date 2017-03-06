@@ -27,7 +27,7 @@
       };
 
       vm.isLoading = false;
-      var stripe = Stripe('pk_test_1EIBbNvuJSQ8GPIJFBC71eqP');
+      var stripe = Stripe('pk_live_1p8AWXUweuSHmqbbFJaCEX2G');
       var elements = stripe.elements();
       // for stripe element
       var style = {
@@ -99,10 +99,20 @@
         hiddenInput.setAttribute('name', 'stripeToken');
         hiddenInput.setAttribute('value', token.id);
         form.appendChild(hiddenInput);
+        
         postcardService.savePostcardData();
+        console.log("hidden", hiddenInput);
+        let data = {
+          postcard_data:  postcardService.postcard,
+          payment_data: {
+            token: token,
+            email: 'annaklotko@gmail.com'
+          }
+        };
         // Submit the form
-        $http.post('/postcards', postcardService.postcard).then((result) => {
-          console.log("result", result.data[0].postcard.url);
+        $http.post('/postcards', data).then((result) => {
+          console.log(result);
+          // console.log("result", result.data[0].postcard.url);
           postcardService.setThumbnail(result.data[0].postcard.thumbnails[0].large);
           postcardService.setId(result.data[0].id);
           postcardService.setDeliveryDate(result.data[0].postcard.expected_delivery_date);
