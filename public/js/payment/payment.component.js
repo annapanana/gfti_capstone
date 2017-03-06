@@ -47,6 +47,8 @@
           frame: postcardService.updateFrameUrl($sce),
           filter: postcardService.getFilter(),
           color: postcardService.getColor(),
+          font: postcardService.getFont(),
+          font_size: postcardService.getFontSize(),
           subtext: postcardService.getSubtext(),
           background: postcardService.getBackgroundImage($sce)
         };

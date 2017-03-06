@@ -155,9 +155,8 @@ footer {
 
 /*Postcard Composition*/
 .greetings-subtext {
-  font-size: 32px;
   text-align: center;
-  font-family: 'Yellowtail', cursive;
+  /*font-family: 'Yellowtail', cursive;*/
 }
 
 .postcard-background {
@@ -421,6 +420,14 @@ footer {
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Day Poster';
+    src: url('https://s3-us-west-2.amazonaws.com/gftiresources/assets/Dayposter_Black.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 h1 {
   font-family: 'Helvetica Neue Medium';

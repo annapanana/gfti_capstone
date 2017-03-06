@@ -1,4 +1,4 @@
 'use strict';
 (function() {
-  angular.module("app", ["ui.router", "slick", "ngAnimate"]);
+  angular.module("app", ["ui.router", "slick", "ngAnimate", "thatisuday.dropzone", 'rzModule']);
 }());

@@ -16,7 +16,9 @@
             filter_id: 1,
             theme_id: 1,
             frame_id: 1,
+            font_id: 1,
             color_id: 2,
+            font_size: 24,
             greetings_subtext: 'greetings from the internet',
             image_url: '../../assets/placeholder_img.png'
           },

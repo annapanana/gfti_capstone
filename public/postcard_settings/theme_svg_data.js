@@ -220,7 +220,6 @@ var filterData = [
   }
 ];
 
-var fontData = [];
 var colorData = {
   1:[
     {id:0, c:"#F4987A"},
@@ -258,4 +257,27 @@ var colorData = {
     {id:5, c:"#FEDF72"},
     {id:6, c:"#FFF"},
     {id:7, c:"#000"}],
+};
+
+var fontData = {
+  1: [
+    {id:0, font:"Day Poster"},
+    {id:1, font:"Yellowtail"},
+    {id:2, font:"Shrikhand"}
+  ],
+  2: [
+    {id:0, font:"Pacifico"},
+    {id:1, font:"Amatic SC"},
+    {id:2, font:"Sacramento"}
+  ],
+  3: [
+    {id:0, font:"Quicksand"},
+    {id:1, font:"Fredoka One"},
+    {id:2, font:"Spinnaker"}
+  ],
+  4: [
+    {id:0, font:"Carter One"},
+    {id:1, font:"Cabin Sketch"},
+    {id:2, font:"Rubik Mono One"}
+  ]
 };

@@ -28,6 +28,10 @@
         return colorData[this.postcard.composition_settings.theme_id];
       };
 
+      this.getFontData = function() {
+        return fontData[this.postcard.composition_settings.theme_id];
+      }
+
       this.getBackgroundImage = function($sce) {
         return $sce.trustAsResourceUrl(this.postcard.composition_settings.image_url);
       };
@@ -72,6 +76,23 @@
         let color_id = this.postcard.composition_settings.color_id;
         return colorData[this.postcard.composition_settings.theme_id][color_id].c;
       };
+
+      this.setFont = function(font_id) {
+        this.postcard.composition_settings.font_id = font_id;
+      };
+
+      this.getFont = function() {
+        let font_id = this.postcard.composition_settings.font_id;
+        return fontData[this.postcard.composition_settings.theme_id][font_id].font;
+      };
+
+      this.setFontSize = function(size) {
+        this.postcard.composition_settings.font_size = size;
+      }
+
+      this.getFontSize = function() {
+        return this.postcard.composition_settings.font_size;
+      }
 
       this.getSubtext = function() {
         return this.postcard.composition_settings.greetings_subtext;
