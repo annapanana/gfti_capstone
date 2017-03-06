@@ -25,6 +25,8 @@
           frame_url: "classic-1",
           color_hex: "#F4987A",
           message: 'this is a message',
+          font_family: 'Day Poster',
+          font_size: 24,
           to: {
             name: 'anna',
             address_line1: '1260 kalmia ave',

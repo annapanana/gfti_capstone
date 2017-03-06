@@ -78,6 +78,8 @@
       };
 
       this.setFont = function(font_id) {
+        let theme_id = this.postcard.composition_settings.theme_id;
+        this.postcard.font_family = fontData[theme_id][font_id].font;
         this.postcard.composition_settings.font_id = font_id;
       };
 
@@ -87,6 +89,7 @@
       };
 
       this.setFontSize = function(size) {
+        this.postcard.font_size = size;
         this.postcard.composition_settings.font_size = size;
       }
 
