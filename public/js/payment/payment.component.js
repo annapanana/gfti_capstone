@@ -27,7 +27,7 @@
       };
 
       vm.isLoading = false;
-      var stripe = Stripe('pk_test_1EIBbNvuJSQ8GPIJFBC71eqP');
+      var stripe = Stripe('pk_live_1p8AWXUweuSHmqbbFJaCEX2G');
       var elements = stripe.elements();
       // for stripe element
       var style = {
@@ -122,6 +122,7 @@
         //   // localStorage.setItem('postcard', JSON.stringify(postcard));
         //   $state.go('postcardSent');
         // });
+
       };
 
       vm.flip = function() {

@@ -8,7 +8,8 @@ var fs = require('fs');
 require('dotenv').config();
 
 const lobFactory = require('../node_modules/lob/lib/index.js');
-const lob = new lobFactory('test_97f0caa8c52f230f7bef2daef8b58e70f81');
+const LOB_KEY = process.env.LOB_KEY;
+const lob = new lobFactory(LOB_KEY);
 
 const STRIPE_KEY = process.env.STRIPE_KEY;
 const stripe = require('stripe')(STRIPE_KEY);
@@ -37,6 +38,7 @@ router.get('/:id/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
+  
   const postcard_data = JSON.parse(req.body.postcard_data)
   const newCard = postcard_data.composition_settings;
   console.log("post data", postcard_data );
@@ -56,7 +58,7 @@ router.post('/', (req, res, next) => {
   // Retrieve html template
   let postcard_front = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
   let postcard_back = fs.readFileSync(__dirname + `/../public/postcard_templates/postcard_back.html`, { encoding: 'utf-8' });
-
+  console.log("token", token);
   // Add zip to db for data viz
   // newCard.from_zip = send_from.address_zip;
 
@@ -66,9 +68,10 @@ stripe.charges.create({
     currency: "usd",
     description: "new postcard",
     source: token
+
   }).then(function(charge) {
     // New charge created on a new customer
-    console.log("Charge Succeeded!", newCard);
+    console.log("Charge Succeeded!", charge);
     // CREATE POSTCARD
     lob.postcards.create({
       to: send_to,
