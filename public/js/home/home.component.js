@@ -22,6 +22,7 @@
             image_scale: 1,
             image_pos_x: 0,
             image_pos_y: 0,
+            text_pos: 0,
             greetings_subtext: 'greetings from the internet',
             image_url: 'https://s3-us-west-2.amazonaws.com/gftiresources/assets/placeholder_img.png'
           },

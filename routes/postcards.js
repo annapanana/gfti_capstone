@@ -37,60 +37,35 @@ router.get('/:id/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  const {composition_settings} = req.body;
-  const newCard = composition_settings;
+  const postcard_data = JSON.parse(req.body.postcard_data)
+  const newCard = postcard_data.composition_settings;
+  console.log("post data", postcard_data );
 
-  const {to} = req.body;
-  var send_to = to;
-  const {from} = req.body;
-  var send_from = from;
+  const token = req.body.stripeToken;
+  console.log(token);
 
-  const {message} = req.body;
-  const msg = message;
+  const send_to = postcard_data.to;
+  const send_from = postcard_data.from;
+  const msg = postcard_data.message;
+  const color = postcard_data.color_hex;
+  const font = postcard_data.font_family;
+  const size = postcard_data.font_size;
 
-  const {payment_info} = req.body;
-  const payment = payment_info;
-
-  const {color_hex} = req.body;
-  const color = color_hex;
-
-  const {font_family} = req.body;
-  const font = font_family;
-
-  const {font_size} = req.body;
-  const size = font_size;
-
-  const {filter_name} = req.body;
-  const filter = filter_name;
-  console.log(filter);
+  const filter = postcard_data.filter_name;
 
   // Retrieve html template
   let postcard_front = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
   let postcard_back = fs.readFileSync(__dirname + `/../public/postcard_templates/postcard_back.html`, { encoding: 'utf-8' });
 
   // Add zip to db for data viz
-  newCard.from_zip = send_from.address_zip;
+  // newCard.from_zip = send_from.address_zip;
 
   // CHARGE USER
-  stripe.customers.create({
-    email: payment.email
-  }).then(function(customer){
-    return stripe.customers.createSource(customer.id, {
-      source: {
-         object: 'card',
-         exp_month: payment.exp_month,
-         exp_year: payment.exp_year,
-         number: payment.number,
-         cvc: payment.cvc
-      }
-    });
-  }).then(function(source) {
-    // console.log("source", source);
-    return stripe.charges.create({
-      amount: 150,
-      currency: 'usd',
-      customer: source.customer
-    });
+stripe.charges.create({
+    amount: 150,
+    currency: "usd",
+    description: "new postcard",
+    source: token
   }).then(function(charge) {
     // New charge created on a new customer
     console.log("Charge Succeeded!", newCard);
