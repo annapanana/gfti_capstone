@@ -114,7 +114,9 @@ stripe.charges.create({
     });
   }).catch(function(err) {
     // TODO switch statement to send different errors
-    return res.send(err);
+    console.log("THIS IS AN ERROR");
+    res.redirect('/');
+    // return res.send(err);
   });
 
   router.patch('/:id', (req, res, next) => {
