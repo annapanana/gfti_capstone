@@ -84,7 +84,6 @@
         postcardService.setFont(font_id);
         vm.postcard.font = postcardService.getFont();
         vm.postcard.font_size = postcardService.getFontSize();
-        console.log(vm.postcard.font_size);
       };
 
       vm.next = function() {
@@ -94,7 +93,6 @@
       };
 
       $scope.$on("slideEnded", function() {
-        console.log("update settings");
          postcardService.setFontSize($scope.slider.value);
          postcardService.setImageScale($scope.imageScale.value);
          postcardService.setImagePosX($scope.imagePosX.value);
