@@ -127,11 +127,22 @@
       };
 
       $scope.imageScale = {
-        value: 1,
+        value: "1.0",
         options: {
-          floor: 1,
-          ceil: 5,
-          showTicks: true
+          showTicks: true,
+          stepsArray: [
+            {value:'0.5'},
+            {value:'0.75'},
+            {value:'1.0'},
+            {value:'1.25'},
+            {value:'1.5'},
+            {value:'1.75'},
+            {value:'2.0'},
+            {value:'2.5'},
+            {value:'3.0'},
+            {value:'3.5'},
+            {value:'4.0'},
+          ]
         }
       };
 

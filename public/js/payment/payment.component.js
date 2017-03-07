@@ -107,7 +107,7 @@
         hiddenData.setAttribute('value', JSON.stringify(postcardService.postcard));
         form.appendChild(hiddenData);
 
-        form.submit();
+        var postReq = form.submit();
 
 
         // Submit the form
