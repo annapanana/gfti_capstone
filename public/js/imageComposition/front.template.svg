@@ -72,7 +72,7 @@
                 0  0  0  1  0"/>
     </filter>
   </defs>
-  <!-- <rect width="100%" height="100%"></rect> -->
+  <rect width="100%" height="100%" x="0" y="0" fill="#2D2D2D"></rect>
   <image ng-attr-transform="scale({{$ctrl.postcard.image_scale}}) translate({{$ctrl.postcard.image_x}},{{$ctrl.postcard.image_y}})" class="postcard-background" filter="url({{$ctrl.postcard.filter}})" xlink:href="{{$ctrl.postcard.background}}" width="100%" height="100%" x="0" y="0"/>
   <!-- <image fill="{{$ctrl.postcard.color}}" class="postcard-theme" xlink:href="{{$ctrl.postcard.frame}}" width="100%" height="100%" x="0" y="0"/> -->
   <text x="50%" y="25%" class="greetings-subtext" font-family="{{$ctrl.postcard.font}}" font-size="{{$ctrl.postcard.font_size}}" ng-attr-transform="translate(0,{{$ctrl.postcard.text_pos}})" text-anchor="middle" fill="{{$ctrl.postcard.color}}">
