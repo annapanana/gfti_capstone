@@ -67,6 +67,7 @@ stripe.charges.create({
     source: token
 
   }).then(function(charge) {
+    console.log(charge);
     // New charge created on a new customer
     console.log("Charge Succeeded!");
     // CREATE POSTCARD
@@ -100,6 +101,7 @@ stripe.charges.create({
       knex('postcards')
         .insert(newCard, '*')
         .then((result) => {
+          console.log(result);
           result[0].postcard = postcard;
           res.redirect('/postcard-sent');
 
