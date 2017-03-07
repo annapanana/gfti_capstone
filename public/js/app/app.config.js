@@ -58,7 +58,7 @@
         .state({
           name: "postcardSent",
           parent: "app",
-          url: "postcard-sent",
+          url: "/postcard-sent",
           component: "postcardSent"
         });
     }

@@ -27,7 +27,9 @@
       };
 
       vm.isLoading = false;
-      var stripe = Stripe('pk_live_1p8AWXUweuSHmqbbFJaCEX2G');
+      // var stripe = Stripe('pk_live_1p8AWXUweuSHmqbbFJaCEX2G');
+      var stripe = Stripe('pk_test_1EIBbNvuJSQ8GPIJFBC71eqP');
+
       var elements = stripe.elements();
       // for stripe element
       var style = {
@@ -102,14 +104,14 @@
         form.appendChild(hiddenInput);
 
         postcardService.savePostcardData();
+        console.log(JSON.stringify(postcardService.postcard));
         const hiddenData = document.createElement('input');
         hiddenData.setAttribute('name', 'postcard_data');
         hiddenData.setAttribute('value', JSON.stringify(postcardService.postcard));
         form.appendChild(hiddenData);
 
-        var postReq = form.submit();
-
-
+        form.submit();
+        // $state.go('postcardSent', null, { reload: true });
         // Submit the form
         // $http.post('/postcards', postcardService.postcard).then((result) => {
         //   console.log("result", result.data[0].postcard.url);

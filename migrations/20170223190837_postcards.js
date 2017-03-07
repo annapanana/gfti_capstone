@@ -12,6 +12,7 @@ exports.up = function(knex, Promise) {
     table.integer('image_scale').notNullable();
     table.integer('image_pos_x').notNullable();
     table.integer('image_pos_y').notNullable();
+    table.integer('text_pos').notNullable();
     table.string('greetings_subtext').notNullable();
     table.string('image_url').notNullable();
     table.string('name');

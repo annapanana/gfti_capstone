@@ -100,11 +100,11 @@
       };
 
       this.setTextPos = function(pos) {
-        this.postcard.composition_settings.text_post = pos;
+        this.postcard.composition_settings.text_pos = pos;
       };
 
       this.getTextPos = function() {
-        return this.postcard.composition_settings.text_post;
+        return this.postcard.composition_settings.text_pos;
       }
 
       this.setImageScale = function(scale) {

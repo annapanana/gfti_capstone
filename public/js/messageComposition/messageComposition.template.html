@@ -20,9 +20,9 @@
     </div>
     <div class="col-sm-6 col-xs-10 color-2 widget-container" style="padding:20px;">
       <div class="row flex-row-spacing">
-        <button class="btn-tab" ng-class="{'btn-tab-active': $ctrl.currentTab === 'message'}" ng-click="$ctrl.changeTab('message')" type="button" name="button">Message</button>
-        <button class="btn-tab" ng-class="{'btn-tab-active': $ctrl.currentTab === 'from'}" ng-click="$ctrl.changeTab('from')" type="button" name="button">Send From</button>
-        <button class="btn-tab" ng-class="{'btn-tab-active': $ctrl.currentTab === 'to'}" ng-click="$ctrl.changeTab('to')" type="button" name="button">Send To</button>
+        <button class="btn-tab hvr-grow" ng-class="{'btn-tab-active': $ctrl.currentTab === 'message'}" ng-click="$ctrl.changeTab('message')" type="button" name="button">Message</button>
+        <button class="btn-tab hvr-grow" ng-class="{'btn-tab-active': $ctrl.currentTab === 'from'}" ng-click="$ctrl.changeTab('from')" type="button" name="button">Send From</button>
+        <button class="btn-tab hvr-grow" ng-class="{'btn-tab-active': $ctrl.currentTab === 'to'}" ng-click="$ctrl.changeTab('to')" type="button" name="button">Send To</button>
       </div>
 
       <div class="row" ng-if="$ctrl.currentTab === 'message'">

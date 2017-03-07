@@ -38,13 +38,13 @@ router.get('/:id/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  
-  const postcard_data = JSON.parse(req.body.postcard_data)
+
+  const postcard_data = JSON.parse(req.body.postcard_data);
   const newCard = postcard_data.composition_settings;
-  console.log("post data", postcard_data );
+  // console.log("post data", postcard_data );
 
   const token = req.body.stripeToken;
-  console.log(token);
+  // console.log(token);
 
   const send_to = postcard_data.to;
   const send_from = postcard_data.from;
@@ -58,9 +58,6 @@ router.post('/', (req, res, next) => {
   // Retrieve html template
   let postcard_front = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
   let postcard_back = fs.readFileSync(__dirname + `/../public/postcard_templates/postcard_back.html`, { encoding: 'utf-8' });
-  console.log("token", token);
-  // Add zip to db for data viz
-  // newCard.from_zip = send_from.address_zip;
 
   // CHARGE USER
 stripe.charges.create({
@@ -71,7 +68,7 @@ stripe.charges.create({
 
   }).then(function(charge) {
     // New charge created on a new customer
-    console.log("Charge Succeeded!", charge);
+    console.log("Charge Succeeded!");
     // CREATE POSTCARD
     lob.postcards.create({
       to: send_to,
@@ -104,7 +101,10 @@ stripe.charges.create({
         .insert(newCard, '*')
         .then((result) => {
           result[0].postcard = postcard;
-          return res.status(200).send(result);
+          res.redirect('/postcard-sent');
+
+          // res.send(result[0])
+          // return res.status(200).send(result);
         })
         .catch(err => {
           next(err);
