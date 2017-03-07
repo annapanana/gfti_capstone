@@ -88,7 +88,7 @@
         postcardService.setMessage(vm.message);
 
         postcardService.savePostcardData();
-        $state.go('payment');
+        $state.go('payment', null, { reload: true });
       };
 
       function checkZipcode(zip) {

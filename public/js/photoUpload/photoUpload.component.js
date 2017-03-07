@@ -37,7 +37,7 @@
 
       vm.next = function() {
         postcardService.savePostcardData();
-        $state.go('imageComposition');
+        $state.go('imageComposition', null, { reload: true });
       };
 
       vm.$onInit = function() {

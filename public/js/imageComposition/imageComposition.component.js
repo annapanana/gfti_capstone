@@ -90,7 +90,7 @@
       vm.next = function() {
         postcardService.setSubtext(vm.postcard.subtext);
         postcardService.savePostcardData();
-        $state.go('messageComposition');
+        $state.go('messageComposition', null, { reload: true });
       };
 
       $scope.$on("slideEnded", function() {

@@ -127,7 +127,7 @@
         <path class="dark-blue" d="M458.47,84.76a2.47,2.47,0,0,1,.73,2v5h-2V87.26a2.07,2.07,0,0,0-.16-.9,1.1,1.1,0,0,0-1.09-.57,1.35,1.35,0,0,0-1.35.84,2.9,2.9,0,0,0-.19,1.13v4h-1.95V84.35h1.89v1.09a3.28,3.28,0,0,1,.71-.83,2.45,2.45,0,0,1,1.52-.45A2.86,2.86,0,0,1,458.47,84.76Z"/>
         <path class="dark-blue" d="M460.25,85.79V84.4h1V82.33h1.93V84.4h1.21v1.39h-1.21v3.94a.89.89,0,0,0,.12.57,1.28,1.28,0,0,0,.71.11h.38v1.46l-.92,0a2.48,2.48,0,0,1-1.89-.48,1.42,1.42,0,0,1-.33-1V85.79Z"/>
       </g>
-      <g id="next_step" ng-hide="$ctrl.nextStep === true && $ctrl.disabled === false" ng-mousedown="$ctrl.setNextButton()" ng-mouseenter="$ctrl.hoverNext(true)" ng-mouseleave="$ctrl.hoverNext(false)" ng-class="{'button-hover':$ctrl.buttonHover}" >
+      <g id="next_step" ng-hide="$ctrl.nextStep === true && $ctrl.disabled === false" ng-mousedown="$ctrl.setNextButton()" ng-mouseenter="$ctrl.hoverNext(true)" ng-mouseleave="$ctrl.hoverNext(false)" ng-class="{'button-hover':$ctrl.buttonHover}">
         <rect ng-class="{'dark-gray':$ctrl.disabled}" class="light-blue" x="487.33" y="12.2" width="136.5" height="54.18"/>
         <rect ng-class="{'light-gray':$ctrl.disabled}" class="dark-blue" x="480.72" y="5.58" width="136.5" height="54.18"/>
         <g>

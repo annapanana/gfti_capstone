@@ -114,9 +114,13 @@ html, body {
   height: 100%;
 }*/
 
+.not-sticky-footer {
+  position: relative;
+}
+
 footer {
-  /*position: fixed;
-  bottom: 0px;*/
+  position: fixed;
+  bottom: 0px;
   width: 100%;
   left: 0;
   right: 0;
@@ -226,10 +230,6 @@ footer {
 
 .widget-element-selected {
   border-color: #AAE0F8;
-}
-
-.widget-element:hover {
-  opacity: .5;
 }
 
 .text-widget {
@@ -488,6 +488,10 @@ a {
 }
 
 a:hover {
+  color: #AF8B89;
+}
+
+a:hover {
   color: #E4C5C2;
 }
 
@@ -499,13 +503,12 @@ a:hover {
   border-color: #AAE0F8;
   color: #FFF;
   border-radius: 0;
-  box-shadow: 4px 4px 0 rgb(212, 239, 251);
-  font-family: 'Helvetica Neue Medium';
+  /*box-shadow: 4px 4px 0 rgb(212, 239, 251);*/
+  font-family: 'Helvetica Neue Light';
   font-size: 14pt;
 }
 
 .btn:hover {
-  opacity: .5;
   color: #FFF;
 }
 
@@ -669,4 +672,25 @@ a:hover {
 
 .fade.ng-hide-add {
   transition: all linear 500ms;
+}
+
+/*Hover Transitions*/
+/* Grow */
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }

@@ -31,7 +31,7 @@
 
       this.getFontData = function() {
         return fontData[this.postcard.composition_settings.theme_id];
-      }
+      };
 
       this.getBackgroundImage = function($sce) {
         return $sce.trustAsResourceUrl(this.postcard.composition_settings.image_url);
@@ -42,9 +42,7 @@
       };
 
       this.setFilter = function(filter_id) {
-        console.log(filter_id);
         this.postcard.filter_name = filterData[filter_id].name;
-        console.log(this.postcard.filter_name);
         this.postcard.composition_settings.filter_id = filter_id;
       };
 
@@ -166,15 +164,12 @@
       };
 
       this.validateBack = function() {
-        console.log("!!!");
         for (let key in this.postcard.to) {
-          console.log(this.postcard.to[key]);
           if (this.postcard[key] === "") {
             return false;
           }
         }
         for (let key in this.postcard.from) {
-          console.log(this.postcard.to[key]);
           if (this.postcard[key] === "") {
               return false;
           }

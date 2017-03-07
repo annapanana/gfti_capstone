@@ -35,7 +35,7 @@
         postcard.card_notes = vm.designNotes;
         postcard.is_saved = true;
         $http.patch(`/postcards/${postcard.id}`, postcard).then(() => {
-          $state.go('archive');
+          $state.go('archive', null, { reload: true });
         });
       };
 

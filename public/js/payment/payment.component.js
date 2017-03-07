@@ -120,7 +120,7 @@
         //   console.log(result.data[0].postcard.expected_delivery_date);
         //   postcardService.savePostcardData();
         //   // localStorage.setItem('postcard', JSON.stringify(postcard));
-        //   $state.go('postcardSent');
+        //   $state.go('postcardSent', null, { reload: true }));
         // });
 
       };

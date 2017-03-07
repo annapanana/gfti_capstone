@@ -6,7 +6,13 @@
       controller: controller
     });
 
-    function controller() {
+    controller.$inject = ['$state']
+    function controller($state) {
       const vm = this;
+      vm.curState = $state.$current.name;
+
+      vm.navTo = function(state) {
+        $state.go(state, null, { reload: true })
+      };
     }
 }());

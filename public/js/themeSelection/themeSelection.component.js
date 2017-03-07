@@ -36,8 +36,9 @@
         vm.composition_settings.theme_id = theme;
         postcard.composition_settings = vm.composition_settings;
         localStorage.setItem('postcard', JSON.stringify(postcard));
-        $state.go('photoUpload');
+        $state.go('photoUpload', null, { reload: true });
       };
+
 
       vm.hoverObject = "";
       vm.setHoverObject = function(obj) {
