@@ -101,6 +101,14 @@
         return this.postcard.composition_settings.font_size;
       };
 
+      this.setTextPos = function(pos) {
+        this.postcard.composition_settings.text_post = pos;
+      };
+
+      this.getTextPos = function() {
+        return this.postcard.composition_settings.text_post;
+      }
+
       this.setImageScale = function(scale) {
         this.postcard.composition_settings.image_scale = scale;
       };

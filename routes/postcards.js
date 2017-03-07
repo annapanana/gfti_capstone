@@ -38,23 +38,21 @@ router.get('/:id/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-
-  const {postcard_data} = req.body;
-  const {payment_data} = req.body;
-  const token = payment_data.token;
-  const email = payment_data.email;
-  console.log("from stripe", req.body.stripeToken);
-
+  
+  const postcard_data = JSON.parse(req.body.postcard_data)
   const newCard = postcard_data.composition_settings;
+  console.log("post data", postcard_data );
 
-  var send_to = postcard_data.to;
-  var send_from = postcard_data.from;
+  const token = req.body.stripeToken;
+  console.log(token);
 
+  const send_to = postcard_data.to;
+  const send_from = postcard_data.from;
   const msg = postcard_data.message;
-
   const color = postcard_data.color_hex;
   const font = postcard_data.font_family;
   const size = postcard_data.font_size;
+
   const filter = postcard_data.filter_name;
 
   // Retrieve html template
@@ -62,21 +60,15 @@ router.post('/', (req, res, next) => {
   let postcard_back = fs.readFileSync(__dirname + `/../public/postcard_templates/postcard_back.html`, { encoding: 'utf-8' });
   console.log("token", token);
   // Add zip to db for data viz
-  newCard.from_zip = send_from.address_zip;
+  // newCard.from_zip = send_from.address_zip;
+
   // CHARGE USER
-  stripe.customers.create({
-    email: email
-  }).then(function(customer){
-    return stripe.customers.createSource(customer.id, {
-      source: token.card
-    });
-  }).then(function(source) {
-    console.log("source", source);
-    return stripe.charges.create({
-      amount: 150,
-      currency: 'usd',
-      customer: source.customer
-    });
+stripe.charges.create({
+    amount: 150,
+    currency: "usd",
+    description: "new postcard",
+    source: token
+
   }).then(function(charge) {
     // New charge created on a new customer
     console.log("Charge Succeeded!", charge);

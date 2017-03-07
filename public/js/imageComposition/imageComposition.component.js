@@ -50,7 +50,8 @@
           image_scale: postcardService.getImageScale(),
           image_x: postcardService.getImagePosX(),
           image_y: postcardService.getImagePosY(),
-          background: postcardService.getBackgroundImage($sce)
+          background: postcardService.getBackgroundImage($sce),
+          text_pos: postcardService.getTextPos()
         };
         // $(".ui-widget").slick({
         //   focusOnSelect: true
@@ -98,10 +99,12 @@
          postcardService.setImageScale($scope.imageScale.value);
          postcardService.setImagePosX($scope.imagePosX.value);
          postcardService.setImagePosY($scope.imagePosY.value);
+         postcardService.setTextPos($scope.textPos.value);
          vm.postcard.font_size = postcardService.getFontSize();
          vm.postcard.image_scale = postcardService.getImageScale();
          vm.postcard.image_x = postcardService.getImagePosX();
          vm.postcard.image_y = postcardService.getImagePosY();
+         vm.postcard.text_pos = postcardService.getTextPos();
          $scope.$apply();
       });
 
@@ -110,16 +113,36 @@
         options: {
           floor: 12,
           ceil: 72,
-          showTicks: true
+          showTicks: false
+        }
+      };
+
+      $scope.textPos = {
+        value: 0,
+        options: {
+          floor: 0,
+          ceil: 175,
+          showTicks: false
         }
       };
 
       $scope.imageScale = {
-        value: 1,
+        value: "1.0",
         options: {
-          floor: 1,
-          ceil: 5,
-          showTicks: true
+          showTicks: true,
+          stepsArray: [
+            {value:'0.5'},
+            {value:'0.75'},
+            {value:'1.0'},
+            {value:'1.25'},
+            {value:'1.5'},
+            {value:'1.75'},
+            {value:'2.0'},
+            {value:'2.5'},
+            {value:'3.0'},
+            {value:'3.5'},
+            {value:'4.0'},
+          ]
         }
       };
 

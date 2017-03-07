@@ -6,8 +6,8 @@
       controller: controller
     });
 
-    controller.$inject = ["$http", "$state", "$stateParams", "$timeout", "$sce", "postcardService"];
-    function controller($http, $state, $stateParams, $timeout, $sce, postcardService) {
+    controller.$inject = ["$http", "$state", "$stateParams", "$timeout", "$sce", "postcardService", "$scope"];
+    function controller($http, $state, $stateParams, $timeout, $sce, postcardService, $scope) {
       const vm = this;
       vm.curStep = 5;
       vm.hoverStep = 0;
@@ -53,6 +53,7 @@
           image_x: postcardService.getImagePosX(),
           image_y: postcardService.getImagePosY(),
           subtext: postcardService.getSubtext(),
+          text_pos: postcardService.getTextPos(),
           background: postcardService.getBackgroundImage($sce)
         };
 
@@ -92,36 +93,36 @@
       };
 
       const stripeTokenHandler = (token) => {
-        // Insert the token ID into the form so it gets submitted to the server
+
         const form = document.getElementById('payment-form');
         const hiddenInput = document.createElement('input');
         hiddenInput.setAttribute('type', 'hidden');
         hiddenInput.setAttribute('name', 'stripeToken');
         hiddenInput.setAttribute('value', token.id);
         form.appendChild(hiddenInput);
-        
+
         postcardService.savePostcardData();
-        console.log("hidden", hiddenInput);
-        let data = {
-          postcard_data:  postcardService.postcard,
-          payment_data: {
-            token: token,
-            email: 'annaklotko@gmail.com'
-          }
-        };
+        const hiddenData = document.createElement('input');
+        hiddenData.setAttribute('name', 'postcard_data');
+        hiddenData.setAttribute('value', JSON.stringify(postcardService.postcard));
+        form.appendChild(hiddenData);
+
+        var postReq = form.submit();
+
+
         // Submit the form
-        $http.post('/postcards', data).then((result) => {
-          console.log(result);
-          // console.log("result", result.data[0].postcard.url);
-          postcardService.setThumbnail(result.data[0].postcard.thumbnails[0].large);
-          postcardService.setId(result.data[0].id);
-          postcardService.setDeliveryDate(result.data[0].postcard.expected_delivery_date);
-          postcardService.setPreview(result.data[0].postcard.url);
-          console.log(result.data[0].postcard.expected_delivery_date);
-          postcardService.savePostcardData();
-          // localStorage.setItem('postcard', JSON.stringify(postcard));
-          $state.go('postcardSent');
-        });
+        // $http.post('/postcards', postcardService.postcard).then((result) => {
+        //   console.log("result", result.data[0].postcard.url);
+        //   postcardService.setThumbnail(result.data[0].postcard.thumbnails[0].large);
+        //   postcardService.setId(result.data[0].id);
+        //   postcardService.setDeliveryDate(result.data[0].postcard.expected_delivery_date);
+        //   postcardService.setPreview(result.data[0].postcard.url);
+        //   console.log(result.data[0].postcard.expected_delivery_date);
+        //   postcardService.savePostcardData();
+        //   // localStorage.setItem('postcard', JSON.stringify(postcard));
+        //   $state.go('postcardSent');
+        // });
+
       };
 
       vm.flip = function() {

@@ -115,8 +115,8 @@ html, body {
 }*/
 
 footer {
-  position: fixed;
-  bottom: 0px;
+  /*position: fixed;
+  bottom: 0px;*/
   width: 100%;
   left: 0;
   right: 0;
