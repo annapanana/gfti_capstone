@@ -116,6 +116,7 @@ html, body {
 
 .not-sticky-footer {
   position: relative;
+  padding-top: 5px;
 }
 
 footer {
@@ -124,8 +125,17 @@ footer {
   width: 100%;
   left: 0;
   right: 0;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   background-color: #AAE0F8;
+}
+
+.footer-text {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 0px;
 }
 
 .navbar {
@@ -568,6 +578,12 @@ a:hover {
 
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
+}
+
+.email-invalid {
+  border-color: #fa755a !important;
+  border-style: solid;
+  border-width: thin;
 }
 
 /*Loader*/

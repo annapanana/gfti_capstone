@@ -13,6 +13,8 @@
       vm.hoverStep = 0;
       vm.nextStep = false;
       vm.buttonHover = false;
+      vm.emailAddress = "";
+      vm.emailInvalid = false;
 
       vm.setNextButton = function() {
         vm.nextStep = true;
@@ -77,20 +79,29 @@
       };
 
       vm.submitCard = function() {
-        //TODO get this info from stripe?
-        postcardService.setPaymentInfo(vm.payment_info);
+        if (vm.emailAddress !== "") {
+          postcardService.setPaymentInfo(vm.payment_info);
+          vm.isLoading = true;
+          stripe.createToken(card).then(function(result) {
+            if (result.error) {
+              vm.isLoading = false;
+              // Inform the user if there was an error
+              var errorElement = document.getElementById('card-errors');
+              errorElement.textContent = result.error.message;
+            } else {
+              // Send the token to your server
+              stripeTokenHandler(result.token);
+            }
+          });
+        } else {
+          var errorElement = document.getElementById('email-errors');
+          errorElement.textContent = "Must include email address to pay";
+          vm.emailInvalid = true;
+        }
+      };
 
-        vm.isLoading = true;
-        stripe.createToken(card).then(function(result) {
-          if (result.error) {
-            // Inform the user if there was an error
-            var errorElement = document.getElementById('card-errors');
-            errorElement.textContent = result.error.message;
-          } else {
-            // Send the token to your server
-            stripeTokenHandler(result.token);
-          }
-        });
+      vm.updateEmailField = function() {
+        vm.emailInvalid = false;
       };
 
       const stripeTokenHandler = (token) => {
@@ -108,6 +119,7 @@
         postcardService.savePostcardData();
         console.log(JSON.stringify(postcardService.postcard));
         const hiddenData = document.createElement('input');
+        hiddenData.setAttribute('type', 'hidden');
         hiddenData.setAttribute('name', 'postcard_data');
         hiddenData.setAttribute('value', JSON.stringify(postcardService.postcard));
         form.appendChild(hiddenData);

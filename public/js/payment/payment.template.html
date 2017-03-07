@@ -12,19 +12,21 @@
 </div>
 
 <div class="container">
-  <div class="row top-margin-sm">
+  <div class="row top-margin-xs">
     <div class="col-md-4 col-sm-2">
 
     </div>
-    <div class="col-md-4 col-sm-8 col-xs-12">
+    <div class="col-md-4 col-sm-8 col-xs-12 widget-container color-2">
       <form id="payment-form" action="/postcards" method="POST">
         <div class="form-row">
           <label for="email">Email Address:</label>
-          <input type="text" name="email" value="" ng-model="$ctrl.emailAddress">
+          <input class="form-field" type="text" name="email" value="" ng-model="$ctrl.emailAddress" style="width:100%" ng-class="{'email-invalid':$ctrl.emailInvalid === true}" ng-focus="$ctrl.updateEmailField()">
+          <!-- Used to display form errors -->
+          <div id="email-errors"></div>
         </div>
         <div class="form-row">
           <label for="card-element">
-            Credit or debit card
+            Credit or Debit Card
           </label>
           <div id="card-element">
               <!-- a Stripe Element will be inserted here. -->
@@ -33,15 +35,17 @@
           <div id="card-errors"></div>
         </div>
       </form>
-      <h6>this site uses <a href="https://stripe.com/">stripe</a> for secure payments</h6>
-      <div ng-if="$ctrl.isLoading" class="loader" style="color:#EB4B2E;">Loading...</div>
+      <h6>This site uses <a href="https://stripe.com/">stripe</a> for secure payments</h6>
+      <div ng-if="$ctrl.isLoading" class="loader">Loading...</div>
     </div>
     <div class="col-md-4 col-sm-2"></div>
   </div>
   <div class="row text-center top-margin-sm">
+    <h5>you will be charded $1.50</h5>
+    <h6>Your reciept will be sent to the email address above</h6>
     <button type="button" class="btn hvr-grow" name="button" ng-click="$ctrl.submitCard()">Pay and Send</button>
   </div>
-  <div class="row top-margin-sm">
+  <div class="row top-margin-xs">
     <div class="row text-center">
       <h3>Order Preview:</h3>
     </div>
