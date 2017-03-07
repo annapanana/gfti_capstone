@@ -3,7 +3,7 @@
   <img class="h-image2" ng-src="../../assets/headers/h7_small.svg" alt="select-theme">
 </div>
 
-<div class="row top-margin-sm">
+<div class="row top-margin-sm image-fill">
   <div class="col-md-4 col-sm-2 col-xs-1"></div>
   <div class="col-md-5 col-sm-8 col-xs-10">
     <div progress-bar></div>
@@ -14,11 +14,11 @@
 <div class="container">
   <div class="row">
     <!-- <div class="col-xs-1"></div> -->
-    <div class="col-sm-6 col-xs-10">
+    <div class="col-md-6 col-xs-12">
       <!-- Postcard Back -->
       <div back-design></div>
     </div>
-    <div class="col-sm-6 col-xs-10 color-2 widget-container" style="padding:20px;">
+    <div class="col-md-6 col-xs-12 color-2 widget-container" style="padding:20px;">
       <div class="row flex-row-spacing">
         <button class="btn-tab hvr-grow" ng-class="{'btn-tab-active': $ctrl.currentTab === 'message'}" ng-click="$ctrl.changeTab('message')" type="button" name="button">Message</button>
         <button class="btn-tab hvr-grow" ng-class="{'btn-tab-active': $ctrl.currentTab === 'from'}" ng-click="$ctrl.changeTab('from')" type="button" name="button">Send From</button>

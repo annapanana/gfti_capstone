@@ -122,13 +122,14 @@
         </filter>
       </defs>
       <title>test_frame</title>
+      <rect width="100%" height="100%" x="0" y="0" fill="#2D2D2D"></rect>
       <image class="cls-3 filter" xlink:href="{{image_url}}" width="100%" height="100%" x="0" y="0" transform="scale({{image_scale}}) translate({{image_pos_x}},{{image_pos_y}})" filter="url({{image_filter}})"/>
       <!-- SVG Path -->
       <g>
         <path class="cls-1" fill="{{color}}" d="M0,0V306H450V0ZM438,294H12V12H438Z"/>
         <rect class="cls-2" fill="{{color}}" x="12" y="12" width="426" height="282"/>
       </g>
-      <text x="50%" y="25%" class="greetings-subtext" text-anchor="middle" font-family="{{font_family}}" font-size="{{font_size}}" fill="{{color}}">
+      <text x="50%" y="25%" class="greetings-subtext" text-anchor="middle" font-family="{{font_family}}" font-size="{{font_size}}" fill="{{color}}" transform="translate(0,{{text_pos}})">
         {{greetings_subtext}}
       </text>
     </svg>

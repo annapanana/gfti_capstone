@@ -1,16 +1,11 @@
 <nav class="navbar navbar-default" role="navigation">
 		<div class="navbar-header">
-			<a class="navbar-brand" ui-sref="home"><img class="image-fill" src="../../assets/gfti_logo.svg" alt="gfti"></a>
+			<a class="navbar-brand" ng-click="$ctrl.navTo('home')"><img class="image-fill" src="../../assets/gfti_logo.svg" alt="gfti"></a>
 		</div>
 		<ul class="nav navbar-nav">
 			<li><a ng-click="$ctrl.navTo('themeSelection')"><h4>Create Card</h4></a></li>
 			<li><h3>|</h3></li>
 			<li><a ng-click="$ctrl.navTo('archive')"><h4>Explore Archive</h4></a></li>
-			<!-- <li><a ui-sref="photoUpload">photo upload</a></li>
-			<li><a ui-sref="imageComposition">composition</a></li>
-			<li><a ui-sref="messageComposition">message</a></li>
-			<li><a ui-sref="payment">payment</a></li>
-			<li><a ui-sref="postcardSent">sent</a></li> -->
 		</ul>
 	</nav>
 	<div style="padding-bottom:50px">
@@ -19,5 +14,8 @@
 
 
 	<footer ng-class="{'not-sticky-footer':$ctrl.curState === 'home'}">
-		<p class="text-muted">Place text here</p>
+		<div class="footer-text">
+			<p class="text-muted">Greetings from the Internet</p>
+			<p class="text-muted">This site works best with Google Chrome</p>
+		</div>
 	</footer>

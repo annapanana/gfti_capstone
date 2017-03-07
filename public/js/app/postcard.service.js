@@ -192,24 +192,8 @@
         this.postcard.id = id;
       };
 
-      this.setDeliveryDate = function(date) {
-        this.postcard.delivery_date = date;
-      };
-
-      this.getDeliveryDate = function() {
-        return this.postcard.delivery_date;
-      };
-
       this.setThumbnail = function(url) {
         this.postcard.composition_settings.thumbnail_url = url;
-      };
-
-      this.setPreview = function(url) {
-        this.postcard.preview = url;
-      };
-
-      this.getPreview = function() {
-        return this.postcard.preview;
       };
 
       this.updatePostcardObject = function(obj) {
@@ -220,6 +204,11 @@
       this.savePostcardData = function() {
         console.log(this.postcard);
         localStorage.setItem('postcard', JSON.stringify(this.postcard));
+      };
+
+      this.setOrderId = function(id) {
+        this.postcard.composition_settings.order_id = id;
+        localStorage.setItem('order_id', JSON.stringify(id));
       };
     });
 }());

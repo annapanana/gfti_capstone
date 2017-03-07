@@ -8,10 +8,10 @@
     <div class="col-md-2"></div>
     <div class="col-md-8 col-sm-12">
       <div class="row">
-        <h5>Your postcard has successfully been sent and is estimated to arrive on {{$ctrl.postcard.delivery_date}}</h5>
+        <h5>Your postcard has successfully been sent and is estimated to arrive on {{$ctrl.delivery_date}}</h5>
       </div>
       <div class="row">
-        <button class="btn" type="button" name="button" ng-click="$ctrl.viewPreview()">View PDF</button>
+        <button class="btn hvr-grow" type="button" name="button" ng-click="$ctrl.viewPreview()">View PDF</button>
       </div>
     </div>
     <div class="col-md-2"></div>
@@ -25,11 +25,11 @@
 
 <div class="container">
   <div class="row text-center top-margin-sm">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-6 col-xs-6">
-      <p>Give your postcard a name and add some information about the design. Then select save to send your design to the archive! All saved designs will be shared with the GFTI community.</p>
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8 col-xs-12">
+      <h5>Give your postcard a name and add some information about the design. Then select save to send your design to the archive! All saved designs will be shared with the GFTI community.</h5>
     </div>
-    <div class="col-sm-3"></div>
+    <div class="col-sm-2"></div>
   </div>
   <div class="row">
     <div class="col-md-1"></div>
@@ -41,7 +41,7 @@
         <label class="form-label" for="postcard_name">Design Name:</label>
         <input class="form-field" type="text" name="poscard_notes" ng-model="$ctrl.cardName">
         <label class="form-label" for="poscard_notes">Design Notes:</label>
-        <textarea class="text-widget" name="postcard_name" rows="8" cols="100" ng-mode="$ctrl.designNotes"></textarea>
+        <textarea class="text-widget" name="postcard_name" rows="8" cols="100" ng-model="$ctrl.designNotes"></textarea>
         <div class="flex-row top-margin-sm">
           <button style="width:150px;" class="btn hvr-grow" type="button" name="button" ng-click="$ctrl.saveDesign()">Save Design</button>
         </div>
