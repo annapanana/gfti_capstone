@@ -82,6 +82,7 @@ stripe.charges.create({
   }).then(function(charge) {
     // New charge created on a new customer
     console.log("Charge Succeeded!");
+    console.log("TEXT POS", newCard.text_pos);
     // CREATE POSTCARD
     lob.postcards.create({
       to: send_to,
@@ -96,6 +97,7 @@ stripe.charges.create({
         font_size: size,
         color: color,
         message: msg,
+        text_pos: newCard.text_pos,
         image_scale: newCard.image_scale,
         image_pos_x: newCard.image_pos_x,
         image_pos_y: newCard.image_pos_y,

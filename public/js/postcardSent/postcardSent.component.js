@@ -33,6 +33,7 @@
           image_x: postcardService.getImagePosX(),
           image_y: postcardService.getImagePosY(),
           subtext: postcardService.getSubtext(),
+          text_pos: postcardService.getTextPos(),
           background: postcardService.getBackgroundImage($sce),
         };
       };
