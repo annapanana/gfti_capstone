@@ -9,7 +9,7 @@ exports.up = function(knex, Promise) {
     table.integer('color_id').notNullable();
     table.integer('font_id').notNullable();
     table.integer('font_size').notNullable();
-    table.integer('image_scale').notNullable();
+    table.decimal('image_scale').notNullable();
     table.integer('image_pos_x').notNullable();
     table.integer('image_pos_y').notNullable();
     table.integer('text_pos').notNullable();
