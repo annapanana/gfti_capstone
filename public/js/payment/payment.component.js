@@ -73,7 +73,6 @@
             displayError.textContent = '';
           }
         });
-
         $(".card-preview").flip();
       };
 
@@ -103,6 +102,9 @@
         hiddenInput.setAttribute('value', token.id);
         form.appendChild(hiddenInput);
 
+        let id = vm.emailAddress + Date.now();
+        console.log(id);
+        postcardService.setOrderId(id);
         postcardService.savePostcardData();
         console.log(JSON.stringify(postcardService.postcard));
         const hiddenData = document.createElement('input');

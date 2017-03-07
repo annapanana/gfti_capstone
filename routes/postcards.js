@@ -37,22 +37,36 @@ router.get('/:id/', (req, res, next) => {
     });
 });
 
-router.post('/', (req, res, next) => {
+router.get('/orders/:id/', (req, res, next) => {
+  console.log(req.params.id);
+  knex('postcards')
+    .where('order_id', req.params.id)
+    .then((result) => {
+      // console.log(result);
+      let postcardData = {
+        pdf_url: result[0].pdf_url,
+        delivery_date: result[0].delivery_date
+      };
+      res.send(postcardData);
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
 
+router.post('/', (req, res, next) => {
   const postcard_data = JSON.parse(req.body.postcard_data);
   const newCard = postcard_data.composition_settings;
   // console.log("post data", postcard_data );
 
   const token = req.body.stripeToken;
   // console.log(token);
-
   const send_to = postcard_data.to;
   const send_from = postcard_data.from;
   const msg = postcard_data.message;
   const color = postcard_data.color_hex;
   const font = postcard_data.font_family;
   const size = postcard_data.font_size;
-
   const filter = postcard_data.filter_name;
 
   // Retrieve html template
@@ -67,7 +81,6 @@ stripe.charges.create({
     source: token
 
   }).then(function(charge) {
-    console.log(charge);
     // New charge created on a new customer
     console.log("Charge Succeeded!");
     // CREATE POSTCARD
@@ -97,7 +110,10 @@ stripe.charges.create({
 
       // newCard.order_id = postcard.id;
       // newCard.image_processed = false;
+      console.log(postcard);
       newCard.thumbnail_url = postcard.thumbnails[0].large;
+      newCard.pdf_url = postcard.url;
+      newCard.delivery_date = postcard.expected_delivery_date;
       knex('postcards')
         .insert(newCard, '*')
         .then((result) => {
@@ -108,7 +124,7 @@ stripe.charges.create({
           // res.send(result[0])
           // return res.status(200).send(result);
         })
-        .catch(err => {
+        .catch((err) => {
           next(err);
         });
     });
@@ -121,18 +137,15 @@ stripe.charges.create({
 
   router.patch('/:id', (req, res, next) => {
     let id = req.params.id;
-    const {card_name, card_notes, thumbnail} = req.body;
+    const {card_name, card_notes} = req.body;
     var name = card_name;
     var notes = card_notes;
-    console.log(name, notes);
-    console.log(id);
     knex('postcards')
       .where('postcards.id', id)
       .then((result) => {
         result[0].name = name;
         result[0].notes = notes;
         result[0].is_saved = true;
-        console.log(result);
         knex('postcards')
           .where('postcards.id', id)
           .update(result[0], '*')

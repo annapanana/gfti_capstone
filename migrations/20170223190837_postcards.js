@@ -18,11 +18,12 @@ exports.up = function(knex, Promise) {
     table.string('name');
     table.string('notes');
     table.string('thumbnail_url').notNullable();
+    table.string('pdf_url').notNullable();
     table.bool('is_saved').notNullable().defaultsTo(false);
     table.integer('times_used').notNullable().defaultsTo(1);
     table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
-    // table.string('order_id').notNullable();
-    // table.bool('image_processed').notNullable().defaultsTo(false);
+    table.string('order_id').notNullable();
+    table.string('delivery_date').notNullable();
   });
 };
 
