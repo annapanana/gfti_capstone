@@ -38,7 +38,6 @@ router.get('/:id/', (req, res, next) => {
 });
 
 router.get('/orders/:id/', (req, res, next) => {
-  console.log(req.params.id);
   knex('postcards')
     .where('order_id', req.params.id)
     .then((result) => {
@@ -108,16 +107,13 @@ stripe.charges.create({
         return res.send(err);
       }
 
-      // newCard.order_id = postcard.id;
-      // newCard.image_processed = false;
-      console.log(postcard);
       newCard.thumbnail_url = postcard.thumbnails[0].large;
       newCard.pdf_url = postcard.url;
       newCard.delivery_date = postcard.expected_delivery_date;
+
       knex('postcards')
         .insert(newCard, '*')
         .then((result) => {
-          console.log(result);
           result[0].postcard = postcard;
           res.redirect('/postcard-sent');
 
@@ -138,18 +134,20 @@ stripe.charges.create({
   router.patch('/:id', (req, res, next) => {
     let id = req.params.id;
     const {card_name, card_notes} = req.body;
+    console.log("Patch", card_name);
     var name = card_name;
     var notes = card_notes;
     knex('postcards')
-      .where('postcards.id', id)
+      .where('postcards.order_id', id)
       .then((result) => {
         result[0].name = name;
         result[0].notes = notes;
         result[0].is_saved = true;
         knex('postcards')
-          .where('postcards.id', id)
+          .where('postcards.order_id', id)
           .update(result[0], '*')
           .then((updatedResult) => {
+            console.log(updatedResult);
             res.send(updatedResult);
           })
           .catch((err) => {

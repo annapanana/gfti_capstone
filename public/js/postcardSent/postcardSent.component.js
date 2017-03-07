@@ -14,12 +14,11 @@
       vm.cardNotes = "";
       var pdf_url = "";
       vm.delivery_date = "";
+      var id = "";
 
       vm.$onInit = function() {
-        let id = JSON.parse(localStorage.getItem('order_id'));
+        id = JSON.parse(localStorage.getItem('order_id'));
         $http.get(`/postcards/orders/${id}`).then(function(result) {
-          console.log(result);
-
           pdf_url = result.data.pdf_url;
           vm.delivery_date = result.data.delivery_date;
         });
@@ -42,7 +41,9 @@
         postcard.card_name = vm.cardName;
         postcard.card_notes = vm.designNotes;
         postcard.is_saved = true;
-        $http.patch(`/postcards/${postcard.id}`, postcard).then(() => {
+        console.log(postcard, id);
+        $http.patch(`/postcards/${id}`, postcard).then((result) => {
+          console.log(result);
           $state.go('archive', null, { reload: true });
         });
       };
