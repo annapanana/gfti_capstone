@@ -19,7 +19,7 @@
       <div class="top-margin-xs row">
         <div class="col-xs-1"></div>
         <div class="col-xs-10 white standard-border-radius" style="padding-bottom:10px; margin-bottom:5px;opacity:.85">
-          <h5 style="margin-bottom:0px;">Font Size</h5>
+          <h6 style="margin-bottom:0px;">Font Size</h6>
           <rzslider rz-slider-model="slider.value" rz-slider-options="slider.options"></rzslider>
         </div>
         <div class="col-xs-1"></div>
@@ -37,7 +37,7 @@
       <div class="top-margin-xs row">
         <div class="col-xs-1"></div>
         <div class="col-xs-10 white standard-border-radius" style="padding-bottom:10px; margin-bottom:5px;opacity:.85">
-          <h5 style="margin-bottom:0px;">Image Scale</h5>
+          <h6 style="margin-bottom:0px;">Image Scale</h6>
           <rzslider rz-slider-model="imageScale.value" rz-slider-options="imageScale.options"></rzslider>
         </div>
         <div class="col-xs-1"></div>
@@ -46,7 +46,7 @@
       <div class="top-margin-xs row">
         <div class="col-xs-1"></div>
         <div class="col-xs-10 white standard-border-radius" style="padding-bottom:10px; margin-bottom:5px;opacity:.85">
-          <h5 style="margin-bottom:0px;">Image Position (Horizontal)</h5>
+          <h6 style="margin-bottom:0px;">Image Position (Horizontal)</h6>
           <rzslider rz-slider-model="imagePosX.value" rz-slider-options="imagePosX.options"></rzslider>
         </div>
         <div class="col-xs-1"></div>
@@ -55,25 +55,25 @@
       <div class="top-margin-xs row">
         <div class="col-xs-1"></div>
         <div class="col-xs-10 white standard-border-radius" style="padding-bottom:10px; margin-bottom:5px;opacity:.85">
-          <h5 style="margin-bottom:0px;">Image Position (Vertical)</h5>
+          <h6 style="margin-bottom:0px;">Image Position (Vertical)</h6>
           <rzslider rz-slider-model="imagePosY.value" rz-slider-options="imagePosY.options"></rzslider>
         </div>
         <div class="col-xs-1"></div>
       </div>
     </div>
-    <div class="col-md-6 col-xs-12">
+    <div class="col-md-5 col-xs-12">
       <!-- Postcard Template -->
       <div front-design></div>
       <div class="widget-container color-2 text-center top-margin-sm" style="height:114px;">
-        <h4 class="top-margin-sm">Edit Subtext</h4>
+        <h6 class="top-margin-sm">Edit Subtext</h6>
         <div class="row flex-row">
           <input class="text-widget" type="text" name="" style="width:75%" ng-model="$ctrl.postcard.subtext" value="{{$ctrl.postcard.subtext}}">
         </div>
       </div>
     </div>
 
-    <div class="col-md-3 col-xs-12 widget-container color-2 text-center" style="height:525px;">
-      <h4 class="top-margin-sm">Select Filter</h4>
+    <div class="col-md-4 col-xs-12 widget-container color-2 text-center" style="height:525px;">
+      <h6 class="top-margin-sm">Select Filter</h6>
       <div class="row flex-row">
         <slick class="ui-widget white" style="opacity:.85" dots="false" infinite="true" speed="300" slides-to-show="3" touch-move="false" slides-to-scroll="1">
           <div ng-repeat="filter in $ctrl.filters">
@@ -85,7 +85,7 @@
           </div>
         </slick>
       </div>
-      <h4 class="top-margin-sm">Select Frame</h4>
+      <h6 class="top-margin-sm">Select Frame</h6>
       <div class="row flex-row">
         <slick class="ui-widget white" style="opacity:.85" dots="false" infinite="true" speed="300" slides-to-show="3" touch-move="false" slides-to-scroll="1">
           <div ng-repeat="singleFrame in $ctrl.frames">
@@ -97,7 +97,7 @@
           </div>
         </slick>
       </div>
-      <h4 class="top-margin-sm">Select Color</h4>
+      <h6 class="top-margin-sm">Select Color</h6>
       <div class="row flex-row">
         <slick class="ui-widget white" style="opacity:.85" dots="false" infinite="true" speed="300" slides-to-show="3" touch-move="false" slides-to-scroll="1">
           <div ng-repeat="color in $ctrl.colors">
@@ -109,7 +109,7 @@
           </div>
         </slick>
       </div>
-      <h4 class="top-margin-sm">Select Font</h4>
+      <h6 class="top-margin-sm">Select Font</h6>
       <div class="col-sm-1"></div>
       <div class="col-sm-10 col-xs-12">
         <div class="row flex-row white standard-border-radius" style="opacity:.85">
