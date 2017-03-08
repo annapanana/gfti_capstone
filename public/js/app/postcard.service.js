@@ -16,7 +16,7 @@
       this.init = function() {
         let color_id = this.postcard.composition_settings.color_id;
         let theme_id = this.postcard.composition_settings.theme_id;
-        this.postcard.color_hex = colorData[theme_id][color_id];
+        this.postcard.composition_settings.color_hex = colorData[theme_id][color_id];
         localStorage.setItem('postcard', JSON.stringify(this.postcard));
       };
 
@@ -49,7 +49,7 @@
       };
 
       this.setFilter = function(filter_id) {
-        this.postcard.filter_name = filterData[filter_id].name;
+        this.postcard.composition_settings.filter_name = filterData[filter_id].name;
         this.postcard.composition_settings.filter_id = filter_id;
       };
 
@@ -69,14 +69,14 @@
       this.updateFrameUrl = function($sce) {
         let frame_id = this.postcard.composition_settings.frame_id;
         let theme_id = this.postcard.composition_settings.theme_id;
-        this.postcard.frame_url = frameData[theme_id][frame_id].local_frame;
+        this.postcard.composition_settings.frame_url = frameData[theme_id][frame_id].local_frame;
         this.postcard.composition_settings.template_name = frameData[theme_id][frame_id].template_name;
-        return this.postcard.frame_url;
+        return this.postcard.composition_settings.frame_url;
       };
 
       this.setColor = function(color_id) {
         let theme_id = this.postcard.composition_settings.theme_id;
-        this.postcard.color_hex = colorData[theme_id][color_id].c;
+        this.postcard.composition_settings.color_hex = colorData[theme_id][color_id].c;
         this.postcard.composition_settings.color_id = color_id;
       };
 
@@ -87,7 +87,7 @@
 
       this.setFont = function(font_id) {
         let theme_id = this.postcard.composition_settings.theme_id;
-        this.postcard.font_family = fontData[theme_id][font_id].font;
+        this.postcard.composition_settings.font_family = fontData[theme_id][font_id].font;
         this.postcard.composition_settings.font_id = font_id;
       };
 
@@ -97,7 +97,7 @@
       };
 
       this.setFontSize = function(size) {
-        this.postcard.font_size = size;
+        this.postcard.composition_settings.font_size = size;
         this.postcard.composition_settings.font_size = size;
       }
 

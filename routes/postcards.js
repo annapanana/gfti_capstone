@@ -86,7 +86,7 @@ stripe.charges.create({
     // CREATE POSTCARD
     lob.postcards.create({
       to: send_to,
-      from: send_from,
+        from: send_from,
       size: '4x6',
       front: postcard_front,
       back: postcard_back,
@@ -115,6 +115,7 @@ stripe.charges.create({
       delete newCard.color_hex;
       delete newCard.font_family;
       delete newCard.filter_name;
+      delete newCard.frame_url;
 
       newCard.thumbnail_url = postcard.thumbnails[0].large;
       newCard.pdf_url = postcard.url;
@@ -124,6 +125,7 @@ stripe.charges.create({
         .insert(newCard, '*')
         .then((result) => {
           result[0].postcard = postcard;
+          console.log("THIS IS THE SENT POST CARD", postcard);
           res.redirect('/postcard-sent');
 
           // res.send(result[0])

@@ -229,13 +229,13 @@ footer {
   width: 60px;
   height: 60px;
   background-color: #FFF;
-  border-radius: 15px;
+  border-radius: 10px;
   display: flex;
   flex-flow: column;
   justify-content: center;
-  border-style: solid;
+  /*border-style: solid;
   border-width: thick;
-  border-color: #FFF;
+  border-color: #FFF;*/
 }
 
 .widget-element-selected {
@@ -243,6 +243,7 @@ footer {
   border-width: thick;
   border-color: #AAE0F8;
 }
+
 
 .text-widget {
   /*width: 50%;*/
@@ -315,7 +316,8 @@ footer {
 }
 
 .archive-widget {
-  background-color: #D4EFFB;
+  /*background-color: #D4EFFB;*/
+  background-color: #AAE0F8;
   border-radius: 3px;
   height: 75px;
   margin: 10px;
@@ -323,7 +325,7 @@ footer {
 }
 
 .dropdown-widget {
-  background-color: #AAE0F8;
+  background-color: #D4EFFB;
   border-radius: 3px;
   color: #000;
   border-style: none;
