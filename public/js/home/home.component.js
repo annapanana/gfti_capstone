@@ -31,28 +31,21 @@
           },
           message: 'this is a message',
           to: {
-            name: 'anna',
-            address_line1: '1260 kalmia ave',
-            address_line2: 'apartment 17',
-            address_city: 'Boulder',
+            name: 'Muffin Man',
+            address_line1: '123 Bluebery Lane',
+            address_line2: '',
+            address_city: 'Sunnyville',
             address_state: 'CO',
             address_zip: '80304'
           },
           from: {
-            name: 'anna',
-            address_line1: '1260 kalmia ave',
-            address_line2: 'apartment 17',
-            address_city: 'Boulder',
-            address_state: 'CO',
-            address_zip: '80304'
-          },
-          payment_info: {
-            object: "card",
-            number: "4242 4242 4242 4242",
-            exp_month: 10,
-            exp_year: 2018,
-            email: "annaklotko@gmail.com"
-          },
+            name: 'Mary Westmacott',
+            address_line1: '3336 Liberty Avenue',
+            address_line2: 'Hickory Hills',
+            address_city: 'Pomona',
+            address_state: 'CA',
+            address_zip: '91766'
+          }
         };
         localStorage.setItem('postcard', JSON.stringify(postcard));
         // $(".card-preview").flip({autoSize: true});
