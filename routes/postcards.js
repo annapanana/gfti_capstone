@@ -63,8 +63,7 @@ router.post('/', (req, res, next) => {
   const send_from = postcard_data.from;
   const msg = postcard_data.message;
 
-  console.log(_dirname);
-  console.log();
+  console.log(fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' }));
 
   // Retrieve html template
   let postcard_front = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
@@ -122,9 +121,7 @@ stripe.charges.create({
         .insert(newCard, '*')
         .then((result) => {
           result[0].postcard = postcard;
-          console.log("THIS IS THE SENT POST CARD", postcard);
           res.redirect('/postcard-sent');
-
           // res.send(result[0])
           // return res.status(200).send(result);
         })
@@ -134,8 +131,8 @@ stripe.charges.create({
     });
   }).catch(function(err) {
     // TODO switch statement to send different errors
-    res.redirect('/');
-    // return res.send(err);
+    // res.redirect('/');
+    return res.send(err);
   });
 
   router.patch('/:id', (req, res, next) => {
