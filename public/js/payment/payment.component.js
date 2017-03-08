@@ -29,8 +29,8 @@
       };
 
       vm.isLoading = false;
-      var stripe = Stripe('pk_live_1p8AWXUweuSHmqbbFJaCEX2G');
-      // var stripe = Stripe('pk_test_1EIBbNvuJSQ8GPIJFBC71eqP');
+      // var stripe = Stripe('pk_live_1p8AWXUweuSHmqbbFJaCEX2G');
+      var stripe = Stripe('pk_test_1EIBbNvuJSQ8GPIJFBC71eqP');
 
       var elements = stripe.elements();
       // for stripe element

@@ -56,17 +56,15 @@ router.get('/orders/:id/', (req, res, next) => {
 router.post('/', (req, res, next) => {
   const postcard_data = JSON.parse(req.body.postcard_data);
   const newCard = postcard_data.composition_settings;
-  // console.log("post data", postcard_data );
 
   const token = req.body.stripeToken;
   // console.log(token);
   const send_to = postcard_data.to;
   const send_from = postcard_data.from;
   const msg = postcard_data.message;
-  // const color = postcard_data.color_hex;
-  // const font = postcard_data.font_family;
-  // const size = postcard_data.font_size;
-  // const filter = postcard_data.filter_name;
+
+  console.log(_dirname);
+  console.log();
 
   // Retrieve html template
   let postcard_front = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
