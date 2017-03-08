@@ -122,7 +122,6 @@
       };
 
       this.setImagePosX = function(pos) {
-        console.log("X POS", pos);
         this.postcard.composition_settings.image_pos_x = pos;
       };
 
@@ -131,7 +130,6 @@
       };
 
       this.setImagePosY = function(pos) {
-        console.log("Y POS", pos);
         this.postcard.composition_settings.image_pos_y = pos;
       };
 
@@ -205,12 +203,10 @@
       };
 
       this.updatePostcardObject = function(obj) {
-        console.log("updated object", obj);
         this.postcard.composition_settings = obj;
       };
 
       this.savePostcardData = function() {
-        console.log("saving", this.postcard);
         localStorage.setItem('postcard', JSON.stringify(this.postcard));
       };
 

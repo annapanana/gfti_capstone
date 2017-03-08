@@ -413,6 +413,7 @@ div:focus {
 
 .card:hover {
   opacity: .75;
+  border-color: #AAE0F8;
 }
 
 /*Images*/

@@ -60,7 +60,6 @@
           file_type:file.type
         };
         $http.post('/photobucket', fileData).then((result) => {
-          // console.log(result.data);
           uploadFile(file, result.data.signedRequest, result.data.url);
         });
       }
@@ -73,7 +72,6 @@
             if(xhr.status === 200){
               postcardService.setBackgroundImage(url);
               vm.postcard.background = postcardService.getBackgroundImage($sce);
-              console.log("image:",  url);
               vm.isLoading = false;
               vm.disabled = false;
               $scope.$apply();

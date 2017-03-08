@@ -42,9 +42,7 @@
         postcard.card_name = vm.cardName;
         postcard.card_notes = vm.designNotes;
         postcard.is_saved = true;
-        console.log(postcard, id);
         $http.patch(`/postcards/${id}`, postcard).then((result) => {
-          console.log(result);
           $state.go('archive', null, { reload: true });
         });
       };

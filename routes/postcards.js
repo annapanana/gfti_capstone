@@ -80,9 +80,6 @@ stripe.charges.create({
     source: token
 
   }).then(function(charge) {
-    // New charge created on a new customer
-    console.log("Charge Succeeded!");
-    console.log("TEXT POS", newCard.text_pos);
     // CREATE POSTCARD
     lob.postcards.create({
       to: send_to,
@@ -109,9 +106,7 @@ stripe.charges.create({
         return res.send(err);
       }
 
-
-      console.log(newCard);
-      // color size font filter
+      // These do not get entered into DB, only used for LOB Card Creation
       delete newCard.color_hex;
       delete newCard.font_family;
       delete newCard.filter_name;
@@ -137,7 +132,6 @@ stripe.charges.create({
     });
   }).catch(function(err) {
     // TODO switch statement to send different errors
-    console.log("THIS IS AN ERROR");
     res.redirect('/');
     // return res.send(err);
   });
@@ -145,7 +139,6 @@ stripe.charges.create({
   router.patch('/:id', (req, res, next) => {
     let id = req.params.id;
     const {card_name, card_notes} = req.body;
-    console.log("Patch", card_name);
     var name = card_name;
     var notes = card_notes;
     knex('postcards')
@@ -158,7 +151,6 @@ stripe.charges.create({
           .where('postcards.order_id', id)
           .update(result[0], '*')
           .then((updatedResult) => {
-            console.log(updatedResult);
             res.send(updatedResult);
           })
           .catch((err) => {
