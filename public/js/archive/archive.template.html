@@ -60,7 +60,7 @@
   </div>
 
   <div class="card-container col-xs-12">
-    <div class="card hvr-grow" ng-repeat="entry in $ctrl.archive | orderBy:$ctrl.sortCriteria | filter:search:strict | filter:(!!$ctrl.filterBy || undefined) && {theme_id:$ctrl.filterBy}" ng-click="$ctrl.selectTemplate(entry.id)">
+    <div class="card" ng-repeat="entry in $ctrl.archive | orderBy:$ctrl.sortCriteria | filter:search:strict | filter:(!!$ctrl.filterBy || undefined) && {theme_id:$ctrl.filterBy}" ng-click="$ctrl.selectTemplate(entry.id)">
       <img class="image-fill" ng-src="{{entry.thumbnail_url}}" alt="">
       <h4>{{entry.name}}</h4>
       <p>{{entry.notes}}</p>

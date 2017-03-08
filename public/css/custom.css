@@ -411,6 +411,10 @@ div:focus {
   margin: 10px;
 }
 
+.card:hover {
+  opacity: .75;
+}
+
 /*Images*/
 .image-fill {
   width: 100%;
