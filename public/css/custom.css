@@ -238,10 +238,6 @@ footer {
   border-color: #FFF;*/
 }
 
-.widget-element:focus {
-  outline-style: none;
-}
-
 .widget-element-selected {
   border-style: solid;
   border-width: thick;
@@ -249,10 +245,17 @@ footer {
   outline-style: none;
 }
 
-.widget-element-selected:focus {
-  outline-style: none;
+a:focus {
+  outline: none;
 }
 
+span:focus {
+  outline: none;
+}
+
+div:focus {
+  outline: none;
+}
 
 .text-widget {
   /*width: 50%;*/
