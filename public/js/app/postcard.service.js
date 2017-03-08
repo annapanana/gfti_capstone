@@ -6,6 +6,13 @@
 
       this.postcard = JSON.parse(localStorage.getItem('postcard'));
 
+      this.setDefault = function(obj) {
+        // Lob needs these default settings
+        this.postcard.composition_settings.color_hex = obj.color;
+        this.postcard.composition_settings.font_family = obj.font;
+        this.postcard.composition_settings.filter_name = obj.filter;
+      };
+
       this.init = function() {
         let color_id = this.postcard.composition_settings.color_id;
         let theme_id = this.postcard.composition_settings.theme_id;
@@ -61,7 +68,6 @@
 
       this.updateFrameUrl = function($sce) {
         let frame_id = this.postcard.composition_settings.frame_id;
-        let color_id = this.postcard.composition_settings.color_id;
         let theme_id = this.postcard.composition_settings.theme_id;
         this.postcard.frame_url = frameData[theme_id][frame_id].local_frame;
         this.postcard.composition_settings.template_name = frameData[theme_id][frame_id].template_name;
@@ -105,17 +111,18 @@
 
       this.getTextPos = function() {
         return this.postcard.composition_settings.text_pos;
-      }
+      };
 
       this.setImageScale = function(scale) {
         this.postcard.composition_settings.image_scale = scale;
       };
 
       this.getImageScale = function() {
-        return this.postcard.composition_settings.image_scale;
+        return parseFloat(this.postcard.composition_settings.image_scale);
       };
 
       this.setImagePosX = function(pos) {
+        console.log("X POS", pos);
         this.postcard.composition_settings.image_pos_x = pos;
       };
 
@@ -124,6 +131,7 @@
       };
 
       this.setImagePosY = function(pos) {
+        console.log("Y POS", pos);
         this.postcard.composition_settings.image_pos_y = pos;
       };
 
@@ -202,7 +210,7 @@
       };
 
       this.savePostcardData = function() {
-        console.log(this.postcard);
+        console.log("saving", this.postcard);
         localStorage.setItem('postcard', JSON.stringify(this.postcard));
       };
 

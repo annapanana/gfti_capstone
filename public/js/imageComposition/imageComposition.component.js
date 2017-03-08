@@ -41,7 +41,7 @@
         vm.curFont = 1;
 
         vm.postcard = {
-          frame: postcardService.updateFrameUrl($sce),
+          frame: postcardService.updateFrameUrl($sce), //frame url
           filter: postcardService.getFilter(),
           color: postcardService.getColor(),
           subtext: postcardService.getSubtext(),
@@ -53,9 +53,8 @@
           background: postcardService.getBackgroundImage($sce),
           text_pos: postcardService.getTextPos()
         };
-        // $(".ui-widget").slick({
-        //   focusOnSelect: true
-        // });
+        console.log(vm.postcard);
+        postcardService.setDefault(vm.postcard);
       };
 
       vm.selectFilter = function(filter_id) {
@@ -74,6 +73,7 @@
 
       vm.selectColor = function(color_id) {
         vm.curColor = color_id;
+        console.log("ID!!", color_id);
         postcardService.setColor(color_id);
         vm.postcard.color = postcardService.getColor();
         vm.postcard.frame = postcardService.updateFrameUrl($sce);
@@ -95,6 +95,7 @@
       $scope.$on("slideEnded", function() {
          postcardService.setFontSize($scope.slider.value);
          postcardService.setImageScale($scope.imageScale.value);
+         console.log($scope.imageScale.value);
          postcardService.setImagePosX($scope.imagePosX.value);
          postcardService.setImagePosY($scope.imagePosY.value);
          postcardService.setTextPos($scope.textPos.value);
@@ -116,7 +117,7 @@
       };
 
       $scope.textPos = {
-        value: 0,
+        value: postcardService.getTextPos(),
         options: {
           floor: 0,
           ceil: 175,
@@ -125,27 +126,27 @@
       };
 
       $scope.imageScale = {
-        value: "1.0",
+        value: postcardService.getImageScale(),
         options: {
           showTicks: true,
           stepsArray: [
-            {value:'0.5'},
-            {value:'0.75'},
-            {value:'1.0'},
-            {value:'1.25'},
-            {value:'1.5'},
-            {value:'1.75'},
-            {value:'2.0'},
-            {value:'2.5'},
-            {value:'3.0'},
-            {value:'3.5'},
-            {value:'4.0'},
+            {value:0.5},
+            {value:0.75},
+            {value:1.0},
+            {value:1.25},
+            {value:1.5},
+            {value:1.75},
+            {value:2.0},
+            {value:2.5},
+            {value:3.0},
+            {value:3.5},
+            {value:4.0},
           ]
         }
       };
 
       $scope.imagePosX = {
-        value: 0,
+        value: postcardService.getImagePosX(),
         options: {
           floor: -500,
           ceil: 500,
@@ -154,7 +155,7 @@
       };
 
       $scope.imagePosY = {
-        value: 0,
+        value: postcardService.getImagePosY(),
         options: {
           floor: -500,
           ceil: 500,

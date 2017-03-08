@@ -228,7 +228,7 @@ var colorData = {
     {id:3, c:"#B5A77F"},
     {id:4, c:"#64CC9E"},
     {id:5, c:"#0A9796"},
-    {id:6, c:"#FFF"},
+    {id:6, c:"#e0e0e0"},
     {id:7, c:"#000"}],
   2:[
     {id:0, c:"#FBFC01"},
@@ -237,7 +237,7 @@ var colorData = {
     {id:3, c:"#50FC00"},
     {id:4, c:"#009AD8"},
     {id:5, c:"#BC3EFF"},
-    {id:6, c:"#FFF"},
+    {id:6, c:"#e0e0e0"},
     {id:7, c:"#000"}],
   3:[
     {id:0, c:"#F9C5C5"},
@@ -246,7 +246,7 @@ var colorData = {
     {id:3, c:"#A898B7"},
     {id:4, c:"#F2C66D"},
     {id:5, c:"#F07463"},
-    {id:6, c:"#FFF"},
+    {id:6, c:"#e0e0e0"},
     {id:7, c:"#000"}],
   4:[
     {id:0, c:"#C7BAA7"},
@@ -255,7 +255,7 @@ var colorData = {
     {id:3, c:"#8BA7AA"},
     {id:4, c:"#DD5E27"},
     {id:5, c:"#FEDF72"},
-    {id:6, c:"#FFF"},
+    {id:6, c:"#e0e0e0"},
     {id:7, c:"#000"}],
 };
 

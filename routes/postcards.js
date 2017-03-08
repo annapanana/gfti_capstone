@@ -63,10 +63,10 @@ router.post('/', (req, res, next) => {
   const send_to = postcard_data.to;
   const send_from = postcard_data.from;
   const msg = postcard_data.message;
-  const color = postcard_data.color_hex;
-  const font = postcard_data.font_family;
-  const size = postcard_data.font_size;
-  const filter = postcard_data.filter_name;
+  // const color = postcard_data.color_hex;
+  // const font = postcard_data.font_family;
+  // const size = postcard_data.font_size;
+  // const filter = postcard_data.filter_name;
 
   // Retrieve html template
   let postcard_front = fs.readFileSync(__dirname + `/../public/postcard_templates/${newCard.template_name}`, { encoding: 'utf-8' });
@@ -93,21 +93,28 @@ stripe.charges.create({
       data: {
         image_url: newCard.image_url,
         greetings_subtext: newCard.greetings_subtext,
-        font_family: font,
-        font_size: size,
-        color: color,
+        font_family: newCard.font_family,
+        font_size: newCard.font_size,
+        color: newCard.color_hex,
         message: msg,
         text_pos: newCard.text_pos,
         image_scale: newCard.image_scale,
         image_pos_x: newCard.image_pos_x,
         image_pos_y: newCard.image_pos_y,
-        image_filter: filter
+        image_filter: newCard.filter_name
       }
     }, function (err, postcard) {
       if (err) {
         // TODO switch statement to send different errors
         return res.send(err);
       }
+
+
+      console.log(newCard);
+      // color size font filter
+      delete newCard.color_hex;
+      delete newCard.font_family;
+      delete newCard.filter_name;
 
       newCard.thumbnail_url = postcard.thumbnails[0].large;
       newCard.pdf_url = postcard.url;

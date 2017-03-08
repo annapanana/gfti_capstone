@@ -239,6 +239,8 @@ footer {
 }
 
 .widget-element-selected {
+  border-style: solid;
+  border-width: thick;
   border-color: #AAE0F8;
 }
 
