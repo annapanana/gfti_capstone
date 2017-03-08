@@ -116,6 +116,10 @@ stripe.charges.create({
       newCard.pdf_url = postcard.url;
       newCard.delivery_date = postcard.expected_delivery_date;
 
+      if (newCard.id) {
+        delete newCard.id;
+      }
+
       knex('postcards')
         .insert(newCard, '*')
         .then((result) => {

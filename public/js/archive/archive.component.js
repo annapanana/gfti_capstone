@@ -25,7 +25,6 @@
       };
 
       vm.selectTemplate = function(id) {
-
         $http.get(`/postcards/${id}`).then((result) => {
           postcardService.updatePostcardObject(result.data);
           postcardService.savePostcardData();
