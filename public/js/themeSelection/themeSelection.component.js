@@ -37,7 +37,7 @@
         localStorage.setItem('postcard', JSON.stringify(postcard));
         $state.go('photoUpload', null, { reload: true });
       };
-      
+
       vm.hoverObject = "";
       vm.setHoverObject = function(obj) {
         vm.hoverObject = obj;

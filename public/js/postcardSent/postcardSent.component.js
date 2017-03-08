@@ -45,6 +45,7 @@
         $http.patch(`/postcards/${id}`, postcard).then((result) => {
           $state.go('archive', null, { reload: true });
         });
+
       };
 
       vm.viewPreview = function() {
