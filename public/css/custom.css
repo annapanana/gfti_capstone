@@ -128,6 +128,11 @@ footer {
   padding-left: 10px;
   padding-right: 10px;
   background-color: #AAE0F8;
+  border-style: solid;
+  border-top-color: #FFF;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
 }
 
 .footer-text {
