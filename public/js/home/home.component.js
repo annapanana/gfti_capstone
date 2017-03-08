@@ -86,9 +86,7 @@
 
       vm.wallpaper = 1;
       function selectRandomWallpaper() {
-        // TODO select a wallpaper to disply
         vm.wallpaper = Math.floor(Math.random() * 3);
-        console.log(vm.wallpaper);
       }
     }
 }());

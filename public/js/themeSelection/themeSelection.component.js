@@ -29,7 +29,6 @@
       vm.$onInit = function() {
         postcard = JSON.parse(localStorage.getItem('postcard'));
         vm.composition_settings = postcard.composition_settings;
-        // console.log($stateParams);
       };
 
       vm.selectTheme = function(theme) {
@@ -38,8 +37,7 @@
         localStorage.setItem('postcard', JSON.stringify(postcard));
         $state.go('photoUpload', null, { reload: true });
       };
-
-
+      
       vm.hoverObject = "";
       vm.setHoverObject = function(obj) {
         vm.hoverObject = obj;

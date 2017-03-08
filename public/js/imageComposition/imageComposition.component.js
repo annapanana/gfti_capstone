@@ -53,12 +53,10 @@
           background: postcardService.getBackgroundImage($sce),
           text_pos: postcardService.getTextPos()
         };
-        console.log(vm.postcard);
         postcardService.setDefault(vm.postcard);
       };
 
       vm.selectFilter = function(filter_id) {
-        console.log(filter_id);
         vm.curFilter = filter_id;
         postcardService.setFilter(filter_id);
         vm.postcard.filter = postcardService.getFilter();
@@ -73,7 +71,6 @@
 
       vm.selectColor = function(color_id) {
         vm.curColor = color_id;
-        console.log("ID!!", color_id);
         postcardService.setColor(color_id);
         vm.postcard.color = postcardService.getColor();
         vm.postcard.frame = postcardService.updateFrameUrl($sce);
@@ -95,7 +92,6 @@
       $scope.$on("slideEnded", function() {
          postcardService.setFontSize($scope.slider.value);
          postcardService.setImageScale($scope.imageScale.value);
-         console.log($scope.imageScale.value);
          postcardService.setImagePosX($scope.imagePosX.value);
          postcardService.setImagePosY($scope.imagePosY.value);
          postcardService.setTextPos($scope.textPos.value);

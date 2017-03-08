@@ -65,7 +65,7 @@
       <!-- Postcard Template -->
       <div front-design></div>
       <div class="widget-container color-2 text-center top-margin-sm" style="height:114px;">
-        <h5 class="top-margin-sm">Edit Subtext</h5>
+        <h5 class="top-margin-sm">Edit Text</h5>
         <div class="row flex-row">
           <input class="text-widget" type="text" name="" style="width:75%" ng-model="$ctrl.postcard.subtext" value="{{$ctrl.postcard.subtext}}">
         </div>
@@ -80,7 +80,7 @@
             <div>
               <a ng-click="$ctrl.selectFilter(filter.id)">
                 <div class="widget-element hvr-grow">
-                  <img class="standard-border-radius image-fill" ng-class="{'widget-element-selected':filter.id==$ctrl.curFilter}" ng-src="{{filter.asset}}" alt="{{filter.name}}">
+                  <img class="standard-border-radius image-fill" ng-class="{'widget-element-selected':filter.id==$ctrl.curFilter}" ng-src="{{filter.asset}}" alt="{{filter.name}}" style="border-radius:10px;">
                 </div>
 
               </a>
@@ -95,7 +95,7 @@
             <div class="">
               <a ng-click="$ctrl.selectFrame(singleFrame.id)">
                 <div class="widget-element hvr-grow">
-                  <img class="standard-border-radius image-fill" ng-src="{{singleFrame.asset}}" ng-class="{'widget-element-selected':singleFrame.id==$ctrl.curFrame}" alt="frame">
+                  <img class="image-fill" ng-src="{{singleFrame.asset}}" ng-class="{'widget-element-selected':singleFrame.id==$ctrl.curFrame}" alt="frame" style="border-radius:10px;">
                 </div>
               </a>
             </div>

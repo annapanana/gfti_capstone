@@ -7,6 +7,13 @@
 
 <div class="container">
   <div class="row top-margin-sm">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8 col-xs-12 text-center">
+      <h5>Welcome to the archive! Your fellow travelers have saved their postcard designs here. When you select a postcard from the options below, you can modify it, add a custom message and mail it.</h5>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+  <div class="row">
     <div class="col-xs-12 archive-container">
       <div class="archive-widget text-center">
         <div class="col-xs-12">
@@ -53,7 +60,7 @@
   </div>
 
   <div class="card-container col-xs-12">
-    <div class="card hvr-grow" ng-repeat="entry in $ctrl.archive | orderBy:$ctrl.sortCriteria | filter:search:strict | filter:(!!$ctrl.filterBy || undefined) && {theme_id:$ctrl.filterBy}" ng-click="$ctrl.selectTemplate(entry.id)">
+    <div class="card" ng-repeat="entry in $ctrl.archive | orderBy:$ctrl.sortCriteria | filter:search:strict | filter:(!!$ctrl.filterBy || undefined) && {theme_id:$ctrl.filterBy}" ng-click="$ctrl.selectTemplate(entry.id)">
       <img class="image-fill" ng-src="{{entry.thumbnail_url}}" alt="">
       <h4>{{entry.name}}</h4>
       <p>{{entry.notes}}</p>

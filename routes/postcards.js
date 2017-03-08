@@ -80,13 +80,10 @@ stripe.charges.create({
     source: token
 
   }).then(function(charge) {
-    // New charge created on a new customer
-    console.log("Charge Succeeded!");
-    console.log("TEXT POS", newCard.text_pos);
     // CREATE POSTCARD
     lob.postcards.create({
       to: send_to,
-      from: send_from,
+        from: send_from,
       size: '4x6',
       front: postcard_front,
       back: postcard_back,
@@ -109,21 +106,25 @@ stripe.charges.create({
         return res.send(err);
       }
 
-
-      console.log(newCard);
-      // color size font filter
+      // These do not get entered into DB, only used for LOB Card Creation
       delete newCard.color_hex;
       delete newCard.font_family;
       delete newCard.filter_name;
+      delete newCard.frame_url;
 
       newCard.thumbnail_url = postcard.thumbnails[0].large;
       newCard.pdf_url = postcard.url;
       newCard.delivery_date = postcard.expected_delivery_date;
 
+      if (newCard.id) {
+        delete newCard.id;
+      }
+
       knex('postcards')
         .insert(newCard, '*')
         .then((result) => {
           result[0].postcard = postcard;
+          console.log("THIS IS THE SENT POST CARD", postcard);
           res.redirect('/postcard-sent');
 
           // res.send(result[0])
@@ -135,7 +136,6 @@ stripe.charges.create({
     });
   }).catch(function(err) {
     // TODO switch statement to send different errors
-    console.log("THIS IS AN ERROR");
     res.redirect('/');
     // return res.send(err);
   });
@@ -143,7 +143,6 @@ stripe.charges.create({
   router.patch('/:id', (req, res, next) => {
     let id = req.params.id;
     const {card_name, card_notes} = req.body;
-    console.log("Patch", card_name);
     var name = card_name;
     var notes = card_notes;
     knex('postcards')
@@ -156,7 +155,6 @@ stripe.charges.create({
           .where('postcards.order_id', id)
           .update(result[0], '*')
           .then((updatedResult) => {
-            console.log(updatedResult);
             res.send(updatedResult);
           })
           .catch((err) => {

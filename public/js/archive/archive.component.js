@@ -16,7 +16,6 @@
 
       vm.$onInit = function() {
         $http.get('/postcards').then((result) => {
-          console.log(result);
           for (var i = 0; i < result.data.length; i++) {
             if (result.data[i].is_saved) {
               vm.archive.push(result.data[i]);
@@ -26,9 +25,7 @@
       };
 
       vm.selectTemplate = function(id) {
-
         $http.get(`/postcards/${id}`).then((result) => {
-          console.log(result.data);
           postcardService.updatePostcardObject(result.data);
           postcardService.savePostcardData();
           $state.go('imageComposition');

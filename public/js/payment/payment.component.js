@@ -105,7 +105,6 @@
       };
 
       const stripeTokenHandler = (token) => {
-
         const form = document.getElementById('payment-form');
         const hiddenInput = document.createElement('input');
         hiddenInput.setAttribute('type', 'hidden');
@@ -113,32 +112,16 @@
         hiddenInput.setAttribute('value', token.id);
         form.appendChild(hiddenInput);
 
+        // Append postcard data to stripe form for post request
         let id = vm.emailAddress + Date.now();
-        console.log(id);
         postcardService.setOrderId(id);
         postcardService.savePostcardData();
-        console.log(JSON.stringify(postcardService.postcard));
         const hiddenData = document.createElement('input');
         hiddenData.setAttribute('type', 'hidden');
         hiddenData.setAttribute('name', 'postcard_data');
         hiddenData.setAttribute('value', JSON.stringify(postcardService.postcard));
         form.appendChild(hiddenData);
-
         form.submit();
-        // $state.go('postcardSent', null, { reload: true });
-        // Submit the form
-        // $http.post('/postcards', postcardService.postcard).then((result) => {
-        //   console.log("result", result.data[0].postcard.url);
-        //   postcardService.setThumbnail(result.data[0].postcard.thumbnails[0].large);
-        //   postcardService.setId(result.data[0].id);
-        //   postcardService.setDeliveryDate(result.data[0].postcard.expected_delivery_date);
-        //   postcardService.setPreview(result.data[0].postcard.url);
-        //   console.log(result.data[0].postcard.expected_delivery_date);
-        //   postcardService.savePostcardData();
-        //   // localStorage.setItem('postcard', JSON.stringify(postcard));
-        //   $state.go('postcardSent', null, { reload: true }));
-        // });
-
       };
 
       vm.flip = function() {

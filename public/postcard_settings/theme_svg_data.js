@@ -158,12 +158,6 @@ var frameData = {
       local_frame: 'wild-4',
       asset: 'assets/icons/frame_Icons/icon_wild_04.png',
       template_name: 'wild/wild_04.html'
-    },
-    {
-      id: 5,
-      local_frame: 'wild-5',
-      asset: 'assets/icons/frame_Icons/icon_wild_05.png',
-      template_name: 'wild/wild_05.html'
     }
   ]
 };
